@@ -658,3 +658,10 @@ video {
 .hover\:font-serif:hover {
   font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
+
+@media (min-width: 768px) {
+  .md\:columns-4 {
+    -moz-columns: 4;
+         columns: 4;
+  }
+}
