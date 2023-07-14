@@ -15,8 +15,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Tomato Grotesk', ...defaultTheme.fontFamily.sans],
-        'serif': ['TT Ramillas', ...defaultTheme.fontFamily.serif],
+        'sans': ['"Tomato Grotesk"', ...defaultTheme.fontFamily.sans],
+        'serif': ['"TT Ramillas"', ...defaultTheme.fontFamily.serif],
       },
     },
   },
