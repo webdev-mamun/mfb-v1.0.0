@@ -609,6 +609,18 @@ video {
        columns: 8;
 }
 
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -668,5 +680,9 @@ video {
   .md\:columns-4 {
     -moz-columns: 4;
          columns: 4;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
