@@ -1,3 +1,144 @@
 @tailwind base;
+
+@layer base {
+    h1, .h1 {
+        @apply text-4xl;
+    }
+    h2, .h2 {
+        @apply text-3xl;
+    }
+    h3, .h3 {
+        @apply text-2xl;
+    }
+    h4, .h4 {
+        @apply text-xl;
+    }
+    h5, .h5 {
+        @apply text-base;
+    }
+    h6, .h6 {
+        @apply text-sm;
+    }
+    
+    p {
+        @apply text-base;
+    }
+    
+    h1.font-sans, .h1.font-sans {
+        letter-spacing: -1.76px;
+    }
+    h1.font-serif, .h1.font-serif {
+        letter-spacing: -4.4px;
+    }
+    h2.font-sans, .h2.font-sans {
+        letter-spacing: -1.24px;
+    }
+    h2.font-serif, .h2.font-serif {
+        letter-spacing: -3.1px;
+    }
+    h3.font-sans, .h3.font-sans {
+        letter-spacing: -0.88px;
+    }
+    h3.font-serif, .h3.font-serif {
+        letter-spacing: -2.2px;
+    }
+    h4.font-sans, .h4.font-sans {
+        letter-spacing: -0.44px;
+    }
+    h4.font-serif, .h4.font-serif {
+        letter-spacing: -1.1px;
+    }
+    h5.font-sans, .h5.font-sans {
+        letter-spacing: -0.32px;
+    }
+    h5.font-serif, .h5.font-serif {
+        letter-spacing: -0.8px;
+    }
+    h6.font-sans, .h6.font-sans {
+        letter-spacing: -0.26px;
+    }
+    h6.font-serif, .h6.font-serif {
+        letter-spacing: -0.65px;
+    }
+    p.font-sans, .base-text.font-sans {
+        letter-spacing: -0.32px;
+    }
+    p.font-serif, .base-text.font-serif {
+        letter-spacing: -0.8px;
+    }
+    .header__heading-link, .header__heading {
+        @apply h4 uppercase font-serif;
+    }
+
+    .header__heading-link > span, .header__heading > span {
+        padding: 9px 0;
+    }
+
+}
+
+.base-text {
+    @apply text-base;
+}
+
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .container {
+        @apply grid grid-cols-10 gap-1 xl:gap-2 px-1 xl:px-2
+    }
+
+    .btn {
+        @apply font-sans;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 2.2rem; /* 110% */
+        letter-spacing: -0.4px;
+        padding: 1.2rem 3.6rem;
+        border-radius: 1.5rem;
+    }
+
+    .btn-small {
+        @apply font-sans;
+        text-align: center;
+        font-size: 12px;
+        line-height: 14.4px;
+        letter-spacing: -0.24px;
+        padding: .5rem 1.5rem .4rem;
+        border-radius: .5rem;
+    }
+
+    .visually-hidden {
+        position: absolute!important;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+        word-wrap: normal!important;
+    }
+
+    .skip-to-content-link {
+        z-index: 9999;
+        position: inherit;
+        overflow: auto;
+        width: auto;
+        height: auto;
+        clip: auto;
+        padding: 0.5rem 1.5rem 0.4rem;
+    }
+
+    .list-menu--inline {
+        gap: 2rem;
+    }
+
+    .menu-drawer-container[open] .menu {
+        @apply invisible;
+    }
+
+    .menu-drawer-container[open] .close {
+        @apply visible;
+    }
+}
