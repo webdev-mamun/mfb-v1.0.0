@@ -5,15 +5,8 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-<nav class="header__inline-menu col-span-4 flex items-center">
+<nav class="header__inline-menu hidden lg:flex items-center">
   <ul class="list-menu list-menu--inline inline-flex items-center h-full" role="list">
-    <li class="inline-flex h-full">
-      {%- liquid
-        if section.settings.menu != blank
-          render 'header-drawer'
-        endif
-      -%}
-    </li>
     {%- for link in section.settings.menu.links -%}
       <li class="inline-flex h-full">
         {%- if link.links != blank -%}

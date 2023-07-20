@@ -571,7 +571,7 @@ p.header__heading-link, .base-text.header__heading-link,p .header__heading, .bas
   text-transform: uppercase;
 }
 
-.header__heading-link > span, .header__heading > span {
+.header__heading-link {
   padding: 9px 0;
 }
 
@@ -708,6 +708,45 @@ p.header__heading-link, .base-text.header__heading-link,p .header__heading, .bas
   }
 }
 
+h1.btn, .h1.btn {
+  letter-spacing: -1.76px;
+}
+
+h2.btn, .h2.btn {
+  letter-spacing: -1.24px;
+}
+
+h3.btn, .h3.btn {
+  letter-spacing: -0.88px;
+}
+
+h4.btn, .h4.btn {
+  letter-spacing: -0.44px;
+}
+
+h5.btn, .h5.btn {
+  letter-spacing: -0.32px;
+}
+
+h6.btn, .h6.btn {
+  letter-spacing: -0.26px;
+}
+
+p.btn, .base-text.btn {
+  letter-spacing: -0.32px;
+}
+
+.btn {
+  font-family: "Tomato Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  /* 110% */
+  letter-spacing: -0.4px;
+  padding: 1.2rem 3.6rem;
+  border-radius: 1.5rem;
+}
+
 h1.btn-small, .h1.btn-small {
   letter-spacing: -1.76px;
 }
@@ -744,6 +783,87 @@ p.btn-small, .base-text.btn-small {
   letter-spacing: -0.24px;
   padding: .5rem 1.5rem .4rem;
   border-radius: .5rem;
+}
+
+h1.btn-link, .h1.btn-link {
+  letter-spacing: -1.76px;
+}
+
+h2.btn-link, .h2.btn-link {
+  letter-spacing: -1.24px;
+}
+
+h3.btn-link, .h3.btn-link {
+  letter-spacing: -0.88px;
+}
+
+h4.btn-link, .h4.btn-link {
+  letter-spacing: -0.44px;
+}
+
+h5.btn-link, .h5.btn-link {
+  letter-spacing: -0.32px;
+}
+
+h6.btn-link, .h6.btn-link {
+  letter-spacing: -0.26px;
+}
+
+p.btn-link, .base-text.btn-link {
+  letter-spacing: -0.32px;
+}
+
+.btn-link {
+  font-family: "Tomato Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  text-decoration-line: underline;
+  position: relative;
+  text-transform: uppercase;
+  padding-right: 57px;
+  letter-spacing: -0.28px;
+}
+
+h1.btn-link:hover, .h1.btn-link:hover {
+  letter-spacing: -4.4px;
+}
+
+h2.btn-link:hover, .h2.btn-link:hover {
+  letter-spacing: -3.1px;
+}
+
+h3.btn-link:hover, .h3.btn-link:hover {
+  letter-spacing: -2.2px;
+}
+
+h4.btn-link:hover, .h4.btn-link:hover {
+  letter-spacing: -1.1px;
+}
+
+h5.btn-link:hover, .h5.btn-link:hover {
+  letter-spacing: -0.8px;
+}
+
+h6.btn-link:hover, .h6.btn-link:hover {
+  letter-spacing: -0.65px;
+}
+
+p.btn-link:hover, .base-text.btn-link:hover {
+  letter-spacing: -0.8px;
+}
+
+.btn-link:hover {
+  font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.btn-link::after {
+  background-image: url('https://cdn.shopify.com/s/files/1/0783/4094/8269/files/button-arrow.svg?v=1689819442');
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .visually-hidden {
@@ -784,10 +904,6 @@ p.btn-small, .base-text.btn-small {
   visibility: hidden;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -810,6 +926,10 @@ p.btn-small, .base-text.btn-small {
 
 .col-span-4 {
   grid-column: span 4 / span 4;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
 }
 
 .block {
@@ -860,6 +980,14 @@ p.btn-small, .base-text.btn-small {
   justify-content: center;
 }
 
+.gap-2 {
+  gap: 2rem;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -907,34 +1035,6 @@ p.btn-small, .base-text.btn-small {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.hover\:font-serif:hoverh1,.hover\:font-serif:hover .h1 {
-  letter-spacing: -4.4px;
-}
-
-.hover\:font-serif:hoverh2,.hover\:font-serif:hover .h2 {
-  letter-spacing: -3.1px;
-}
-
-.hover\:font-serif:hoverh3,.hover\:font-serif:hover .h3 {
-  letter-spacing: -2.2px;
-}
-
-.hover\:font-serif:hoverh4,.hover\:font-serif:hover .h4 {
-  letter-spacing: -1.1px;
-}
-
-.hover\:font-serif:hoverh5,.hover\:font-serif:hover .h5 {
-  letter-spacing: -0.8px;
-}
-
-.hover\:font-serif:hoverh6,.hover\:font-serif:hover .h6 {
-  letter-spacing: -0.65px;
-}
-
-.hover\:font-serif:hoverp,.hover\:font-serif:hover .base-text {
-  letter-spacing: -0.8px;
-}
-
 .focus\:skip-to-content-link:focus {
   z-index: 9999;
   position: inherit;
@@ -975,12 +1075,30 @@ p.btn-small, .base-text.btn-small {
   }
 }
 
-.hover\:font-serif:hover {
-  font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
 @media (min-width: 768px) {
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:gap-2 {
+    gap: 2rem;
   }
 }

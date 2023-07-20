@@ -145,8 +145,13 @@
           "label": "Logo"
         },
         "logo_width": {
-          "label": "Desktop logo width",
-          "info": "Logo width is automatically optimized for mobile."
+          "label": "Desktop logo width"
+        },
+        "logo_image_mobile": {
+          "label": "Logo mobile"
+        },
+        "logo_width_mobile": {
+          "label": "Mobile logo width"
         },
         "favicon": {
           "label": "Favicon image",
@@ -1072,6 +1077,9 @@
         "menu": {
           "label": "Menu"
         },
+        "drawer_menu": {
+          "label": "Drawer Menu"
+        },
         "menu_type_desktop": {
           "label": "Desktop menu type",
           "info": "Menu type is automatically optimized for mobile.",
@@ -1148,29 +1156,13 @@
       "name": "Image banner",
       "settings": {
         "image": {
-          "label": "First image"
+          "label": "Desktop image"
         },
         "image_2": {
-          "label": "Second image"
+          "label": "Mobile image"
         },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
-        },
-        "image_height": {
-          "label": "Banner height",
-          "options__1": {
-            "label": "Adapt to first image"
-          },
-          "options__2": {
-            "label": "Small"
-          },
-          "options__3": {
-            "label": "Medium"
-          },
-          "options__4": {
-            "label": "Large"
-          },
-          "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         },
         "desktop_content_position": {
           "options__1": {

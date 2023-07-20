@@ -70,7 +70,7 @@
         @apply h4 uppercase font-serif;
     }
 
-    .header__heading-link > span, .header__heading > span {
+    .header__heading-link {
         padding: 9px 0;
     }
 
@@ -106,6 +106,30 @@
         letter-spacing: -0.24px;
         padding: .5rem 1.5rem .4rem;
         border-radius: .5rem;
+    }
+
+    .btn-link {
+        @apply font-sans;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        @apply underline;
+        @apply relative;
+        @apply uppercase;
+        padding-right: 57px;
+        letter-spacing: -0.28px;
+    }
+
+    .btn-link:hover {
+        @apply font-serif;
+    }
+
+    .btn-link::after {
+        background-image: url('https://cdn.shopify.com/s/files/1/0783/4094/8269/files/button-arrow.svg?v=1689819442');
+        @apply bg-contain;
+        @apply absolute;
+        @apply top-1/2;
+        @apply right-0;
+        @apply -translate-y-1/2;
     }
 
     .visually-hidden {

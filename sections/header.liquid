@@ -74,26 +74,43 @@
         endif
       %}
     {% endcomment %}
-      {%- liquid
-        if section.settings.menu != blank
-          render 'header-dropdown-menu'
-        endif
-      %}
+      <div class="col-span-4 flex items-center gap-2">
+        {%- liquid
+          if section.settings.menu != blank
+            render 'header-drawer'
+          endif
+          if section.settings.menu != blank
+            render 'header-dropdown-menu'
+          endif
+        -%}
+      </div>
       {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading col-span-2 flex items-center">
+        <h1 class="header__heading col-span-2 flex items-center justify-center">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset col-span-2 flex items-center justify-center">
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                 {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                {%- assign logo_mobile_height = settings.logo_mobile_width | divided_by: settings.logo_mobile.aspect_ratio -%}
                 {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
                 {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {% capture widths_mobile %}{{ settings.logo_mobile_width }}, {{ settings.logo_mobile_width | times: 1.5 | round }}, {{ settings.logo_mobile_width | times: 2 }}{% endcapture %}
+
                 {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo',
+                  class: 'header__heading-logo hidden lg:block',
                   widths: widths,
                   height: logo_height,
                   width: settings.logo_width,
+                  alt: logo_alt,
+                  sizes: sizes,
+                  preload: true
+                }}
+                {{ settings.logo_mobile | image_url: width: 600 | image_tag:
+                  class: 'header__heading-logo lg:hidden',
+                  widths: widths_mobile,
+                  height: logo_mobile_height,
+                  width: settings.logo_mobile_width,
                   alt: logo_alt,
                   sizes: sizes,
                   preload: true
@@ -296,6 +313,12 @@
       "id": "menu",
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "link_list",
+      "id": "drawer-menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.drawer_menu.label"
     },
     {
       "type": "select",
