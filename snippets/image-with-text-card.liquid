@@ -1,5 +1,5 @@
 <div class="{{ column_class }}">
-  <div class="">
+  <div class="pb-1">
     {%- liquid
       assign image = block.settings.image
       assign mobile_image = block.settings.mobile_image
@@ -25,20 +25,20 @@
       }}
     {%- else -%}
       {%- assign placeholder = 'detailed-apparel-' | append: forloop.index -%}
-      {{ placeholder | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
+      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg w-full max-w-full rounded-2xl' }}
     {%- endif -%}
   </div>
-  <div>
+  <div class="grid {{ container_class }}">
     {%- if block.settings.title != blank -%}
-      <h2 class="font-sans text-base">{{ block.settings.title }}</h2>
+      <h2 class="{{ title_class }} font-sans text-base">{{ block.settings.title }}</h2>
     {%- endif -%}
-    <div class="">
+    <div class="{{ content_class }}">
       {%- if block.settings.text != blank -%}
-        <p class="font-serif">{{ block.settings.text }}</p>
+        <p class="font-serif pb-.5">{{ block.settings.text }}</p>
       {%- endif -%}
-      {%- if block.settings.link_text != blank -%}
-        <a href="{{ block.settings.link_url }}" class="btn-link">
-          {{- block.settings.link_text -}}
+      {%- if block.settings.button_text != blank -%}
+        <a href="{{ block.settings.button_url }}" class="btn-link">
+          {{- block.settings.button_text -}}
         </a>
       {%- endif -%}
     </div>
