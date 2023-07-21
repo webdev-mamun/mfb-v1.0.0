@@ -32,20 +32,20 @@
       {{
         image
         | image_url: width: 1920
-        | image_tag: loading: 'lazy', class: 'hidden lg:block', sizes: sizes, widths: widths
+        | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
       }}
       {{
         mobile_image
         | image_url: width: 1920
-        | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image', sizes: sizes, widths: widths
+        | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image  rounded-2xl', sizes: sizes, widths: widths
       }}
     {%- else -%}
       {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
     {%- endif -%}
   </div>
-  <div class="col-span-full lg:col-span-5 py-[3.8rem] order-first lg:order-last">
+  <div class="col-span-full lg:col-span-5 pt-[3.8rem] pb-[3.5rem] order-first lg:order-last">
     {%- if section.settings.text != blank -%}
-      <div class="image-with-text-text mb-3">
+      <div class="image-with-text-text mb-2 font-sans big-text md:text-2xl xl:text-3xl">
         {% if section.settings.icon != blank -%}
           {{-
             section.settings.icon
@@ -64,7 +64,7 @@
       </div>
     {%- endif -%}
     {%- if section.settings.link_text != blank -%}
-      <a href="{{ section.settings.link_url }}" class="btn-link hidden lg:inline-block mb-6">
+      <a href="{{ section.settings.link_url }}" class="btn-link hidden lg:inline-block mb-4">
         {{- section.settings.link_text -}}
       </a>
     {%- endif -%}

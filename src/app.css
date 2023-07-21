@@ -96,11 +96,11 @@
     .btn {
         @apply font-sans;
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.4rem;
         line-height: 2.2rem; /* 110% */
-        letter-spacing: -0.4px;
+        letter-spacing: -0.28px;
         padding: 1.2rem 3.6rem;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
         color: var(--btn-text-color, #FFFEF7);
         background-color: var(--btn-bg-color, #022541);
         @apply transition-all;
@@ -197,9 +197,9 @@
         @apply visible;
     }
 
-    .image-with-text-text, .image-with-text-text > * {
+    /* .image-with-text-text, .image-with-text-text > * {
         @apply big-text;
         @apply md:text-2xl;
         @apply xl:text-3xl;
-    }
+    } */
 }
