@@ -14,25 +14,70 @@
 
 {% assign scheme1 = settings.color_schemes | first %}
 
-<div class="image-with-text xl:container">
-  <div class="col-span-full lg:col-span-5">
-    {%- if section.settings.image != blank -%}
+<div class="image-with-text container xl:container">
+  <div class="col-span-full lg:col-span-5 py-1 order-last lg:order-last">
+    {%- liquid
+      assign image = section.settings.image
+      assign mobile_image = section.settings.mobile_image
+      if mobile_image == blank
+        assign mobile_image = image
+      endif
+    -%}
+    {%- if image != blank -%}
       {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
       {%- capture sizes -%}
         (min-width: 1440px) {{ 1440 | minus: 100 | divided_by: 2 }}px,
         (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
       {%- endcapture -%}
-      {{ section.settings.image | image_url: width: 1920 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+      {{
+        image
+        | image_url: width: 1920
+        | image_tag: loading: 'lazy', class: 'hidden lg:block', sizes: sizes, widths: widths
+      }}
+      {{
+        mobile_image
+        | image_url: width: 1920
+        | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image', sizes: sizes, widths: widths
+      }}
     {%- else -%}
-      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
     {%- endif -%}
   </div>
-  <div class="col-span-full lg:col-span-5">
-    <div class="h2"></div>
-    <a class="btn-link"></a>
-    <div class="flex gap-1 lg:gap-2">
-      <a class="btn"></a>
-    </div>
+  <div class="col-span-full lg:col-span-5 py-[3.8rem] order-first lg:order-last">
+    {%- if section.settings.text != blank -%}
+      <div class="image-with-text-text mb-3">
+        {% if section.settings.icon != blank -%}
+          {{-
+            section.settings.icon
+            | image_url: width: 155
+            | image_tag: loading: 'lazy', class: 'hidden xl:inline-block translate-y-[.3rem] mr-.5 float-left'
+          -}}
+          {{-
+            section.settings.icon
+            | image_url: width: 79
+            | image_tag:
+              loading: 'lazy',
+              class: 'inline-block xl:hidden translate-y-[.5rem] md:translate-y-[1.1rem] mr-.5 float-left'
+          -}}
+        {%- endif -%}
+        {{ section.settings.text }}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.link_text != blank -%}
+      <a href="{{ section.settings.link_url }}" class="btn-link hidden lg:inline-block mb-6">
+        {{- section.settings.link_text -}}
+      </a>
+    {%- endif -%}
+    {%- if section.settings.btn_text_1 != blank or section.settings.btn_text_1 != blank -%}
+      <div class="flex flex-wrap gap-1 lg:gap-2">
+        {%- if section.settings.btn_text_1 != blank -%}
+          <a href="{{ section.settings.btn_url_1 }}" class="btn">{{ section.settings.btn_text_1 }}</a>
+        {%- endif -%}
+        {%- if section.settings.btn_text_2 != blank -%}
+          <a href="{{ section.settings.btn_url_2 }}" class="btn">{{ section.settings.btn_text_2 }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
@@ -48,6 +93,16 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:sections.image-with-text.settings.mobile_image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "t:sections.image-with-text.settings.icon.label"
     },
     {
       "type": "html",

@@ -15,9 +15,10 @@
         | image_url: width: 3840
         | image_tag:
           loading: 'lazy',
+          preload: true,
           width: section.settings.image.width,
           height: image_height,
-          class: 'hidden lg:block',
+          class: 'hidden lg:block object-cover',
           sizes: width,
           widths: widths
       }}
@@ -26,9 +27,10 @@
         | image_url: width: 1920
         | image_tag:
           loading: 'lazy',
+          preload: true,
           width: section.settings.image_mobile.width,
           height: image_height_mobile,
-          class: 'lg:hidden',
+          class: 'lg:hidden object-cover',
           sizes: width,
           widths: widths
       }}

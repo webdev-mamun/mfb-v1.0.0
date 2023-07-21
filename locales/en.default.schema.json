@@ -1172,6 +1172,12 @@
         "image": {
           "label": "Image"
         },
+        "mobile_image": {
+          "label": "Mobile image"
+        },
+        "icon": {
+          "label": "Icon"
+        },
         "text": {
           "label": "Text"
         },
