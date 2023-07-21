@@ -1,13 +1,13 @@
-<div class="image-with-text-columns">
+<div class="image-with-text-columns py-1 lg:py-2">
   <div class="container xl:container">
     {%- liquid
-      for block in section.block
+      for block in section.blocks
         if forloop.index == 1 and section.blocks.size == 2
-          render 'image-with-text-card', column_class: 'col-span-full lg:col-span-6'
-        elsif forloop.index == 1 and section.blocks.size == 2
-          render 'image-with-text-card', column_class: 'col-span-full lg:col-span-4'
+          render 'image-with-text-card', column_class: 'col-span-full lg:col-span-6', container_class: 'grid-cols-6', title_class: 'col-span-2', content_class: 'col-span-4', block: block
+        elsif forloop.index == 2 and section.blocks.size == 2
+          render 'image-with-text-card', column_class: 'col-span-full lg:col-span-4', container_class: 'grid-cols-6 xl:grid-cols-4', title_class: 'col-span-2', content_class: 'col-span-4 xl:col-span-2', block: block
         else
-          render 'image-with-text-card', column_class: 'col-span-full'
+          render 'image-with-text-card', column_class: 'col-span-full', container_class: 'grid-cols-10', title_class: 'col-span-4', content_class: 'col-span-6', block: block
         endif
       endfor
     -%}
@@ -21,44 +21,45 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
+  "max_blocks": 2,
   "settings": [],
   "blocks": [
     {
       "type": "image_with_text",
-      "name": "t:sections.image-with-text-columns.blocks.name",
+      "name": "t:sections.image-with-text-columns.blocks.image-with-text-column.name",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.image-with-text-columns.blocks.settings.image.label"
+          "label": "t:sections.image-with-text-columns.blocks.image-with-text-column.settings.image.label"
         },
         {
           "type": "image_picker",
           "id": "image_mobile",
-          "label": "t:sections.image-with-text-columns.blocks.settings.image_mobile.label"
+          "label": "t:sections.image-with-text-columns.blocks.image-with-text-column.settings.image_mobile.label"
         },
         {
           "type": "textarea",
           "id": "title",
-          "label": "t:sections.image-with-text-columns.blocks.settings.title.label",
+          "label": "t:sections.image-with-text-columns.blocks.image-with-text-column.settings.title.label",
           "default": "NOTES FROM THE ROAD"
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "text",
-          "label": "t:sections.image-with-text-columns.blocks.settings.text.label",
+          "label": "t:sections.image-with-text-columns.blocks.image-with-text-column.settings.text.label",
           "default": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio."
         },
         {
           "type": "text",
           "id": "button_text",
-          "label": "t:sections.image-with-text-columns.blocks.settings.button_text.label",
+          "label": "t:sections.image-with-text-columns.blocks.image-with-text-column.settings.button_text.label",
           "default": "Follow our journey"
         },
         {
           "type": "url",
           "id": "button_url",
-          "label": "t:sections.image-with-text-columns.blocks.settings.button_url.label"
+          "label": "t:sections.image-with-text-columns.blocks.image-with-text-column.settings.button_url.label"
         }
       ]
     }
