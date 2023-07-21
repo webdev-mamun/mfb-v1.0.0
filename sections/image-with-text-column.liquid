@@ -1,0 +1,72 @@
+<div class="image-with-text-columns">
+  <div class="container xl:container">
+    {%- liquid
+      for block in section.block
+        if forloop.index == 1 and section.blocks.size == 2
+          render 'image-with-text-card', column_class: 'col-span-full lg:col-span-6'
+        elsif forloop.index == 1 and section.blocks.size == 2
+          render 'image-with-text-card', column_class: 'col-span-full lg:col-span-4'
+        else
+          render 'image-with-text-card', column_class: 'col-span-full'
+        endif
+      endfor
+    -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image-with-text-columns.name",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image_with_text",
+      "name": "",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-with-text-columns.blocks.settings.image.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "t:sections.image-with-text-columns.blocks.settings.image_mobile.label"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "t:sections.image-with-text-columns.blocks.settings.title.label",
+          "default": "NOTES FROM THE ROAD"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.image-with-text-columns.blocks.settings.text.label",
+          "default": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "t:sections.image-with-text-columns.blocks.settings.button_text.label",
+          "default": "Follow our journey"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "t:sections.image-with-text-columns.blocks.settings.button_url.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-with-text-columns.presets.name"
+    }
+  ]
+}
+{% endschema %}

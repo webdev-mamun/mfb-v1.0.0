@@ -11,8 +11,9 @@
       "type": "image-with-text",
       "settings": {
         "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_2.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_2_mobile.jpg",
         "icon": "shopify:\/\/shop_images\/Logo_Black_3.svg",
-        "text": "<p class=\"inline-block float-left mb-2\">is a direct-to-consumer  wine and spirits merchant.<\/p>\n<p>We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/p>",
+        "text": "<span>is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-2 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
         "link_text": "Learn more about us",
         "link_url": "",
         "btn_text_1": "SHOP WINES",

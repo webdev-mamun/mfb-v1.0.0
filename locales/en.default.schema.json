@@ -1166,6 +1166,37 @@
         "name": "Image banner"
       }
     },
+    "image-with-text-columns": {
+      "name": "Multicolumn Image with text",
+      "blocks": {
+        "image-with-text-column": {
+          "name": "Colunm",
+          "settings": {
+            "image": {
+              "label": "Desktop image"
+            },
+            "image_mobile": {
+              "label": "Mobile image"
+            },
+            "title": {
+              "label": "Title"
+            },
+            "text": {
+              "label": "Text"
+            },
+            "button_text": {
+              "label": "Button text"
+            },
+            "button_url": {
+              "label": "Button url"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Multicolumn Image with text"
+      }
+    },
     "image-with-text": {
       "name": "Image with text",
       "settings": {
