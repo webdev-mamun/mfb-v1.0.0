@@ -1,6 +1,3 @@
-{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
-{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
-
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -14,135 +11,122 @@
     }
   }
 {%- endstyle -%}
-
+{%- liquid
+  assign title_first = section.settings.title_first
+  assign title_last = section.settings.title_last
+  assign icon = section.settings.icon
+  assign text = section.settings.text
+  assign image_1 = section.settings.image_1
+  assign image_2 = section.settings.image_2
+-%}
 <div class="newsletter">
-  <div class="container xl:container grid-rows-3 xl:grid-rows-5">
-    <div class="col-start-2 col-end-4 row-start-1 row-end-3 bg-gray-900 text-white">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
-      type specimen book. It has survived not only five centuries
+  <div class="container xl:container auto-rows-min lg:grid-rows-5">
+    <div class="row-start-1 row-end-2 col-start-1 col-end-6 lg:col-start-2 lg:col-end-4 lg:row-end-3">
+      {%- if image_1 != blank -%}
+        {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+        {%- capture sizes -%}
+          (min-width: 1440px) {{ 1440 | minus: 100 | divided_by: 2 }}px,
+          (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+        {%- endcapture -%}
+        {{ image_1 | image_url: width: 264 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+      {%- endif -%}
     </div>
-    <div class="col-start-4 col-end-8 row-start-2 row-end-5 bg-red-900 text-white">
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
-      literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
-      College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-      going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes
-      from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-      written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first
-      line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32
-      and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form,
-      accompanied by English versions from the 1914 translation by H. Rackham.
-    </div>
-    <div class="col-start-8 col-end-10 row-start-3 row-end-6 bg-blue-900 text-white">
-      There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some
-      form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a
-      passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All
-      the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first
-      true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model
-      sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always
-      free from repetition, injected humour, or non-characteristic words etc.
-    </div>
-  </div>
-</div>
-
-<div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when '@app' -%}
-          {% render block %}
-        {%- when 'heading' -%}
-          <h2
-            class="inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {{ block.settings.heading }}
+    <div class="col-start-2 col-end-10 row-start-2 row-end-3 row lg:col-start-4 lg:col-end-8 lg:row-start-2 lg:row-end-5">
+      <div class="w-100 max-w-[43.7rem] mx-auto">
+        {%- if title_first != blank or title_last != blank or icon != blank -%}
+          <h2 class="text-center uppercase">
+            {%- if title_first != blank -%}
+              <span class="font-serif big-text lg:text-2xl block">{{ title_first }}</span>
+            {%- endif -%}
+            {%- if title_last != blank or icon != blank -%}
+              <span class="font-sans big-text lg:text-2xl block">
+                {% if icon != blank -%}
+                  {{-
+                    icon
+                    | image_url: width: 112
+                    | image_tag: loading: 'lazy', class: 'hidden lg:inline-block translate-y-[-.9rem] mr-.5'
+                  -}}
+                  {{-
+                    icon
+                    | image_url: width: 76.77
+                    | image_tag: loading: 'lazy', class: 'inline-block lg:hidden translate-y-[-.6rem] mr-.5'
+                  -}}
+                {%- endif -%}
+                {{ title_last }}
+              </span>
+            {%- endif -%}
           </h2>
-        {%- when 'paragraph' -%}
-          <div
-            class="newsletter__subheading rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
-          >
-            {{ block.settings.text }}
-          </div>
-        {%- when 'email_form' -%}
-          <div {{ block.shopify_attributes }}>
-            {% form 'customer', class: 'newsletter-form' %}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-              <div
-                class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                <div class="field">
-                  <input
-                    id="NewsletterForm--{{ section.id }}"
-                    type="email"
-                    name="contact[email]"
-                    class="field__input"
-                    value="{{ form.email }}"
-                    aria-required="true"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    autocomplete="email"
-                    {% if form.errors %}
-                      autofocus
-                      aria-invalid="true"
-                      aria-describedby="Newsletter-error--{{ section.id }}"
-                    {% elsif form.posted_successfully? %}
-                      aria-describedby="Newsletter-success--{{ section.id }}"
-                    {% endif %}
-                    placeholder="{{ 'newsletter.label' | t }}"
-                    required
-                  >
-                  <label class="field__label" for="NewsletterForm--{{ section.id }}">
-                    {{ 'newsletter.label' | t }}
-                  </label>
-                  <button
-                    type="submit"
-                    class="newsletter-form__button field__button"
-                    name="commit"
-                    id="Subscribe"
-                    aria-label="{{ 'newsletter.button_label' | t }}"
-                  >
-                    {% render 'icon-arrow' %}
-                  </button>
-                </div>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <p class="font-sans text-ms md:text-base indent-10 mb-[1.5rem]">{{ text }}</p>
+        {%- endif -%}
+        <div {{ block.shopify_attributes }}>
+          {% form 'customer', class: 'newsletter-form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="flex flex-wrap justify-center gap-2">
+              <div class="fild w-full">
+                <input
+                  id="NewsletterForm--{{ section.id }}"
+                  type="email"
+                  name="contact[email]"
+                  class="border-b-2 w-full grow"
+                  value="{{ form.email }}"
+                  aria-required="true"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if form.errors %}
+                    autofocus
+                    aria-invalid="true"
+                    aria-describedby="Newsletter-error--{{ section.id }}"
+                  {% elsif form.posted_successfully? %}
+                    aria-describedby="Newsletter-success--{{ section.id }}"
+                  {% endif %}
+                  placeholder="{{ 'newsletter.label' | t }}"
+                  required
+                >
                 {%- if form.errors -%}
-                  <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
-                    {%- render 'icon-error' -%}
+                  <small class="text-xs text-[#FF0F0F]" id="Newsletter-error--{{ section.id }}">
                     {{- form.errors.translated_fields.email | capitalize }}
                     {{ form.errors.messages.email -}}
                   </small>
                 {%- endif -%}
+                {%- if form.posted_successfully? -%}
+                  <h3
+                    class="text-xs text-[#18AC00]"
+                    id="Newsletter-success--{{ section.id }}"
+                    tabindex="-1"
+                    autofocus
+                  >
+                    {{- 'newsletter.success' | t }}
+                  </h3>
+                {%- endif -%}
               </div>
-              {%- if form.posted_successfully? -%}
-                <h3
-                  class="newsletter-form__message newsletter-form__message--success form__message"
-                  id="Newsletter-success--{{ section.id }}"
-                  tabindex="-1"
-                  autofocus
-                >
-                  {% render 'icon-success' -%}
-                  {{- 'newsletter.success' | t }}
-                </h3>
-              {%- endif -%}
-            {% endform %}
-          </div>
-      {%- endcase -%}
-    {%- endfor -%}
+              <button
+                type="submit"
+                class="btn border border-[#151515]"
+                name="commit"
+                id="Subscribe"
+                style="--btn-text-color: #151515; --btn-text-color-hover: #151515; --btn-bg-color: transparent; --btn-bg-color-hover: transparent"
+                aria-label="{{ 'newsletter.button_label' | t }}"
+              >
+                sign up
+              </button>
+            </div>
+          {% endform %}
+        </div>
+      </div>
+    </div>
+    <div class="row-start-3 row-end-4 col-start-6 col-end-11 lg:col-start-8 lg:col-end-10 lg:row-start-3 lg:row-end-6">
+      {%- if image_2 != blank -%}
+        {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+        {%- capture sizes -%}
+          (min-width: 1440px) {{ 1440 | minus: 100 | divided_by: 2 }}px,
+          (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+        {%- endcapture -%}
+        {{ image_2 | image_url: width: 264 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+      {%- endif -%}
+    </div>
   </div>
 </div>
 
@@ -155,6 +139,39 @@
     "groups": ["header"]
   },
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Right image"
+    },
+    {
+      "type": "text",
+      "id": "title_first",
+      "label": "Title first part",
+      "default": "Join the"
+    },
+    {
+      "type": "text",
+      "id": "title_last",
+      "label": "Title last part",
+      "default": "FAMILY"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies."
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -196,76 +213,9 @@
       "default": 52
     }
   ],
-  "blocks": [
-    {
-      "type": "heading",
-      "name": "t:sections.newsletter.blocks.heading.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "Subscribe to our emails",
-          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
-        },
-        {
-          "type": "select",
-          "id": "heading_size",
-          "options": [
-            {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
-            },
-            {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
-            },
-            {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
-            }
-          ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "name": "t:sections.newsletter.blocks.paragraph.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Be the first to know about new collections and exclusive offers.</p>",
-          "label": "t:sections.newsletter.blocks.paragraph.settings.paragraph.label"
-        }
-      ]
-    },
-    {
-      "type": "email_form",
-      "name": "t:sections.newsletter.blocks.email_form.name",
-      "limit": 1
-    },
-    {
-      "type": "@app"
-    }
-  ],
   "presets": [
     {
-      "name": "t:sections.newsletter.presets.name",
-      "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "paragraph"
-        },
-        {
-          "type": "email_form"
-        }
-      ]
+      "name": "t:sections.newsletter.presets.name"
     }
   ]
 }

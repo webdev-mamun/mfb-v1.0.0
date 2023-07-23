@@ -1202,18 +1202,18 @@
       },
       {
         "type": "image_picker",
-        "id": "brand_image",
-        "label": "t:settings_schema.brand_information.settings.brand_image.label"
+        "id": "footer_brand_image",
+        "label": "t:settings_schema.brand_information.settings.footer_brand_image.label"
       },
       {
         "type": "range",
-        "id": "brand_image_width",
-        "min": 50,
-        "max": 550,
-        "step": 5,
+        "id": "footer_brand_image_width",
+        "min": 100,
+        "max": 200,
+        "step": 1,
         "default": 100,
         "unit": "px",
-        "label": "t:settings_schema.brand_information.settings.brand_image_width.label"
+        "label": "t:settings_schema.brand_information.settings.footer_brand_image_width.label"
       }
     ]
   },
@@ -1222,61 +1222,147 @@
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.social-media.settings.header.content"
+        "content": "t:settings_schema.social-media.settings.facebook_header.content"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
-        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
       },
       {
         "type": "text",
+        "id": "social_facebook_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_facebook_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.instagram_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_instagram_link",
-        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
       },
       {
         "type": "text",
+        "id": "social_instagram_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_instagram_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.youtube_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_youtube_link",
-        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
       },
       {
         "type": "text",
+        "id": "social_youtube_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_youtube_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.tiktok_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_tiktok_link",
-        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
       },
       {
         "type": "text",
+        "id": "social_tiktok_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_tiktok_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.twitter_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_twitter_link",
-        "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
       },
       {
         "type": "text",
+        "id": "social_twitter_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_twitter_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.snapchat_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_snapchat_link",
-        "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
       },
       {
         "type": "text",
+        "id": "social_snapchat_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_snapchat_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.pinterest_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_pinterest_link",
-        "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
       },
       {
         "type": "text",
+        "id": "social_pinterest_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_pinterest_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.tumblr_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_tumblr_link",
-        "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
       },
       {
         "type": "text",
+        "id": "social_tumblr_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_tumblr_text.info"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.vimeo_header.content"
+      },
+      {
+        "type": "text",
         "id": "social_vimeo_link",
-        "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
+        "label": "t:settings_schema.social-media.settings.link_label.label",
         "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_text",
+        "label": "t:settings_schema.social-media.settings.text_label.label",
+        "info": "t:settings_schema.social-media.settings.social_vimeo_text.info"
       }
     ]
   },

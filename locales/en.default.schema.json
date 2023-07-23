@@ -176,6 +176,12 @@
         },
         "brand_image_width": {
           "label": "Image width"
+        },
+        "footer_brand_image": {
+          "label": "Image"
+        },
+        "footer_brand_image_width": {
+          "label": "Image width"
         }
       }
     },
@@ -251,44 +257,92 @@
     "social-media": {
       "name": "Social media",
       "settings": {
-        "header": {
-          "content": "Social accounts"
+        "link_label": {
+          "label": "Link"
+        },
+        "text_label": {
+          "label": "Text"
+        },
+        "twitter_header": {
+          "content": "Twitter"
         },
         "social_twitter_link": {
-          "label": "Twitter",
           "info": "https://twitter.com/shopify"
         },
+        "social_twitter_text": {
+          "info": "Twitter"
+        },
+        "facebook_header": {
+          "content": "Facebook"
+        },
         "social_facebook_link": {
-          "label": "Facebook",
           "info": "https://facebook.com/shopify"
         },
+        "social_facebook_text": {
+          "info": "Facebook"
+        },
+        "pinterest_header": {
+          "content": "Pinterest"
+        },
         "social_pinterest_link": {
-          "label": "Pinterest",
           "info": "https://pinterest.com/shopify"
         },
+        "social_pinterest_text": {
+          "info": "Pinterest"
+        },
+        "instagram_header": {
+          "content": "Instagram"
+        },
         "social_instagram_link": {
-          "label": "Instagram",
           "info": "http://instagram.com/shopify"
         },
+        "social_instagram_text": {
+          "info": "@shopify"
+        },
+        "tiktok_header": {
+          "content": "Tiktok"
+        },
         "social_tiktok_link": {
-          "label": "TikTok",
           "info": "https://tiktok.com/@shopify"
         },
+        "social_tiktok_text": {
+          "info": "@shopify"
+        },
+        "tumblr_header": {
+          "content": "Tumblr"
+        },
         "social_tumblr_link": {
-          "label": "Tumblr",
           "info": "https://shopify.tumblr.com"
         },
+        "social_tumblr_text": {
+          "info": "Tumblr"
+        },
+        "snapchat_header": {
+          "content": "Snapchat"
+        },
         "social_snapchat_link": {
-          "label": "Snapchat",
           "info": "https://www.snapchat.com/add/shopify"
         },
+        "social_snapchat_text": {
+          "info": "Snapchat"
+        },
+        "youtube_header": {
+          "content": "Youtube"
+        },
         "social_youtube_link": {
-          "label": "YouTube",
           "info": "https://www.youtube.com/shopify"
         },
+        "social_youtube_text": {
+          "info": "Youtube"
+        },
+        "vimeo_header": {
+          "content": "Vimeo"
+        },
         "social_vimeo_link": {
-          "label": "Vimeo",
           "info": "https://vimeo.com/shopify"
+        },
+        "social_vimeo_text": {
+          "info": "Vimeo"
         }
       }
     },
@@ -965,23 +1019,8 @@
             }
           }
         },
-        "brand_information": {
-          "name": "Brand information",
-          "settings": {
-            "paragraph": {
-              "content": "This block will display your brand information. [Edit brand information.](/editor?context=theme&category=brand%20information)"
-            },
-            "header__1": {
-              "content": "Social media icons"
-            },
-            "show_social": {
-              "label": "Show social media icons",
-              "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
-            }
-          }
-        },
-        "text": {
-          "name": "Text",
+        "address": {
+          "name": "Address",
           "settings": {
             "heading": {
               "label": "Heading"
@@ -990,66 +1029,43 @@
               "label": "Subtext"
             }
           }
+        },
+        "contact": {
+          "name": "Contact info",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "subtext": {
+              "label": "Subtext"
+            }
+          }
+        },
+        "social": {
+          "name": "Social links",
+          "settings": {
+            "heading": {
+              "label": "Heading",
+              "info": "To display your social media accounts, link them in your [theme settings].(\/editor?context=theme&category=social%20media)"
+            }
+          }
+        },
+        "newsletter": {
+          "name": "Newsletter",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            }
+          }
         }
       },
       "settings": {
-        "newsletter_enable": {
-          "label": "Show email signup"
-        },
-        "newsletter_heading": {
-          "label": "Heading"
-        },
-        "header__1": {
-          "content": "Email Signup",
-          "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/manual/customers/manage-customers)"
-        },
-        "header__2": {
-          "content": "Social media icons",
-          "info": "To display your social media accounts, link them in your [theme settings](/editor?context=theme&category=social%20media)."
-        },
-        "show_social": {
-          "label": "Show social media icons"
-        },
-        "header__3": {
-          "content": "Country/region selector"
-        },
-        "header__4": {
-          "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
-        },
-        "enable_country_selector": {
-          "label": "Enable country/region selector"
-        },
-        "header__5": {
-          "content": "Language selector"
-        },
-        "header__6": {
-          "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
-        },
-        "enable_language_selector": {
-          "label": "Enable language selector"
-        },
-        "header__7": {
-          "content": "Payment methods"
-        },
-        "payment_enable": {
-          "label": "Show payment icons"
-        },
         "header__8": {
           "content": "Policy links",
           "info": "To add store policies, go to your [policy settings](/admin/settings/legal)."
         },
         "show_policy": {
           "label": "Show policy links"
-        },
-        "margin_top": {
-          "label": "Top margin"
-        },
-        "header__9": {
-          "content": "Follow on Shop",
-          "info": "To allow customers to follow your store on the Shop app from your storefront, Shop Pay must be enabled. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
-        },
-        "enable_follow_on_shop": {
-          "label": "Enable Follow on Shop"
         }
       }
     },

@@ -99,6 +99,7 @@
         font-size: 1.4rem;
         line-height: 2.2rem; /* 110% */
         letter-spacing: -0.28px;
+        @apply uppercase;
         padding: 1.2rem 3.6rem;
         border-radius: 1rem;
         color: var(--btn-text-color, #FFFEF7);
