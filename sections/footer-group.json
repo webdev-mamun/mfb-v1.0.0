@@ -5,45 +5,49 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "footer-0": {
+        "8d3e26f7-8f7d-44d8-bca0-74f27fa6c6de": {
+          "type": "address",
+          "settings": {
+            "title": "BASED IN",
+            "address": "Washington, D.C. &<br> Paris, France"
+          }
+        },
+        "d83ff12c-ccdc-4f42-a48d-875a9369825b": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "title": "MENU",
             "menu": "footer"
           }
         },
-        "footer-1": {
-          "type": "link_list",
+        "251c34b0-1e8b-47fd-83e8-09f1ca6d45c1": {
+          "type": "social",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
+            "title": "FOLLOW US"
           }
         },
-        "footer-2": {
-          "type": "text",
+        "da70fdc5-918b-4bcb-9e29-74afc3afa2c8": {
+          "type": "contact",
           "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "title": "SAY HELLO",
+            "subtext": "<a href=\"mailto:hello@drinkmfb.com\">hello@drinkmfb.com<\/a>"
+          }
+        },
+        "21a69ca5-c815-4e2b-a4a5-f092f4febcbf": {
+          "type": "newsletter",
+          "settings": {
+            "title": "JOIN THE LIST"
           }
         }
       },
       "block_order": [
-        "footer-0",
-        "footer-1",
-        "footer-2"
+        "8d3e26f7-8f7d-44d8-bca0-74f27fa6c6de",
+        "d83ff12c-ccdc-4f42-a48d-875a9369825b",
+        "251c34b0-1e8b-47fd-83e8-09f1ca6d45c1",
+        "da70fdc5-918b-4bcb-9e29-74afc3afa2c8",
+        "21a69ca5-c815-4e2b-a4a5-f092f4febcbf"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "payment_enable": true,
-        "show_policy": false,
-        "margin_top": 48,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_policy": false
       }
     }
   },
