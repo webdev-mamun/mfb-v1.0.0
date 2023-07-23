@@ -55,7 +55,7 @@
         assign col = 'grid-cols-2'
       endif
     -%}
-    <div class="col-span-full pt-6 gap-1 xl:gap-2 grid {{ col }}">
+    <div class="col-span-full pt-3 gap-1 xl:gap-x-2 xl:gap-y-1 grid {{ col }}">
       {%- for block in section.blocks -%}
         {%- liquid
           assign col_class = 'col-span-full'
@@ -85,7 +85,7 @@
             endif
           endif
         -%}
-        <div class="{{ col_class }}">
+        <div class="{{ col_class }} mb-[1.5rem] lg:mb-0">
           <h3 class="text-md uppercase mb-.5">{{ block.settings.title }}</h3>
           {%- case block.type -%}
             {%- when 'address' -%}
