@@ -13,7 +13,7 @@
         "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_2.jpg",
         "mobile_image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_2_mobile.jpg",
         "icon": "shopify:\/\/shop_images\/Logo_Black_3.svg",
-        "text": "<span>is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-2 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
+        "text": "<span>is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
         "link_text": "Learn more about us",
         "link_url": "",
         "btn_text_1": "SHOP WINES",
@@ -139,31 +139,6 @@
     },
     "e16f32bb-984a-4534-b479-4a7ab16c282c": {
       "type": "newsletter",
-      "blocks": {
-        "template--20004128751917__e16f32bb-984a-4534-b479-4a7ab16c282c-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "template--20004128751917__e16f32bb-984a-4534-b479-4a7ab16c282c-paragraph-1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
-          }
-        },
-        "template--20004128751917__e16f32bb-984a-4534-b479-4a7ab16c282c-email_form-1": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--20004128751917__e16f32bb-984a-4534-b479-4a7ab16c282c-heading-1",
-        "template--20004128751917__e16f32bb-984a-4534-b479-4a7ab16c282c-paragraph-1",
-        "template--20004128751917__e16f32bb-984a-4534-b479-4a7ab16c282c-email_form-1"
-      ],
       "settings": {
         "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
         "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2.jpg",
@@ -175,6 +150,165 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "45ae4465-7843-4d87-8657-fd781121613c": {
+      "type": "producers",
+      "blocks": {
+        "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-1": {
+          "type": "producer",
+          "settings": {
+            "text": "GUILLAUME NOIRE",
+            "country": "Fr"
+          }
+        },
+        "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-2": {
+          "type": "producer",
+          "settings": {
+            "text": "ELISE DECHANNES",
+            "country": "Fr"
+          }
+        },
+        "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-3": {
+          "type": "producer",
+          "settings": {
+            "text": "DOMAINE DE BRIN",
+            "country": "fr",
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_2_3d31cdba-60d7-424f-875d-deea063560ac.jpg"
+          }
+        },
+        "c79dc3af-4b9b-4f67-97d0-139e770ad379": {
+          "type": "producer",
+          "settings": {
+            "text": "DOMAINE DE L’ENCLOS",
+            "country": "it"
+          }
+        },
+        "31b790c8-3a3f-4b2a-855b-41ec0c7dcd61": {
+          "type": "producer",
+          "settings": {
+            "text": "MANOIR D’APREVAL",
+            "country": "fr"
+          }
+        },
+        "3fde3a48-c7e3-4376-beb3-60247224c828": {
+          "type": "producer",
+          "settings": {
+            "text": "MARISA BACHER",
+            "country": "it"
+          }
+        },
+        "4edb1557-8023-4eda-808a-3939332a90eb": {
+          "type": "producer",
+          "settings": {
+            "text": "CALVADOS MICHEL HUARD",
+            "country": "it"
+          }
+        },
+        "5b2c41e5-505d-465d-8085-f65523763232": {
+          "type": "producer",
+          "settings": {
+            "text": "ALEXANDRA & OLIVIER MAVIT",
+            "country": "fr"
+          }
+        },
+        "e5787f87-565a-482c-b4f4-8390ab9b0128": {
+          "type": "producer",
+          "settings": {
+            "text": "PETIT CLERGEOT",
+            "country": "fr"
+          }
+        },
+        "75f0cd40-94a4-4330-9a78-755e388d2971": {
+          "type": "producer",
+          "settings": {
+            "text": "FONTAINE DES GRIVES",
+            "country": "fr"
+          }
+        },
+        "bd7f2c02-0750-4734-a644-c3fcd65a0ba8": {
+          "type": "producer",
+          "settings": {
+            "text": "MARX-COUTELAS",
+            "country": "fr"
+          }
+        },
+        "49c7b10a-c8d3-430d-b695-b4d4b5fcef26": {
+          "type": "producer",
+          "settings": {
+            "text": "TERRES DE NUIT",
+            "country": "fr"
+          }
+        },
+        "d613ce9d-8c0d-4d51-a6af-054ac23da94d": {
+          "type": "producer",
+          "settings": {
+            "text": "DOMAINE DE BICHERY",
+            "country": "fr"
+          }
+        }
+      },
+      "block_order": [
+        "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-1",
+        "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-2",
+        "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-3",
+        "c79dc3af-4b9b-4f67-97d0-139e770ad379",
+        "31b790c8-3a3f-4b2a-855b-41ec0c7dcd61",
+        "3fde3a48-c7e3-4376-beb3-60247224c828",
+        "4edb1557-8023-4eda-808a-3939332a90eb",
+        "5b2c41e5-505d-465d-8085-f65523763232",
+        "e5787f87-565a-482c-b4f4-8390ab9b0128",
+        "75f0cd40-94a4-4330-9a78-755e388d2971",
+        "bd7f2c02-0750-4734-a644-c3fcd65a0ba8",
+        "49c7b10a-c8d3-430d-b695-b4d4b5fcef26",
+        "d613ce9d-8c0d-4d51-a6af-054ac23da94d"
+      ],
+      "settings": {
+        "title": "PRODUCERS",
+        "text": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at %icon% and are part of an ever growing curated collective of wine and spirit makers.",
+        "icon": "shopify:\/\/shop_images\/small-logo-white.svg",
+        "btn": "Click throught to learn more about the people behind the bottles.",
+        "btn_mobile": "SEE ALL PRODUCERS",
+        "url": ""
+      }
+    },
+    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df": {
+      "type": "subscription-info",
+      "blocks": {
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "02",
+            "text": "Two bottles of hand-selected spirits delivered to your door every month."
+          }
+        },
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "02",
+            "text": "Two bottles of hand-selected spirits delivered to your door every month."
+          }
+        },
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "02",
+            "text": "Two bottles of hand-selected spirits delivered to your door every month."
+          }
+        }
+      },
+      "block_order": [
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-1",
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2",
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_3.jpg",
+        "title": "Join %icon% for a monthly  subscription, full of hand-selected wines and spirits.",
+        "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
+        "btn": "Click through to see all our subscriptions on offer",
+        "btn_mobile": "SEE ALL SUBSCRIPTIONS",
+        "url": ""
+      }
     }
   },
   "order": [
@@ -184,6 +318,8 @@
     "featured_collection",
     "317c40db-089f-41c8-b5a1-a98e808d05f5",
     "25f85844-b960-42a2-ba01-81d581141e76",
-    "e16f32bb-984a-4534-b479-4a7ab16c282c"
+    "e16f32bb-984a-4534-b479-4a7ab16c282c",
+    "45ae4465-7843-4d87-8657-fd781121613c",
+    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df"
   ]
 }
