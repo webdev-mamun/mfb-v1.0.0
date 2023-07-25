@@ -1,0 +1,169 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      --color: #FFFEF7;
+      --bg: #022541;
+    --btn-color: var(--color);
+    --btn-bg: var(--bg);
+    --btn-color-hover: var(--color);
+    --btn-bg-hover: var(--bg);
+    --bg-image: url('{{ image | image_url: width: '1024' }})';
+  }
+
+  mobile-bg:
+{%- endstyle -%}
+
+{%- liquid
+  assign title = section.settings.title
+  assign icon = section.settings.icon
+  assign image = section.settings.image
+  assign btn = section.settings.btn
+  assign btn_mobile = section.settings.btn_mobile
+  assign utl = section.settings.url
+-%}
+
+{% capture inline_icon %}
+    {{- icon | image_url: width: 247.11 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block mt-[-4rem]' -}}
+    {{- icon | image_url: width: 155.62 | image_tag: loading: 'lazy', class: 'inline-block lg:hidden mt-[-2.5rem]' -}}
+{% endcapture %}
+{%- if icon != blank and title contains '%icon%' %}
+  {% assign title = title | replace: '%icon%', inline_icon %}
+{% endif %}
+
+<div class="subscription-info text-[color:var(--color)] mobile-bg bg-[url('{{ image | image_url: width: '1024' }})'] bg-no-repeat bg-cover lg:bg-none lg:bg-[color:var(--bg)]">
+  <div class="container xl:container px-0 xl:px-0">
+    <div class="col-span-4 hidden lg:block">
+      {%- if image != blank -%}
+        {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+        {%- capture sizes -%}
+              (min-width: 1440px) {{ 1440 | minus: 100 | divided_by: 2 }}px,
+              (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+            {%- endcapture -%}
+        {{ image | image_url: width: 1920 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+      {%- else -%}
+        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
+      {%- endif -%}
+    </div>
+    <div class="col-span-full lg:col-span-6 max-w-[70.8rem] mx-auto flex flex-col gap-4 justify-center items-center">
+      {%- if title != blank -%}
+        <h2 class="text-[2.2rem] leading-[2.6rem] lg:text-[4.2rem] lg:leading-[4.6rem] -tracking-[.02em] text-[color:var(--color)] text-center uppercase">
+          {{ title }}
+        </h2>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="grid grid-flow-row auto-rows-fr gap-3 lg:grid-flow-col lg:auto-cols-fr lg:gap-0 lg:rounded-none lg:divide-x">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign title = block.settings.title
+              assign text = block.settings.text
+            -%}
+            <div class="flex flex-col items-center justify-center gap-1 text-[color:var(--bg)] bg-[color:var(--color)] rounded-2xl p-[3rem] max-w-[24.5rem] lg:text-inherit lg:bg-transparent mx-auto lg:py-0 lg:px-2 lg:rounded-none">
+              {%- if title != blank -%}
+                <h3 class="text-center text-3xl -tracking-[.02em]">{{ title }}</h3>
+              {%- endif -%}
+              {%- if text != blank -%}
+                <p class="font-serif text-center text-sm lg:text-base -tracking-[.05em]">{{ text }}</p>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      {%- if btn != blank or btn_mobile != blank -%}
+        <div class="flex flex-column justify-center items-center">
+          {%- if btn != blank -%}
+            {%- render 'btn-link',
+              text: btn,
+              url: url,
+              class: ' flex-col hidden lg:flex justify-center items-center'
+            -%}
+          {%- endif -%}
+          {%- if btn_mobile != blank -%}
+            <a src="{{ url }}" class="btn lg:hidden">{{ btn_mobile | default: btn }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Subscription info",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Join %icon% for a monthly  subscription, full of hand-selected wines and spirits."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "btn",
+      "label": "Button text",
+      "default": "Click through to see all our subscriptions on offer"
+    },
+    {
+      "type": "text",
+      "id": "btn_mobile",
+      "label": "Button text(Mobile)",
+      "default": "SEE ALL SUBSCRIPTIONS"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Info",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "02"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Two bottles of hand-selected spirits delivered to your door every month."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscription info",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
