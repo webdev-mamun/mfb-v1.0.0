@@ -1,0 +1,200 @@
+<script src="{{ 'splide.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'splide-extension-auto-scroll.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'producers-slider.js' | asset_url }}" defer="defer"></script>
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+{% style %}
+    #shopify-section-{{ section.id }} {
+        --btn-text-color: #FFFEF7;
+        --btn-bg-color: transparent;
+        --btn-border-color: #FFFEF7;
+        --btn-text-color-hover: #FFFEF7;
+        --btn-bg-color-hover: transparent;
+        --btn-border-color-hover: #FFFEF7;
+    }
+  .splide__slide .producer-image {
+    opacity: 0;
+  }
+
+  .splide__slide.is-active .producer-image {
+    opacity: 1;
+  }
+{% endstyle %}
+<div class="producers-section lg:pt-9 lg:pb-9 pt-7 pb-10 bg-[#022541] text-[#FFFEF7]">
+  <div
+    class="container lg:container"
+  >
+    {%- liquid
+      assign title = section.settings.title
+      assign text = section.settings.text
+      assign icon = section.settings.icon
+      assign url = section.settings.url
+      assign btn = section.settings.btn
+      assign btn_mobile = section.settings.btn_mobile
+    -%}
+    {% capture inline_icon %}
+        {{- icon | image_url: width: 44 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block translate-y-[-.2rem]' -}}
+        {{- icon | image_url: width: 30 | image_tag: loading: 'lazy', class: 'inline-block lg:hidden' -}}
+    {% endcapture %}
+    {%- if icon != blank and text contains '%icon%' %}
+      {% assign text = section.settings.text | replace: '%icon%', inline_icon %}
+    {% endif %}
+    <div class="col-span-full">
+      <div class="max-w-[52.6rem] mx-auto">
+        {%- if section.settings.title != blank -%}
+          <h2 class="font-sans text-[3.2rem] leading-[4rem] lg:text-[6.2rem] lg:leading-[5.2rem] -tracking-[.02em] uppercase text-center">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <div class="font-serif text-base text-center -tracking-[0.05em]  mt-2">
+            <span>{{ text }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  <producers-slider class="block h-[16.6rem] lg:h-[26rem] mt-5">
+    <div class="splide" role="group" aria-label="{{ title }}">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign text = block.settings.text
+              assign image = block.settings.image
+              assign country = block.settings.country
+            -%}
+            <li class="splide__slide">
+              <div class="relative h-full flex justify-center items-center">
+                <div class="w-[13.4rem] lg:w-[22.4rem] h-[16.6rem] lg:h-[26rem] mx-auto absolute top-2/4 start-2/4 -translate-x-2/4 -translate-y-2/4 z-1 producer-image">
+                  {%- if image != blank -%}
+                    {%- assign widths = '375, 550' -%}
+                    {%- capture sizes -%}
+                                    (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                                    (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+                                  {%- endcapture -%}
+                    {{
+                      image
+                      | image_url: width: 224, height: 260
+                      | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+                    }}
+                    {{
+                      image
+                      | image_url: width: 134, height: 166
+                      | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
+                    }}
+                  {%- else -%}
+                    {%- assign placeholder = 'detailed-apparel-' | append: forloop.index -%}
+                    {{
+                      'detailed-apparel-1'
+                      | placeholder_svg_tag: 'placeholder-svg w-full max-w-full max-h-full rounded-2xl'
+                    }}
+                  {%- endif -%}
+                </div>
+                <span class="uppercase font-sans big-text lg:text-2xl w-full text-center relative z-2">
+                  {{- text -}}
+                  <span class="font-serif text-[1.4rem] leading-[1.8rem] -tracking-[.02em] align-top">
+                    (
+                    {{- country -}}
+                    )
+                  </span></span
+                >
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </producers-slider>
+  <div class="col-span-full flex flex-column justify-center pt-6">
+    {%- render 'btn-link', text: btn, url: url, class: ' flex-col hidden lg:flex justify-center items-center' -%}
+    <a src="{{ url }}" class="btn lg:hidden">{{ btn_mobile }}</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Producers",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "PRODUCERS"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at %icon% and are part of an ever growing curated collective of wine and spirit makers."
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "btn",
+      "label": "Button text",
+      "default": "Click throught to learn more about the people behind the bottles."
+    },
+    {
+      "type": "text",
+      "id": "btn_mobile",
+      "label": "Button text(Mobile)",
+      "default": "SEE ALL PRODUCERS"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Url"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "producer",
+      "name": "Producer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "DOMAINE DE BRIN"
+        },
+        {
+          "type": "text",
+          "id": "country",
+          "label": "Country",
+          "default": "Us"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Producers",
+      "blocks": [
+        {
+          "type": "producer"
+        },
+        {
+          "type": "producer"
+        },
+        {
+          "type": "producer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

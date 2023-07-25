@@ -96,20 +96,33 @@
     .btn {
         @apply font-sans;
         text-align: center;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         line-height: 2.2rem; /* 110% */
-        letter-spacing: -0.28px;
+        letter-spacing: -0.26px;
         @apply uppercase;
-        padding: 1.2rem 3.6rem;
+        padding: 1.3rem 3.5rem .9rem;
         border-radius: 1rem;
-        color: var(--btn-text-color, #FFFEF7);
-        background-color: var(--btn-bg-color, #022541);
+        color: var(--btn-color, #FFFEF7);
+        background-color: var(--btn-bg, #022541);
+        @apply border;
+        border-color: var(--btn-border, #022541);
         @apply transition-all;
+
     }
 
     .btn:hover {
-        color: var(--btn-text-color-hover, #FFFEF7);
-        background-color: var(--btn-bg-color-hover, #AA9955);
+        color: var(--btn-color-hover, #FFFEF7);
+        background-color: var(--btn-bg-hover, #AA9955);
+        border-color: var(--btn-border-hover, #AA9955);
+    }
+
+    @media (min-width: 1024px) {
+        .btn {
+            font-size: 1.4rem;
+            line-height: 2.2rem; /* 110% */
+            letter-spacing: -0.28px;
+    
+        }
     }
 
     .btn-small {
@@ -120,48 +133,32 @@
         letter-spacing: -0.24px;
         padding: .5rem 1.5rem .4rem;
         border-radius: .5rem;
-        color: var(--btn-text-color, #FFFEF7);
-        background-color: var(--btn-bg-color, #022541);
+        color: var(--btn-color, #FFFEF7);
+        background-color: var(--btn-bg, #022541);
+        @apply border;
+        border-color: var(--btn-border, #022541);
         @apply transition-all;
     }
 
     .btn-small:hover {
-        color: var(--btn-text-color-hover, #FFFEF7);
-        background-color: var(--btn-bg-color-hover, #AA9955);
+        color: var(--btn-color-hover, #FFFEF7);
+        background-color: var(--btn-bg-hover, #AA9955);
+        border-color: var(--btn-border-hover, #AA9955);
     }
 
     .btn-link {
         @apply font-sans;
         font-size: 1.4rem;
         line-height: 2.2rem;
-        @apply underline;
-        @apply underline-offset-2;
         @apply relative;
         @apply uppercase;
-        padding-right: 52px;
         letter-spacing: -0.28px;
-        color: var(--link-color, #151515);
+        color: var(--btn-color, #151515);
         @apply transition-all;
     }
 
     .btn-link:hover {
-        color: var(--link-color-hover, #AA9955);
-    }
-
-    .btn-link::after {
-        content: '';
-        background-image: url('https://cdn.shopify.com/s/files/1/0783/4094/8269/files/button-arrow.svg?v=1689819442');
-        width: 4.7rem;
-        height: 9px;
-        @apply bg-contain;
-        @apply bg-no-repeat;
-        @apply absolute;
-        @apply top-1/2;
-        @apply right-0;
-        @apply -translate-y-1/2;
-    }
-    .btn-link:hover::after {
-        background-image: url('https://cdn.shopify.com/s/files/1/0783/4094/8269/files/button-arrow-gold.svg?v=1689883678');
+        color: var(--btn-color-hover, #AA9955);
     }
 
     .visually-hidden {
@@ -203,4 +200,12 @@
         @apply md:text-2xl;
         @apply xl:text-3xl;
     } */
+}
+
+.js-marquee span:nth-child(odd) {
+    @apply font-serif
+}
+
+.js-marquee span:not(:last-child) {
+    @apply mr-6;
 }

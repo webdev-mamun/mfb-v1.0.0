@@ -45,7 +45,7 @@
   </div>
   <div class="col-span-full lg:col-span-5 pt-2 lg:pt-[3.8rem] pb-[1.5rem] order-first lg:order-last">
     {%- if section.settings.text != blank -%}
-      <div class="image-with-text-text mb-[2.5rem] font-sans big-text md:text-2xl xl:text-3xl xl:tracking-[-3.1px]">
+      <div class="image-with-text-text font-sans big-text md:text-2xl xl:text-3xl xl:tracking-[-3.1px]">
         {% if section.settings.icon != blank -%}
           {{-
             section.settings.icon
@@ -64,12 +64,14 @@
       </div>
     {%- endif -%}
     {%- if section.settings.link_text != blank -%}
-      <a href="{{ section.settings.link_url }}" class="btn-link hidden lg:inline-block mb-6">
-        {{- section.settings.link_text -}}
-      </a>
+      {%- render 'btn-link',
+        text: section.settings.link_text,
+        url: section.settings.link_text,
+        class: ' hidden lg:flex items-center mt-[2.5rem]'
+      -%}
     {%- endif -%}
     {%- if section.settings.btn_text_1 != blank or section.settings.btn_text_1 != blank -%}
-      <div class="flex flex-wrap gap-1 lg:gap-2">
+      <div class="flex flex-wrap gap-1 lg:gap-2 mt-6">
         {%- if section.settings.btn_text_1 != blank -%}
           <a href="{{ section.settings.btn_url_1 }}" class="btn">{{ section.settings.btn_text_1 }}</a>
         {%- endif -%}
@@ -85,6 +87,7 @@
 {
   "name": "t:sections.image-with-text.name",
   "class": "section",
+  "tag": "section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },

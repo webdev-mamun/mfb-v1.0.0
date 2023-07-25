@@ -19,17 +19,17 @@
             "menu": "footer"
           }
         },
-        "251c34b0-1e8b-47fd-83e8-09f1ca6d45c1": {
-          "type": "social",
-          "settings": {
-            "title": "FOLLOW US"
-          }
-        },
         "da70fdc5-918b-4bcb-9e29-74afc3afa2c8": {
           "type": "contact",
           "settings": {
             "title": "SAY HELLO",
             "subtext": "<a href=\"mailto:hello@drinkmfb.com\">hello@drinkmfb.com<\/a>"
+          }
+        },
+        "251c34b0-1e8b-47fd-83e8-09f1ca6d45c1": {
+          "type": "social",
+          "settings": {
+            "title": "FOLLOW US"
           }
         },
         "21a69ca5-c815-4e2b-a4a5-f092f4febcbf": {
@@ -42,12 +42,12 @@
       "block_order": [
         "8d3e26f7-8f7d-44d8-bca0-74f27fa6c6de",
         "d83ff12c-ccdc-4f42-a48d-875a9369825b",
-        "251c34b0-1e8b-47fd-83e8-09f1ca6d45c1",
         "da70fdc5-918b-4bcb-9e29-74afc3afa2c8",
+        "251c34b0-1e8b-47fd-83e8-09f1ca6d45c1",
         "21a69ca5-c815-4e2b-a4a5-f092f4febcbf"
       ],
       "settings": {
-        "show_policy": false
+        "bottom_menu": "policy"
       }
     }
   },

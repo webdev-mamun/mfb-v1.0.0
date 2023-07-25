@@ -27,7 +27,29 @@
     {% endif %}
 
     {% render 'meta-tags' %}
+    <script type="module" defer="defer">
+      import marquee from 'https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-marquee.js';
+      class marqueeText extends HTMLElement {
+        constructor() {
+          super();
+          this.setUpMarqueeText();
+        }
 
+        setUpMarqueeText() {
+          new marquee(this.querySelector('.marquee-text'), {
+            css3easing: 'linear',
+            delayBeforeStart: 0,
+            speed: 70,
+            startVisible: true,
+            recalcResize: true,
+            duplicated: true,
+            gap: 60,
+          });
+        }
+      }
+
+      customElements.define('marquee-text', marqueeText);
+    </script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>

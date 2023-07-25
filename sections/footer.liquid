@@ -164,27 +164,23 @@
         </div>
       {%- endfor -%}
     </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
-        <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+    <div class="col-span-full ">
+      <div class="grid justify-items-center">
+        <small class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px]">
+          {{- 'All right reserved MF&B' | link_to: routes.root_url -}}
         </small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title }}</a></small
-                  >
-                </li>
-              {%- endif -%}
+        {%- if section.settings.bottom_menu.links.size > 0 -%}
+          <ul role="list" class="flex flex-col">
+            {%- for link in section.settings.bottom_menu.links -%}
+              <li class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px]">
+                <a class="underline" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
             {%- endfor -%}
           </ul>
         {%- endif -%}
+        <small class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px] pt-1">Site Credit</small>
       </div>
     </div>
-    <div></div>
   </div>
 </footer>
 
@@ -284,15 +280,9 @@
   ],
   "settings": [
     {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__8.content",
-      "info": "t:sections.footer.settings.header__8.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_policy",
-      "default": false,
-      "label": "t:sections.footer.settings.show_policy.label"
+      "type": "link_list",
+      "id": "bottom_menu",
+      "label": "t:sections.footer.settings.bottom_menu.label"
     }
   ],
   "default": {

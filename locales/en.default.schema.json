@@ -1060,12 +1060,8 @@
         }
       },
       "settings": {
-        "header__8": {
-          "content": "Policy links",
-          "info": "To add store policies, go to your [policy settings](/admin/settings/legal)."
-        },
-        "show_policy": {
-          "label": "Show policy links"
+        "bottom_menu": {
+          "label": "Bottom menu"
         }
       }
     },
