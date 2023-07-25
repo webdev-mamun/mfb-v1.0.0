@@ -1069,6 +1069,14 @@ p.btn-link, .base-text.btn-link {
   margin-top: -2.5rem;
 }
 
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -1333,6 +1341,18 @@ p.btn-link, .base-text.btn-link {
   background-color: var(--color);
 }
 
+.bg-\[var\(--bg-image\)\] {
+  background-color: var(--bg-image);
+}
+
+.bg-\[url\(var\(--bg-image\)\)\] {
+  background-image: url(var(--bg-image));
+}
+
+.bg-\[image\:var\(--bg-image\)\] {
+  background-image: var(--bg-image);
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1372,6 +1392,11 @@ p.btn-link, .base-text.btn-link {
 .py-\[\.822rem\] {
   padding-top: .822rem;
   padding-bottom: .822rem;
+}
+
+.py-9 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
 
 .pb-\.5 {
@@ -1805,6 +1830,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     margin-bottom: 0;
   }
 
+  .lg\:mt-0 {
+    margin-top: 0;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1861,6 +1890,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     gap: 0;
   }
 
+  .lg\:gap-4 {
+    gap: 4rem;
+  }
+
   .lg\:divide-x > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-x-reverse: 0;
     border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -1896,6 +1929,11 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   .lg\:py-0 {
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .lg\:px-0 {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .lg\:pb-9 {

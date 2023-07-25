@@ -83,74 +83,6 @@
         "padding_bottom": 36
       }
     },
-    "317c40db-089f-41c8-b5a1-a98e808d05f5": {
-      "type": "image-with-text-column",
-      "blocks": {
-        "7cdb18db-f71f-4772-be2a-485c048b4e65": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_15.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Rectangle_64.jpg",
-            "title": "NOTES FROM THE ROAD",
-            "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio.",
-            "button_text": "Follow our journey",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "7cdb18db-f71f-4772-be2a-485c048b4e65"
-      ],
-      "settings": {
-      }
-    },
-    "25f85844-b960-42a2-ba01-81d581141e76": {
-      "type": "image-with-text-column",
-      "blocks": {
-        "036b4a40-be97-4b41-989b-f276067e0eca": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_18.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Rectangle_66.jpg",
-            "title": "WHERE TO BUY",
-            "text": "Discover where you can get our  wines & spirits near  you.",
-            "button_text": "FIND NEARBY SUPPLIERS",
-            "button_url": ""
-          }
-        },
-        "3053b57f-6c75-4eda-8977-f459c5532e6e": {
-          "type": "image_with_text",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3_mobile.jpg",
-            "title": "OUR ETHOS",
-            "text": "We have an ethos at to only work with our family of local producers we know personally and trust fully.",
-            "button_text": "FIND NEARBY SUPPLIERS",
-            "button_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "036b4a40-be97-4b41-989b-f276067e0eca",
-        "3053b57f-6c75-4eda-8977-f459c5532e6e"
-      ],
-      "settings": {
-      }
-    },
-    "e16f32bb-984a-4534-b479-4a7ab16c282c": {
-      "type": "newsletter",
-      "settings": {
-        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
-        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2.jpg",
-        "title_first": "Join the",
-        "title_last": "FAMILY",
-        "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "45ae4465-7843-4d87-8657-fd781121613c": {
       "type": "producers",
       "blocks": {
@@ -271,6 +203,27 @@
         "url": ""
       }
     },
+    "317c40db-089f-41c8-b5a1-a98e808d05f5": {
+      "type": "image-with-text-column",
+      "blocks": {
+        "7cdb18db-f71f-4772-be2a-485c048b4e65": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_15.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_64.jpg",
+            "title": "NOTES FROM THE ROAD",
+            "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio.",
+            "button_text": "Follow our journey",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "7cdb18db-f71f-4772-be2a-485c048b4e65"
+      ],
+      "settings": {
+      }
+    },
     "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df": {
       "type": "subscription-info",
       "blocks": {
@@ -284,15 +237,15 @@
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2": {
           "type": "column",
           "settings": {
-            "title": "02",
-            "text": "Two bottles of hand-selected spirits delivered to your door every month."
+            "title": "06",
+            "text": "Six bottles of hand-selected wines delivered to your door every month."
           }
         },
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3": {
           "type": "column",
           "settings": {
-            "title": "02",
-            "text": "Two bottles of hand-selected spirits delivered to your door every month."
+            "title": "16",
+            "text": "Sixteen bottles of hand-selected wines delivered to your door every month."
           }
         }
       },
@@ -303,11 +256,59 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_3.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_1.jpg",
         "title": "Join %icon% for a monthly  subscription, full of hand-selected wines and spirits.",
         "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
         "btn": "Click through to see all our subscriptions on offer",
         "btn_mobile": "SEE ALL SUBSCRIPTIONS",
         "url": ""
+      }
+    },
+    "25f85844-b960-42a2-ba01-81d581141e76": {
+      "type": "image-with-text-column",
+      "blocks": {
+        "036b4a40-be97-4b41-989b-f276067e0eca": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_18.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_66.jpg",
+            "title": "WHERE TO BUY",
+            "text": "Discover where you can get our  wines & spirits near  you.",
+            "button_text": "FIND NEARBY SUPPLIERS",
+            "button_url": ""
+          }
+        },
+        "3053b57f-6c75-4eda-8977-f459c5532e6e": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3_mobile.jpg",
+            "title": "OUR ETHOS",
+            "text": "We have an ethos at to only work with our family of local producers we know personally and trust fully.",
+            "button_text": "FIND NEARBY SUPPLIERS",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "036b4a40-be97-4b41-989b-f276067e0eca",
+        "3053b57f-6c75-4eda-8977-f459c5532e6e"
+      ],
+      "settings": {
+      }
+    },
+    "e16f32bb-984a-4534-b479-4a7ab16c282c": {
+      "type": "newsletter",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
+        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2.jpg",
+        "title_first": "Join the",
+        "title_last": "FAMILY",
+        "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
@@ -316,10 +317,10 @@
     "09374c67-687a-4189-a13f-876327b1375a",
     "rich_text",
     "featured_collection",
-    "317c40db-089f-41c8-b5a1-a98e808d05f5",
-    "25f85844-b960-42a2-ba01-81d581141e76",
-    "e16f32bb-984a-4534-b479-4a7ab16c282c",
     "45ae4465-7843-4d87-8657-fd781121613c",
-    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df"
+    "317c40db-089f-41c8-b5a1-a98e808d05f5",
+    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df",
+    "25f85844-b960-42a2-ba01-81d581141e76",
+    "e16f32bb-984a-4534-b479-4a7ab16c282c"
   ]
 }
