@@ -696,12 +696,6 @@ p.header__heading-link, .base-text.header__heading-link,p .header__heading, .bas
   margin-left: auto;
 }
 
-@media (min-width: none) {
-  .container {
-    max-width: none;
-  }
-}
-
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
@@ -1948,12 +1942,6 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     margin-left: auto;
   }
 
-  @media (min-width: none) {
-    .lg\:container {
-      max-width: none;
-    }
-  }
-
   @media (min-width: 1440px) {
     .lg\:container {
       max-width: 1440px;
@@ -1982,12 +1970,6 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  @media (min-width: none) {
-    .xl\:container {
-      max-width: none;
-    }
   }
 
   @media (min-width: 1440px) {
