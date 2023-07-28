@@ -696,6 +696,12 @@ p.header__heading-link, .base-text.header__heading-link,p .header__heading, .bas
   margin-left: auto;
 }
 
+@media (min-width: none) {
+  .container {
+    max-width: none;
+  }
+}
+
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
@@ -1566,6 +1572,10 @@ p.btn-link, .base-text.btn-link {
   padding-bottom: 1.5rem;
 }
 
+.pb-\[3\.5rem\] {
+  padding-bottom: 3.5rem;
+}
+
 .pr-\[6\.8rem\] {
   padding-right: 6.8rem;
 }
@@ -1618,10 +1628,6 @@ p.btn-link, .base-text.btn-link {
 
 .pt-\[\.9rem\] {
   padding-top: .9rem;
-}
-
-.pb-\[3\.5rem\] {
-  padding-bottom: 3.5rem;
 }
 
 .text-center {
@@ -1925,16 +1931,6 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   letter-spacing: -0.8px;
 }
 
-@media (min-width: 1024px) {
-  .lg\:base-text.font-sans {
-    letter-spacing: -0.32px;
-  }
-
-  .lg\:base-text.font-serif {
-    letter-spacing: -0.8px;
-  }
-}
-
 .focus\:skip-to-content-link:focus {
   z-index: 9999;
   position: inherit;
@@ -1950,6 +1946,12 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  @media (min-width: none) {
+    .lg\:container {
+      max-width: none;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -1980,6 +1982,12 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  @media (min-width: none) {
+    .xl\:container {
+      max-width: none;
+    }
   }
 
   @media (min-width: 1440px) {
