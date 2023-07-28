@@ -1,4 +1,12 @@
-<div class="image-with-text-columns py-1 lg:py-2">
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      --color: #151515;
+      --bg: #FFFEF7;
+      --btn-color: #151515;
+      --btn-color-hover: #AA9955;
+    }
+{%- endstyle -%}
+<div class="image-with-text-columns pt-1 pb-[3.5rem] lg:py-2 text-[color:var(--color)] bg-[color:var(--bg)]">
   <div class="container xl:container">
     {%- liquid
       for block in section.blocks
@@ -17,6 +25,7 @@
 {% schema %}
 {
   "name": "t:sections.image-with-text-columns.name",
+  "tag": "section",
   "class": "section",
   "disabled_on": {
     "groups": ["header", "footer"]

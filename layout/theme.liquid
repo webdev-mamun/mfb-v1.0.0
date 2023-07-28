@@ -50,6 +50,8 @@
 
       customElements.define('marquee-text', marqueeText);
     </script>
+    <script src="{{ 'splide.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'splide-extension-auto-scroll.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
@@ -250,6 +252,7 @@
     {% endstyle %}
 
     {% comment %} {{ 'base.css' | asset_url | stylesheet_tag }} {% endcomment %}
+    {{ 'splide.min.css' | asset_url | stylesheet_tag }}
     {{ 'app.css' | asset_url | stylesheet_tag }}
 
     {%- if settings.predictive_search_enabled -%}
@@ -273,6 +276,8 @@
     <a class="visually-hidden btn-small focus:skip-to-content-link" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
+
+    {%- render 'confirm-age' -%}
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}

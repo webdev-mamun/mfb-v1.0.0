@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+{% comment %} <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- if settings.predictive_search_enabled -%}
@@ -76,7 +76,7 @@
     {% endcomment %}
       <div class="col-span-4 flex items-center gap-2">
         {%- liquid
-          if section.settings.menu != blank
+          if section.settings.drawer-menu != blank
             render 'header-drawer'
           endif
           if section.settings.menu != blank
@@ -140,7 +140,7 @@
         </a>
       {%- endif -%}
 
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset base-text font-sans flex items-center uppercase h-full" id="cart-icon-bubble">
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full" id="cart-icon-bubble">
         ({{ cart.item_count }})
       </a>
     </div>

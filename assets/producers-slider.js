@@ -1,4 +1,3 @@
-console.log('slider produ');
 class producersSlider extends HTMLElement {
     constructor() {
       super();

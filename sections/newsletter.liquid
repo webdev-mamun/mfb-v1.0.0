@@ -10,16 +10,36 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #shopify-section-{{ section.id }} {
+    --color: #151515;
+    --bg: #FFFEF7;
+    --btn-color: #151515;
+    --btn-bg: transparent;
+    --btn-border: #151515;
+    --btn-color-hover: #FFFEF7;
+    --btn-bg-hover: #151515;
+    --btn-border-hover: #151515;
+
+  }
 {%- endstyle -%}
 {%- liquid
-  assign title_first = section.settings.title_first
-  assign title_last = section.settings.title_last
-  assign icon = section.settings.icon
+  assign title = section.settings.title
+  assign icon = settings.logo_mobile
   assign text = section.settings.text
   assign image_1 = section.settings.image_1
   assign image_2 = section.settings.image_2
 -%}
-<div class="newsletter">
+
+{% capture inline_icon %}
+      {{- icon | image_url: width: 112 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block translate-y-[-.9rem] mr-.5' -}}
+      {{- icon | image_url: width: 76.77 | image_tag: loading: 'lazy', class: 'inline-block lg:hidden translate-y-[-.6rem] mr-.5' -}}
+  {% endcapture %}
+{%- if icon != blank and title contains '%icon%' %}
+  {% assign title = title | replace: '%icon%', inline_icon %}
+{% endif %}
+
+<div class="newsletter text-[color:var(--color)] bg-[color:var(--bg)]">
   <div class="container xl:container auto-rows-min lg:grid-rows-5">
     <div class="row-start-1 row-end-2 col-start-1 col-end-6 lg:col-start-2 lg:col-end-4 lg:row-end-3">
       {%- if image_1 != blank -%}
@@ -32,34 +52,17 @@
       {%- endif -%}
     </div>
     <div class="col-start-2 col-end-10 row-start-2 row-end-3 row lg:col-start-4 lg:col-end-8 lg:row-start-2 lg:row-end-5">
-      <div class="w-100 max-w-[43.7rem] mx-auto">
-        {%- if title_first != blank or title_last != blank or icon != blank -%}
-          <h2 class="text-center uppercase">
-            {%- if title_first != blank -%}
-              <span class="font-serif big-text lg:text-2xl block">{{ title_first }}</span>
-            {%- endif -%}
-            {%- if title_last != blank or icon != blank -%}
-              <span class="font-sans big-text lg:text-2xl block">
-                {% if icon != blank -%}
-                  {{-
-                    icon
-                    | image_url: width: 112
-                    | image_tag: loading: 'lazy', class: 'hidden lg:inline-block translate-y-[-.9rem] mr-.5'
-                  -}}
-                  {{-
-                    icon
-                    | image_url: width: 76.77
-                    | image_tag: loading: 'lazy', class: 'inline-block lg:hidden translate-y-[-.6rem] mr-.5'
-                  -}}
-                {%- endif -%}
-                {{ title_last }}
-              </span>
-            {%- endif -%}
-          </h2>
-        {%- endif -%}
-        {%- if text != blank -%}
-          <p class="font-sans text-ms md:text-base indent-10 mb-[1.5rem]">{{ text }}</p>
-        {%- endif -%}
+      <div class="w-100 max-w-[43.7rem] mx-auto flex flex-col gap-[1.5rem]">
+        <div class="flex flex-col gap-1 lg:gap-[4.5rem]">
+          {%- if title != blank -%}
+            <h2 class="text-center uppercase font-sans big-text lg:text-2xl first-line:font-serif">
+              {{ title }}
+            </h2>
+          {%- endif -%}
+          {%- if text != blank -%}
+            <p class="font-sans text-ms md:text-base indent-10">{{ text }}</p>
+          {%- endif -%}
+        </div>
         <div {{ block.shopify_attributes }}>
           {% form 'customer', class: 'newsletter-form' %}
             <input type="hidden" name="contact[tags]" value="newsletter">
@@ -69,7 +72,10 @@
                   id="NewsletterForm--{{ section.id }}"
                   type="email"
                   name="contact[email]"
-                  class="border-b-2 w-full grow"
+                  class="
+                    border-b w-full grow border-[color:var(--btn-border)] focus-visible:outline-none bg-transparent text-[color:var(--color)] placeholder:text-[#C5C5C5]
+                    py-.5
+                  "
                   value="{{ form.email }}"
                   aria-required="true"
                   autocorrect="off"
@@ -104,10 +110,12 @@
               </div>
               <button
                 type="submit"
-                class="btn border border-[#151515]"
+                class="
+                  font-sans uppercase text-[1.4rem] leading-[2.2rem] tracking-[.02em] px-[3.6rem] pt-[.6rem] pb-[.4rem] rounded-2xl border text-[color:var(--btn-color)] bg-[color:var(--btn-bg)] border-[color:var(--btn-border)]
+                  hover:text-[color:var(--btn-color-hover)] hover:bg-[color:var(--btn-bg-hover)] hover:border-[color:var(--btn-border-hover)] transition-all
+                "
                 name="commit"
                 id="Subscribe"
-                style="--btn-text-color: #151515; --btn-text-color-hover: #151515; --btn-bg-color: transparent; --btn-bg-color-hover: transparent"
                 aria-label="{{ 'newsletter.button_label' | t }}"
               >
                 sign up
@@ -150,21 +158,10 @@
       "label": "Right image"
     },
     {
-      "type": "text",
-      "id": "title_first",
-      "label": "Title first part",
-      "default": "Join the"
-    },
-    {
-      "type": "text",
-      "id": "title_last",
-      "label": "Title last part",
-      "default": "FAMILY"
-    },
-    {
-      "type": "image_picker",
-      "id": "icon",
-      "label": "Icon"
+      "type": "html",
+      "id": "title",
+      "label": "Title",
+      "default": "Join the <br>%icon% family"
     },
     {
       "type": "text",

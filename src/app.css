@@ -187,14 +187,6 @@
         gap: 2rem;
     }
 
-    .menu-drawer-container[open] .menu {
-        @apply invisible;
-    }
-
-    .menu-drawer-container[open] .close {
-        @apply visible;
-    }
-
     /* .image-with-text-text, .image-with-text-text > * {
         @apply big-text;
         @apply md:text-2xl;
@@ -208,4 +200,20 @@
 
 .js-marquee span:not(:last-child) {
     @apply mr-6;
+}
+
+#menu-drawer {
+    @apply transition-transform; 
+    @apply ease-in-out; 
+    @apply duration-100; 
+    @apply will-change-transform;
+    @apply -translate-x-full;
+}
+
+[open].menu-opening #menu-drawer {
+    @apply transition-transform; 
+    @apply ease-in-out; 
+    @apply duration-100; 
+    @apply will-change-transform;
+    @apply translate-x-0;
 }

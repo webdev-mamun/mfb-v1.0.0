@@ -1,12 +1,23 @@
+{%- liquid
+  assign image = block.settings.image
+  assign mobile_image = block.settings.mobile_image
+  if mobile_image == blank
+    assign mobile_image = image
+  endif
+  assign title = block.settings.title
+  assign text = block.settings.text
+  assign icon = settings.logo_mobile
+-%}
+{% capture inline_icon %}
+  {{- icon | image_url: width: 38 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[.2rem]' -}}
+  {{- icon | image_url: width: 30 | image_tag: loading: 'lazy', class: 'inline-block lg:hidden -mt-[.2rem]' -}}
+{% endcapture %}
+{%- if icon != blank and text contains '%icon%' %}
+  {% assign text = text | replace: '%icon%', inline_icon %}
+{% endif %}
+
 <div class="{{ column_class }}">
   <div class="pb-1">
-    {%- liquid
-      assign image = block.settings.image
-      assign mobile_image = block.settings.mobile_image
-      if mobile_image == blank
-        assign mobile_image = image
-      endif
-    -%}
     {%- if image != blank -%}
       {%- assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' -%}
       {%- capture sizes -%}
@@ -29,12 +40,12 @@
     {%- endif -%}
   </div>
   <div class="grid {{ container_class }}">
-    {%- if block.settings.title != blank -%}
-      <h2 class="{{ title_class }} font-sans text-base">{{ block.settings.title }}</h2>
+    {%- if title != blank -%}
+      <h2 class="{{ title_class }} font-sans text-base">{{ title }}</h2>
     {%- endif -%}
     <div class="{{ content_class }}">
-      {%- if block.settings.text != blank -%}
-        <p class="font-serif pb-.5">{{ block.settings.text }}</p>
+      {%- if text != blank -%}
+        <p class="font-serif pb-.5">{{ text }}</p>
       {%- endif -%}
       {%- if block.settings.button_text != blank -%}
         {%- render 'btn-link',

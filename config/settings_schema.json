@@ -16,6 +16,11 @@
         "label": "t:settings_schema.logo.settings.logo_image.label"
       },
       {
+        "type": "image_picker",
+        "id": "secondary_logo",
+        "label": "t:settings_schema.logo.settings.secondary_logo_image.label"
+      },
+      {
         "type": "range",
         "id": "logo_width",
         "min": 50,
@@ -29,6 +34,11 @@
         "type": "image_picker",
         "id": "logo_mobile",
         "label": "t:settings_schema.logo.settings.logo_image_mobile.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "secondary_logo_mobile",
+        "label": "t:settings_schema.logo.settings.secondary_logo_image_mobile.label"
       },
       {
         "type": "range",

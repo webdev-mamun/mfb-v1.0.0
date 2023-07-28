@@ -10,6 +10,13 @@
   text-align: var(--text-alignment);
 }
 
+.ratio::before {
+  content: '';
+  width: 0;
+  height: 0;
+  padding-bottom: var(--ratio-percent);
+}
+
 .card:not(.ratio) {
   display: flex;
   flex-direction: column;
@@ -53,10 +60,10 @@
   content: '';
   position: absolute;
   z-index: -1;
-  width: calc(var(--border-width) * 2 + 100%);
-  height: calc(var(--border-width) * 2 + 100%);
-  top: calc(var(--border-width) * -1);
-  left: calc(var(--border-width) * -1);
+  width: calc(var(--border-width, 0.0rem) * 2 + 100%);
+  height: calc(var(--border-width, 0.0rem) * 2 + 100%);
+  top: calc(var(--border-width, 0.0rem) * -1);
+  left: calc(var(--border-width, 0.0rem) * -1);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
 }

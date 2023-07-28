@@ -10,79 +10,96 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #shopify-section-{{ section.id }} {
+    --color: #151515;
+    --bg: #FFFEF7;
+    --btn-color: #FFFEF7;
+    --btn-bg: #022541;
+    --btn-border: #022541;
+    --btn-color-hover: #FFFEF7;
+    --btn-bg-hover: #AA9955;
+    --btn-border-hover: #AA9955;
+
+  }
+
+  #shopify-section-{{ section.id }} .btn-link {
+    --btn-color: #151515;
+    --btn-color-hover: #AA9955;
+  }
 {%- endstyle -%}
 
 {% assign scheme1 = settings.color_schemes | first %}
+{%- liquid
+  assign text = section.settings.text
+  assign icon = settings.logo_mobile
+-%}
 
-<div class="image-with-text container xl:container">
-  <div class="col-span-full lg:col-span-5 py-1 order-last lg:order-last">
-    {%- liquid
-      assign image = section.settings.image
-      assign mobile_image = section.settings.mobile_image
-      if mobile_image == blank
-        assign mobile_image = image
-      endif
-    -%}
-    {%- if image != blank -%}
-      {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
-      {%- capture sizes -%}
+{% capture inline_icon %}
+      {{- icon | image_url: width: 155 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[2.9rem]' -}}
+      {{- icon | image_url: width: 105 | image_tag: loading: 'lazy', class: 'hidden md:inline-block lg:hidden -mt-[1.7rem]' -}}
+      {{- icon | image_url: width: 79 | image_tag: loading: 'lazy', class: 'inline-block md:hidden -mt-[1.4rem]' -}}
+  {% endcapture %}
+{%- if icon != blank and text contains '%icon%' %}
+  {% assign text = text | replace: '%icon%', inline_icon %}
+{% endif %}
+
+<div class="image-with-text text-[color:var(--color)] bg-[color:var(--bg)]">
+  <div class="container xl:container">
+    <div class="col-span-full lg:col-span-5 py-1 order-last lg:order-last">
+      {%- liquid
+        assign image = section.settings.image
+        assign mobile_image = section.settings.mobile_image
+        if mobile_image == blank
+          assign mobile_image = image
+        endif
+      -%}
+      {%- if image != blank -%}
+        {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+        {%- capture sizes -%}
         (min-width: 1440px) {{ 1440 | minus: 100 | divided_by: 2 }}px,
         (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
       {%- endcapture -%}
-      {{
-        image
-        | image_url: width: 1920
-        | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
-      }}
-      {{
-        mobile_image
-        | image_url: width: 1920
-        | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image  rounded-2xl', sizes: sizes, widths: widths
-      }}
-    {%- else -%}
-      {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
-    {%- endif -%}
-  </div>
-  <div class="col-span-full lg:col-span-5 pt-2 lg:pt-[3.8rem] pb-[1.5rem] order-first lg:order-last">
-    {%- if section.settings.text != blank -%}
-      <div class="image-with-text-text font-sans big-text md:text-2xl xl:text-3xl xl:tracking-[-3.1px]">
-        {% if section.settings.icon != blank -%}
-          {{-
-            section.settings.icon
-            | image_url: width: 155
-            | image_tag: loading: 'lazy', class: 'hidden xl:inline-block translate-y-[.3rem] mr-.5 float-left'
-          -}}
-          {{-
-            section.settings.icon
-            | image_url: width: 79
-            | image_tag:
-              loading: 'lazy',
-              class: 'inline-block xl:hidden translate-y-[.5rem] md:translate-y-[1.1rem] mr-.5 float-left'
-          -}}
-        {%- endif -%}
-        {{ section.settings.text }}
-      </div>
-    {%- endif -%}
-    {%- if section.settings.link_text != blank -%}
-      {%- render 'btn-link',
-        text: section.settings.link_text,
-        url: section.settings.link_text,
-        class: ' hidden lg:flex items-center mt-[2.5rem]'
-      -%}
-    {%- endif -%}
-    {%- if section.settings.btn_text_1 != blank or section.settings.btn_text_1 != blank -%}
-      <div class="flex flex-wrap gap-1 lg:gap-2 mt-6">
-        {%- if section.settings.btn_text_1 != blank -%}
-          <a href="{{ section.settings.btn_url_1 }}" class="btn">{{ section.settings.btn_text_1 }}</a>
-        {%- endif -%}
-        {%- if section.settings.btn_text_2 != blank -%}
-          <a href="{{ section.settings.btn_url_2 }}" class="btn">{{ section.settings.btn_text_2 }}</a>
-        {%- endif -%}
-      </div>
-    {%- endif -%}
+        {{
+          image
+          | image_url: width: 1920
+          | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1920
+          | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image  rounded-2xl', sizes: sizes, widths: widths
+        }}
+      {%- else -%}
+        {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
+      {%- endif -%}
+    </div>
+    <div class="col-span-full lg:col-span-5 pt-2 lg:pt-[3.8rem] pb-[1.5rem] order-first lg:order-last lg:ps-2">
+      {%- if text != blank -%}
+        <div class="image-with-text-text font-sans big-text md:text-2xl xl:text-3xl xl:tracking-[-3.1px]">
+          {{ text }}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.link_text != blank -%}
+        {%- render 'btn-link',
+          text: section.settings.link_text,
+          url: section.settings.link_text,
+          class: ' hidden lg:flex items-center mt-[2.5rem]'
+        -%}
+      {%- endif -%}
+      {%- if section.settings.btn_text_1 != blank or section.settings.btn_text_1 != blank -%}
+        <div class="flex flex-wrap gap-1 lg:gap-2 mt-6">
+          {%- if section.settings.btn_text_1 != blank -%}
+            <a href="{{ section.settings.btn_url_1 }}" class="btn">{{ section.settings.btn_text_1 }}</a>
+          {%- endif -%}
+          {%- if section.settings.btn_text_2 != blank -%}
+            <a href="{{ section.settings.btn_url_2 }}" class="btn">{{ section.settings.btn_text_2 }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
   </div>
 </div>
-
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
@@ -101,11 +118,6 @@
       "type": "image_picker",
       "id": "mobile_image",
       "label": "t:sections.image-with-text.settings.mobile_image.label"
-    },
-    {
-      "type": "image_picker",
-      "id": "icon",
-      "label": "t:sections.image-with-text.settings.icon.label"
     },
     {
       "type": "html",

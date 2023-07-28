@@ -5,312 +5,104 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
+{%- style -%}
+  header-drawer {
+    --color: #fffef7;
+    --bg: #022541;
+    --btn-color: #022541;
+    --btn-bg: #fffef7;
+  }
+{%- endstyle -%}
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details
     id="Details-menu-drawer-container"
     class="menu-drawer-container h-full"
   >
     <summary
-      class="header__icon header__icon--menu header__icon--summary link focus-inset base-text font-sans flex items-center uppercase h-full relative"
+      class="header__icon header__icon--menu header__icon--summary link focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full relative"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
       <span class="menu"> menu </span>
-      <span class="close absolute  invisible"> close </span>
     </summary>
-    <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
-      <div class="menu-drawer__inner-container">
-        <div class="container xl:container">
-          <div class="header__inline-menu col-span-4 flex items-center">
-            <button class="header__icon header__icon--menu header__icon--summary link focus-inset base-text font-sans flex items-center uppercase h-full">
-              Close
-            </button>
-          </div>
+    <div
+      id="menu-drawer"
+      class="fixed top-0 left-0 w-full h-full bg-[color:var(--bg)] text-[color:var(--color)] z-10"
+    >
+      <div class="container xl:container py-[1.4rem] lg;py-[.9rem]">
+        <div class="col-span-4 flex items-center gap-2">
+          <button class="header__icon header__icon--menu header__icon--summary link focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full">
+            Close
+          </button>
         </div>
-        <div class="menu-drawer__navigation-container">
-          <nav class="menu-drawer__navigation">
-            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+        <div class="col-span-2 flex items-center justify-center">
+          {%- liquid
+            assign height = 230 | divided_by: settings.secondary_logo.aspect_ratio
+            assign alt = settings.secondary_logo.alt | default: shop.name
+            assign height_mobile = 68 | divided_by: settings.settings.secondary_logo_mobile.aspect_ratio
+            assign alt_mobile = settings.secondary_logo_mobile.alt | default: shop.name
+          -%}
+          {{
+            settings.secondary_logo
+            | image_url: width: 230
+            | image_tag: class: 'hidden lg:block', height: height, width: 1440, alt: alt, preload: true
+          }}
+          {{
+            settings.secondary_logo_mobile
+            | image_url: width: 68
+            | image_tag: class: 'lg:hidden', height: height_mobile, width: 68, alt: alt_mobile, preload: true
+          }}
+        </div>
+        <div class="col-span-4 flex items-center justify-center"></div>
+      </div>
+      <div class="container xl:container min-h-[calc(100%_-_51px)] lg:min-h-[calc(100%_-_40px)]">
+        <div class="col-span-full overflow-auto ps-1 lg:ps-2 pt-5 pb-10 flex flex-col gap-3">
+          <nav>
+            <ul>
               {%- for link in section.settings['drawer-menu'].links -%}
-                <li>
+                <li class="flex flex-col">
+                  <a
+                    href="{{ link.url }}"
+                    class="font-serif big-text leading-[3.36rem] -tracking-[.05em] lg:text-2xl lg:leading-[5.2rem] lg:-tracking-[.04em] uppercase"
+                  >
+                    {{- link.title -}}
+                  </a>
                   {%- if link.links != blank -%}
-                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
-                      <summary
-                        id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
-                      >
-                        {{ link.title | escape }}
-                        {% render 'icon-arrow' %}
-                        {% render 'icon-caret' %}
-                      </summary>
-                      <div
-                        id="link-{{ link.handle | escape }}"
-                        class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                        tabindex="-1"
-                      >
-                        <div class="menu-drawer__inner-submenu">
-                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                            {% render 'icon-arrow' %}
-                            {{ link.title | escape }}
-                          </button>
-                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
-                            {%- for childlink in link.links -%}
-                              <li>
-                                {%- if childlink.links == blank -%}
+                    <ul class="ps-1 lg:ps-4">
+                      {%- for childlink in link.links -%}
+                        <li class="flex flex-col">
+                          <a
+                            href="{{ childlink.url }}"
+                            class="font-sans big-text leading-[3.34rem] lg:text-2xl lg:leading-[4.8rem] lg:-tracking-[.02em] uppercase"
+                          >
+                            {{- childlink.title -}}
+                          </a>
+                          {%- if childlink.links != blank -%}
+                            <ul class="ps-1 lg:ps-4">
+                              {%- for grandchildlink in childlink.links -%}
+                                <li class="flex flex-col">
                                   <a
-                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                    href="{{ childlink.url }}"
-                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                    {% if childlink.current %}
-                                      aria-current="page"
-                                    {% endif %}
+                                    href="{{ grandchildlink.url }}"
+                                    class="font-serif big-text leading-[3.36rem] -tracking-[.05em] lg:text-2xl lg:leading-[4.8rem] lg:-tracking-[.04em] uppercase pb-.5"
                                   >
-                                    {{ childlink.title | escape }}
+                                    {{- grandchildlink.title -}}
                                   </a>
-                                {%- else -%}
-                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
-                                    <summary
-                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
-                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
-                                    >
-                                      {{ childlink.title | escape }}
-                                      {% render 'icon-arrow' %}
-                                      {% render 'icon-caret' %}
-                                    </summary>
-                                    <div
-                                      id="childlink-{{ childlink.handle | escape }}"
-                                      class="menu-drawer__submenu has-submenu gradient motion-reduce"
-                                    >
-                                      <button
-                                        class="menu-drawer__close-button link link--text focus-inset"
-                                        aria-expanded="true"
-                                      >
-                                        {% render 'icon-arrow' %}
-                                        {{ childlink.title | escape }}
-                                      </button>
-                                      <ul
-                                        class="menu-drawer__menu list-menu"
-                                        role="list"
-                                        tabindex="-1"
-                                      >
-                                        {%- for grandchildlink in childlink.links -%}
-                                          <li>
-                                            <a
-                                              id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                              href="{{ grandchildlink.url }}"
-                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                              {% if grandchildlink.current %}
-                                                aria-current="page"
-                                              {% endif %}
-                                            >
-                                              {{ grandchildlink.title | escape }}
-                                            </a>
-                                          </li>
-                                        {%- endfor -%}
-                                      </ul>
-                                    </div>
-                                  </details>
-                                {%- endif -%}
-                              </li>
-                            {%- endfor -%}
-                          </ul>
-                        </div>
-                      </div>
-                    </details>
-                  {%- else -%}
-                    <a
-                      id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                      {% if link.current %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      {{ link.title | escape }}
-                    </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                      <li></li>
+                    </ul>
                   {%- endif -%}
                 </li>
               {%- endfor -%}
             </ul>
           </nav>
-          <div class="menu-drawer__utility-links">
-            {%- if shop.customer_accounts_enabled -%}
-              <a
-                href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-                class="menu-drawer__account link focus-inset h5 medium-hide large-up-hide"
-              >
-                {% render 'icon-account' %}
-                {%- liquid
-                  if customer
-                    echo 'customer.account_fallback' | t
-                  else
-                    echo 'customer.log_in' | t
-                  endif
-                -%}
-              </a>
-            {%- endif -%}
-            {%- if localization.available_countries or localization.available_languages -%}
-              <div class="menu-drawer__localization header-localization">
-                {%- if localization.available_countries and localization.available_countries.size > 1 -%}
-                  <noscript>
-                    {%- form 'localization', id: 'HeaderCountryMobileFormNoScriptDrawer', class: 'localization-form' -%}
-                      <div class="localization-form__select">
-                        <h2 class="visually-hidden" id="HeaderCountryMobileLabelNoScriptDrawer">
-                          {{ 'localization.country_label' | t }}
-                        </h2>
-                        <select
-                          class="localization-selector link"
-                          name="country_code"
-                          aria-labelledby="HeaderCountryMobileLabelNoScriptDrawer"
-                        >
-                          {%- for country in localization.available_countries -%}
-                            <option
-                              value="{{ country.iso_code }}"
-                              {%- if country.iso_code == localization.country.iso_code %}
-                                selected
-                              {% endif %}
-                            >
-                              {{ country.name }} ({{ country.currency.iso_code }}
-                              {{ country.currency.symbol }})
-                            </option>
-                          {%- endfor -%}
-                        </select>
-                        {% render 'icon-caret' %}
-                      </div>
-                      <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-                    {%- endform -%}
-                  </noscript>
-
-                  <localization-form class="no-js-hidden">
-                    {%- form 'localization', id: 'HeaderCountryMobileForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderCountryMobileLabel">
-                          {{ 'localization.country_label' | t }}
-                        </h2>
-                        {%- render 'country-localization', localPosition: 'HeaderCountryMobile' -%}
-                      </div>
-                    {%- endform -%}
-                  </localization-form>
-                {% endif %}
-
-                {%- if localization.available_languages and localization.available_languages.size > 1 -%}
-                  <noscript>
-                    {%- form 'localization',
-                      id: 'HeaderLanguageMobileFormNoScriptDrawer',
-                      class: 'localization-form'
-                    -%}
-                      <div class="localization-form__select">
-                        <h2 class="visually-hidden" id="HeaderLanguageMobileLabelNoScriptDrawer">
-                          {{ 'localization.language_label' | t }}
-                        </h2>
-                        <select
-                          class="localization-selector link"
-                          name="locale_code"
-                          aria-labelledby="HeaderLanguageMobileLabelNoScriptDrawer"
-                        >
-                          {%- for language in localization.available_languages -%}
-                            <option
-                              value="{{ language.iso_code }}"
-                              lang="{{ language.iso_code }}"
-                              {%- if language.iso_code == localization.language.iso_code %}
-                                selected
-                              {% endif %}
-                            >
-                              {{ language.endonym_name | capitalize }}
-                            </option>
-                          {%- endfor -%}
-                        </select>
-                        {% render 'icon-caret' %}
-                      </div>
-                      <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-                    {%- endform -%}
-                  </noscript>
-
-                  <localization-form class="no-js-hidden">
-                    {%- form 'localization', id: 'HeaderLanguageMobileForm', class: 'localization-form' -%}
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderLanguageMobileLabel">
-                          {{ 'localization.language_label' | t }}
-                        </h2>
-                        {%- render 'language-localization', localPosition: 'HeaderLanguageMobile' -%}
-                      </div>
-                    {%- endform -%}
-                  </localization-form>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-            <ul class="list list-social list-unstyled" role="list">
-              {%- if settings.social_twitter_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
-                    {%- render 'icon-twitter' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_facebook_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
-                    {%- render 'icon-facebook' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_pinterest_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_pinterest_link }}" class="list-social__link link">
-                    {%- render 'icon-pinterest' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_instagram_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
-                    {%- render 'icon-instagram' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_tiktok_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_tiktok_link }}" class="list-social__link link">
-                    {%- render 'icon-tiktok' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_tumblr_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_tumblr_link }}" class="list-social__link link">
-                    {%- render 'icon-tumblr' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_snapchat_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_snapchat_link }}" class="list-social__link link">
-                    {%- render 'icon-snapchat' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_youtube_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
-                    {%- render 'icon-youtube' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-              {%- if settings.social_vimeo_link != blank -%}
-                <li class="list-social__item">
-                  <a href="{{ settings.social_vimeo_link }}" class="list-social__link link">
-                    {%- render 'icon-vimeo' -%}
-                    <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
-                  </a>
-                </li>
-              {%- endif -%}
-            </ul>
+          <div class="mt-auto">
+            <h3 class="text-md uppercase -tracking-[.02em]">JOIN THE LIST</h3>
+            {%- render 'inline-newsletter-form', id: 'contactMenudrawer' -%}
           </div>
         </div>
       </div>

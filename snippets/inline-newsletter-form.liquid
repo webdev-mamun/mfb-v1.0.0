@@ -1,0 +1,60 @@
+{%- form 'customer', id: '{{ id }}', class: 'footer__newsletter newsletter-form ps-2' -%}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+  <div class="newsletter-form__field-wrapper">
+    <div class="field relative w-full max-w-[32rem] lg:max-w-[26.4rem]">
+      <input
+        id="NewsletterForm--{{ section.id }}"
+        type="email"
+        name="contact[email]"
+        class="
+          field__input w-full border-b text-[color:var(--input-color)] bg-[color:var(--input-bg)] border-[color:var(--input-border)] text-[1.4rem] leading-[1.4rem] -tracking-[.02em]
+          pt-[.9rem] pb-[.1rem] pr-[6.8rem] focus-visible:outline-none
+        "
+        value="{{ form.email }}"
+        aria-required="true"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        {% if form.errors %}
+          autofocus
+          aria-invalid="true"
+          aria-describedby="ContactFooter-error"
+        {% elsif form.posted_successfully? %}
+          aria-describedby="ContactFooter-success"
+        {% endif %}
+        placeholder="{{ 'newsletter.label' | t }}"
+        required
+      >
+      <button
+        type="submit"
+        class="
+          absolute right-0 font-sans text-[1rem] leading-[1.6rem] tracking-[.02em] text-[color:var(--btn-color)] bg-[color:var(--btn-bg)] rounded
+          px-[1.3rem] pt-[.4rem] pb-[.2rem]
+        "
+        name="commit"
+        id="Subscribe"
+        aria-label="{{ 'newsletter.button_label' | t }}"
+      >
+        SIGN UP
+      </button>
+    </div>
+    {%- if form.errors -%}
+      <small class="newsletter-form__message form__message" id="ContactFooter-error">
+        {%- render 'icon-error' -%}
+        {{- form.errors.translated_fields.email | capitalize }}
+        {{ form.errors.messages.email -}}
+      </small>
+    {%- endif -%}
+  </div>
+  {%- if form.posted_successfully? -%}
+    <h3
+      class="newsletter-form__message newsletter-form__message--success form__message"
+      id="ContactFooter-success"
+      tabindex="-1"
+      autofocus
+    >
+      {% render 'icon-success' -%}
+      {{- 'newsletter.success' | t }}
+    </h3>
+  {%- endif -%}
+{%- endform -%}
