@@ -27,9 +27,9 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "NEW<br>\nARRIVALS",
         "collection": "all",
-        "btn": "SHOP ALL"
+        "btn": "SHOP ALL NEW ARRIVALS"
       }
     },
     "45ae4465-7843-4d87-8657-fd781121613c": {
