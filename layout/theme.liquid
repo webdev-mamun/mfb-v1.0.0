@@ -273,6 +273,12 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+    <svg xmlns="http://www.w3.org/2000/svg" hidden>
+      <symbol id="icon-close" viewBox="0 0 16 17">
+        <line x1="0.353553" y1="0.646447" x2="15.3536" y2="15.6464" stroke="currentColor"/>
+        <line x1="15.3536" y1="1.35355" x2="0.353554" y2="16.3536" stroke="currentColor"/>
+      </symbol>
+    </svg>
     <a class="visually-hidden btn-small focus:skip-to-content-link" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -340,5 +346,7 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    {%- render 'cookie-banner' -%}
+    {%- render 'newsletter-popup' -%}
   </body>
 </html>

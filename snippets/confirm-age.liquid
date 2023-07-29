@@ -73,7 +73,6 @@
       this.redirectUrl = '/collections/frontpage';
       this.redirectPage = window.location.href.indexOf(this.redirectUrl) !== -1;
 
-      console.log(this.redirectPage);
       if (!this.cookieFound && !this.redirectPage && !Shopify.designMode) {
         this.showPopup();
       } else {

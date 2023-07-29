@@ -79,6 +79,13 @@
         padding: 9px 0;
     }
 
+    body {
+        @apply font-sans;
+        @apply text-base;
+        @apply text-[color:var(--color,#022541)];
+        @apply bg-[color:var(--bg,#FFFEF7)];
+    }
+
 }
 
 .base-text {

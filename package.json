@@ -4,5 +4,8 @@
   },
   "scripts": {
     "build": "tailwindcss -i ./src/app.css -o assets/app.css -w"
+  },
+  "dependencies": {
+    "@thoughtbot/tailwindcss-aria-attributes": "^0.2.0"
   }
 }

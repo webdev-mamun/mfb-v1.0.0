@@ -1,0 +1,72 @@
+{% style %}
+  #cookies-banner {
+    --color: #ffffff;
+    --bg: #022541;
+    --btn-color: #022541;
+    --btn-bg: #ffffff;
+    --btn-border: #ffffff;
+  }
+{% endstyle %}
+<div id="cookies-banner" class="fixed bottom-0 left-0 w-full block aria-hidden:hidden" aria-hidden="false">
+  <div class="flex items-center justify-between py-3 px-2 lg:py-1 lg:px-4 gap-1 text-xs text-[color:var(--color)] bg-[color:var(--bg)] [&_a]:underline [&_a]:underline-offset-2">
+    <span
+      >This site uses cookies to enhance the user experience. By using this site, you acknowledge that you have read,
+      understood, and agreed to our <a>Terms of Use</a>.</span
+    >
+    <div class="flex flex-wrap md:flex-nowrap gap-1 items-center">
+      <button onclick="handleDecline()" class="btn-small uppercase">Decline</button>
+      <button onclick="handleAccept()" class="btn-small uppercase">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function getBannerEl() {
+    return document.getElementById('cookies-banner');
+  }
+
+  function hideBanner(res) {
+    getBannerEl().style.display = 'none';
+  }
+
+  function showBanner() {
+    getBannerEl().style.display = 'block';
+  }
+
+  function handleAccept(e) {
+    window.Shopify.customerPrivacy.setTrackingConsent(true, hideBanner);
+
+    document.addEventListener('trackingConsentAccepted', function () {
+      console.log('trackingConsentAccepted event fired');
+    });
+  }
+
+  function handleDecline() {
+    window.Shopify.customerPrivacy.setTrackingConsent(false, hideBanner);
+  }
+
+  function initCookieBanner() {
+    const userCanBeTracked = window.Shopify.customerPrivacy.userCanBeTracked();
+    const userTrackingConsent = window.Shopify.customerPrivacy.getTrackingConsent();
+
+    if (!userCanBeTracked && userTrackingConsent === 'no_interaction') {
+      showBanner();
+    }
+  }
+
+  window.Shopify.loadFeatures(
+    [
+      {
+        name: 'consent-tracking-api',
+        version: '0.1',
+      },
+    ],
+    function (error) {
+      if (error) {
+        throw error;
+      }
+
+      initCookieBanner();
+    }
+  );
+</script>

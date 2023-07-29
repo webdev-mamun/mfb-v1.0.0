@@ -1,0 +1,58 @@
+{% form 'customer', class: 'newsletter-form' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+  <div class="flex flex-wrap justify-center gap-2">
+    <div class="fild w-full">
+      <input
+        id="NewsletterForm--{{ id }}"
+        type="email"
+        name="contact[email]"
+        class="
+          border-b w-full grow border-[color:var(--btn-border)] focus-visible:outline-none bg-transparent text-[color:var(--color)] placeholder:text-[#C5C5C5]
+          py-.5
+        "
+        value="{{ form.email }}"
+        aria-required="true"
+        autocorrect="off"
+        autocapitalize="off"
+        autocomplete="email"
+        {% if form.errors %}
+          autofocus
+          aria-invalid="true"
+          aria-describedby="Newsletter-error--{{ id }}"
+        {% elsif form.posted_successfully? %}
+          aria-describedby="Newsletter-success--{{ section.id }}"
+        {% endif %}
+        placeholder="{{ 'newsletter.label' | t }}"
+        required
+      >
+      {%- if form.errors -%}
+        <small class="text-xs text-[#FF0F0F]" id="Newsletter-error--{{ id }}">
+          {{- form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email -}}
+        </small>
+      {%- endif -%}
+      {%- if form.posted_successfully? -%}
+        <h3
+          class="text-xs text-[#18AC00]"
+          id="Newsletter-success--{{ id }}"
+          tabindex="-1"
+          autofocus
+        >
+          {{- 'newsletter.success' | t }}
+        </h3>
+      {%- endif -%}
+    </div>
+    <button
+      type="submit"
+      class="
+        font-sans uppercase text-[1.4rem] leading-[2.2rem] tracking-[.02em] px-[3.6rem] pt-[.6rem] pb-[.4rem] rounded-2xl border text-[color:var(--btn-color)] bg-[color:var(--btn-bg)] border-[color:var(--btn-border)]
+        hover:text-[color:var(--btn-color-hover)] hover:bg-[color:var(--btn-bg-hover)] hover:border-[color:var(--btn-border-hover)] transition-all
+      "
+      name="commit"
+      id="Subscribe"
+      aria-label="{{ 'newsletter.button_label' | t }}"
+    >
+      sign up
+    </button>
+  </div>
+{% endform %}
