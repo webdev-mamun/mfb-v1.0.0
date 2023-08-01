@@ -406,12 +406,12 @@
       "delete": "Delete",
       "delete_confirm": "Are you sure you wish to delete this address?"
     },
-    "log_in": "Log in",
+    "log_in": "Login",
     "log_out": "Log out",
     "login_page": {
       "cancel": "Cancel",
       "create_account": "Create account",
-      "email": "Email",
+      "email": "Email Address",
       "forgot_password": "Forgot your password?",
       "guest_continue": "Continue",
       "guest_title": "Continue as a guest",
