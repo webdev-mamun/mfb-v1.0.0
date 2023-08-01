@@ -1,0 +1,104 @@
+{%- if section.settings.enable_agecheck -%}
+  <script src="{{ 'age-check.js' | asset_url }}" defer="defer"></script>
+  {%- style -%}
+      #shopify-section-{{ section.id }} {
+        --color: #fffef7;
+        --bg: #022541;
+        --btn-color: #022541;
+        --btn-bg: #fff;
+        --btn-border: #fffef7;
+    }
+  {%- endstyle -%}
+
+  {%- liquid
+    assign text = section.settings.text
+    assign logo = settings.secondary_logo
+    assign height = 1440 | divided_by: settings.secondary_logo.aspect_ratio
+    assign alt = settings.secondary_logo.alt | default: shop.name
+    assign logo_mobile = settings.secondary_logo_mobile
+    assign height_mobile = 277 | divided_by: settings.settings.secondary_logo_mobile.aspect_ratio
+    assign alt_mobile = settings.secondary_logo_mobile.alt | default: shop.name
+    assign redirec_url = section.settings.redirec_url
+  -%}
+  <age-verification
+    class="fixed inset-0 z-20 text-[color:var(--color)] bg-[color:var(--bg)] block aria-hidden:hidden"
+    data-id="{{ section.id }}"
+    aria-hidden="true"
+    data-redirec-url="{% if redirec_url != blank %}{{ redirec_url }}{% else %}null{% endif %}"
+  >
+    <div class="container 2xl:container h-full py-4 lg:pt-0 lg:pb-1">
+      <div class="col-span-full h-full grid grid-rows-[auto,1fr] gap-3">
+        <div class="text-center mx-auto">
+          {{
+            logo
+            | image_url: width: 1440
+            | image_tag: class: 'hidden lg:block', height: height, width: 1440, alt: alt, preload: true
+          }}
+          {{
+            logo_mobile
+            | image_url: width: 277
+            | image_tag: class: 'lg:hidden', height: height_mobile, width: 277, alt: alt_mobile, preload: true
+          }}
+        </div>
+        <div class="flex flex-col justify-center gap-y-9 lg:gap-y-4">
+          {%- if text != blank -%}
+            <div class="font-serif w-full max-w-[78rem] mx-auto text-center big-text lg:text-3xl -tracking-[.05em]">
+              {{ text }}
+            </div>
+          {%- endif -%}
+          <div class="w-full max-w-[55rem] mx-auto flex flex-wrap justify-center gap-2">
+            <button
+              id="accept"
+              class="
+                font-sans text-[2rem] leading-[2.2rem] -tracking-[.02em] uppercase
+                px-[3.6rem] py-[1.55rem] border rounded-3xl
+                bg-[color:var(--btn-bg)] border-[color:var(--btn-border)] text-[color:var(--btn-color)]
+                min-w-[26.2rem]
+              "
+            >
+              yes
+            </button>
+            <button
+              id="refuse"
+              class="
+                font-sans text-[2rem] leading-[2.2rem] -tracking-[.02em] uppercase
+                px-[3.6rem] py-[1.55rem] border rounded-3xl
+                bg-[color:var(--btn-bg)] border-[color:var(--btn-border)] text-[color:var(--btn-color)]
+                min-w-[26.2rem]
+              "
+            >
+              no
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </age-verification>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Age check",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_agecheck",
+      "label": "Enable age check",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "text",
+      "label": "Text",
+      "default": "Please confirm you are 21 years of age or older."
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "redirec_url"
+    }
+  ]
+}
+{% endschema %}
