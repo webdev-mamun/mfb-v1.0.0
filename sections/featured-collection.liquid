@@ -1,4 +1,6 @@
 <script src="{{ 'featured-collection-slider.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <style>
   #shopify-section-{{ section.id }} .splide {
     visibility: visible;
@@ -29,7 +31,7 @@
   }
 </style>
 <div class="featured-collection pt-1 pb-2 text-[color:var(--color)] bg-[color:var(--bg)]">
-  <div class="container xl:container">
+  <div class="container 2xl:container">
     <featured-collection-slider class="col-span-full">
       <div class="splide" role="group" aria-label="Splide Basic HTML Example">
         <div class="splide__track">

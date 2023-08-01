@@ -63,6 +63,13 @@
         {% render 'price', product: card_product, price_class: 'font-sans text-sm leading-[1.5rem] tracking-[-.02em]' %}
       </div>
     </div>
+    {%- liquid
+      assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
+      assign qty_rules = false
+      if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
+        assign qty_rules = true
+      endif
+    -%}
     <product-form data-section-id="{{ section.id }}">
       {%- form 'product',
         card_product,
@@ -82,7 +89,10 @@
           id="{{ product_form_id }}-submit"
           type="submit"
           name="add"
-          class="group font-sans text-sm uppercase w-full flex justify-between items-center gap-1 px-1 py-[.85rem] border-y text-[color:var(--act-btn-color)] bg-[color:var(--act-btn-bg)] border-[color:var(--act-btn-border)] hover:text-[color:var(--act-btn-color-hover)] hover:bg-[color:var(--act-btn-bg-hover)] hover:border-[color:var(--act-btn-border-hover)] disabled:cursor-not-allowed transition-all"
+          class="
+            card-act-btn
+            group
+          "
           aria-haspopup="dialog"
           aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
           aria-live="polite"
@@ -92,22 +102,27 @@
           {% endif %}
         >
           <span class="mt-[.4rem]">
-            <span>
-              {%- if card_product.selected_or_first_available_variant.available -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- else -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- endif -%}
-            </span>
-            <span class="sold-out-message hidden">
-              {{ 'products.product.sold_out' | t }}
-            </span>
+            {{ 'products.product.add_to_cart' | t }}
           </span>
-          <span>
+          <span class="sold-out-message hidden mt-[.4rem]">
+            {{ 'products.product.add_to_cart' | t }}
+          </span>
+          <div class="loading-overlay--spinner hidden">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              class="spinner"
+              viewBox="0 0 66 66"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle class="path stroke-[var(--act-btn-border)] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+          <span class="group-[&.loading]:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <circle cx="8" cy="8" r="8" class="fill-[color:var(--act-btn-bg-hover)] group-hover:fill-[color:var(--act-btn-color-hover)]"/>
-              <line x1="8.11914" y1="3.80951" x2="8.11914" y2="12.1905" class="stroke-[color:var(--act-btn-color-hover)] group-hover:stroke-[color:var(--act-btn-bg-hover)]"/>
-              <line x1="12.1904" y1="8.11905" x2="3.80948" y2="8.11905" class="stroke-[color:var(--act-btn-color-hover)] group-hover:stroke-[color:var(--act-btn-bg-hover)]"/>
+              <circle cx="8" cy="8" r="8" class="fill-[color:var(--act-btn-border)] group-enabled:fill-[color:var(--act-btn-bg-hover)] group-enabled:group-hover:fill-[color:var(--act-btn-color-hover)]"/>
+              <line x1="8.11914" y1="3.80951" x2="8.11914" y2="12.1905" class="stroke-[color:var(--act-btn-color-hover)] group-enabled:stroke-[#d9d9d9] group-enabled:group-hover:stroke-[color:var(--act-btn-bg-hover)]" />
+              <line x1="12.1904" y1="8.11905" x2="3.80948" y2="8.11905" class="stroke-[color:var(--act-btn-color-hover)] group-enabled:stroke-[#d9d9d9] group-enabled:group-hover:stroke-[color:var(--act-btn-bg-hover)]"/>
             </svg>
           </span>
         </button>

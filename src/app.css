@@ -86,6 +86,12 @@
         @apply bg-[color:var(--bg,#FFFEF7)];
     }
 
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
 }
 
 .base-text {
@@ -97,7 +103,7 @@
 
 @layer components {
     .container {
-        @apply grid grid-cols-10 gap-1 xl:gap-2 px-1 xl:px-2
+        @apply grid grid-cols-10 gap-1
     }
 
     .btn {
@@ -107,7 +113,7 @@
         line-height: 2.2rem; /* 110% */
         letter-spacing: -0.26px;
         @apply uppercase;
-        padding: 1.3rem 3.5rem .9rem;
+        padding: 1.2rem 3.5rem 1rem;
         border-radius: 1rem;
         color: var(--btn-color, #FFFEF7);
         background-color: var(--btn-bg, #022541);
@@ -135,11 +141,11 @@
     .btn-small {
         @apply font-sans;
         text-align: center;
-        font-size: 12px;
+        font-size: 10px;
         line-height: 14.4px;
-        letter-spacing: -0.24px;
-        padding: .5rem 1.5rem .4rem;
-        border-radius: .5rem;
+        letter-spacing: -.02em;
+        padding: .35rem 1.5rem .25rem;
+        border-radius: .2rem;
         color: var(--btn-color, #FFFEF7);
         background-color: var(--btn-bg, #022541);
         @apply border;
@@ -194,11 +200,111 @@
         gap: 2rem;
     }
 
-    /* .image-with-text-text, .image-with-text-text > * {
-        @apply big-text;
-        @apply md:text-2xl;
-        @apply xl:text-3xl;
-    } */
+    .default-input {
+        @apply outline-none;
+        @apply border-b;
+        @apply font-sans;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        letter-spacing: -.02em;
+        border-color: var(--input-border, currentColor);
+        background-color: var(--input-bg, transparent);
+    }
+
+    .card-act-btn {
+        @apply font-sans;
+        @apply text-sm;
+        @apply uppercase;
+        @apply w-full;
+        @apply flex;
+        @apply justify-between;
+        @apply items-center;
+        @apply gap-1;
+        @apply px-1;
+        @apply py-[.85rem];
+        @apply border-y;
+        @apply text-[color:var(--act-btn-border)];
+        @apply bg-[color:var(--act-btn-bg)];
+        @apply border-[color:var(--act-btn-border)];
+        @apply enabled:text-[color:var(--act-btn-color)];
+        @apply enabled:bg-[color:var(--act-btn-bg)];
+        @apply enabled:hover:text-[color:var(--act-btn-color-hover)];
+        @apply enabled:hover:bg-[color:var(--act-btn-bg-hover)];
+        @apply enabled:hover:border-[color:var(--act-btn-border-hover)];
+        @apply transition-all;
+        @apply relative;
+        @apply [&.loading]:hover:text-transparent;
+        @apply [&.loading]:hover:bg-[color:var(--act-btn-bg)];
+        @apply [&.loading]:hover:border-[color:var(--act-btn-border)];
+    }
+
+    .card-act-btn circle{
+        @apply transition-all;
+    }
+
+    .card-act-btn line {
+        @apply transition-all;
+    }
+
+    .loading-overlay--spinner {
+        @apply absolute;
+        @apply w-[1.5rem];
+        @apply left-1/2; 
+        @apply -translate-x-2/4;
+        @apply animate-spin-slow;
+    }
+
+    .loading-overlay--spinner .path {
+        stroke-dasharray: 280;
+        stroke-dashoffset: 0;
+        transform-origin: center;
+    }
+
+    .drawer {
+        @apply fixed;
+        @apply top-0;
+        @apply left-0;
+        @apply w-screen;
+        @apply h-fit;
+        @apply invisible;
+        @apply [&.active]:visible;
+        @apply z-30;
+        @apply flex;
+        @apply justify-end;
+
+    }
+
+    .cart-drawer__overlay {
+        @apply fixed;
+        @apply inset-0;
+        @apply backdrop-blur-[10px];
+        @apply -z-10;
+    }
+    .drawer__inner {
+        @apply text-[color:var(--color,_#151515)];
+        @apply bg-[color:var(--bg,_#FFFEF7)];
+        @apply w-[30rem];
+        @apply md:w-[60.9rem];
+        @apply overflow-auto;
+        @apply flex;
+        @apply flex-col;
+        @apply pt-1;
+        @apply px-1;
+        @apply pb-2;
+        @apply md:p-2;
+        @apply gap-2;
+        @apply gap-2;
+        @apply rounded-2xl;
+        @apply translate-y-0;
+        @apply xs:translate-y-[2rem];
+        @apply translate-x-full;
+        @apply group-[&.active]:-translate-x-0;
+        @apply xs:group-[&.active]:-translate-x-[2rem];
+        @apply transition-transform;
+        @apply delay-100;
+        @apply duration-500;
+    }
+
 }
 
 .js-marquee span:nth-child(odd) {

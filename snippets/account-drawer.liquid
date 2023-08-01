@@ -1,0 +1,114 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+
+  Usage:
+  {% render 'header-drawer' %}
+{% endcomment %}
+
+{%- style -%}
+  login-drawer {
+    --color: #151515;
+    --bg: #fffef7;
+    --btn-color: #fffef7;
+    --btn-bg: #151515;
+    --btn-border: #151515;
+    --btn-color-hover: #fffef7;
+    --btn-bg-hover: #151515;
+    --btn-border-hover: #151515;
+    --color-disable: #c5c5c5;
+    --top: 4.1rem;
+  }
+{%- endstyle -%}
+
+<login-drawer>
+  <details
+    id="Details-login-drawer-container"
+    class="login-drawer-container h-full group"
+  >
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full relative"
+      aria-label="{{ 'customer.log_in' | t }}"
+    >
+      <span class="menu cursor-pointer">{{ 'customer.log_in' | t }}</span>
+    </summary>
+    <div
+      id="login-drawer"
+      class="
+        fixed top-[var(--top)] left-0 w-full  bg-[color:var(--bg)] text-[color:var(--color)] z-10
+        -translate-y-1/2 opacity-0 invisible group-open:opacity-100 group-open:visible group-open:translate-y-0 transition-all delay-100
+        pt-2 pb-[2.5rem] lg:py-5
+      "
+    >
+      <div class="container">
+        <div class="col-span-full w-full max-w-[63rem] mx-auto flex flex-col gap-[3.5rem] lg:gap-3">
+          <h2 class="font-sans text-xl -tracking-[.02em] uppercase">{{ 'customer.log_in' | t }}</h2>
+          <div class="flex flex-col lg:flex-row w-full">
+            {%- form 'customer_login', novalidate: 'novalidate', class: 'w-full' -%}
+              <div class="flex flex-col gap-1">
+                <div class="flex flex-wrap flex-col md:flex-row w-full items-center lg:items-start gap-1 lg:gap-2">
+                  <div class="field grow shrink w-full lg:max-w-[26rem]">
+                    <input
+                      class="w-full default-input"
+                      type="email"
+                      name="customer[email]"
+                      id="CustomerEmail"
+                      autocomplete="email"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      {% if form.errors contains 'form' %}
+                        aria-invalid="true"
+                      {% endif %}
+                      placeholder="{{ 'customer.login_page.email' | t }}"
+                    >
+                    <label class="sr-only" for="CustomerEmail">
+                      {{ 'customer.login_page.email' | t }}
+                    </label>
+                  </div>
+                  {%- if form.password_needed -%}
+                    <div class="field grow shrink w-full lg:max-w-[26rem] flex flex-col">
+                      <input
+                        class="w-full default-input"
+                        type="password"
+                        value=""
+                        name="customer[password]"
+                        id="CustomerPassword"
+                        autocomplete="current-password"
+                        {% if form.errors contains 'form' %}
+                          aria-invalid="true"
+                        {% endif %}
+                        placeholder="{{ 'customer.login_page.password' | t }}"
+                      >
+                      <label class="sr-only" for="CustomerPassword">
+                        {{ 'customer.login_page.password' | t }}
+                      </label>
+                      <a href="#recover" class="text-[1rem] leading-[2.2rem] tracking-[.02em] text-right">
+                        {{ 'customer.login_page.forgot_password' | t }}
+                      </a>
+                    </div>
+                  {%- endif -%}
+
+                  <button class="btn-small uppercase">
+                    {{ 'customer.login_page.sign_in' | t }}
+                  </button>
+                </div>
+
+                {%- if form.errors -%}
+                  <div class="form__message text-xs" tabindex="-1" autofocus>
+                    {{ 'templates.contact.form.error_heading' | t }}
+                  </div>
+                  {{ form.errors | default_errors }}
+                {%- endif -%}
+                <div class="flex flex-col items-center">
+                  <p class="text-xs">Don’t have an account yet?</p>
+                  <a href="{{ routes.account_register_url }}" class="text-xs text-[color:var(--color-disable)]">
+                    {{ 'customer.login_page.create_account' | t }}
+                  </a>
+                </div>
+              </div>
+            {%- endform -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</login-drawer>

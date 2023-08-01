@@ -91,6 +91,7 @@
       {% endfor %}
 
       {{ scheme_classes | prepend: 'body' }} {
+        /* lllll */
         color: rgba(var(--color-foreground), 0.75);
         background-color: rgb(var(--color-background));
       }
@@ -283,8 +284,6 @@
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    {%- render 'confirm-age' -%}
-
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -348,5 +347,6 @@
     {%- endif -%}
     {%- render 'cookie-banner' -%}
     {%- render 'newsletter-popup' -%}
+    {%- section 'age-check' -%}
   </body>
 </html>

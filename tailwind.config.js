@@ -16,7 +16,7 @@ module.exports = {
     container: {
       center: true,
       screens: {
-        xl: '1440px',
+        '2xl': '1440px',
       },
     },
     spacing: {
@@ -61,6 +61,35 @@ module.exports = {
       }]
     },
     extend: {
+      screens: {
+        "xs": "375px"
+      },
+      animation: {
+        'spin-slow': 'spin-slow 1.4s linear infinite',
+        'dash': 'dash 1.4s ease-in-out infinite',
+      },
+      keyframes: {
+        'spin-slow': {
+          '0%': {
+            transform: 'rotate(0)'
+          },
+          '100%': {
+            transform: 'rotate(270deg)'
+          }
+        },
+        'dash': {
+          '0%,100%': {
+            'stroke-dashoffset': '280'
+          },
+          '50%': {
+            'stroke-dashoffset': '75',
+            transform: 'rotate(135deg)'
+          },
+          '100%': {
+            transform: 'rotate(450deg)'
+          }
+        }
+      },
       fontFamily: {
         'sans': ['"Tomato Grotesk"', ...defaultTheme.fontFamily.sans],
         'serif': ['"TT Ramillas"', ...defaultTheme.fontFamily.serif],

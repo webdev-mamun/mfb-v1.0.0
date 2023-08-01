@@ -1,9 +1,9 @@
-{%- form 'customer', id: '{{ id }}', class: 'footer__newsletter newsletter-form ps-2' -%}
+{%- form 'customer', class: 'footer__newsletter newsletter-form ps-2' -%}
   <input type="hidden" name="contact[tags]" value="newsletter">
   <div class="newsletter-form__field-wrapper">
     <div class="field relative w-full max-w-[32rem] lg:max-w-[26.4rem]">
       <input
-        id="NewsletterForm--{{ section.id }}"
+        id="NewsletterForm--{{ id }}"
         type="email"
         name="contact[email]"
         class="
