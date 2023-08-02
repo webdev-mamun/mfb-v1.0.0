@@ -103,7 +103,7 @@
 
 @layer components {
     .container {
-        @apply grid grid-cols-10 gap-1
+        @apply grid grid-cols-10 gap-1 px-1 lg:px-2
     }
 
     .btn {

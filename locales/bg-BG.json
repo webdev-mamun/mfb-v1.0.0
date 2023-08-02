@@ -280,6 +280,7 @@
       "taxes_included_and_shipping_policy_html": "С включени данъци. <a href=\"{{ link }}\">Доставката<\/a> и отстъпките се изчисляват при плащане.",
       "taxes_and_shipping_at_checkout": "Данъците, отстъпките и доставката се изчисляват при плащане",
       "headings": {
+        "title": "Title",
         "product": "Продукт",
         "price": "Цена",
         "total": "Обща сума",

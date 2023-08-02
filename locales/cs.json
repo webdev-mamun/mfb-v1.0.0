@@ -302,6 +302,7 @@
       "taxes_and_shipping_at_checkout": "Daně, slevy a poštovné se vypočítají na pokladně.",
       "update": "Aktualizovat",
       "headings": {
+        "title": "Title",
         "product": "Produkt",
         "price": "Cena",
         "total": "Celkem",

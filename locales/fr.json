@@ -292,6 +292,7 @@
       "taxes_included_and_shipping_policy_html": "Taxe incluse. <a href=\"{{ link }}\">Frais d’expédition<\/a> et réductions calculés à l’étape du paiement.",
       "taxes_and_shipping_at_checkout": "Taxes, réductions et frais d’expédition calculés à l’étape du paiement",
       "headings": {
+        "title": "Title",
         "product": "Produit",
         "price": "Prix",
         "total": "Total",

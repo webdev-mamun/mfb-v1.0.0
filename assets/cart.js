@@ -182,8 +182,14 @@ class CartItems extends HTMLElement {
   updateLiveRegions(line, message) {
     const lineItemError =
       document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
-    if (lineItemError) lineItemError.querySelector('.cart-item__error-text').innerHTML = message;
+      
+    if(message !== ''){
+      lineItemError.classList.add('pt-.5');
+    } else {
+      if(lineItemError.classList.contains('pt-.5')) lineItemError.classList.remove('pt-.5');
+    }
 
+    if (lineItemError) lineItemError.querySelector('.cart-item--error-text').innerHTML = message;
     this.lineItemStatusElement.setAttribute('aria-hidden', true);
 
     const cartStatus =

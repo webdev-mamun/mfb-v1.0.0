@@ -1,30 +1,39 @@
-{{ 'component-cart.css' | asset_url | stylesheet_tag }}
-{{ 'component-totals.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'component-cart.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{% comment %}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
+  {%- style -%}
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
-  }
-{%- endstyle -%}
 
-<div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+{% endcomment %}
+
+<div
+  class="group block mx-auto max-w-[37rem] lg:max-w-[87rem] px-2 pt-1 pb-[21rem] lg:pb-[28rem]{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
   <div>
     <div class="cart__footer section-{{ section.id }}-padding">
       {%- if settings.show_cart_note -%}
-        <cart-note class="cart__note field">
-          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+        <cart-note class="cart__note field w-full flex flex-col gap-.5">
+          <label for="Cart-note" class="text-[1.4rem] leading-[1.82rem] -tracking-[.02em] uppercase">
+            {{- 'sections.cart.note' | t -}}
+          </label>
           <textarea
-            class="text-area field__input"
+            class="text-area field__input rounded-lg px-[1.5rem] py-1 border border-[color:var(--border-color,_#c5c5c5)] "
+            rows="4"
             name="note"
             form="cart"
             id="Cart-note"
@@ -33,15 +42,15 @@
         </cart-note>
       {%- endif -%}
 
-      <div class="cart__blocks">
+      <div class="cart__blocks flex flex-col gap-1">
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
             {%- when 'subtotal' -%}
-              <div class="js-contents" {{ block.shopify_attributes }}>
-                <div>
-                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+              <div class="js-contents flex flex-col gap-1" {{ block.shopify_attributes }}>
+                {%- if cart.cart_level_discount_applications.size > 0 -%}
+                  <div>
                     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in cart.cart_level_discount_applications -%}
                         <li class="discounts__discount discounts__discount--position">
@@ -51,15 +60,19 @@
                         </li>
                       {%- endfor -%}
                     </ul>
-                  {%- endif -%}
+                  </div>
+                {%- endif -%}
+
+                <div class="totals flex justify-between items-center gap-2">
+                  <h2 class="totals__total text-[1.4rem] leading-[1.82rem] -tracking-[.02em] uppercase">
+                    {{ 'sections.cart.estimated_total' | t }}
+                  </h2>
+                  <p class="totals__total-value text-[1.6rem] leading-[2.08rem] -tracling-[.02rem]">
+                    {{ cart.total_price | money }}
+                  </p>
                 </div>
 
-                <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
-                </div>
-
-                <small class="tax-note caption-large rte">
+                <small class="tax-note caption-large rte text-[1rem] leading-[1.5rem] lg:text-[1.2rem] lg:leading-[1.8rem] -tracking-[.02em] lg:text-right">
                   {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
                     {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
                   {%- elsif cart.taxes_included -%}
@@ -72,9 +85,12 @@
                 </small>
               </div>
             {%- else -%}
-              <div class="cart__ctas" {{ block.shopify_attributes }}>
+              <div
+                class="cart__ctas flex flex-col gap-2 pt-2 lg:pt-7 border-t border-[color:var(--border-color,_#c5c5c5)]"
+                {{ block.shopify_attributes }}
+              >
                 <noscript>
-                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                  <button type="submit" class="cart__update-button btn" form="cart">
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
@@ -82,7 +98,7 @@
                 <button
                   type="submit"
                   id="checkout"
-                  class="cart__checkout-button button"
+                  class="cart__checkout-button btn w-full"
                   name="checkout"
                   {% if cart == empty %}
                     disabled

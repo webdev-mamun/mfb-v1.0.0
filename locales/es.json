@@ -291,8 +291,9 @@
       "taxes_included_and_shipping_policy_html": "Impuesto incluido. <a href=\"{{ link }}\">Envío<\/a> y descuentos calculados en la pantalla de pago.",
       "taxes_and_shipping_at_checkout": "Impuestos, descuentos y envío calculados en la pantalla de pago",
       "headings": {
-        "product": "Producto",
+        "title": "Title",
         "price": "Precio",
+        "product": "Producto",
         "total": "Total",
         "quantity": "Cantidad",
         "image": "Imagen del producto"

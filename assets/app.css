@@ -748,6 +748,15 @@ input[type="number"]::-webkit-inner-spin-button,
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
   gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 h1.btn, .h1.btn {
@@ -1237,6 +1246,10 @@ p.card-act-btn, .base-text.card-act-btn {
   left: 0;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .left-2\/4 {
   left: 50%;
 }
@@ -1345,6 +1358,10 @@ p.card-act-btn, .base-text.card-act-btn {
   grid-column-end: 6;
 }
 
+.row-span-4 {
+  grid-row: span 4 / span 4;
+}
+
 .row-start-1 {
   grid-row-start: 1;
 }
@@ -1400,6 +1417,10 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .mb-\.5 {
   margin-bottom: .5rem;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
 }
 
 .mb-\[1\.5rem\] {
@@ -1534,6 +1555,10 @@ p.card-act-btn, .base-text.card-act-btn {
   width: 1.6rem;
 }
 
+.w-\[1\.8rem\] {
+  width: 1.8rem;
+}
+
 .w-\[13\.4rem\] {
   width: 13.4rem;
 }
@@ -1546,8 +1571,17 @@ p.card-act-btn, .base-text.card-act-btn {
   width: 30.3rem;
 }
 
+.w-\[30rem\] {
+  width: 30rem;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-min {
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .min-w-\[15\.8rem\] {
@@ -1568,6 +1602,10 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .max-w-\[32rem\] {
   max-width: 32rem;
+}
+
+.max-w-\[37rem\] {
+  max-width: 37rem;
 }
 
 .max-w-\[43\.7rem\] {
@@ -1596,10 +1634,6 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-\[87rem\] {
-  max-width: 87rem;
 }
 
 .shrink {
@@ -1707,6 +1741,14 @@ p.card-act-btn, .base-text.card-act-btn {
   grid-template-columns: 10rem 1fr;
 }
 
+.grid-cols-\[9rem\2c _1fr\] {
+  grid-template-columns: 9rem 1fr;
+}
+
+.grid-rows-\[2\.4rem_repeat\(2\2c _minmax\(3rem\2c _min-content\)\)_auto\] {
+  grid-template-rows: 2.4rem repeat(2, minmax(3rem, min-content)) auto;
+}
+
 .grid-rows-\[auto\2c 1fr\] {
   grid-template-rows: auto 1fr;
 }
@@ -1741,6 +1783,10 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .justify-items-center {
   justify-items: center;
+}
+
+.gap-\.5 {
+  gap: .5rem;
 }
 
 .gap-1 {
@@ -1818,6 +1864,10 @@ p.card-act-btn, .base-text.card-act-btn {
   border-radius: 1.5rem;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1832,6 +1882,14 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .border-\[color\:var\(--border\2c _\#C5C5C5\)\] {
   border-color: var(--border, #C5C5C5);
+}
+
+.border-\[color\:var\(--border-color\2c _\#C5C5C5\)\] {
+  border-color: var(--border-color, #C5C5C5);
+}
+
+.border-\[color\:var\(--border-color\2c _\#c5c5c5\)\] {
+  border-color: var(--border-color, #c5c5c5);
 }
 
 .border-\[color\:var\(--btn-border\)\] {
@@ -1937,6 +1995,11 @@ p.card-act-btn, .base-text.card-act-btn {
   padding-right: 1.3rem;
 }
 
+.px-\[1\.5rem\] {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-\[3\.6rem\] {
   padding-left: 3.6rem;
   padding-right: 3.6rem;
@@ -2026,6 +2089,10 @@ p.card-act-btn, .base-text.card-act-btn {
   padding-bottom: 2.5rem;
 }
 
+.pb-\[21rem\] {
+  padding-bottom: 21rem;
+}
+
 .pb-\[3\.5rem\] {
   padding-bottom: 3.5rem;
 }
@@ -2088,6 +2155,10 @@ p.card-act-btn, .base-text.card-act-btn {
   padding-top: 3.5rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2123,6 +2194,10 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .text-\[1\.4rem\] {
   font-size: 1.4rem;
+}
+
+.text-\[1\.6rem\] {
+  font-size: 1.6rem;
 }
 
 .text-\[1rem\] {
@@ -2166,6 +2241,10 @@ p.card-act-btn, .base-text.card-act-btn {
   line-height: 1.4rem;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -2202,8 +2281,16 @@ p.card-act-btn, .base-text.card-act-btn {
   line-height: 1.6rem;
 }
 
+.leading-\[1\.82rem\] {
+  line-height: 1.82rem;
+}
+
 .leading-\[1\.8rem\] {
   line-height: 1.8rem;
+}
+
+.leading-\[2\.08rem\] {
+  line-height: 2.08rem;
 }
 
 .leading-\[2\.2rem\] {
@@ -2451,26 +2538,15 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     gap: 1rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  @media (min-width: 1440px) {
-    .xl\:container {
-      max-width: 1440px;
+  @media (min-width: 1024px) {
+    .lg\:container {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
-  }
-
-  .xl\:container {
-    display: grid;
-    grid-template-columns: repeat(10, minmax(0, 1fr));
-    gap: 1rem;
   }
 }
 
@@ -2491,6 +2567,15 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .\32xl\:container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 }
 
@@ -2558,6 +2643,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   stroke: var(--act-btn-bg-hover);
 }
 
+.group.is-empty .group-\[\&\.is-empty\]\:block {
+  display: block;
+}
+
 .group.is-empty .group-\[\&\.is-empty\]\:flex {
   display: flex;
 }
@@ -2572,6 +2661,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
 
 .peer:empty ~ .peer-empty\:hidden {
   display: none;
+}
+
+.peer.hidden ~ .peer-\[\&\.hidden\]\:visible {
+  visibility: visible;
 }
 
 [aria-hidden="true"].aria-hidden\:hidden {
@@ -2663,6 +2756,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     grid-column-end: 8;
   }
 
+  .lg\:row-span-1 {
+    grid-row: span 1 / span 1;
+  }
+
   .lg\:row-start-2 {
     grid-row-start: 2;
   }
@@ -2685,6 +2782,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
 
   .lg\:mb-0 {
     margin-bottom: 0;
+  }
+
+  .lg\:mb-7 {
+    margin-bottom: 7rem;
   }
 
   .lg\:mt-0 {
@@ -2735,6 +2836,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     max-width: 26rem;
   }
 
+  .lg\:max-w-\[87rem\] {
+    max-width: 87rem;
+  }
+
   .lg\:auto-cols-fr {
     grid-auto-columns: minmax(0, 1fr);
   }
@@ -2755,6 +2860,14 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     grid-template-columns: repeat(9, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-\[12rem_2fr_repeat\(3\2c _minmax\(0\2c _1fr\)\)\] {
+    grid-template-columns: 12rem 2fr repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+
   .lg\:grid-rows-5 {
     grid-template-rows: repeat(5, minmax(0, 1fr));
   }
@@ -2765,6 +2878,14 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
 
   .lg\:items-start {
     align-items: flex-start;
+  }
+
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .lg\:justify-end {
+    justify-content: flex-end;
   }
 
   .lg\:gap-\.5 {
@@ -2807,6 +2928,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
 
   .lg\:rounded-none {
     border-radius: 0px;
+  }
+
+  .lg\:border-none {
+    border-style: none;
   }
 
   .lg\:bg-\[color\:var\(--bg\)\] {
@@ -2869,6 +2994,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     padding-bottom: 9rem;
   }
 
+  .lg\:pb-\[28rem\] {
+    padding-bottom: 28rem;
+  }
+
   .lg\:ps-2 {
     -webkit-padding-start: 2rem;
             padding-inline-start: 2rem;
@@ -2883,12 +3012,24 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
     padding-top: 0;
   }
 
+  .lg\:pt-7 {
+    padding-top: 7rem;
+  }
+
   .lg\:pt-9 {
     padding-top: 9rem;
   }
 
+  .lg\:pt-\[18rem\] {
+    padding-top: 18rem;
+  }
+
   .lg\:pt-\[3\.8rem\] {
     padding-top: 3.8rem;
+  }
+
+  .lg\:text-right {
+    text-align: right;
   }
 
   .lg\:text-2xl {
@@ -2899,6 +3040,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   .lg\:text-3xl {
     font-size: 6.2rem;
     line-height: 6.2rem;
+  }
+
+  .lg\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
   }
 
   .lg\:text-\[2\.6rem\] {
@@ -2921,6 +3066,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   .lg\:text-md {
     font-size: 1.4rem;
     line-height: 2.2rem;
+  }
+
+  .lg\:leading-\[1\.8rem\] {
+    line-height: 1.8rem;
   }
 
   .lg\:leading-\[3rem\] {
@@ -2983,6 +3132,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   .xl\:tracking-\[-3\.1px\] {
     letter-spacing: -3.1px;
   }
+}
+
+.\[\&\.is-empty\]\:pb-\[18rem\].is-empty {
+  padding-bottom: 18rem;
 }
 
 .\[\&_a\]\:underline a {

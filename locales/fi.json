@@ -281,6 +281,7 @@
       "taxes_included_and_shipping_policy_html": "Sisältää veron. <a href=\"{{ link }}\">Toimituskulut<\/a> ja alennukset lasketaan kassalla.",
       "taxes_and_shipping_at_checkout": "Verot, alennukset ja toimituskulut lasketaan kassalla",
       "headings": {
+        "title": "Title",
         "product": "Tuote",
         "price": "Hinta",
         "total": "Yhteensä",
