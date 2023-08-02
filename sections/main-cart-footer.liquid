@@ -20,7 +20,7 @@
 {% endcomment %}
 
 <div
-  class="group block mx-auto max-w-[37rem] lg:max-w-[87rem] px-2 pt-1 pb-[21rem] lg:pb-[28rem]{% if cart == empty %} is-empty{% endif %}"
+  class="group block mx-auto max-w-[37rem] lg:max-w-[87rem] px-2 pt-1 pb-[21rem] lg:pb-[28rem] [&.is-empty]:hidden{% if cart == empty %} is-empty{% endif %}"
   id="main-cart-footer"
   data-id="{{ section.id }}"
 >

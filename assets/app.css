@@ -1475,6 +1475,10 @@ p.card-act-btn, .base-text.card-act-btn {
   margin-top: auto;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -3132,6 +3136,10 @@ p.js-marquee span:nth-child(odd), .base-text.js-marquee span:nth-child(odd) {
   .xl\:tracking-\[-3\.1px\] {
     letter-spacing: -3.1px;
   }
+}
+
+.\[\&\.is-empty\]\:hidden.is-empty {
+  display: none;
 }
 
 .\[\&\.is-empty\]\:pb-\[18rem\].is-empty {
