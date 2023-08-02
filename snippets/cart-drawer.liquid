@@ -350,7 +350,7 @@
                             role="alert"
                           >
                             <small
-                              class="cart-item__error-text peer order-1 text-[1rem] leading-[1.2rem] tracking-[.02em]"
+                              class="cart-item--error-text peer order-1 text-[1rem] leading-[1.2rem] tracking-[.02em]"
                             ></small>
                             <svg
                               aria-hidden="true"
@@ -408,8 +408,8 @@
             class="flex items-center justify-between gap-1 border-b border-[color:var(--border,_#C5C5C5)] pt-[.4rem]"
             role="status"
           >
-            <h2 class="totals__subtotal text-[1.4rem] tracking-[.02em] leading-[2.6rem] uppercase">SUBTOTAL:</h2>
-            <p class="totals__subtotal-value text-[1.4rem] tracking-[.02em]">
+            <h2 class="totals__subtotal text-[1.4rem] -tracking-[.02em] leading-[2.6rem] uppercase">SUBTOTAL:</h2>
+            <p class="totals__subtotal-value text-[1.4rem] -tracking-[.02em]">
               {{ cart.total_price | money_with_currency }}
             </p>
           </div>
@@ -431,8 +431,8 @@
             class="flex items-center justify-between gap-1 border-b border-[color:var(--border,_#C5C5C5)] pt-[.4rem]"
             role="status"
           >
-            <h4 class="totals__subtotal text-[1.4rem] tracking-[.02em] leading-[2.6rem] uppercase">Shipping:</h4>
-            <p class="text-[1.4rem] tracking-[.02em] leading-[2.6rem] uppercase">
+            <h4 class="totals__subtotal text-[1.4rem] -tracking-[.02em] leading-[2.6rem] uppercase">Shipping:</h4>
+            <p class="text-[1.4rem] -tracking-[.02em] leading-[2.6rem] uppercase">
               {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
             </p>
           </div>
