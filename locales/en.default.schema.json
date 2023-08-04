@@ -1621,22 +1621,13 @@
       "name": "Product information",
       "blocks": {
         "text": {
-          "name": "Text",
+          "name": "Vendor",
           "settings": {
             "text": {
               "label": "Text"
             },
-            "text_style": {
-              "label": "Text style",
-              "options__1": {
-                "label": "Body"
-              },
-              "options__2": {
-                "label": "Subtitle"
-              },
-              "options__3": {
-                "label": "Uppercase"
-              }
+            "url": {
+              "label": "Url"
             }
           }
         },
