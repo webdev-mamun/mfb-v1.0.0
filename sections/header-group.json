@@ -7,7 +7,7 @@
       "settings": {
         "menu": "main-menu",
         "drawer-menu": "drawer",
-        "sticky_header_type": "reduce-logo-size",
+        "sticky_header_type": "on-scroll-up",
         "color_scheme": "background-1"
       }
     },
