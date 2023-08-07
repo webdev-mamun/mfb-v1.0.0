@@ -12,7 +12,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_2.jpg",
         "mobile_image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_2_mobile.jpg",
-        "text": "<span>%icon% is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
+        "text": "<span>%icon% is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door. This is atest!<\/span>",
         "link_text": "Learn more about us",
         "link_url": "",
         "btn_text_1": "SHOP WINES",
