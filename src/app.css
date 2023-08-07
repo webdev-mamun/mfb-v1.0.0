@@ -76,7 +76,7 @@
     }
 
     .header__heading-link {
-        padding: 9px 0;
+        padding: 1.1rem 0 .7rem;
     }
 
     body {
@@ -106,6 +106,26 @@
 @tailwind utilities;
 
 @layer components {
+    .section-header.animate {
+        @apply transition-[top] duration-[.15s] ease-out
+    }
+
+    .section-header.shopify-section-group-header-group {
+        @apply z-[3]
+    }
+
+    .shopify-section-header-sticky {
+        @apply sticky top-0
+    }
+
+    .shopify-section-header-hidden {
+        @apply -top-[calc(1_*_var(--header-height))]
+    }
+
+    .header-wrapper {
+        @apply block relative
+    }
+
     .container {
         @apply grid grid-cols-10 gap-1 px-1 lg:px-2
     }
@@ -123,7 +143,7 @@
         background-color: var(--btn-bg, #022541);
         @apply border;
         border-color: var(--btn-border, #022541);
-        @apply transition-all;
+        @apply transition-colors;
 
     }
 
@@ -154,7 +174,7 @@
         background-color: var(--btn-bg, #022541);
         @apply border;
         border-color: var(--btn-border, #022541);
-        @apply transition-all;
+        @apply transition-colors;
     }
 
     .btn-small:hover {
@@ -171,7 +191,7 @@
         @apply uppercase;
         letter-spacing: -0.28px;
         color: var(--btn-color, #151515);
-        @apply transition-all;
+        @apply transition-colors;
     }
 
     .btn-link:hover {
@@ -312,35 +332,50 @@
     .no-js .no-js-hidden {
         @apply hidden;
     }
+    .no-js:not(html) {
+        @apply hidden;
+    }
 
     .product__description, .product__description>* {@apply text-[1.4rem] leading-[1.5rem] -tracking-[.02em] lg:text-base}
 
     .product__description hr {
-        @apply mt-[5.5rem] lg:mt-[6.5rem] mb-[1.5rem]
+        @apply mt-[5.5rem] lg:mt-[6.5rem] mb-[1.5rem];
     }
 
-    .product-form__submit {
+    .product-act-btn {
         @apply flex justify-center items-center h-[5.5rem] w-full px-[3.6rem] py-[1.2rem] rounded-3xl uppercase text-[color:var(--act-btn-color,_#FFFEF7)] bg-[color:var(--act-btn-bg,_#022541)]
         text-[2rem] leading-[2.2rem] -tracking-[.02em] border border-[color:var(--act-btn-border,_#022541)] hover:text-[color:var(--act-btn-color-hover,_#FFFEF7)]
-        hover:border-[color:var(--act-btn-border-hover,_#AA9955)] hover:bg-[color:var(--act-btn-bg-hover,_#AA9955)] transition-all
+        hover:border-[color:var(--act-btn-border-hover,_#AA9955)] hover:bg-[color:var(--act-btn-bg-hover,_#AA9955)] transition-all;
     }
 
     .product-form__buttons .shopify-payment-button__button {
         @apply flex justify-center items-center h-[5.5rem] w-full px-[3.6rem] py-[1.2rem] rounded-3xl uppercase text-[color:var(--act-btn-color,_#151515)] bg-[color:var(--act-btn-bg,_transparent)]
         text-[2rem] leading-[2.2rem] -tracking-[.02em] border border-[color:var(--act-btn-border,_#151515)] hover:text-[color:var(--act-btn-color-hover,_#FFFEF7)]
-        hover:border-[color:var(--act-btn-border-hover,_#022541)] hover:bg-[color:var(--act-btn-bg-hover,_#022541)] border-solid transition-all
+        hover:border-[color:var(--act-btn-border-hover,_#022541)] hover:bg-[color:var(--act-btn-bg-hover,_#022541)] border-solid transition-all;
     }
     
     .product-form__buttons .shopify-payment-button__button--hidden {
         @apply hidden;
     }
 
+    .product-sticky-btn {
+        @apply flex justify-center items-center h-[3.1rem] text-[1.3rem] lg:text-[1.4rem] leading-[2.2rem] -tracking-[.02em] uppercase rounded-2xl border border-[color:var(--sticky-btn-border,_#FFFEF7)]
+        pt-[.2rem] lg:pt-0 px-2 min-w-[13.6rem] lg:min-w-[15.8rem];
+    }
+
+    .sticky-act-section {
+        @apply sticky top-[var(--header-height,_0)] transition-[top] duration-[.15s] ease-out;
+    }
+
+    .sticky-header-hidden .sticky-act-section {
+        @apply top-0;
+    }
 }
 
 
 
 .js-marquee span:nth-child(odd) {
-    @apply font-serif
+    @apply font-serif;
 }
 
 .js-marquee span:not(:last-child) {

@@ -1,29 +1,20 @@
-{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  @media screen and (max-width: 749px) {
-    .collection-hero--with-image .collection-hero__inner {
-      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
-    }
-  }
-{%- endstyle -%}
-
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
+<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %}">
+  <div class="collection-hero__inner container pt-2 pb-4 lg:py-7">
+    <div class="collection-hero__text-wrapper col-span-full max-w-[46rem] mx-auto text-center">
+      <h1 class="collection-hero__title text-2xl lg:text-[8.8rem] -tracking-[.02em] lg:leading-[7.4rem] first-line:font-serif first-line:-tracking-[.05em] uppercase max-w-[23rem] lg:max-w-[46rem] mx-auto">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
       </h1>
 
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- if section.settings.show_collection_description and collection.description != blank -%}
+        <div class="collection-hero__description rte text-md leading-[2rem] -tracking-[.02em] pt-2 lg:pt-4">
+          {{ collection.description }}
+        </div>
       {%- endif -%}
     </div>
 
     {%- if section.settings.show_collection_image and collection.image -%}
-      <div class="collection-hero__image-container media gradient">
+      <div class="collection-hero__image-container col-sapn-full">
         <img
           srcset="
             {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -66,12 +57,6 @@
       "default": false,
       "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
       "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
     }
   ]
 }

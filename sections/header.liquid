@@ -1,3 +1,10 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --color: #151515;
+    --bg: #FFFEF7;
+  }
+{%- endstyle -%}
+
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -76,11 +83,11 @@
 {%- if section.settings.sticky_header_type != 'none' -%}
   <sticky-header
     data-sticky-type="{{ section.settings.sticky_header_type }}"
-    class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+    class="header-wrapper text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)]"
   >
 {%- else -%}
   <div
-    class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+    class="header-wrapper"
   >
 {%- endif -%}
 <header class="container 2xl:container {% if section.settings.menu != blank %} header--has-menu{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}">
@@ -283,14 +290,17 @@
     hide() {
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      document.body.classList.add('sticky-header-hidden');
       this.closeMenuDisclosure();
       this.closeSearchModal();
+      //this.closeLoginModal();
     }
 
     reveal() {
       if (this.headerIsAlwaysSticky) return;
       this.header.classList.add('shopify-section-header-sticky', 'animate');
       this.header.classList.remove('shopify-section-header-hidden');
+      document.body.classList.remove('sticky-header-hidden');
     }
 
     reset() {
@@ -305,7 +315,12 @@
 
     closeSearchModal() {
       this.searchModal = this.searchModal || this.header.querySelector('details-modal');
-      this.searchModal.close(false);
+      if (this.searchModal) this.searchModal.close(false);
+    }
+
+    closeLoginModal() {
+      this.loginModal = this.loginModal || this.header.querySelector('login-drawer');
+      if (this.loginModal) console.dir(this.loginModal);
     }
   }
 
