@@ -11,67 +11,35 @@
         "color_scheme": "background-1"
       }
     },
-    "160eaa3b-e771-4fa9-850b-b81bed4e483b": {
-      "type": "marquee-text",
+    "292a9420-5cb2-46c7-aa48-6a4e74bd5e01": {
+      "type": "announcement-bar",
       "blocks": {
-        "sections--20004128293165__160eaa3b-e771-4fa9-850b-b81bed4e483b-marquee_text-1": {
-          "type": "marquee_text",
+        "sections--19991762239789__292a9420-5cb2-46c7-aa48-6a4e74bd5e01-announcement-1": {
+          "type": "announcement",
           "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
+            "text": "WINES AND SPIRITS FROM THE SOURCE",
+            "link": ""
           }
         },
-        "536e6a8f-5398-40d2-8a6b-ca0a03938974": {
-          "type": "marquee_text",
+        "a327a297-8c8c-4681-ac59-4be5b33137cb": {
+          "type": "announcement",
           "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
-          }
-        },
-        "09b165ef-bf4a-4899-a35a-43a8283bceb6": {
-          "type": "marquee_text",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
-          }
-        },
-        "712a1af5-1ce6-47af-b124-1ac898ed8091": {
-          "type": "marquee_text",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
-          }
-        },
-        "4ff4c3aa-8f5f-4bfc-9c81-133e47bb7d36": {
-          "type": "marquee_text",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
-          }
-        },
-        "ae250f15-e5a5-4a3a-a4f3-a10334096b79": {
-          "type": "marquee_text",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
-          }
-        },
-        "feecebf4-0a5c-4010-aa42-082cf3eaf14e": {
-          "type": "marquee_text",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE"
+            "text": "WINES AND SPIRITS FROM THE SOURCE",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "sections--20004128293165__160eaa3b-e771-4fa9-850b-b81bed4e483b-marquee_text-1",
-        "536e6a8f-5398-40d2-8a6b-ca0a03938974",
-        "09b165ef-bf4a-4899-a35a-43a8283bceb6",
-        "712a1af5-1ce6-47af-b124-1ac898ed8091",
-        "4ff4c3aa-8f5f-4bfc-9c81-133e47bb7d36",
-        "ae250f15-e5a5-4a3a-a4f3-a10334096b79",
-        "feecebf4-0a5c-4010-aa42-082cf3eaf14e"
+        "sections--19991762239789__292a9420-5cb2-46c7-aa48-6a4e74bd5e01-announcement-1",
+        "a327a297-8c8c-4681-ac59-4be5b33137cb"
       ],
       "settings": {
+        "show_home_only": true
       }
     }
   },
   "order": [
     "header",
-    "160eaa3b-e771-4fa9-850b-b81bed4e483b"
+    "292a9420-5cb2-46c7-aa48-6a4e74bd5e01"
   ]
 }
