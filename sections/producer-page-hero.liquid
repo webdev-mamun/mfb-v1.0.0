@@ -1,0 +1,80 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      --color: #FFFEF7;
+      --bg: #022541;
+  }
+{%- endstyle -%}
+{%- liquid
+  assign title = section.settings.title | replace_first: ' ', '<br/>'
+  assign name = section.settings.name
+  assign image = section.settings.image
+  if section.settings.mobile_image != blank
+    assign mobile_image = section.settings.mobile_image
+  else
+    assign mobile_image = image
+  endif
+-%}
+<div class="producer-hero pt-[4.5rem] pb-[3.5rem] text-[color:var(--color,_#FFFEF7)] bg-[color:var(--bg,_#022541)]">
+  <div class="container gap-y-[5.5rem] lg:gap-y-0">
+    <div class="col-span-full lg:col-span-7 text-center lg:text-left flex flex-col justify-between gap-y-1">
+      {%- if title != blank -%}
+        <h1 class="text-2xl lg:text-4xl font-serif lg:font-sans">{{ title }}</h1>
+      {%- endif -%}
+      {%- if name != blank -%}
+        <p class="uppercase">{{ name }}</p>
+      {%- endif -%}
+    </div>
+    <div class="col-span-full lg:col-span-3 flex flex-col gap-10">
+      {%- if image != blank -%}
+        {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+        {%- capture sizes -%}
+        (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+        (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+      {%- endcapture -%}
+        {{
+          image
+          | image_url: width: 1920
+          | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+        }}
+        {{
+          mobile_image
+          | image_url: width: 1920
+          | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
+        }}
+      {%- endif -%}
+      <p class="uppercase text-xs text-center lg:hidden">start reading</p>
+    </div>
+  </div>
+</div>
+
+{%- schema -%}
+{
+  "name": "Producer hero",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Producer title"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "Producer name"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Image (Mobile)"
+    }
+  ]
+}
+{%- endschema -%}

@@ -1,0 +1,194 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      --color: #151515;
+      --bg: #FFFEF7;
+      --border: #C5C5C5;
+  }
+{%- endstyle -%}
+{%- liquid
+  assign logo = section.settings.logo
+  assign country = section.settings.country
+  assign region = section.settings.region
+  assign appelation = section.settings.appelation
+  assign grapes = section.settings.grapes
+  assign farming = section.settings.farming
+  assign production = section.settings.production
+  assign geology = section.settings.geology
+-%}
+<div class="producer-info pt-2 pb-8 lg:pt-[8.5rem] lg:pb-[14.5rem] text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] border-b border-[color:var(--border,_#C5C5C5)]">
+  <div class="container">
+    <ul class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2 px-2">
+      <li class="col-span-full lg:col-span-2 text-sm lg:text-base text-center lg:text-left border-b border-[color:var(--border,_#C5C5C5)] lg:border-none pb-1 lg:pb-0 text-[color:var(--border,_#C5C5C5)] lg:text-[color:var(--color,_#151515)]">
+        INFORMATION
+      </li>
+      {%- if logo != blank -%}
+        <li class="col-span-1">
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem] hidden lg:block">Logo</p>
+          <div class="w-full max-w-[16rem] mx-auto">
+            {{- logo | image_url: width: logo.width | image_tag: loading: 'lazy', class: 'text-center lg:text-left' -}}
+          </div>
+        </li>
+      {%- endif -%}
+      {%- if country != blank
+        or region != blank
+        or appelation != blank
+        or grapes != blank
+        or farming != blank
+        or production != blank
+        or geology != blank
+      -%}
+        <li class="lg:hidden col-span-1 flex flex-col gap-2{% if logo != blank %} col-start-2{% endif %}">
+          {%- if country != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">COUNTRY:</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ country }}</p>
+            </div>
+          {%- endif -%}
+          {%- if region != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">REGION:</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ region }}</p>
+            </div>
+          {%- endif -%}
+          {%- if appelation != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">APPELATION(S):</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ appelation }}</p>
+            </div>
+          {%- endif -%}
+          {%- if grapes != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem] ">GRAPES:</p>
+              <div class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] [&>*]:text-[1.4rem] [&>*]:leading-[1.8rem] [&>*]:-tracking-[.02em]">
+                {{ grapes }}
+              </div>
+            </div>
+          {%- endif -%}
+          {%- if farming != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">FARMING:</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ farming }}</p>
+            </div>
+          {%- endif -%}
+          {%- if production != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">ANNUAL PRODUCTION:</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ production }}</p>
+            </div>
+          {%- endif -%}
+          {%- if geology != blank -%}
+            <div>
+              <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">GEOLOGY:</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ geology }}</p>
+            </div>
+          {%- endif -%}
+        </li>
+      {%- endif -%}
+      {%- if country != blank or region != blank -%}
+        <li class="col-span-1 flex-col gap-2 hidden lg:flex">
+          {%- if country != blank -%}
+            <div>
+              <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">COUNTRY:</p>
+              <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ country }}</p>
+            </div>
+          {%- endif -%}
+          {%- if region != blank -%}
+            <div>
+              <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">REGION:</p>
+              <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ region }}</p>
+            </div>
+          {%- endif -%}
+        </li>
+      {%- endif -%}
+      {%- if appelation != blank -%}
+        <li class="col-span-1 hidden lg:block">
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">APPELATION(S):</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ appelation }}</p>
+        </li>
+      {%- endif -%}
+      {%- if grapes != blank -%}
+        <li class="col-span-1 hidden lg:block">
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">GRAPES:</p>
+          <div class="text-[1.4rem] leading-[2rem] -tracking-[.02em] [&>*]:text-[1.4rem] [&>*]:leading-[2rem] [&>*]:-tracking-[.02em]">
+            {{ grapes }}
+          </div>
+        </li>
+      {%- endif -%}
+      {%- if farming != blank -%}
+        <li class="col-span-1 hidden lg:block">
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem] ">FARMING:</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ farming }}</p>
+        </li>
+      {%- endif -%}
+      {%- if production != blank -%}
+        <li class="col-span-1 hidden lg:block">
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">ANNUAL PRODUCTION:</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ production }}</p>
+        </li>
+      {%- endif -%}
+      {%- if geology != blank -%}
+        <li class="col-span-1 hidden lg:block">
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">GEOLOGY:</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ geology }}</p>
+        </li>
+      {%- endif -%}
+    </ul>
+  </div>
+</div>
+
+{%- schema -%}
+{
+  "name": "Producer info",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "country",
+      "label": "Country",
+      "default": "France"
+    },
+    {
+      "type": "text",
+      "id": "region",
+      "label": "Region",
+      "default": "Southwest"
+    },
+    {
+      "type": "text",
+      "id": "appelation",
+      "label": "Appelation",
+      "default": "Gaillac"
+    },
+    {
+      "type": "richtext",
+      "id": "grapes",
+      "label": "Grapes",
+      "default": "<p>Braucol, Duras, Merlot, Syrah, Mauzac, Loin de l’oeil, Cabernet, Sauvignon</p>"
+    },
+    {
+      "type": "text",
+      "id": "farming",
+      "label": "Farming",
+      "default": "Biodynamic and certified organic"
+    },
+    {
+      "type": "text",
+      "id": "production",
+      "label": "Production",
+      "default": "5,000 Cases"
+    },
+    {
+      "type": "text",
+      "id": "geology",
+      "label": "Geology",
+      "default": "Grey limestone"
+    }
+  ]
+}
+{%- endschema -%}

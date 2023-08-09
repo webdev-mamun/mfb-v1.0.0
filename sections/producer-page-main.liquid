@@ -1,0 +1,41 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      --color: #151515;
+      --bg: #FFFEF7;
+      --border: #C5C5C5;
+  }
+{%- endstyle -%}
+{%- liquid
+  assign overview = section.settings.overview
+  assign description = section.settings.description
+-%}
+<div class="producer-main pt-2 pb-8 lg:pt-[8.5rem] lg:pb-[14.5rem] text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] border-b border-[color:var(--border,_#C5C5C5)]">
+  {%- if overview != blank -%}
+    <div class="w-full max-w-[115.6rem] mx-auto producer-overview px-4">{{ overview }}</div>
+  {%- endif -%}
+  {% if description != blank %}
+    <div class="w-full max-w-[93rem] mx-auto producer-description px-6 mt-2">{{ description }}</div>
+  {%- endif -%}
+</div>
+
+{%- schema -%}
+{
+  "name": "Producer overview content",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "overview",
+      "label": "Overview",
+      "default": "<p>For nearly a decade, Damien Bonnet has been a pioneering lodestar of the renewal of Gaillac, one of France’s oldest winemaking appellations. Though nearly equidistant from the Atlantic and the Mediterranean coasts, Gaillac was heavily influenced by Bordeaux for the last half-century at the expense of its rich and rare collection of native grapes. Damien has tossed Cabernet aside to focus on food-friendly heirloom varieties like Braucol, Duras and Mauzac!</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Since taking over in 2008, Damien has turned Domaine de Brin into one of the pioneering lodestars of the renewal of Gaillac. Under his father and previous generations, the family's 14 hectares of grapes were sold to the local cooperative. Damien decided from the outset to make his own wines, with the strong conviction to vinify mostly undersung local varietals like Braucol, Duras and Mauzac instead of the Cabernet Sauvignon plants his father had put in.</p>"
+    }
+  ]
+}
+{%- endschema -%}

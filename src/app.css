@@ -370,16 +370,21 @@
     .sticky-header-hidden .sticky-act-section {
         @apply top-0;
     }
+
+    
 }
 
-
-
-.js-marquee span:nth-child(odd) {
-    @apply font-serif;
+.producer-overview .metafield-multi_line_text_field,
+.producer-overview p {
+    @apply font-serif text-[3.2rem] leading-[3.6rem] -tracking-[.05em] indent-6 lg:text-2xl lg:leading-normal lg:indent-[14rem]
 }
 
-.js-marquee span:not(:last-child) {
-    @apply mr-6;
+.producer-description .metafield-rich_text_field {
+    @apply lg:columns-2 gap-2
+}
+
+.producer-description .metafield-rich_text_field> * {
+   @apply mb-2 text-base -tracking-[.02em]
 }
 
 #menu-drawer {

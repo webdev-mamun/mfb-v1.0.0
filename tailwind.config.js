@@ -10,6 +10,7 @@ module.exports = {
     './templates/*.liquid',
     './templates/*.json',
     './templates/customers/*.liquid',
+    './templates/metaobject/*.liquid',
     './locales/*.json',
   ],
   theme: {
