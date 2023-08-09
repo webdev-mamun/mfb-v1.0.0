@@ -3,38 +3,38 @@
     "hero": {
       "type": "producer-page-hero",
       "settings": {
-        "title": "{{ metaobject.title.value }}",
-        "name": "{{ metaobject.name.value }}",
-        "image": "{{ metaobject.image.value }}",
-        "mobile_image": "{{ metaobject.image_mobile.value }}"
+        "title": "{{ page.metafields.custom.producers.value.title.value }}",
+        "name": "{{ page.metafields.custom.producers.value.name.value }}",
+        "image": "{{ page.metafields.custom.producers.value.image.value }}",
+        "mobile_image": "{{ page.metafields.custom.producers.value.image_mobile.value }}"
       }
     },
     "main": {
       "type": "producer-page-main",
       "settings": {
-        "overview": "<p>{{ metaobject.overview | metafield_tag }}<\/p>",
-        "description": "{{ metaobject.description | metafield_tag }}"
+        "overview": "<p>{{ page.metafields.custom.producers.value.overview | metafield_tag }}<\/p>",
+        "description": "{{ page.metafields.custom.producers.value.description | metafield_tag }}"
       }
     },
     "info": {
       "type": "producer-informetion",
       "settings": {
-        "logo": "{{ metaobject.information.value.logo.value }}",
-        "country": "{{ metaobject.information.value.country.value }}",
-        "region": "{{ metaobject.information.value.region.value }}",
-        "appelation": "{{ metaobject.information.value.appelation_s.value }}",
-        "grapes": "<p>{{ metaobject.information.value.grapes | metafield_tag }}<\/p>",
-        "farming": "{{ metaobject.information.value.farming.value }}",
-        "production": "{{ metaobject.information.value.annual_production.value }}",
-        "geology": "{{ metaobject.information.value.geology.value }}"
+        "logo": "{{ page.metafields.custom.producers.value.information.value.logo.value }}",
+        "country": "France",
+        "region": "Southwest",
+        "appelation": "Gaillac",
+        "grapes": "<p>Braucol, Duras, Merlot, Syrah, Mauzac, Loin de l’oeil, Cabernet, Sauvignon<\/p>",
+        "farming": "Biodynamic and certified organic",
+        "production": "5,000 Cases",
+        "geology": "Grey limestone"
       }
     },
-    "f081b94e-cd20-4617-a64a-03cd95c4be9c": {
+    "collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "more by {{ section.settings.collection.title }}",
-        "collection": "{{ metaobject.collection.value }}",
-        "btn": "SHOP ALL BY THIS PRODUCER"
+        "title": "Drink by <br>producer",
+        "collection": "{{ page.metafields.custom.producers.value.collection.value }}",
+        "btn": "SHOP ALL by this producer"
       }
     }
   },
@@ -42,6 +42,6 @@
     "hero",
     "main",
     "info",
-    "f081b94e-cd20-4617-a64a-03cd95c4be9c"
+    "collection"
   ]
 }
