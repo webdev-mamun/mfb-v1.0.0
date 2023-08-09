@@ -61,14 +61,14 @@
         {%- if vendor.value.title != blank -%}
           {%- if vendor.value.page != blank -%}
             <a
-              href="{{ vendor.value.page }}"
+              href="{{ pages[vendor.value.page].url }}"
               class="font-sans text-sm leading-[1.5rem] tracking-[-.02em] uppercase mb-.5"
             >
               {{ vendor.value.title }}
             </a>
           {%- else -%}
             <p class="font-sans text-sm leading-[1.5rem] tracking-[-.02em] uppercase mb-.5">
-              {{ vendor.value.name }}
+              {{ vendor.value.title }}
             </p>
           {%- endif -%}
         {%- endif -%}

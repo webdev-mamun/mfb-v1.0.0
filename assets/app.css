@@ -1783,6 +1783,10 @@ p.card-act-btn, .base-text.card-act-btn {
   max-width: 115.6rem;
 }
 
+.max-w-\[16rem\] {
+  max-width: 16rem;
+}
+
 .max-w-\[22\.6rem\] {
   max-width: 22.6rem;
 }
@@ -1841,10 +1845,6 @@ p.card-act-btn, .base-text.card-act-btn {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-\[16rem\] {
-  max-width: 16rem;
 }
 
 .shrink {
@@ -3198,10 +3198,6 @@ p.producer-overview .metafield-multi_line_text_field, .base-text.producer-overvi
 
   .lg\:col-start-8 {
     grid-column-start: 8;
-  }
-
-  .lg\:col-start-auto {
-    grid-column-start: auto;
   }
 
   .lg\:col-end-10 {

@@ -1,41 +1,16 @@
 {
   "sections": {
     "hero": {
-      "type": "producer-page-hero",
-      "settings": {
-        "title": "{{ page.metafields.custom.producers.value.title.value }}",
-        "name": "{{ page.metafields.custom.producers.value.name.value }}",
-        "image": "{{ page.metafields.custom.producers.value.image.value }}",
-        "mobile_image": "{{ page.metafields.custom.producers.value.image_mobile.value }}"
-      }
+      "type": "producer-page-hero"
     },
     "main": {
-      "type": "producer-page-main",
-      "settings": {
-        "overview": "<p>{{ page.metafields.custom.producers.value.overview | metafield_tag }}<\/p>",
-        "description": "{{ page.metafields.custom.producers.value.description | metafield_tag }}"
-      }
+      "type": "producer-page-main"
     },
     "info": {
-      "type": "producer-informetion",
-      "settings": {
-        "logo": "{{ page.metafields.custom.producers.value.information.value.logo.value }}",
-        "country": "France",
-        "region": "Southwest",
-        "appelation": "Gaillac",
-        "grapes": "<p>Braucol, Duras, Merlot, Syrah, Mauzac, Loin de l’oeil, Cabernet, Sauvignon<\/p>",
-        "farming": "Biodynamic and certified organic",
-        "production": "5,000 Cases",
-        "geology": "Grey limestone"
-      }
+      "type": "producer-informetion"
     },
     "collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Drink by <br>producer",
-        "collection": "{{ page.metafields.custom.producers.value.collection.value }}",
-        "btn": "SHOP ALL by this producer"
-      }
+      "type": "featured-collection"
     }
   },
   "order": [

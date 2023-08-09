@@ -3,12 +3,11 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "2daf2a43-4347-49a8-8a0c-2516e94c8bc2": {
+        "791c2280-69ad-4bfe-b48c-28ed3236c848": {
           "type": "vendor",
-          "source": "{{ product.metafields.custom.vendor.value }}",
           "settings": {
-            "text": "{{ product.metafields.custom.vendor.value.title.value }}",
-            "url": "{{ product.metafields.custom.vendor.value.page.value }}"
+            "text": "{{ block.settings.page.title }}",
+            "page": "{{ product.metafields.custom.vendor.value.page.value }}"
           }
         },
         "title": {
@@ -41,7 +40,7 @@
         }
       },
       "block_order": [
-        "2daf2a43-4347-49a8-8a0c-2516e94c8bc2",
+        "791c2280-69ad-4bfe-b48c-28ed3236c848",
         "title",
         "price",
         "quantity_selector",

@@ -158,10 +158,11 @@
                 {%- when '@app' -%}
                   {% render block %}
                 {%- when 'vendor' -%}
+                  {%- assign page_url = pages[block.settings.page].url -%}
                   <div class="" {{ block.shopify_attributes }}>
-                    {%- if block.settings.url != blank -%}
+                    {%- if page_url != blank -%}
                       <a
-                        href="{{ block.settings.url }}"
+                        href="{{ page_url }}"
                         class="big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase"
                       >
                         {{- block.settings.text -}}
@@ -556,9 +557,9 @@
           "label": "t:sections.main-product.blocks.text.settings.text.label"
         },
         {
-          "type": "url",
-          "id": "url",
-          "label": "Url"
+          "type": "page",
+          "id": "page",
+          "label": "Page"
         }
       ]
     },

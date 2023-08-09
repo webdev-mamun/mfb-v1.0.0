@@ -1,0 +1,99 @@
+{%- liquid
+  assign image = section.settings.image | default: collection.image
+  assign image_mobile = section.settings.image_mobile
+  if section.settings.image_mobile == blank
+    assign image_mobile = image
+  endif
+-%}
+<div class="collection-hero{% if section.settings.show_collection_image %} collection-hero--with-image{% endif %}">
+  <div class="collection-hero__inner container pt-2 pb-4 lg:py-7">
+    <div class="collection-hero__text-wrapper col-span-full max-w-[46rem] mx-auto text-center">
+      <h1 class="collection-hero__title text-2xl lg:text-[8.8rem] -tracking-[.02em] lg:leading-[7.4rem] first-line:font-serif first-line:-tracking-[.05em] uppercase">
+        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+        INTRODUCING <br>
+        {{- collection.title | escape -}}
+      </h1>
+
+      {%- if section.settings.show_collection_description and collection.description != blank -%}
+        <div class="collection-hero__description rte text-md leading-[2rem] -tracking-[.02em] pt-2 lg:pt-4">
+          {{ collection.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_collection_image -%}
+      <div class="collection-hero__image-container col-sapn-full">
+        <img
+          srcset="
+            {%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if image.width >= 360 -%}{{ image | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if image.width >= 535 -%}{{ image | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if image.width >= 750 -%}{{ image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if image.width >= 1070 -%}{{ image | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if image.width >= 1500 -%}{{ image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ image | image_url }} {{ image.width }}w
+          "
+          src="{{ image | image_url: width: 750 }}"
+          sizes="(min-width: {{ 1440 }}px) {{ 1440| minus: 40 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+          alt=""
+          width="{{ image.width }}"
+          height="{{ image.width | divided_by: image.aspect_ratio }}"
+          class="hidden lg:block"
+        >
+        <img
+          srcset="
+            {%- if image_mobile.width >= 165 -%}{{ image_mobile | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if image_mobile.width >= 360 -%}{{ image_mobile | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if image_mobile.width >= 535 -%}{{ image_mobile | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if image_mobile.width >= 750 -%}{{ image_mobile | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if image_mobile.width >= 1070 -%}{{ image_mobile | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if image_mobile.width >= 1500 -%}{{ image_mobile | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ image_mobile | image_url }} {{ image_mobile.width }}w
+          "
+          src="{{ image_mobile | image_url: width: 750 }}"
+          sizes="(min-width: {{ 1440 }}px) {{ 1440| minus: 40 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+          alt=""
+          width="{{ image_mobile.width }}"
+          height="{{ image_mobile.width | divided_by: image_mobile.aspect_ratio }}"
+          class="lg:hidden"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.producer-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.producer-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.producer-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.producer-collection-banner.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:sections.producer-collection-banner.settings.image_mobile.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.producer-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.producer-collection-banner.settings.show_collection_image.info"
+    }
+  ]
+}
+{% endschema %}
