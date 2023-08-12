@@ -12,7 +12,9 @@
       }
     },
     "announcement-bar": {
-      "type": "announcement-bar"
+      "type": "announcement-bar",
+      "settings": {
+      }
     }
   },
   "order": [

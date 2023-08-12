@@ -119,7 +119,6 @@
             "label": "t:settings_schema.colors.settings.button_border_hover.label",
             "default": "#AA9955"
           },
-
           {
             "type": "color",
             "id": "secondary_button_label",
