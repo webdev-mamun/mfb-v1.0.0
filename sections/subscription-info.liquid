@@ -1,3 +1,13 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --bg-image: url('{{ mobile_image | image_url: width: '1024' }}');
+  }
+{%- endstyle -%}
+
 {%- liquid
   assign title = section.settings.title
   assign icon = section.settings.icon
@@ -16,19 +26,7 @@
   {% assign title = title | replace: '%icon%', inline_icon %}
 {% endif %}
 
-{%- style -%}
-  #shopify-section-{{ section.id }} {
-    --color: #FFFEF7;
-    --bg: #022541;
-    --btn-color: var(--color);
-    --btn-bg: var(--bg);
-    --btn-color-hover: var(--color);
-    --btn-bg-hover: var(--bg);
-    --bg-image: url('{{ mobile_image | image_url: width: '1024' }}');
-  }
-{%- endstyle -%}
-
-<div class="subscription-info text-[color:var(--color)]{% unless mobile_image == blank%} bg-[image:var(--bg-image)] bg-no-repeat bg-cover{% else %} bg-[color:var(--bg)]{% endunless %} lg:bg-none lg:bg-[color:var(--bg)]">
+<div class="subscription-info  section-padding color-{{ section.settings.color_scheme }}{% unless mobile_image == blank%} bg-[image:var(--bg-image)] bg-no-repeat bg-cover lg:bg-none{% endunless %}">
   <div class="container px-0 xl:px-0">
     <div class="col-span-4 hidden lg:block">
       {%- if image != blank -%}
@@ -131,6 +129,57 @@
       "type": "url",
       "id": "url",
       "label": "Url"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 0
     }
   ],
   "blocks": [

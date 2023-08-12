@@ -14,7 +14,7 @@
   }
 {%- endstyle -%}
 
-<footer class="footer  pt-2 pb-6 border-t border-[color:var(--section-divider)] color-[color:var(--color)] bg-[color:var(--bg)]">
+<footer class="footer color-{{ section.settings.color_scheme }} pt-2 pb-6 border-t border-[color:var(--section-divider)] color-[color:var(--color)] bg-[color:var(--bg)]">
   <div class="container lg:container">
     {%- if settings.footer_brand_image != blank -%}
       <div class="col-span-full">
@@ -223,6 +223,13 @@
       "type": "link_list",
       "id": "bottom_menu",
       "label": "t:sections.footer.settings.bottom_menu.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
     }
   ],
   "default": {

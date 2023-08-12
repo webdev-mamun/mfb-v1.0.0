@@ -190,12 +190,12 @@
         @apply relative;
         @apply uppercase;
         letter-spacing: -0.28px;
-        color: var(--btn-color, #151515);
+        color: var(--color-link, #151515);
         @apply transition-colors;
     }
 
     .btn-link:hover {
-        color: var(--btn-color-hover, #AA9955);
+        color: var(--color-link-hover, #AA9955);
     }
 
     .visually-hidden {

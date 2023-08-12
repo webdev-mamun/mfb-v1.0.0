@@ -124,6 +124,9 @@
         "text": {
           "label": "Text"
         },
+        "button__header": {
+          "content": "Buttons"
+        },
         "button_background": {
           "label": "Button background"
         },
@@ -143,10 +146,25 @@
           "label": "Button border on hover"
         },
         "secondary_button_label": {
-          "label": "Outline button"
+          "label": "Link button label"
         },
-        "shadow": {
-          "label": "Shadow"
+        "secondary_button_label_hover": {
+          "label": "Link button label on hover"
+        },
+        "link__header": {
+          "content": "Links"
+        },
+        "link_label": {
+          "label": "Link"
+        },
+        "link_label_hover": {
+          "label": "Link on hover"
+        },
+        "divider__header": {
+          "content": "Divider"
+        },
+        "divider": {
+          "label": "Section divider and border"
         }
       }
     },

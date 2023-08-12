@@ -1,13 +1,11 @@
 <script src="{{ 'producers-slider.js' | asset_url }}" defer="defer"></script>
 {% style %}
-    #shopify-section-{{ section.id }} {
-        --btn-color: #FFFEF7;
-        --btn-bg: transparent;
-        --btn-border: #FFFEF7;
-        --btn-color-hover: #FFFEF7;
-        --btn-bg-hover: transparent;
-        --btn-border-hover: #FFFEF7;
-    }
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
   .splide__slide .producer-image {
     opacity: 0;
   }
@@ -16,7 +14,7 @@
     opacity: 1;
   }
 {% endstyle %}
-<div class="producers-section lg:pt-9 lg:pb-9 pt-7 pb-10 bg-[#022541] text-[#FFFEF7]">
+<div class="producers-section section-padding color-{{ section.settings.color_scheme }}">
   <div
     class="container lg:container"
   >
@@ -145,6 +143,57 @@
       "type": "url",
       "id": "url",
       "label": "Url"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 90
     }
   ],
   "blocks": [
