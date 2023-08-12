@@ -135,22 +135,22 @@
         text-align: center;
         font-size: 1.3rem;
         line-height: 2.2rem; /* 110% */
-        letter-spacing: -0.26px;
+        letter-spacing: -.02em;
         @apply uppercase;
         padding: 1.2rem 3.5rem 1rem;
         border-radius: 1rem;
-        color: var(--btn-color, #FFFEF7);
-        background-color: var(--btn-bg, #022541);
+        color: var(--color-button-text, #FFFEF7);
+        background-color: var(--color-button, #022541);
+        border-color: var(--color-button-border, #022541);
         @apply border;
-        border-color: var(--btn-border, #022541);
         @apply transition-colors;
 
     }
 
     .btn:hover {
-        color: var(--btn-color-hover, #FFFEF7);
-        background-color: var(--btn-bg-hover, #AA9955);
-        border-color: var(--btn-border-hover, #AA9955);
+        color: var(--color-button-text-hover, #FFFEF7);
+        background-color: var(--color-button-hover, #AA9955);
+        border-color: var(--color-button-border-hover, #AA9955);
     }
 
     @media (min-width: 1024px) {
@@ -170,17 +170,17 @@
         letter-spacing: -.02em;
         padding: .35rem 1.5rem .25rem;
         border-radius: .2rem;
-        color: var(--btn-color, #FFFEF7);
-        background-color: var(--btn-bg, #022541);
         @apply border;
-        border-color: var(--btn-border, #022541);
+        color: var(--color-button-text, #FFFEF7);
+        background-color: var(--color-button, #022541);
+        border-color: var(--color-button-border, #022541);
         @apply transition-colors;
     }
 
     .btn-small:hover {
-        color: var(--btn-color-hover, #FFFEF7);
-        background-color: var(--btn-bg-hover, #AA9955);
-        border-color: var(--btn-border-hover, #AA9955);
+        color: var(--color-button-text-hover, #FFFEF7);
+        background-color: var(--color-button-hover, #AA9955);
+        border-color: var(--color-button-border-hover, #AA9955);
     }
 
     .btn-link {
@@ -247,27 +247,49 @@
         @apply px-1;
         @apply py-[.85rem];
         @apply border-y;
-        @apply text-[color:var(--act-btn-border)];
-        @apply bg-[color:var(--act-btn-bg)];
-        @apply border-[color:var(--act-btn-border)];
-        @apply enabled:text-[color:var(--act-btn-color)];
-        @apply enabled:bg-[color:var(--act-btn-bg)];
-        @apply enabled:hover:text-[color:var(--act-btn-color-hover)];
-        @apply enabled:hover:bg-[color:var(--act-btn-bg-hover)];
-        @apply enabled:hover:border-[color:var(--act-btn-border-hover)];
+
+        @apply text-[color:var(--color-button-border,_#DCDCDC)];
+        @apply bg-[color:var(--color-button,_#FFFEF7)];
+        @apply border-[color:var(--color-button-border,_#DCDCDC)];
+        @apply enabled:text-[color:var(--color-button-text,_#151515)];
+        @apply enabled:bg-[color:var(--color-button,_#FFFEF7)];
+
+        @apply enabled:hover:text-[color:var(--color-button-text-hover,_#FFFEF7)];
+        @apply enabled:hover:bg-[color:var(--color-button-hover,_#022541)];
+        @apply enabled:hover:border-[color:var(--color-button-border-hover,_#022541)];
+        @apply [&.loading]:hover:text-transparent;
+        @apply [&.loading]:hover:bg-[color:var(--color-button,_transparent)];
+        @apply [&.loading]:hover:border-[color:var(--color-button-border,_#DCDCDC)];
+
         @apply transition-all;
         @apply relative;
-        @apply [&.loading]:hover:text-transparent;
-        @apply [&.loading]:hover:bg-[color:var(--act-btn-bg)];
-        @apply [&.loading]:hover:border-[color:var(--act-btn-border)];
     }
 
-    .card-act-btn circle{
-        @apply transition-all;
+    .card-act-btn:disabled .plus-icon circle {
+        @apply fill-[color:var(--color-button-border,_#DCDCDC)]
+        transition-all;
     }
 
-    .card-act-btn line {
-        @apply transition-all;
+    .card-act-btn .plus-icon circle {
+        @apply fill-[color:var(--color-button-hover,_#022541)]
+        transition-all;
+    }
+
+    .card-act-btn:not(:disabled):hover .plus-icon circle {
+        @apply fill-[color:var(--color-button-text-hover,_#FFFEF7)]
+    }
+
+    .card-act-btn:disabled .plus-icon line {
+        @apply stroke-[color:var(--color-button-text-hover,_#FFFEF7)]
+    }
+
+    .card-act-btn .plus-icon line {
+        @apply stroke-[color:var(--color-button,_#FFFEF7)]
+        transition-all;
+    }
+
+    .card-act-btn:not(:disabled):hover .plus-icon line {
+        @apply stroke-[color:var(--color-button-hover,_#022541)]
     }
 
     .loading-overlay--spinner {
@@ -371,7 +393,33 @@
         @apply top-0;
     }
 
+    .icon-plus-minus {
+        @apply w-[1.6rem] h-[1.6rem] relative;
+    }
+
+    .icon-plus-minus::after,
+    .icon-plus-minus::before {
+        content: '';
+        @apply absolute w-full h-[.1rem] top-1/2 -translate-y-1/2 bg-black
+    }
+
+    .icon-plus-minus::after {
+        @apply rotate-90
+    }
     
+    .group[open] .icon-plus-minus::after {
+        @apply rotate-0
+    }
+    
+    .gradient {
+        background: rgb(var(--color-background));
+        background: var(--gradient-background);
+        background-attachment: fixed;
+    }
+
+    .section-padding {
+        @apply pt-[var(--padding-top,_1rem)] pb-[var(--padding-bottom,_1rem)] md:pt-[var(--padding-top-desktop,_2rem)] md:pb-[var(--padding-bottom-desktop,_2rem)];
+    }
 }
 
 .producer-overview .metafield-multi_line_text_field,

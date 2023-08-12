@@ -1,0 +1,138 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+<div class="section-padding color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <div class="col-span-full hidden md:grid grid-cols-10 gap-y-2 gap-x-4">
+      <div class="md:col-span-4 grid grid-cols-2 grid-rows-{{ section.blocks.size }} gap-2 h-min">
+        {%- for block in section.blocks -%}
+          <div class="odd:col-start-1 even:col-start-2 row-start-{{ forloop.index }}">
+            {%- assign image = block.settings.image -%}
+            <img
+              src="{{ image | image_url: width: 400 }}"
+              alt="{{ image.alt }}"
+              width="300"
+              height="{{ 300 | divided_by: image.aspect_ratio }}"
+              class="rounded-2xl"
+            >
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="md:col-span-6 grid lg:grid-cols-2 h-min gap-x-4 gap-y-2">
+        {%- for block in section.blocks -%}
+          <div class="col-span-1 flex flex-col gap-2">
+            {{ block.settings.text | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="col-span-full flex flex-col gap-2 md:hidden">
+      {%- for block in section.blocks -%}
+        <div class="grid grid-cols-10 gap-2">
+          <div class="col-span-3">
+            {%- assign image = block.settings.image -%}
+            <img
+              src="{{ image | image_url: width: 400 }}"
+              alt="{{ image.alt }}"
+              width="300"
+              height="{{ 300 | divided_by: image.aspect_ratio }}"
+              class="rounded-2xl"
+            >
+          </div>
+          <div class="col-span-7 flex flex-col gap-2">
+            {{ block.settings.text | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.producer-collection-info.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.producer-collection-info.settings.paragraph.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info",
+      "name": "t:sections.producer-collection-info.blocks.info.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.producer-collection-info.blocks.info.settings.image.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.producer-collection-info.blocks.info.settings.richtext.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

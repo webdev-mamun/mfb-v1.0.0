@@ -11,35 +11,12 @@
         "color_scheme": "background-1"
       }
     },
-    "292a9420-5cb2-46c7-aa48-6a4e74bd5e01": {
-      "type": "announcement-bar",
-      "blocks": {
-        "sections--19991762239789__292a9420-5cb2-46c7-aa48-6a4e74bd5e01-announcement-1": {
-          "type": "announcement",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE",
-            "link": ""
-          }
-        },
-        "a327a297-8c8c-4681-ac59-4be5b33137cb": {
-          "type": "announcement",
-          "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "sections--19991762239789__292a9420-5cb2-46c7-aa48-6a4e74bd5e01-announcement-1",
-        "a327a297-8c8c-4681-ac59-4be5b33137cb"
-      ],
-      "settings": {
-        "show_home_only": true
-      }
+    "announcement-bar": {
+      "type": "announcement-bar"
     }
   },
   "order": [
     "header",
-    "292a9420-5cb2-46c7-aa48-6a4e74bd5e01"
+    "announcement-bar"
   ]
 }

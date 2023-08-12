@@ -125,10 +125,22 @@
           "label": "Text"
         },
         "button_background": {
-          "label": "Solid button background"
+          "label": "Button background"
         },
         "button_label": {
-          "label": "Solid button label"
+          "label": "Button label"
+        },
+        "button_border": {
+          "label": "Button border"
+        },
+        "button_background_hover": {
+          "label": "Button background on hover"
+        },
+        "button_label_hover": {
+          "label": "Button label on hover"
+        },
+        "button_border_hover": {
+          "label": "Button border on hover"
         },
         "secondary_button_label": {
           "label": "Outline button"
@@ -451,8 +463,10 @@
       },
       "padding": {
         "section_padding_heading": "Section padding",
-        "padding_top": "Top padding",
-        "padding_bottom": "Bottom padding"
+        "padding_top_desktop": "Top padding",
+        "padding_bottom_desktop": "Bottom padding",
+        "padding_top": "Top padding mobile",
+        "padding_bottom": "Bottom padding mobile"
       },
       "spacing": "Spacing",
       "colors": {
@@ -1408,7 +1422,7 @@
       "name": "Collection banner (Producer)",
       "settings": {
         "paragraph": {
-          "content": "Add a description or image by editing your collection. [Learn more](https:\/\/help.shopify.com\/manual\/products\/collections\/collection-layout)"
+          "content": "Add a description by editing your collection [Learn more](https:\/\/help.shopify.com\/manual\/products\/collections\/collection-layout) and add image by editing your vaedor metaobject. [Learn more](https:\/\/help.shopify.com\/manual\/custom-data\/metaobjects\/creating-entries#create-a-new-entry)"
         },
         "show_collection_description": {
           "label": "Show collection description"
@@ -1422,6 +1436,27 @@
         "show_collection_image": {
           "label": "Show collection image",
           "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+        }
+      }
+    },
+    "producer-collection-info": {
+      "name": "Collection extra info (Producer)",
+      "settings": {
+        "paragraph": {
+          "content": "Add image and text content by editing your vaedor metaobject. [Learn more](https:\/\/help.shopify.com\/manual\/custom-data\/metaobjects\/creating-entries#create-a-new-entry)"
+        }
+      },
+      "blocks": {
+        "info": {
+          "name": "Extra enfo",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "richtext": {
+              "label": "Text"
+            }
+          }
         }
       }
     },

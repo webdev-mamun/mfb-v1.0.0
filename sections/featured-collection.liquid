@@ -15,7 +15,7 @@
     grid-column: span 2 / span 2;
   }
 
-  #shopify-section-{{ section.id }} {
+  {% comment %} #shopify-section-{{ section.id }} {
     --color: #151515;
     --bg: #FFFEF7;
 
@@ -28,9 +28,9 @@
     --act-btn-color-hover: #FFFEF7;
     --act-btn-bg-hover: #022541;
     --act-btn-border-hover: #022541;
-  }
+  } {% endcomment %}
 </style>
-<div class="featured-collection pt-1 pb-2 text-[color:var(--color)] bg-[color:var(--bg)]">
+<div class="featured-collection pt-1 pb-2 color-{{ section.settings.color_scheme }}">
   <div class="container 2xl:container">
     <featured-collection-slider class="col-span-full">
       <div class="splide" role="group" aria-label="Splide Basic HTML Example">
@@ -39,7 +39,7 @@
             <li class="splide__slide">
               <div class="flex flex-col justify-between h-full px-1 pb-2 pt-.5">
                 <h2 class="font-sans text-xl lg:text-2xl -tracking-[.02em] first-line:font-serif first-line:-tracking-[.05em] uppercase">
-                  {{ section.settings.title }}
+                  {{ section.settings.title | replace_first: ' ', '<br>' }}
                 </h2>
                 {%- render 'btn-link',
                   text: section.settings.btn,
@@ -290,6 +290,13 @@
       "id": "btn",
       "default": "SHOP ALL",
       "label": "t:sections.featured-collection.settings.button.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-1"
     }
   ],
   "presets": [

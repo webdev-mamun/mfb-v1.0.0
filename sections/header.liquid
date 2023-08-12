@@ -5,56 +5,11 @@
   }
 {%- endstyle -%}
 
-<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link
-  rel="stylesheet"
-  href="{{ 'component-cart-notification.css' | asset_url }}"
-  media="print"
-  onload="this.media='all'"
->
-{% comment %} <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
-{%- if settings.predictive_search_enabled -%}
-  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-  <link
-    rel="stylesheet"
-    href="{{ 'component-loading-overlay.css' | asset_url }}"
-    media="print"
-    onload="this.media='all'"
-  >
-{%- endif -%}
-{%- if section.settings.menu_type_desktop == 'mega' -%}
-  <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
-  <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
-{%- endif -%}
-
-{%- if settings.cart_type == 'drawer' -%}
-  {% comment %} {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }} {% endcomment %}
-  {% comment %}
-    {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-  {% endcomment %}
-  {% comment %}
-    {{ 'component-totals.css' | asset_url | stylesheet_tag }}
-    {{ 'component-price.css' | asset_url | stylesheet_tag }}
-    {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
-    {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
-  {% endcomment %}
-{%- endif -%}
-
-<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-search.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
-
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+{% comment %} <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
-{%- if settings.cart_type == 'drawer' -%}
-  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
+<script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
@@ -83,11 +38,11 @@
 {%- if section.settings.sticky_header_type != 'none' -%}
   <sticky-header
     data-sticky-type="{{ section.settings.sticky_header_type }}"
-    class="header-wrapper text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)]"
+    class="header-wrapper color-{{ section.settings.color_scheme }} text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)]"
   >
 {%- else -%}
   <div
-    class="header-wrapper"
+    class="header-wrapper color-{{ section.settings.color_scheme }}"
   >
 {%- endif -%}
 <header class="container 2xl:container {% if section.settings.menu != blank %} header--has-menu{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}">
@@ -399,10 +354,6 @@
         {
           "value": "always",
           "label": "t:sections.header.settings.sticky_header_type.options__3.label"
-        },
-        {
-          "value": "reduce-logo-size",
-          "label": "t:sections.header.settings.sticky_header_type.options__4.label"
         }
       ],
       "default": "on-scroll-up",

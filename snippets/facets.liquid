@@ -12,7 +12,6 @@
   {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %}
 {% endcomment %}
 
-{{ 'component-show-more.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
@@ -25,20 +24,33 @@
   endif
 -%}
 
-<div class="facets-container border-t border-b">
+<div class="facets-container">
   <menu-drawer
     class="mobile-facets__wrapper container"
     data-breakpoint="desktop"
   >
-    <details class="mobile-facets__disclosure disclosure-has-popup col-span-full">
-      <summary class="mobile-facets__open-wrapper focus-offset flex cursor-pointer py-1">
+    <details class="group mobile-facets__disclosure disclosure-has-popup col-span-full py-1">
+      <summary class="mobile-facets__open-wrapper focus-offset flex justify-between items-center cursor-pointer mb-0 group-open:mb-2 transition-spacing ease-linear duration-100">
         <span class="mobile-facets__open text-md leading-[1.7rem] -tracking-[.02em] first-line:font-serif first-line:-tracking-[.05em] uppercase">
           Refine<br>
           Selection
         </span>
+        <span id="ProductCount" class="hidden">
+          {%- if results.results_count -%}
+            {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
+          {%- elsif results.products_count == results.all_products_count -%}
+            {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+          {%- else -%}
+            {{
+              'products.facets.product_count'
+              | t: product_count: results.products_count, count: results.all_products_count
+            }}
+          {%- endif -%}
+        </span>
+        <button class="icon-plus-minus" type="button"></button>
       </summary>
       <facet-filters-form>
-        <form id="FacetFiltersFormMobile" class="mobile-facets py-1">
+        <form id="FacetFiltersFormMobile" class="mobile-facets">
           <div class="mobile-facets__inner gradient">
             <div class="mobile-facets__main grid grid-cols-3 grid-rows-2 gap-1 lg:grid-cols-8 lg:grid-rows-none lg:gap-x-2 lg:gap-y-0">
               {%- if enable_filtering -%}

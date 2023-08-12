@@ -10,26 +10,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  #shopify-section-{{ section.id }} {
-    --color: #151515;
-    --bg: #FFFEF7;
-    --btn-color: #FFFEF7;
-    --btn-bg: #022541;
-    --btn-border: #022541;
-    --btn-color-hover: #FFFEF7;
-    --btn-bg-hover: #AA9955;
-    --btn-border-hover: #AA9955;
-
-  }
-
-  #shopify-section-{{ section.id }} .btn-link {
-    --btn-color: #151515;
-    --btn-color-hover: #AA9955;
-  }
 {%- endstyle -%}
-
-{% assign scheme1 = settings.color_schemes | first %}
 {%- liquid
   assign text = section.settings.text
   assign icon = settings.logo_mobile
@@ -44,7 +25,7 @@
   {% assign text = text | replace: '%icon%', inline_icon %}
 {% endif %}
 
-<div class="image-with-text text-[color:var(--color)] bg-[color:var(--bg)]">
+<div class="image-with-text color-{{ section.settings.color_scheme }}">
   <div class="container 2xl:container">
     <div class="col-span-full lg:col-span-5 py-1 order-last lg:order-last">
       {%- liquid
