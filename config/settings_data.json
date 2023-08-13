@@ -105,7 +105,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
-    "currency_code_enabled": true,
+    "currency_code_enabled": false,
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
@@ -152,18 +152,18 @@
           "button": "#151515",
           "button_label": "#ffffff",
           "button_border": "#151515",
-          "button_hover": "#AA9955",
-          "button_label_hover": "#FFFEF7",
-          "button_border_hover": "#AA9955",
+          "button_hover": "#aa9955",
+          "button_label_hover": "#fffef7",
+          "button_border_hover": "#aa9955",
           "secondary_button": "#fffef7",
           "secondary_button_label": "#151515",
           "secondary_button_border": "#151515",
           "secondary_button_hover": "#022541",
-          "secondary_button_label_hover": "#FFFEF7",
+          "secondary_button_label_hover": "#fffef7",
           "secondary_button_border_hover": "#022541",
           "link": "#151515",
-          "link_hover": "#AA9955",
-          "divider": "#C5C5C5"
+          "link_hover": "#aa9955",
+          "divider": "#c5c5c5"
         }
       },
       "background-2": {
@@ -175,17 +175,17 @@
           "button_label": "#151515",
           "button_border": "#dcdcdc",
           "button_hover": "#022541",
-          "button_label_hover": "#FFFEF7",
+          "button_label_hover": "#fffef7",
           "button_border_hover": "#022541",
           "secondary_button": "#022541",
           "secondary_button_label": "#121212",
           "secondary_button_border": "#151515",
           "secondary_button_hover": "#022541",
-          "secondary_button_label_hover": "#FFFEF7",
+          "secondary_button_label_hover": "#fffef7",
           "secondary_button_border_hover": "#022541",
           "link": "#151515",
-          "link_hover": "#AA9955",
-          "divider": "#C5C5C5"
+          "link_hover": "#aa9955",
+          "divider": "#c5c5c5"
         }
       },
       "inverse": {
@@ -193,21 +193,21 @@
           "background": "#022541",
           "background_gradient": "",
           "text": "#fffef7",
-          "button": "#ffffff",
-          "button_label": "#000000",
-          "button_border": "#022541",
-          "button_hover": "#AA9955",
-          "button_label_hover": "#FFFEF7",
-          "button_border_hover": "#AA9955",
+          "button": "#fffef7",
+          "button_label": "#022541",
+          "button_border": "#fffef7",
+          "button_hover": "#aa9955",
+          "button_label_hover": "#fffef7",
+          "button_border_hover": "#aa9955",
           "secondary_button": "#022541",
           "secondary_button_label": "#ffffff",
           "secondary_button_border": "#151515",
           "secondary_button_hover": "#022541",
-          "secondary_button_label_hover": "#FFFEF7",
+          "secondary_button_label_hover": "#fffef7",
           "secondary_button_border_hover": "#022541",
           "link": "#fffef7",
-          "link_hover": "#AA9955",
-          "divider": "#C5C5C5"
+          "link_hover": "#aa9955",
+          "divider": "#c5c5c5"
         }
       },
       "accent-1": {
@@ -218,18 +218,18 @@
           "button": "#ffffff",
           "button_label": "#121212",
           "button_border": "#022541",
-          "button_hover": "#AA9955",
-          "button_label_hover": "#FFFEF7",
-          "button_border_hover": "#AA9955",
+          "button_hover": "#aa9955",
+          "button_label_hover": "#fffef7",
+          "button_border_hover": "#aa9955",
           "secondary_button": "#022541",
           "secondary_button_label": "#ffffff",
           "secondary_button_border": "#151515",
           "secondary_button_hover": "#022541",
-          "secondary_button_label_hover": "#FFFEF7",
+          "secondary_button_label_hover": "#fffef7",
           "secondary_button_border_hover": "#022541",
           "link": "#151515",
-          "link_hover": "#AA9955",
-          "divider": "#C5C5C5"
+          "link_hover": "#aa9955",
+          "divider": "#c5c5c5"
         }
       },
       "accent-2": {
@@ -240,18 +240,18 @@
           "button": "#022541",
           "button_label": "#fffef7",
           "button_border": "#022541",
-          "button_hover": "#AA9955",
-          "button_label_hover": "#FFFEF7",
-          "button_border_hover": "#AA9955",
+          "button_hover": "#aa9955",
+          "button_label_hover": "#fffef7",
+          "button_border_hover": "#aa9955",
           "secondary_button": "#022541",
           "secondary_button_label": "#ffffff",
           "secondary_button_border": "#151515",
           "secondary_button_hover": "#022541",
-          "secondary_button_label_hover": "#FFFEF7",
+          "secondary_button_label_hover": "#fffef7",
           "secondary_button_border_hover": "#022541",
           "link": "#151515",
-          "link_hover": "#AA9955",
-          "divider": "#C5C5C5"
+          "link_hover": "#aa9955",
+          "divider": "#c5c5c5"
         }
       }
     }

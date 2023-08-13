@@ -8,12 +8,39 @@
         "menu": "main-menu",
         "drawer-menu": "drawer",
         "sticky_header_type": "none",
-        "color_scheme": "background-1"
+        "color_scheme": "background-1",
+        "drawer_color_scheme": "inverse"
       }
     },
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "e01cd84d-29f1-431e-ac4b-4024267623b0": {
+          "type": "announcement",
+          "settings": {
+            "text": "WINES AND SPIRITS FROM THE SOURCE",
+            "link": ""
+          }
+        },
+        "749b002f-4a9a-43ff-b0bc-b2df1f85b3f3": {
+          "type": "announcement",
+          "settings": {
+            "text": "WINES AND SPIRITS FROM THE SOURCE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "e01cd84d-29f1-431e-ac4b-4024267623b0",
+        "749b002f-4a9a-43ff-b0bc-b2df1f85b3f3"
+      ],
       "settings": {
+        "show_home_only": true,
+        "color_scheme": "inverse",
+        "padding_top": 8,
+        "padding_bottom": 8,
+        "padding_top_desktop": 8,
+        "padding_bottom_desktop": 8
       }
     }
   },

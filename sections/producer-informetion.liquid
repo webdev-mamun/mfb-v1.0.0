@@ -1,8 +1,9 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
-      --color: #151515;
-      --bg: #FFFEF7;
-      --border: #C5C5C5;
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
 {%- endstyle -%}
 {%- liquid
@@ -15,10 +16,10 @@
   assign production = section.settings.production
   assign geology = section.settings.geology
 -%}
-<div class="producer-info pt-2 pb-8 lg:pt-[8.5rem] lg:pb-[14.5rem] text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] border-b border-[color:var(--border,_#C5C5C5)]">
+<div class="producer-info section-padding color-{{ section.settings.color_scheme }} border-b border-color lg:border-t">
   <div class="container">
     <ul class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2 px-2">
-      <li class="col-span-full lg:col-span-2 text-sm lg:text-base text-center lg:text-left border-b border-[color:var(--border,_#C5C5C5)] lg:border-none pb-1 lg:pb-0 text-[color:var(--border,_#C5C5C5)] lg:text-[color:var(--color,_#151515)]">
+      <li class="col-span-full lg:col-span-2 text-sm lg:text-base text-center lg:text-left border-b border-color lg:border-none pb-1 lg:pb-0 text-[rgb(var(--divider,_197,197,197))] lg:text-[rgb(var(--color-foreground,_21,21,21))]">
         INFORMATION
       </li>
       {%- if logo != blank -%}
@@ -188,6 +189,56 @@
       "id": "geology",
       "label": "Geology",
       "default": "Grey limestone"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 90
     }
   ]
 }

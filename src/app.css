@@ -170,6 +170,42 @@
         @apply text-[rgb(var(--color-secondary-button-text-hover,_255,254,247))] bg-[rgb(var(--color-secondary-button-hover,_2,37,65))] border-[rgb(var(--color-secondary-button-border-hover,_2,37,65))];
     }
 
+    .card-act-btn {
+        @apply font-sans text-sm uppercase w-full flex justify-between items-center gap-1 px-1 py-[.85rem] border-y
+        text-[rgb(var(--color-button-border,_220,220,220))] bg-[rgb(var(--color-button,_255,254,247))] border-[rgb(var(--color-button-border,_220,220,220))]
+        enabled:text-[rgb(var(--color-button-text,_21,21,21))] enabled:bg-[rgb(var(--color-button,_255,254,247))] 
+        enabled:hover:text-[rgb(var(--color-button-text-hover,_255,254,247))] enabled:hover:bg-[rgb(var(--color-button-hover,_2,37,65))] 
+        enabled:hover:border-[color:var(--color-button-border-hover,_2,37,65)] [&.loading]:hover:text-transparent
+        [&.loading]:hover:bg-[rgb(var(--color-button,_transparent))] [&.loading]:hover:border-[rgb(var(--color-button-border,_220,220,220))]
+        transition-all relative;
+    }
+
+    .card-act-btn:disabled .plus-icon circle {
+        @apply fill-[rgb(var(--color-button-border,_220,220,220))]
+        transition-all;
+    }
+
+    .card-act-btn .plus-icon circle {
+        @apply fill-[rgb(var(--color-button-hover,_2,37,65))]
+        transition-all;
+    }
+
+    .card-act-btn:not(:disabled):hover .plus-icon circle {
+        @apply fill-[rgb(var(--color-button-text-hover,_255,254,247))]
+    }
+
+    .card-act-btn:disabled .plus-icon line {
+        @apply stroke-[rgb(var(--color-button-text-hover,_255,254,247))]
+    }
+
+    .card-act-btn .plus-icon line {
+        @apply stroke-[rgb(var(--color-button,_255,254,247))]
+        transition-all;
+    }
+
+    .card-act-btn:not(:disabled):hover .plus-icon line {
+        @apply stroke-[rgb(var(--color-button-hover,_2,37,65))]
+    }
 
     .border-color {
         @apply border-[rgb(var(--divider,_197,197,197))]
@@ -205,63 +241,6 @@
         @apply w-full border-b outline-none font-sans text-[1.4rem] leading-[2.2rem] -tracking-[.02em] focus-visible:outline-none 
         text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))] border-[rgb(var(--color-foreground,_21,21,21))]
          pb-[.1rem]
-    }
-
-    .card-act-btn {
-        @apply font-sans;
-        @apply text-sm;
-        @apply uppercase;
-        @apply w-full;
-        @apply flex;
-        @apply justify-between;
-        @apply items-center;
-        @apply gap-1;
-        @apply px-1;
-        @apply py-[.85rem];
-        @apply border-y;
-
-        @apply text-[color:var(--color-button-border,_#DCDCDC)];
-        @apply bg-[color:var(--color-button,_#FFFEF7)];
-        @apply border-[color:var(--color-button-border,_#DCDCDC)];
-        @apply enabled:text-[color:var(--color-button-text,_#151515)];
-        @apply enabled:bg-[color:var(--color-button,_#FFFEF7)];
-
-        @apply enabled:hover:text-[color:var(--color-button-text-hover,_#FFFEF7)];
-        @apply enabled:hover:bg-[color:var(--color-button-hover,_#022541)];
-        @apply enabled:hover:border-[color:var(--color-button-border-hover,_#022541)];
-        @apply [&.loading]:hover:text-transparent;
-        @apply [&.loading]:hover:bg-[color:var(--color-button,_transparent)];
-        @apply [&.loading]:hover:border-[color:var(--color-button-border,_#DCDCDC)];
-
-        @apply transition-all;
-        @apply relative;
-    }
-
-    .card-act-btn:disabled .plus-icon circle {
-        @apply fill-[color:var(--color-button-border,_#DCDCDC)]
-        transition-all;
-    }
-
-    .card-act-btn .plus-icon circle {
-        @apply fill-[color:var(--color-button-hover,_#022541)]
-        transition-all;
-    }
-
-    .card-act-btn:not(:disabled):hover .plus-icon circle {
-        @apply fill-[color:var(--color-button-text-hover,_#FFFEF7)]
-    }
-
-    .card-act-btn:disabled .plus-icon line {
-        @apply stroke-[color:var(--color-button-text-hover,_#FFFEF7)]
-    }
-
-    .card-act-btn .plus-icon line {
-        @apply stroke-[color:var(--color-button,_#FFFEF7)]
-        transition-all;
-    }
-
-    .card-act-btn:not(:disabled):hover .plus-icon line {
-        @apply stroke-[color:var(--color-button-hover,_#022541)]
     }
 
     .loading-overlay--spinner {
@@ -329,17 +308,17 @@
     }
 
     .icon-plus-minus {
-        @apply w-[1.6rem] h-[1.6rem] relative;
+        @apply w-[1.6rem] h-[1.6rem] relative pointer-events-none;
     }
 
     .icon-plus-minus::after,
     .icon-plus-minus::before {
         content: '';
-        @apply absolute w-full h-[.1rem] top-1/2 -translate-y-1/2 bg-black
+        @apply absolute w-full h-[.1rem] left-0 top-1/2 -translate-y-1/2 bg-black;
     }
 
     .icon-plus-minus::after {
-        @apply rotate-90
+        @apply rotate-90;
     }
     
     .group[open] .icon-plus-minus::after {
@@ -355,20 +334,20 @@
     .section-padding {
         @apply pt-[var(--padding-top,_1rem)] pb-[var(--padding-bottom,_1rem)] md:pt-[var(--padding-top-desktop,_2rem)] md:pb-[var(--padding-bottom-desktop,_2rem)];
     }
+
+    .producer-overview p {
+        @apply font-serif text-[3.2rem] leading-[3.6rem] -tracking-[.05em] indent-6 lg:text-2xl lg:leading-normal lg:indent-[14rem];
+    }
+
+    .producer-description p{
+        @apply text-md lg:text-base -tracking-[.02em];
+    }
+
+    .producer-description>div:first-child p:first-child {
+        @apply indent-3 lg:indent-[6rem];
+    }
 }
 
-.producer-overview .metafield-multi_line_text_field,
-.producer-overview p {
-    @apply font-serif text-[3.2rem] leading-[3.6rem] -tracking-[.05em] indent-6 lg:text-2xl lg:leading-normal lg:indent-[14rem]
-}
-
-.producer-description .metafield-rich_text_field {
-    @apply lg:columns-2 gap-2
-}
-
-.producer-description .metafield-rich_text_field> * {
-   @apply mb-2 text-base -tracking-[.02em]
-}
 
 #menu-drawer {
     @apply transition-transform ease-in-out duration-100 will-change-transform -translate-x-full;

@@ -1,14 +1,61 @@
 {
   "sections": {
     "banner": {
-      "type": "producer-collection-banner"
+      "type": "producer-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "inverse",
+        "padding_top": 60,
+        "padding_bottom": 15,
+        "padding_top_desktop": 105,
+        "padding_bottom_desktop": 85
+      }
     },
     "info": {
-      "type": "producer-collection-info"
+      "type": "producer-collection-info",
+      "blocks": {
+        "3c4a8834-a9e6-4e28-96f5-b62f694d5241": {
+          "type": "info",
+          "source": "{{ collection.metafields.custom.vendor.value.collection_page_extra_info_row_1.value }}",
+          "settings": {
+            "image": "{{ collection.metafields.custom.vendor.value.collection_page_extra_info_row_1.value.image.value }}",
+            "text": "{{ collection.metafields.custom.vendor.value.collection_page_extra_info_row_1.value.text | metafield_tag }}"
+          }
+        },
+        "f6ba837a-2567-4efc-a0c9-35fb4c6697e4": {
+          "type": "info",
+          "source": "{{ collection.metafields.custom.vendor.value.collection_page_extra_info_row_2.value }}",
+          "settings": {
+            "image": "{{ collection.metafields.custom.vendor.value.collection_page_extra_info_row_2.value.image.value }}",
+            "text": "{{ collection.metafields.custom.vendor.value.collection_page_extra_info_row_2.value.text | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "3c4a8834-a9e6-4e28-96f5-b62f694d5241",
+        "f6ba837a-2567-4efc-a0c9-35fb4c6697e4"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "padding_top": 15,
+        "padding_bottom": 140,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 100
+      }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "products_per_page": 15,
+        "show_vendor": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "color_scheme": "inverse",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 125
       }
     }
   },

@@ -1,5 +1,8 @@
 {%- liquid
   assign image = section.settings.image
+  if section.settings.show_collection_image == true and image == blank and collection.image != blank
+    assign image = collection.image
+  endif
   assign image_mobile = section.settings.image_mobile
   if section.settings.image_mobile == blank
     assign image_mobile = image
@@ -15,7 +18,7 @@
   }
 {%- endstyle -%}
 
-<div class="section-padding color-{{ section.settings.color_scheme }} collection-hero{% if section.settings.show_collection_image %} collection-hero--with-image{% endif %}">
+<div class="section-padding color-{{ section.settings.color_scheme }} collection-hero{% if section.settings.show_collection_image %} collection-hero--with-image{% endif %} {{ collection.image }}">
   <div class="collection-hero__inner container">
     <div class="collection-hero__text-wrapper col-span-full text-center flex flex-col gap-2 lg:gap-6">
       <h1 class="collection-hero__title text-2xl lg:text-[8.8rem] -tracking-[.02em] lg:leading-[9rem] first-line:font-serif first-line:-tracking-[.05em] uppercase">
@@ -24,7 +27,7 @@
         {{- collection.title | escape -}}
       </h1>
 
-      {%- if section.settings.show_collection_image -%}
+      {%- if image != blank and section.settings.show_collection_image -%}
         <div class="collection-hero__image-container col-span-full w-full max-w-[43.2rem] mx-auto">
           <img
             srcset="
@@ -123,7 +126,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 10
+      "default": 60
     },
     {
       "type": "range",
@@ -133,7 +136,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 10
+      "default": 15
     },
     {
       "type": "range",
@@ -143,7 +146,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top_desktop",
-      "default": 20
+      "default": 105
     },
     {
       "type": "range",
@@ -153,7 +156,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom_desktop",
-      "default": 20
+      "default": 85
     }
   ]
 }

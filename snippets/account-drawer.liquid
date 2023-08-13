@@ -34,11 +34,12 @@
     <div
       id="login-drawer"
       class="
-        fixed top-[var(--top)] left-0 w-full  bg-[color:var(--bg)] text-[color:var(--color)] z-10
-        -translate-y-1/2 opacity-0 invisible group-open:opacity-100 group-open:visible group-open:translate-y-0 transition-all delay-100
-        pt-2 pb-[2.5rem] lg:py-5
+        fixed top-[var(--top)] left-0 w-full z-10 -translate-y-1/2 opacity-0 invisible
+        group-open:opacity-100 group-open:visible group-open:translate-y-0 transition-all delay-100
+        pt-2 pb-[2.5rem] lg:py-5 text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))]
       "
     >
+      <button type="button">close</button>
       <div class="container">
         <div class="col-span-full w-full max-w-[63rem] mx-auto flex flex-col gap-[3.5rem] lg:gap-3">
           <h2 class="font-sans text-xl -tracking-[.02em] uppercase">{{ 'customer.log_in' | t }}</h2>
@@ -46,7 +47,7 @@
             {%- form 'customer_login', novalidate: 'novalidate', class: 'w-full' -%}
               <div class="flex flex-col gap-1">
                 <div class="flex flex-wrap flex-col md:flex-row w-full items-center lg:items-start gap-1 lg:gap-2">
-                  <div class="field grow shrink w-full lg:max-w-[26rem]">
+                  <div class="field grow shrink w-full lg:max-w-[26rem]" tabindex="-1">
                     <input
                       class="w-full default-input"
                       type="email"

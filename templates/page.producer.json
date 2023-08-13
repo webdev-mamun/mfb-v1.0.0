@@ -1,16 +1,62 @@
 {
   "sections": {
     "hero": {
-      "type": "producer-page-hero"
+      "type": "producer-page-hero",
+      "settings": {
+        "title": "{{ page.metafields.custom.producers.value.title.value }}",
+        "name": "{{ page.metafields.custom.producers.value.name.value }}",
+        "image": "{{ page.metafields.custom.producers.value.image.value }}",
+        "mobile_image": "{{ page.metafields.custom.producers.value.image_mobile.value }}",
+        "color_scheme": "inverse",
+        "padding_top": 45,
+        "padding_bottom": 35,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
+      }
     },
     "main": {
-      "type": "producer-page-main"
+      "type": "producer-page-main",
+      "settings": {
+        "overview": "<p>{{ page.metafields.custom.producers.value.overview | metafield_tag }}<\/p>",
+        "description_1": "{{ page.metafields.custom.producers.value.description_column_1 | metafield_tag }}",
+        "description_2": "{{ page.metafields.custom.producers.value.description_column_2 | metafield_tag }}",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "padding_top_desktop": 100,
+        "padding_bottom_desktop": 130
+      }
     },
     "info": {
-      "type": "producer-informetion"
+      "type": "producer-informetion",
+      "settings": {
+        "logo": "{{ page.metafields.custom.producers.value.information.value.logo.value }}",
+        "country": "{{ page.metafields.custom.producers.value.information.value.country.value }}",
+        "region": "{{ page.metafields.custom.producers.value.information.value.region.value }}",
+        "appelation": "{{ page.metafields.custom.producers.value.information.value.appelation_s.value }}",
+        "grapes": "<p>{{ page.metafields.custom.producers.value.information.value.grapes | metafield_tag }}<\/p>",
+        "farming": "{{ page.metafields.custom.producers.value.information.value.farming.value }}",
+        "production": "{{ page.metafields.custom.producers.value.information.value.annual_production.value }}",
+        "geology": "{{ page.metafields.custom.producers.value.information.value.geology.value }}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 90
+      }
     },
     "collection": {
-      "type": "featured-collection"
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "{{ page.metafields.custom.producers.value.collection.value }}",
+        "btn": "SHOP ALL",
+        "color_scheme": "background-2",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
+      }
     }
   },
   "order": [

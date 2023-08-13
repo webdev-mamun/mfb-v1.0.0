@@ -29,7 +29,7 @@
         <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
         <aside
           aria-labelledby="verticalTitle"
-          class="facets-wrapper border-t"
+          class="facets-wrapper border-t border-color"
           id="main-collection-filters"
           data-id="{{ section.id }}"
         >
@@ -43,7 +43,7 @@
         </aside>
       {%- endif -%}
       <div
-        class="product-grid-container border-t pt-1 lg:pt-2"
+        class="product-grid-container border-t border-color pt-1 lg:pt-2"
         id="ProductGridContainer"
       >
         {%- if collection.products.size == 0 -%}

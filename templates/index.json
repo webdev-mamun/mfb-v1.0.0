@@ -19,20 +19,24 @@
         "btn_url_1": "",
         "btn_text_2": "SHOP SPIRITS",
         "btn_url_2": "",
-        "color_scheme": "",
+        "color_scheme": "accent-2",
         "padding_top": 35,
         "padding_bottom": 35,
         "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20
+        "padding_bottom_desktop": 10
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "NEW<br>\nARRIVALS",
+        "title": "NEW ARRIVALS",
         "collection": "all",
         "btn": "SHOP ALL NEW ARRIVALS",
-        "color_scheme": ""
+        "color_scheme": "background-2",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_desktop": 10,
+        "padding_bottom_desktop": 20
       }
     },
     "45ae4465-7843-4d87-8657-fd781121613c": {
@@ -152,7 +156,7 @@
         "btn": "Click throught to learn more about the people behind the bottles.",
         "btn_mobile": "SEE ALL PRODUCERS",
         "url": "",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "padding_top": 70,
         "padding_bottom": 100,
         "padding_top_desktop": 90,
@@ -178,7 +182,7 @@
         "7cdb18db-f71f-4772-be2a-485c048b4e65"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "padding_top": 10,
         "padding_bottom": 35,
         "padding_top_desktop": 20,
@@ -223,7 +227,7 @@
         "btn": "Click through to see all our subscriptions on offer",
         "btn_mobile": "SEE ALL SUBSCRIPTIONS",
         "url": "",
-        "color_scheme": "",
+        "color_scheme": "inverse",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_desktop": 0,
@@ -261,7 +265,7 @@
         "3053b57f-6c75-4eda-8977-f459c5532e6e"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "padding_top": 10,
         "padding_bottom": 35,
         "padding_top_desktop": 20,
