@@ -51,7 +51,7 @@
         "show_vendor": false,
         "enable_quick_add": false,
         "enable_filtering": false,
-        "color_scheme": "inverse",
+        "color_scheme": "accent-1",
         "padding_top": 10,
         "padding_bottom": 10,
         "padding_top_desktop": 20,
