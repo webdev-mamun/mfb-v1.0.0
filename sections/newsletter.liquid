@@ -1,26 +1,9 @@
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
   #shopify-section-{{ section.id }} {
-    --color: #151515;
-    --bg: #FFFEF7;
-    --btn-color: #151515;
-    --btn-bg: transparent;
-    --btn-border: #151515;
-    --btn-color-hover: #FFFEF7;
-    --btn-bg-hover: #151515;
-    --btn-border-hover: #151515;
-
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
 {%- endstyle -%}
 {%- liquid
@@ -39,8 +22,8 @@
   {% assign title = title | replace: '%icon%', inline_icon %}
 {% endif %}
 
-<div class="newsletter text-[color:var(--color)] bg-[color:var(--bg)]">
-  <div class="container 2xl:container auto-rows-min lg:grid-rows-5">
+<div class="newsletter section-padding color-{{ section.settings.color_scheme }}">
+  <div class="container auto-rows-min lg:grid-rows-5">
     <div class="row-start-1 row-end-2 col-start-1 col-end-6 lg:col-start-2 lg:col-end-4 lg:row-end-3">
       {%- if image_1 != blank -%}
         {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
@@ -107,26 +90,21 @@
       "default": "Join the <br>%icon% family"
     },
     {
-      "type": "text",
+      "type": "textarea",
       "id": "text",
       "label": "Text",
       "default": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies."
     },
     {
+      "type": "paragraph",
+      "content": "t:sections.newsletter.settings.paragraph.content"
+    },
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "background-1"
-    },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "default": true,
-      "label": "t:sections.newsletter.settings.full_width.label"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:sections.newsletter.settings.paragraph.content"
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
     },
     {
       "type": "header",
@@ -136,21 +114,41 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 200,
+      "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 40
+      "default": 0
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 200,
+      "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 52
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 0
     }
   ],
   "presets": [
