@@ -17,8 +17,9 @@
             <img
               src="{{ image | image_url: width: 400 }}"
               alt="{{ image.alt }}"
-              width="300"
-              height="{{ 300 | divided_by: image.aspect_ratio }}"
+              width="500"
+              height="{{ 500 | divided_by: image.aspect_ratio }}"
+              loading="lazy"
               class="rounded-2xl"
             >
           </div>
