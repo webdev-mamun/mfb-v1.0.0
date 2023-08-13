@@ -53,9 +53,10 @@
     "994a4483-10b3-4d9f-ac1d-044b2414883b": {
       "type": "featured-collection",
       "settings": {
-        "title": "Drink by<br>producer",
+        "title": "Drink by producer",
         "collection": "{{ product.metafields.custom.vendor.value.collection.value }}",
         "btn": "SHOP ALL by this producer",
+        "color_scheme": "background-2",
         "padding_top": 10,
         "padding_bottom": 10,
         "padding_top_desktop": 20,
