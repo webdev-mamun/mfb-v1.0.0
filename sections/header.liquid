@@ -45,7 +45,7 @@
     class="header-wrapper color-{{ section.settings.color_scheme }}"
   >
 {%- endif -%}
-<header class="container 2xl:container {% if section.settings.menu != blank %} header--has-menu{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}">
+<header class="container {% if section.settings.menu != blank %} header--has-menu{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}">
   {% comment %}
     {%- liquid
       if section.settings.menu != blank
@@ -368,6 +368,12 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "background-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "drawer_color_scheme",
+      "label": "t:sections.header.settings.drawer_menu_color.label",
+      "default": "color-inverse"
     }
   ]
 }

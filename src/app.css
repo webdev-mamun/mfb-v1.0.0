@@ -80,10 +80,7 @@
     }
 
     body {
-        @apply font-sans;
-        @apply text-base;
-        @apply text-[color:var(--color,#022541)];
-        @apply bg-[color:var(--bg,#FFFEF7)];
+        @apply font-sans text-base text-[rbg(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))];
     }
 
     input[type="number"]::-webkit-inner-spin-button,
@@ -123,79 +120,59 @@
     }
 
     .header-wrapper {
-        @apply block relative
+        @apply block relative;
     }
 
     .container {
-        @apply grid grid-cols-10 gap-1 px-1 lg:px-2
+        @apply max-w-full grid grid-cols-10 gap-1 px-1 lg:px-2 lg:gap-2;
     }
 
     .btn {
-        @apply font-sans;
-        text-align: center;
-        font-size: 1.3rem;
-        line-height: 2.2rem; /* 110% */
-        letter-spacing: -.02em;
-        @apply uppercase;
-        padding: 1.2rem 3.5rem 1rem;
-        border-radius: 1rem;
-        color: var(--color-button-text, #FFFEF7);
-        background-color: var(--color-button, #022541);
-        border-color: var(--color-button-border, #022541);
-        @apply border;
-        @apply transition-colors;
-
+        @apply font-sans text-center text-[1.3rem] leading-[2.2rem] -tracking-[.02em] uppercase border rounded-2xl px-[3.5rem] pt-[1.2rem] pb-1;
     }
 
-    .btn:hover {
-        color: var(--color-button-text-hover, #FFFEF7);
-        background-color: var(--color-button-hover, #AA9955);
-        border-color: var(--color-button-border-hover, #AA9955);
-    }
 
     @media (min-width: 1024px) {
         .btn {
-            font-size: 1.4rem;
-            line-height: 2.2rem; /* 110% */
-            letter-spacing: -0.28px;
-    
+            @apply text-md;
         }
     }
 
     .btn-small {
-        @apply font-sans;
-        text-align: center;
-        font-size: 10px;
-        line-height: 14.4px;
-        letter-spacing: -.02em;
-        padding: .35rem 1.5rem .25rem;
-        border-radius: .2rem;
-        @apply border;
-        color: var(--color-button-text, #FFFEF7);
-        background-color: var(--color-button, #022541);
-        border-color: var(--color-button-border, #022541);
-        @apply transition-colors;
+        @apply font-sans text-center text-[1rem] leading-[1.6rem] -tracking-[.02em] border uppercase rounded-[.2rem] px-[1.3rem] pt-[.25rem] pb-[.15rem] max-h-[2.2rem];
     }
 
-    .btn-small:hover {
-        color: var(--color-button-text-hover, #FFFEF7);
-        background-color: var(--color-button-hover, #AA9955);
-        border-color: var(--color-button-border-hover, #AA9955);
+    .btn-medium {
+        @apply font-sans text-center text-[1.4rem] leading-[2.2rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] px-[3.5rem] pt-[.6rem] pb-[.3rem];
     }
 
     .btn-link {
-        @apply font-sans;
-        font-size: 1.4rem;
-        line-height: 2.2rem;
-        @apply relative;
-        @apply uppercase;
-        letter-spacing: -0.28px;
-        color: var(--color-link, #151515);
-        @apply transition-colors;
+        @apply font-sans text-md relative uppercase -tracking-[.02em] text-[rgb(var(--color-link,_21,21,21))] transition-colors;
     }
 
     .btn-link:hover {
-        color: var(--color-link-hover, #AA9955);
+        @apply text-[rgb(var(--color-link-hover,_170,153,85))];
+    }
+
+    .btn-primary {
+        @apply text-[rgb(var(--color-button-text,_255,254,247))] bg-[rgb(var(--color-button,_2,37,65))] border-[rgb(var(--color-button-border,_2,37,65))] transition-colors;
+    }
+
+    .btn-primary:hover {
+        @apply text-[rgb(var(--color-button-text-hover,_255,254,247))] bg-[rgb(var(--color-button-hover,_170,153,85))] border-[rgb(var(--color-button-border-hover,_170,153,85))];
+    }
+
+    .btn-secondary {
+        @apply text-[rgb(var(--color-secondary-button-text,_21,21,21))] bg-[rgb(var(--color-secondary-button,_255,254,247))] border-[rgb(var(--color-secondary-button-border,_21,21,21))] transition-colors;
+    }
+
+    .btn-secondary:hover {
+        @apply text-[rgb(var(--color-secondary-button-text-hover,_255,254,247))] bg-[rgb(var(--color-secondary-button-hover,_2,37,65))] border-[rgb(var(--color-secondary-button-border-hover,_2,37,65))];
+    }
+
+
+    .border-color {
+        @apply border-[rgb(var(--divider,_197,197,197))]
     }
 
     .visually-hidden {
@@ -225,14 +202,9 @@
     }
 
     .default-input {
-        @apply outline-none;
-        @apply border-b;
-        @apply font-sans;
-        font-size: 1.4rem;
-        line-height: 2.2rem;
-        letter-spacing: -.02em;
-        border-color: var(--input-border, currentColor);
-        background-color: var(--input-bg, transparent);
+        @apply w-full border-b outline-none font-sans text-[1.4rem] leading-[2.2rem] -tracking-[.02em] focus-visible:outline-none 
+        text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))] border-[rgb(var(--color-foreground,_21,21,21))]
+         pb-[.1rem]
     }
 
     .card-act-btn {
@@ -293,11 +265,7 @@
     }
 
     .loading-overlay--spinner {
-        @apply absolute;
-        @apply w-[1.5rem];
-        @apply left-1/2; 
-        @apply -translate-x-2/4;
-        @apply animate-spin-slow;
+        @apply absolute w-[1.5rem] left-1/2 -translate-x-2/4 animate-spin-slow;
     }
 
     .loading-overlay--spinner .path {
@@ -307,48 +275,15 @@
     }
 
     .drawer {
-        @apply fixed;
-        @apply top-0;
-        @apply left-0;
-        @apply w-screen;
-        @apply h-fit;
-        @apply invisible;
-        @apply [&.active]:visible;
-        @apply z-30;
-        @apply flex;
-        @apply justify-end;
-
+        @apply fixed top-0 left-0 w-screen h-fit invisible [&.active]:visible z-30 flex justify-end;
     }
 
     .cart-drawer__overlay {
-        @apply fixed;
-        @apply inset-0;
-        @apply backdrop-blur-[10px];
-        @apply -z-10;
+        @apply fixed inset-0 backdrop-blur-[10px] -z-10;
     }
     .drawer__inner {
-        @apply text-[color:var(--color,_#151515)];
-        @apply bg-[color:var(--bg,_#FFFEF7)];
-        @apply w-[30rem];
-        @apply md:w-[60.9rem];
-        @apply overflow-auto;
-        @apply flex;
-        @apply flex-col;
-        @apply pt-1;
-        @apply px-1;
-        @apply pb-2;
-        @apply md:p-2;
-        @apply gap-2;
-        @apply gap-2;
-        @apply rounded-2xl;
-        @apply translate-y-0;
-        @apply xs:translate-y-[2rem];
-        @apply translate-x-full;
-        @apply group-[&.active]:-translate-x-0;
-        @apply xs:group-[&.active]:-translate-x-[2rem];
-        @apply transition-transform;
-        @apply delay-100;
-        @apply duration-500;
+        @apply text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] w-[30rem] md:w-[60.9rem] overflow-auto flex flex-col pt-1 px-1 pb-2 md:p-2 gap-2 rounded-2xl 
+        translate-y-0 xs:translate-y-[2rem] translate-x-full group-[&.active]:-translate-x-0 xs:group-[&.active]:-translate-x-[2rem] transition-transform delay-100 duration-500;
     }
 
     .no-js .no-js-hidden {
@@ -436,17 +371,9 @@
 }
 
 #menu-drawer {
-    @apply transition-transform; 
-    @apply ease-in-out; 
-    @apply duration-100; 
-    @apply will-change-transform;
-    @apply -translate-x-full;
+    @apply transition-transform ease-in-out duration-100 will-change-transform -translate-x-full;
 }
 
 [open].menu-opening #menu-drawer {
-    @apply transition-transform; 
-    @apply ease-in-out; 
-    @apply duration-100; 
-    @apply will-change-transform;
-    @apply translate-x-0;
+    @apply transition-transform ease-in-out duration-100 will-change-transform translate-x-0;
 }

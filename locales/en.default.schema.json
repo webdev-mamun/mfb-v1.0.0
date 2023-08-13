@@ -145,11 +145,23 @@
         "button_border_hover": {
           "label": "Button border on hover"
         },
+        "secondary_button_background": {
+          "label": "Secondary button background"
+        },
         "secondary_button_label": {
-          "label": "Link button label"
+          "label": "Secondary button label"
+        },
+        "secondary_button_border": {
+          "label": "Secondary button border"
+        },
+        "secondary_button_background_hover": {
+          "label": "Secondary button background on hover"
         },
         "secondary_button_label_hover": {
-          "label": "Link button label on hover"
+          "label": "Secondary button label on hover"
+        },
+        "secondary_button_border_hover": {
+          "label": "Secondary button border hover"
         },
         "link__header": {
           "content": "Links"
@@ -998,6 +1010,9 @@
         },
         "drawer_menu": {
           "label": "Drawer Menu"
+        },
+        "drawer_menu_color": {
+          "label": "Drawer color"
         },
         "menu_type_desktop": {
           "label": "Desktop menu type",

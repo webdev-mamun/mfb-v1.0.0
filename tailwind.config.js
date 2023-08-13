@@ -15,10 +15,7 @@ module.exports = {
   ],
   theme: {
     container: {
-      center: true,
-      screens: {
-        '2xl': '1440px',
-      },
+      center: true
     },
     spacing: {
       '0': "0",

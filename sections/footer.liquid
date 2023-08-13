@@ -1,20 +1,22 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 
-{%- style -%}
-  #shopify-section-{{ section.id }} {
-    --color: #151515;
-    --bg: #FFFEF7;
-    --section-divider: #C5C5C5;
+{% comment %}
+  {%- style -%}
+    #shopify-section-{{ section.id }} {
+      --color: #151515;
+      --bg: #FFFEF7;
+      --section-divider: #C5C5C5;
 
-    --btn-color: #FFFEF7;
-    --btn-bg: #151515;
-    --input-border: #151515;
-    --input-color: #151515;
-    --input-bg: transparent;
-  }
-{%- endstyle -%}
+      --btn-color: #FFFEF7;
+      --btn-bg: #151515;
+      --input-border: #151515;
+      --input-color: #151515;
+      --input-bg: transparent;
+    }
+  {%- endstyle -%}
+{% endcomment %}
 
-<footer class="footer color-{{ section.settings.color_scheme }} pt-2 pb-6 border-t border-[color:var(--section-divider)] color-[color:var(--color)] bg-[color:var(--bg)]">
+<footer class="footer color-{{ section.settings.color_scheme }} pt-2 pb-6 border-t">
   <div class="container lg:container">
     {%- if settings.footer_brand_image != blank -%}
       <div class="col-span-full">

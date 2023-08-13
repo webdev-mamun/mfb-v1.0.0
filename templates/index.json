@@ -20,8 +20,10 @@
         "btn_text_2": "SHOP SPIRITS",
         "btn_url_2": "",
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 35,
+        "padding_bottom": 35,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
       }
     },
     "featured_collection": {
@@ -29,7 +31,8 @@
       "settings": {
         "title": "NEW<br>\nARRIVALS",
         "collection": "all",
-        "btn": "SHOP ALL NEW ARRIVALS"
+        "btn": "SHOP ALL NEW ARRIVALS",
+        "color_scheme": ""
       }
     },
     "45ae4465-7843-4d87-8657-fd781121613c": {
@@ -148,7 +151,12 @@
         "text": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at %icon% and are part of an ever growing curated collective of wine and spirit makers.",
         "btn": "Click throught to learn more about the people behind the bottles.",
         "btn_mobile": "SEE ALL PRODUCERS",
-        "url": ""
+        "url": "",
+        "color_scheme": "",
+        "padding_top": 70,
+        "padding_bottom": 100,
+        "padding_top_desktop": 90,
+        "padding_bottom_desktop": 90
       }
     },
     "317c40db-089f-41c8-b5a1-a98e808d05f5": {
@@ -170,6 +178,11 @@
         "7cdb18db-f71f-4772-be2a-485c048b4e65"
       ],
       "settings": {
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 35,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
       }
     },
     "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df": {
@@ -209,7 +222,12 @@
         "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
         "btn": "Click through to see all our subscriptions on offer",
         "btn_mobile": "SEE ALL SUBSCRIPTIONS",
-        "url": ""
+        "url": "",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "25f85844-b960-42a2-ba01-81d581141e76": {
@@ -243,6 +261,11 @@
         "3053b57f-6c75-4eda-8977-f459c5532e6e"
       ],
       "settings": {
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 35,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
       }
     },
     "e16f32bb-984a-4534-b479-4a7ab16c282c": {
@@ -252,10 +275,11 @@
         "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2.jpg",
         "title": "Join the <br>%icon% family",
         "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
-        "color_scheme": "",
-        "full_width": true,
+        "color_scheme": "background-1",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     }
   },

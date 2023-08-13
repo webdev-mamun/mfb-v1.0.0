@@ -1,14 +1,9 @@
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
 {%- endstyle -%}
 {%- liquid
@@ -25,9 +20,9 @@
   {% assign text = text | replace: '%icon%', inline_icon %}
 {% endif %}
 
-<div class="image-with-text color-{{ section.settings.color_scheme }}">
-  <div class="container 2xl:container">
-    <div class="col-span-full lg:col-span-5 py-1 order-last lg:order-last">
+<div class="image-with-text section-padding color-{{ section.settings.color_scheme }}">
+  <div class="container items-center">
+    <div class="col-span-full lg:col-span-5 order-last lg:order-last">
       {%- liquid
         assign image = section.settings.image
         assign mobile_image = section.settings.mobile_image
@@ -44,12 +39,12 @@
         {{
           image
           | image_url: width: 1920
-          | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+          | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl h-full', sizes: sizes, widths: widths
         }}
         {{
           mobile_image
           | image_url: width: 1920
-          | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image  rounded-2xl', sizes: sizes, widths: widths
+          | image_tag: loading: 'lazy', class: 'lg:hidden mobile-image rounded-2xl', sizes: sizes, widths: widths
         }}
       {%- else -%}
         {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg max-w-full' }}
@@ -71,10 +66,10 @@
       {%- if section.settings.btn_text_1 != blank or section.settings.btn_text_1 != blank -%}
         <div class="flex flex-wrap gap-1 lg:gap-2 mt-6">
           {%- if section.settings.btn_text_1 != blank -%}
-            <a href="{{ section.settings.btn_url_1 }}" class="btn">{{ section.settings.btn_text_1 }}</a>
+            <a href="{{ section.settings.btn_url_1 }}" class="btn btn-primary">{{ section.settings.btn_text_1 }}</a>
           {%- endif -%}
           {%- if section.settings.btn_text_2 != blank -%}
-            <a href="{{ section.settings.btn_url_2 }}" class="btn">{{ section.settings.btn_text_2 }}</a>
+            <a href="{{ section.settings.btn_url_2 }}" class="btn btn-primary">{{ section.settings.btn_text_2 }}</a>
           {%- endif -%}
         </div>
       {%- endif -%}
@@ -161,21 +156,41 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 200,
+      "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 10
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 200,
+      "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 20
     }
   ],
   "presets": [

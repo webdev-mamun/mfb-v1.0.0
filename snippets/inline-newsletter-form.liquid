@@ -6,10 +6,7 @@
         id="NewsletterForm--{{ id }}"
         type="email"
         name="contact[email]"
-        class="
-          field__input w-full border-b text-[color:var(--input-color)] bg-[color:var(--input-bg)] border-[color:var(--input-border)] text-[1.4rem] leading-[1.4rem] -tracking-[.02em]
-          pt-[.9rem] pb-[.1rem] pr-[6.8rem] focus-visible:outline-none
-        "
+        class="field__input default-input pr-[6.8rem]"
         value="{{ form.email }}"
         aria-required="true"
         autocorrect="off"
@@ -27,10 +24,7 @@
       >
       <button
         type="submit"
-        class="
-          absolute right-0 font-sans text-[1rem] leading-[1.6rem] -tracking-[.02em] text-[color:var(--btn-color)] bg-[color:var(--btn-bg)] rounded
-          px-[1.3rem] pt-[.4rem] pb-[.2rem]
-        "
+        class="absolute right-0 bottom-[6px] btn-small btn-primary"
         name="commit"
         id="Subscribe"
         aria-label="{{ 'newsletter.button_label' | t }}"
