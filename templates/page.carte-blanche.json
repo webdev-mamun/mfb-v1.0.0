@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "sections": {
         "hero": {
             "type": "cart-blanche-hero"
@@ -6,3 +7,18 @@
     },
     "order": ["hero"]
 }
+=======
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
+>>>>>>> d0b11f249c77c29375b1fcab6a86a2edf8f1b402
