@@ -5,21 +5,6 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
-{%- style -%}
-  login-drawer {
-    --color: #151515;
-    --bg: #fffef7;
-    --btn-color: #fffef7;
-    --btn-bg: #151515;
-    --btn-border: #151515;
-    --btn-color-hover: #fffef7;
-    --btn-bg-hover: #151515;
-    --btn-border-hover: #151515;
-    --color-disable: #c5c5c5;
-    --top: 4.1rem;
-  }
-{%- endstyle -%}
-
 <details-modal class="h-full">
   <details
     id="Details-login-drawer-container"
@@ -36,11 +21,15 @@
       class="
         fixed top-[var(--top)] left-0 w-full z-10 -translate-y-1/2 opacity-0 invisible
         group-open:opacity-100 group-open:visible group-open:translate-y-0 transition-all delay-100
-        pt-2 pb-[2.5rem] lg:py-5 text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))]
+         text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))]
       "
     >
-      <button type="button">close</button>
-      <div class="container">
+      <div class="container relative pt-2 pb-[2.5rem] lg:py-5">
+        <button type="button" class="absolute right-2 top-2">
+          <svg class="w-[3.1rem] h-[3.1rem]">
+            <use href="#icon-close"></use>
+          </svg>
+        </button>
         <div class="col-span-full w-full max-w-[63rem] mx-auto flex flex-col gap-[3.5rem] lg:gap-3">
           <h2 class="font-sans text-xl -tracking-[.02em] uppercase">{{ 'customer.log_in' | t }}</h2>
           <div class="flex flex-col lg:flex-row w-full">

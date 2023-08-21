@@ -12,7 +12,7 @@
 <ul class="flex flex-col gap-[.3rem] {{ class }}" role="list">
   {%- if settings.social_facebook_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_facebook_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_facebook_link }}" class="link list-social__link">
         {{ settings.social_facebook_text }}
       </a>
     </li>
@@ -20,7 +20,7 @@
   {%- if settings.social_instagram_link != blank -%}
     <li class="list-social__item">
       <a
-        class="font-sans text-xs lg:text-md"
+        class="{{ font_style }}"
         href="{{ settings.social_instagram_link }}"
         class="link list-social__link"
       >
@@ -30,21 +30,21 @@
   {%- endif -%}
   {%- if settings.social_youtube_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_youtube_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_youtube_link }}" class="link list-social__link">
         {{ settings.social_youtube_text }}
       </a>
     </li>
   {%- endif -%}
   {%- if settings.social_tiktok_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_tiktok_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_tiktok_link }}" class="link list-social__link">
         {{ settings.social_tiktok_text }}
       </a>
     </li>
   {%- endif -%}
   {%- if settings.social_twitter_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_twitter_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_twitter_link }}" class="link list-social__link">
         {{ settings.social_twitter_text }}
       </a>
     </li>
@@ -52,7 +52,7 @@
   {%- if settings.social_pinterest_link != blank -%}
     <li class="list-social__item">
       <a
-        class="font-sans text-xs lg:text-md"
+        class="{{ font_style }}"
         href="{{ settings.social_pinterest_link }}"
         class="link list-social__link"
       >
@@ -62,21 +62,21 @@
   {%- endif -%}
   {%- if settings.social_snapchat_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_snapchat_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_snapchat_link }}" class="link list-social__link">
         {{ settings.social_snapchat_text }}
       </a>
     </li>
   {%- endif -%}
   {%- if settings.social_tumblr_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_tumblr_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_tumblr_link }}" class="link list-social__link">
         {{ settings.social_tumblr_text }}
       </a>
     </li>
   {%- endif -%}
   {%- if settings.social_vimeo_link != blank -%}
     <li class="list-social__item">
-      <a class="font-sans text-xs lg:text-md" href="{{ settings.social_vimeo_link }}" class="link list-social__link">
+      <a class="{{ font_style }}" href="{{ settings.social_vimeo_link }}" class="link list-social__link">
         {{ settings.social_vimeo_link }}
       </a>
     </li>

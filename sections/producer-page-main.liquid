@@ -11,15 +11,31 @@
   assign overview = section.settings.overview | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' | replace: '<p></p>', ''
   assign description_1 = section.settings.description_1 | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' | replace: '<p></p>', ''
   assign description_2 = section.settings.description_2 | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' | replace: '<p></p>', ''
+  assign url = collections[section.settings.collection].url
+  assign text = section.settings.text
 -%}
 <div class="producer-main section-padding color-{{ section.settings.color_scheme }} flex flex-col gap-y-2 lg:gap-y-10">
   {%- if overview != blank -%}
     <div class="w-full max-w-[115.6rem] mx-auto producer-overview px-2 lg:px-4">{{ overview }}</div>
   {%- endif -%}
-  {% if description_1 != blank or description_2 != blank %}
+  {%- if description_1 != blank or description_2 != blank -%}
     <div class="w-full max-w-[93rem] mx-auto producer-description px-[4.5rem] lg:px-6 grid grid-cols-6 gap-2">
-      <div class="col-span-full lg:col-span-3 flex flex-col gap-2">{{ description_1 }}</div>
-      <div class="col-span-full lg:col-span-3 flex flex-col gap-2">{{ description_2 }}</div>
+      {%- if description_1 != blank -%}
+        <div class="col-span-full lg:col-span-3 flex flex-col gap-2">
+          {{ description_1 }}
+          {%- if description_2 == blank and url != blank -%}
+            {%- render 'btn-link', url: url, text: text, class: ' items-center' -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      {%- if description_2 != blank -%}
+        <div class="col-span-full lg:col-span-3 flex flex-col gap-2">
+          {{ description_2 }}
+          {%- if description_2 != blank and url != blank -%}
+            {%- render 'btn-link', url: url, text: text, class: ' items-center' -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     </div>
   {%- endif -%}
 </div>
@@ -47,6 +63,17 @@
       "id": "description_2",
       "label": "Description column 2",
       "default": "<p>Since taking over in 2008, Damien has turned Domaine de Brin into one of the pioneering lodestars of the renewal of Gaillac. Under his father and previous generations, the family's 14 hectares of grapes were sold to the local cooperative. Damien decided from the outset to make his own wines, with the strong conviction to vinify mostly undersung local varietals like Braucol, Duras and Mauzac instead of the Cabernet Sauvignon plants his father had put in.</p>"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Button text",
+      "default": "READ MORE"
     },
     {
       "type": "color_scheme",

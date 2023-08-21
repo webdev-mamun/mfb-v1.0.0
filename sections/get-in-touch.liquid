@@ -1,0 +1,204 @@
+{%- liquid
+  assign image = section.settings.image
+  assign title = section.settings.title
+  assign caption = section.settings.caption
+  assign caption_title = section.settings.caption_title
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <div class="col-span-full section-padding border-t border-color grid grid-cols-10 gap-x-1 lg:gap-x-2">
+      <div class="col-span-full grid grid-cols-10 gap-x-1 lg:gap-x-2 gap-y-[2.5rem]">
+        <h2 class="lg:ps-2 col-span-full lg:col-span-4 big-text text-center lg:text-2xl lg:text-left uppercase">
+          {{ title }}
+        </h2>
+        {%- for block in section.blocks -%}
+          <div class="col-span-full lg:col-span-2 grid grid-cols-10 gap-1 auto-rows-min">
+            <h4 class="text-md leading-[1.8rem] lg:text-xl lg:leading-[2.6rem] uppercase col-span-3 lg:col-span-full">
+              {{ block.settings.title }}
+            </h4>
+            {%- case block.type -%}
+              {%- when 'text' -%}
+                <div class="ps-2 font-serif [&>*]:text-md [&>*]:leading-[2rem] [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem] col-span-7 lg:col-span-full">
+                  {{ block.settings.text }}
+                </div>
+              {%- when 'social' -%}
+                {%- if block.settings.show_social -%}
+                  <div class="col-span-7 lg:col-span-full">
+                    {%- render 'social-icons',
+                      class: 'ps-2',
+                      font_style: 'font-serif text-md leading-[2rem] lg:text-base lg:leading-[2.2rem]'
+                    -%}
+                  </div>
+                {%- endif -%}
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 {% if section.blocks.size > 0 or title != blank %} mt-7 lg:mt-[14rem]{% endif %}">
+        {%- if image != blank -%}
+          <div class="rounded-2xl">
+            {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+            {%- capture sizes -%}
+                          (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                          (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+                        {%- endcapture -%}
+            {{ image | image_url: width: 1920 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+          </div>
+          {%- if caption != blank -%}
+            <div class="py-1 grid grid-cols-8 lg:grid-cols-6 gap-2">
+              {%- if caption_title != blank -%}
+                <p class="px-1 lg:px-2 text-xs md:text-base -tracking-[.02em] uppercase opacity-70 col-span-3">
+                  {{ caption_title }}
+                </p>
+              {%- endif -%}
+              <p class="font-serif text-sm lg:text-base -tracking-[.05em] opacity-70 col-span-5 lg:col-span-3">
+                {{ caption }}
+              </p>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Get in touch",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "SHOP & TRADE"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>+1 202 997 5565</p><p>hello@mfbimports.com</p>"
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "SOCIALS"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "label": "Show social media",
+          "default": true,
+          "info": "To display your social media accounts, link them in your [theme settings].(\/editor?context=theme&category=social%20media)"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "GET IN TOUCH"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "caption_title",
+      "label": "Cation title",
+      "default": "PERSONAL TOUCH"
+    },
+    {
+      "type": "textarea",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Many of our producers are small-scale family owned businesses."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 65
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 150
+    }
+  ],
+  "presets": [
+    {
+      "name": "Get in touch"
+    }
+  ]
+}
+{% endschema %}

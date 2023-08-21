@@ -1,0 +1,145 @@
+{%- liquid
+  assign image = section.settings.image
+  assign text = section.settings.text
+  assign caption = section.settings.caption
+  assign caption_title = section.settings.caption_title
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+<div class="section-padding color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <div class="col-span-4">
+      {%- if image != blank -%}
+        <div class="rounded-2xl">
+          {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+          {%- capture sizes -%}
+                (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+              {%- endcapture -%}
+          {{ image | image_url: width: 1920 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+        </div>
+        {%- if caption != blank -%}
+          <div class="py-1 flex justify-between gap-2">
+            {%- if caption_title != blank -%}
+              <p class="text-xs md:text-base -tracking-[.02em] uppercase opacity-70 px-1 lg:px-2">
+                {{ caption_title }}
+              </p>
+            {%- endif -%}
+            <p class="hidden lg:block font-serif text-base -tracking-[.05em] opacity-70">{{ caption }}</p>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+    <div class="col-span-6">
+      <div class="lg:ml-2 font-serif [&>*]:text-md [&>*]:leadign-[2rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:md:text-xl [&>*]:md:leading-[2.6rem] [&>*]:lg:text-[3.2rem] [&>*]:lg:leading-[3.6rem] [&>*]:xl:text-2xl [&>*]:xl:leading-[5.2rem] [&>*]:-tracking-[.05em] [&>*:not(:first-child)]:lg:mt-[3.5rem] [&>*:first-child]:lg:indent-[12rem]">
+        {{ text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About image with text",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "WINES AND SPIRITS FROM THE SOURCE"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "caption_title",
+      "label": "Cation title",
+      "default": "ORGANICALLY GROWN"
+    },
+    {
+      "type": "textarea",
+      "id": "caption",
+      "label": "Caption",
+      "default": "All our drinks are produced organically by European producers."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur. Adipiscing nibh fames vel ac netus a faucibus blandit enim. Lorem pharetra sed donec enim. In dolor fames sit sed augue cras pellentesque.</p> <p>Congue fames sit turpis nulla sit sed tristique arcu. Purus viverra commodo et eget nec.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 130
+    }
+  ],
+  "presets": [
+    {
+      "name": "About image with text"
+    }
+  ]
+}
+{% endschema %}

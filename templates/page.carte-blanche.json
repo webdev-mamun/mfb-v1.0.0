@@ -1,0 +1,8 @@
+{
+    "sections": {
+        "hero": {
+            "type": "cart-blanche-hero"
+        }
+    },
+    "order": ["hero"]
+}

@@ -99,7 +99,7 @@
             {%- when 'contact' -%}
               <div class="font-sans text-xs lg:text-md ps-2">{{ block.settings.subtext }}</div>
             {%- when 'social' -%}
-              {%- render 'social-icons', class: 'ps-2' -%}
+              {%- render 'social-icons', class: 'ps-2', font_style: 'font-sans text-xs lg:text-md' -%}
             {%- when 'newsletter' -%}
               {%- render 'inline-newsletter-form', id: 'contactFooter' -%}
           {%- endcase -%}
@@ -198,11 +198,8 @@
           "type": "textarea",
           "id": "title",
           "default": "FOLLOW US",
-          "label": "t:sections.footer.blocks.social.settings.heading.label"
-        },
-        {
-          "type": "header",
-          "content": "t:sections.footer.blocks.social.settings.heading.info"
+          "label": "t:sections.footer.blocks.social.settings.heading.label",
+          "info": "t:sections.footer.blocks.social.settings.heading.info"
         }
       ]
     },

@@ -1,0 +1,90 @@
+{
+  "sections": {
+    "hero": {
+      "type": "about-page-hero",
+      "settings": {
+        "title": "WINES AND SPIRITS FROM THE SOURCE",
+        "image": "shopify:\/\/shop_images\/about-hero.jpg",
+        "text": "<p>%icon% is a direct-to-consumer wine and spirits merchant.<\/p><p>We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/p>",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 25,
+        "padding_top_desktop": 110,
+        "padding_bottom_desktop": 65
+      }
+    },
+    "main": {
+      "type": "about-page-image-with-text",
+      "settings": {
+        "title": "WINES AND SPIRITS FROM THE SOURCE",
+        "image": "shopify:\/\/shop_images\/about-main.jpg",
+        "caption_title": "ORGANICALLY GROWN",
+        "caption": "All our drinks are produced organically by European producers.",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur. Adipiscing nibh fames vel ac netus a faucibus blandit enim. Lorem pharetra sed donec enim. In dolor fames sit sed augue cras pellentesque.<\/p><p>Congue fames sit turpis nulla sit sed tristique arcu. Purus viverra commodo et eget nec.<\/p>",
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 55,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 130
+      }
+    },
+    "text-blocks": {
+      "type": "about-page-text-blocks"
+    },
+    "contact": {
+      "type": "get-in-touch",
+      "blocks": {
+        "85c536cc-89e3-401c-b9c2-721bab642bbc": {
+          "type": "text",
+          "settings": {
+            "title": "SHOP & TRADE",
+            "text": "<p>+1 202 997 5565<\/p><p>hello@mfbimports.com<\/p>"
+          }
+        },
+        "d96e143f-229e-4d79-b523-993aa558b2a9": {
+          "type": "social",
+          "settings": {
+            "title": "SOCIALS",
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "85c536cc-89e3-401c-b9c2-721bab642bbc",
+        "d96e143f-229e-4d79-b523-993aa558b2a9"
+      ],
+      "settings": {
+        "title": "GET IN TOUCH",
+        "image": "shopify:\/\/shop_images\/getintouch.jpg",
+        "caption_title": "PERSONAL TOUCH",
+        "caption": "Many of our producers are small-scale family owned businesses.",
+        "color_scheme": "background-1",
+        "padding_top": 45,
+        "padding_bottom": 65,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 150
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
+        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
+        "title": "Join the <br>%icon% family",
+        "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 200
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "text-blocks",
+    "contact",
+    "newsletter"
+  ]
+}

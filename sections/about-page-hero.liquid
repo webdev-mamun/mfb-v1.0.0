@@ -1,0 +1,156 @@
+{%- liquid
+  assign title = section.settings.title
+  assign image = section.settings.image
+  assign text = section.settings.text
+  if section.settings.icon_color == 'black'
+    assign icon = settings.logo_mobile
+  elsif section.settings.icon_color == 'white'
+    assign icon = settings.secondary_logo_mobile
+  endif
+-%}
+
+{% capture inline_icon %}
+      {{- icon | image_url: width: 108.84 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[.9rem]' -}}
+      {{- icon | image_url: width: 59 | image_tag: loading: 'lazy', class: 'inline-block lg:hidden -mt-[.4rem]' -}}
+{% endcapture %}
+{%- if icon != blank and text contains '%icon%' %}
+  {% assign text = text | replace: '%icon%', inline_icon %}
+{% endif %}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+<div class="section-padding color-{{ section.settings.color_scheme }}">
+  <div class="px-1 lg:px-2">
+    {% if title != blank %}
+      <h2 class="text-2xl -tracking-[.02em] lg:text-4xl first-line:font-serif first-line:-tracking-[.02em] text-center uppercase w-full max-w-[52rem] lg:max-w-[87rem] mx-auto">
+        {{ title }}
+      </h2>
+    {%- endif -%}
+    {%- if image != blank -%}
+      <div class="w-full max-w-[43.5rem] mx-auto rounded-2xl{% if title != blank %} pt-[2.5rem] lg:pt-[4.5rem]{% endif %}">
+        {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+        {%- capture sizes -%}
+            (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+            (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+          {%- endcapture -%}
+        {{ image | image_url: width: 1920 | image_tag: loading: 'lazy', sizes: sizes, widths: widths }}
+      </div>
+    {%- endif -%}
+    {%- if text != blank -%}
+      <div
+        class="max-w-[128rem] mx-auto font-serif [&>*]:text-xl [&>*]:leadign-[2.6rem] [&>*]:lg:text-2xl [&>*]:lg:leading-[5.2rem] [&>*]:-tracking-[.05em] [&>*:not(:first-child)]:mt-2 [&>*:not(:first-child)]:lg:mt-0 text-center{%if title != blank or image != blank%} mt-[3.5rem] lg:mt-[5.5rem]{%- endif -%}"
+      >
+        {{ text }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "WINES AND SPIRITS FROM THE SOURCE"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>%icon% is a direct-to-consumer wine and spirits merchant.</p> <p>We source from small-scale, independent European producers bringing you delicious bottles right to your door.</p>"
+    },
+    {
+      "type": "select",
+      "id": "icon_color",
+      "label": "Icon color",
+      "options": [
+        {
+          "value": "white",
+          "label": "White"
+        },
+        {
+          "value": "black",
+          "label": "Black"
+        }
+      ],
+      "default": "black"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info",
+      "default": "background-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 110
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 65
+    }
+  ],
+  "presets": [
+    {
+      "name": "About hero"
+    }
+  ]
+}
+{% endschema %}

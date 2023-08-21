@@ -240,7 +240,7 @@
     .default-input {
         @apply w-full border-b outline-none font-sans text-[1.4rem] leading-[2.2rem] -tracking-[.02em] focus-visible:outline-none 
         text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))] border-[rgb(var(--color-foreground,_21,21,21))]
-         pb-[.1rem]
+         pb-[.1rem] [&.error-input:not(:focus)]:border-[#FF0000] [&.error-input:not(:focus)]:text-[#FF0000] [&.error-input:not(:focus)]:placeholder:text-[#FF0000]
     }
 
     .loading-overlay--spinner {
@@ -346,6 +346,59 @@
     .producer-description>div:first-child p:first-child {
         @apply indent-3 lg:indent-[6rem];
     }
+
+    .text-block-title {
+        @apply text-md leading-[1.8rem] lg:text-xl lg:leading-[2.6rem] uppercase group-hover/textblock:lg:font-serif transition-all;
+    }
+
+    .text-block-text {
+        @apply [&>*]:text-md [&>*]:leading-[2rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem] [&>*:first-child]:lg:indent-[6.5rem] group-hover/textblock:lg:font-serif transition-all;
+    }
+
+    .main-page-content h2 {
+        @apply text-base mb-[2.5rem] mt-[4.5rem] lg:text-xl lg:mb-3 uppercase
+    }
+
+    .main-page-content > *:not(h1,h2,h3,h4) {
+        @apply text-md lg:text-base
+    }
+
+    .main-page-content p + p {
+        @apply mt-2;
+    }
+
+    .account-title {
+        @apply text-center uppercase first-line:font-serif first-line:-tracking-[.05em] text-2xl max-w-[10ch] mx-auto
+    }
+
+    .form__message {
+        @apply text-xs ps-2 underline underline-offset-2
+    }
+    .form__message--error {
+        @apply text-[#FF0000]
+    }
+
+    #login, #recover {
+        @apply scroll-m-2
+    }
+
+    #login:focus-visible, #recover:focus-visible {
+        @apply outline-none
+    }
+
+    #recover {
+        @apply hidden
+    }
+
+    #recover:target {
+        @apply block
+    }
+
+    #recover:target~#login {
+        @apply hidden;
+    }
+
+    
 }
 
 

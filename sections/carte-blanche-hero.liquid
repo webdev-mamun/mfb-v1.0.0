@@ -7,28 +7,18 @@
   }
 {%- endstyle -%}
 
-<div class="section-padding color-{{ section.settings.color_scheme }} w-full max-w-[83.2rem] mx-auto px-1 lg:px-2">
-  <h1 class="main-page-title mb-3 text-2xl lg:text-3xl lg:mb-10 text-center max-w-[16ch] mx-auto first-line:font-serif first-line:-tracking-[.05em]">
-    {{ page.title | escape }}
-  </h1>
-  <div class="main-page-content">
-    {{ page.content }}
+<div class="cart-blanche-hero section-padding color-{{ section.settings.color_scheme }}">
+  <div
+    class="cart-blanche-hero--banner grid grid-cols-10 gap-1 lg:gap-2 px-1 lg:px-2 grid-rows-[115px_minmax(290px,_1fr)_155px]"
+  >
+    baltu
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "t:sections.main-page.name",
-  "tag": "section",
-  "class": "section",
+  "name": "Cart blanche hero",
   "settings": [
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info",
-      "default": "background-2"
-    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
@@ -41,7 +31,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 55
+      "default": 20
     },
     {
       "type": "range",
@@ -51,7 +41,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 160
+      "default": 60
     },
     {
       "type": "range",
@@ -61,7 +51,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top_desktop",
-      "default": 110
+      "default": 20
     },
     {
       "type": "range",
@@ -71,7 +61,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom_desktop",
-      "default": 200
+      "default": 170
     }
   ]
 }
