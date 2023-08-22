@@ -6,6 +6,7 @@
         "title": "WINES AND SPIRITS FROM THE SOURCE",
         "image": "shopify:\/\/shop_images\/about-hero.jpg",
         "text": "<p>%icon% is a direct-to-consumer wine and spirits merchant.<\/p><p>We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/p>",
+        "icon_color": "black",
         "color_scheme": "",
         "padding_top": 50,
         "padding_bottom": 25,
@@ -29,7 +30,96 @@
       }
     },
     "text-blocks": {
-      "type": "about-page-text-blocks"
+      "type": "about-page-text-blocks",
+      "blocks": {
+        "35c2265d-8c08-4e2a-886f-1a4dbf117e98": {
+          "type": "textblock",
+          "settings": {
+            "title": "WEBSHOP",
+            "text": "<p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.<\/p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p><p>If you do wish to make any changes to your membership, including address changes, please email us at hello@drinkmfb.com so we can make the changes to your account.<\/p>",
+            "image": "shopify:\/\/shop_images\/text-block-workshop.png"
+          }
+        },
+        "28ef74bf-c4cd-4337-9aba-3c30869d4243": {
+          "type": "textblock",
+          "settings": {
+            "title": "BESPOKE BARREL PICKS FOR CLUBS",
+            "text": "<p>What's more, you will always be able to find the bottles in your subscription on our website so rest assured you are getting the best value for your money.<\/p><p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.<\/p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p>"
+          }
+        },
+        "80bb7813-0e87-4e2d-804b-fc7b9c167833": {
+          "type": "textblock",
+          "settings": {
+            "title": "TRADE",
+            "text": "<p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p><p>If you do wish to make any changes to your membership, including address changes, please email us at hello@drinkmfb.com so we can make the changes to your account.<\/p>"
+          }
+        },
+        "debf4364-01aa-4cf3-be3a-b897a9ae656c": {
+          "type": "textblock",
+          "settings": {
+            "title": "BESPOKE WINE CURATION",
+            "text": "<p>What's more, you will always be able to find the bottles in your subscription on our website so rest assured you are getting the best value for your money .<\/p><p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.<\/p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "35c2265d-8c08-4e2a-886f-1a4dbf117e98",
+        "28ef74bf-c4cd-4337-9aba-3c30869d4243",
+        "80bb7813-0e87-4e2d-804b-fc7b9c167833",
+        "debf4364-01aa-4cf3-be3a-b897a9ae656c"
+      ],
+      "settings": {
+        "title": "WHAT WE DO",
+        "show_mobile_image": true,
+        "color_scheme": "",
+        "padding_top": 45,
+        "padding_bottom": 65,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 150
+      }
+    },
+    "2e1f5976-3028-4acd-a918-04ff23b2f569": {
+      "type": "about-page-text-blocks",
+      "blocks": {
+        "4765cfdd-ae81-44b2-aaf7-19143060698a": {
+          "type": "textblock",
+          "settings": {
+            "title": "NATALIE MUFSON",
+            "text": "<p>Natalie Mufson lives in New York after time in Europe working the London fine wine trade. She’s also worked in the vineyards of Bordeaux.<\/p>",
+            "image": "shopify:\/\/shop_images\/mufson.png"
+          }
+        },
+        "9cee0141-1cbf-4fb5-9e6d-d717f6cdc15b": {
+          "type": "textblock",
+          "settings": {
+            "title": "JON BRAND",
+            "text": "<p>Jon Brand lives in Paris, where he turned in his journalist card a few years back to sell and distribute wine to the city’s top restaurants.<\/p>",
+            "image": "shopify:\/\/shop_images\/jon_brand.jpg"
+          }
+        },
+        "60da167a-247a-4279-a39c-260078af85d0": {
+          "type": "textblock",
+          "settings": {
+            "title": "GREG FARON",
+            "text": "<p>Greg Faron is a Washington, D.C.-based restaurateur with a passion for brandy and single-barrel spirits. He side-gigs as a real estate executive<\/p>",
+            "image": "shopify:\/\/shop_images\/brand.png"
+          }
+        }
+      },
+      "block_order": [
+        "4765cfdd-ae81-44b2-aaf7-19143060698a",
+        "9cee0141-1cbf-4fb5-9e6d-d717f6cdc15b",
+        "60da167a-247a-4279-a39c-260078af85d0"
+      ],
+      "settings": {
+        "title": "WHO WE ARE",
+        "show_mobile_image": true,
+        "color_scheme": "",
+        "padding_top": 45,
+        "padding_bottom": 65,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 150
+      }
     },
     "contact": {
       "type": "get-in-touch",
@@ -84,6 +174,7 @@
     "hero",
     "main",
     "text-blocks",
+    "2e1f5976-3028-4acd-a918-04ff23b2f569",
     "contact",
     "newsletter"
   ]

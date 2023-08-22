@@ -58,7 +58,7 @@
                     {% when 'boolean', 'list' %}
                       {%- liquid
                         if filter.label == 'Region'
-                          assign class = 'cols-pan-1 row-span-2 lg:col-span-3'
+                          assign class = 'cols-pan-1 row-span-2 lg:col-span-3 col-start-2 row-start-1 lg:col-start-4'
                         elsif filter.label == 'Drinks'
                           assign class = 'hidden lg:block col-span-1 row-span-1'
                         else

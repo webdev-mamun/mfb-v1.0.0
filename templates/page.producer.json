@@ -6,13 +6,27 @@
         "title": "{{ page.metafields.custom.producers.value.title.value }}",
         "name": "{{ page.metafields.custom.producers.value.name.value }}",
         "image": "{{ page.metafields.custom.producers.value.image.value }}",
-        "mobile_image": "{{ page.metafields.custom.producers.value.image_mobile.value }}"
+        "mobile_image": "{{ page.metafields.custom.producers.value.image_mobile.value }}",
+        "color_scheme": "",
+        "padding_top": 45,
+        "padding_bottom": 35,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
       }
     },
     "main": {
       "type": "producer-page-main",
       "settings": {
-        "overview": "<p>{{ page.metafields.custom.producers.value.overview | metafield_tag }}<\/p>"
+        "overview": "<p>{{ page.metafields.custom.producers.value.overview | metafield_tag }}<\/p>",
+        "description_1": "{{ section.settings.collection.metafields.custom.vendor.value.description_column_1 | metafield_tag }}",
+        "description_2": "{{ section.settings.collection.metafields.custom.vendor.value.description_column_2 | metafield_tag }}",
+        "collection": "{{ page.metafields.custom.producers.value.collection.value }}",
+        "text": "READ MORE",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 80,
+        "padding_top_desktop": 100,
+        "padding_bottom_desktop": 130
       }
     },
     "info": {
@@ -25,7 +39,12 @@
         "grapes": "<p>{{ page.metafields.custom.producers.value.information.value.grapes | metafield_tag }}<\/p>",
         "farming": "{{ page.metafields.custom.producers.value.information.value.farming.value }}",
         "production": "{{ page.metafields.custom.producers.value.information.value.annual_production.value }}",
-        "geology": "{{ page.metafields.custom.producers.value.information.value.geology.value }}"
+        "geology": "{{ page.metafields.custom.producers.value.information.value.geology.value }}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 90
       }
     },
     "collection": {

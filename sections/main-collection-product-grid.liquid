@@ -5,11 +5,8 @@
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {% endcomment %}
 
-{%- if section.settings.enable_quick_add -%}
-  {% comment %} {{ 'quick-add.css' | asset_url | stylesheet_tag }} {% endcomment %}
-  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 {%- style -%}
   #shopify-section-{{ section.id }} {

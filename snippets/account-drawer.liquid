@@ -4,7 +4,7 @@
   Usage:
   {% render 'header-drawer' %}
 {% endcomment %}
-
+<script src="{{ 'login-drawer-component.js' | asset_url }}" defer="defer"></script>
 <details-modal class="h-full">
   <details
     id="Details-login-drawer-container"
@@ -16,7 +16,7 @@
     >
       <span class="menu cursor-pointer">{{ 'customer.log_in' | t }}</span>
     </summary>
-    <div
+    <login-drawer
       id="login-drawer"
       class="
         fixed top-[var(--top)] left-0 w-full z-10 -translate-y-1/2 opacity-0 invisible
@@ -24,24 +24,27 @@
          text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))]
       "
     >
-      <div class="container relative pt-2 pb-[2.5rem] lg:py-5">
+      <div class="container relative pt-2 pb-[2.5rem] lg:pt-4 lg:pb-5">
         <button type="button" class="absolute right-2 top-2">
-          <svg class="w-[3.1rem] h-[3.1rem]">
+          <svg class="w-[1.5rem] h-[1.5rem] lg:w-[2.2rem] lg:h-[2.2rem]">
             <use href="#icon-close"></use>
           </svg>
         </button>
-        <div class="col-span-full w-full max-w-[63rem] mx-auto flex flex-col gap-[3.5rem] lg:gap-3">
-          <h2 class="font-sans text-xl -tracking-[.02em] uppercase">{{ 'customer.log_in' | t }}</h2>
+        <div
+          class="col-span-full w-full max-w-[63rem] mx-auto [&:not(.hidden)]:flex flex-col gap-[3.5rem] lg:gap-3"
+          id="account-drawer-login"
+        >
+          <h2 class="font-sans text-xl -tracking-[.02em] uppercase ps-1 lg:ps-0">{{ 'customer.log_in' | t }}</h2>
           <div class="flex flex-col lg:flex-row w-full">
             {%- form 'customer_login', novalidate: 'novalidate', class: 'w-full' -%}
-              <div class="flex flex-col gap-1">
-                <div class="flex flex-wrap flex-col md:flex-row w-full items-center lg:items-start gap-1 lg:gap-2">
+              <div class="grid grid-cols-10 gap-1">
+                <div class="col-span-8 col-start-2 lg:col-span-full lg:col-start-1 flex flex-wrap flex-col lg:flex-row w-full items-center lg:items-start gap-1 lg:gap-2">
                   <div class="field grow shrink w-full lg:max-w-[26rem]" tabindex="-1">
                     <input
                       class="w-full default-input"
                       type="email"
                       name="customer[email]"
-                      id="CustomerEmail"
+                      id="DrawerCustomerEmail"
                       autocomplete="email"
                       autocorrect="off"
                       autocapitalize="off"
@@ -50,7 +53,7 @@
                       {% endif %}
                       placeholder="{{ 'customer.login_page.email' | t }}"
                     >
-                    <label class="sr-only" for="CustomerEmail">
+                    <label class="sr-only" for="DrawerCustomerEmail">
                       {{ 'customer.login_page.email' | t }}
                     </label>
                   </div>
@@ -61,17 +64,21 @@
                         type="password"
                         value=""
                         name="customer[password]"
-                        id="CustomerPassword"
+                        id="DrawerCustomerPassword"
                         autocomplete="current-password"
                         {% if form.errors contains 'form' %}
                           aria-invalid="true"
                         {% endif %}
                         placeholder="{{ 'customer.login_page.password' | t }}"
                       >
-                      <label class="sr-only" for="CustomerPassword">
+                      <label class="sr-only" for="DrawerCustomerPassword">
                         {{ 'customer.login_page.password' | t }}
                       </label>
-                      <a href="#recover" class="text-[1rem] leading-[2.2rem] -tracking-[.02em] text-right">
+                      <a
+                        href="#recover"
+                        class="text-[1rem] leading-[2.2rem] -tracking-[.02em] text-right"
+                        id="recoverBtn"
+                      >
                         {{ 'customer.login_page.forgot_password' | t }}
                       </a>
                     </div>
@@ -81,14 +88,7 @@
                     {{ 'customer.login_page.sign_in' | t }}
                   </button>
                 </div>
-
-                {%- if form.errors -%}
-                  <div class="form__message text-xs" tabindex="-1" autofocus>
-                    {{ 'templates.contact.form.error_heading' | t }}
-                  </div>
-                  {{ form.errors | default_errors }}
-                {%- endif -%}
-                <div class="flex flex-col items-center">
+                <div class="col-span-full flex flex-col items-center">
                   <p class="text-xs">Don’t have an account yet?</p>
                   <a href="{{ routes.account_register_url }}" class="text-xs text-[color:var(--color-disable)]">
                     {{ 'customer.login_page.create_account' | t }}
@@ -98,7 +98,53 @@
             {%- endform -%}
           </div>
         </div>
+        <div
+          class="col-span-full w-full max-w-[63rem] mx-auto [&:not(.hidden)]:flex flex-col gap-[3.5rem] lg:gap-3 hidden"
+          id="account-drawer-recover"
+        >
+          <div class="flex flex-col gap-1 ps-1 lg:ps-0">
+            <h2 class="font-sans text-xl -tracking-[.02em] uppercase">{{ 'customer.recover_password.title' | t }}</h2>
+            <p class="text-sm">
+              {{ 'customer.recover_password.subtext' | t }}
+            </p>
+          </div>
+          <div class="flex flex-col lg:flex-row w-full">
+            {%- form 'recover_customer_password', novalidate: 'novalidate', class: 'w-full' -%}
+              <div class="grid grid-cols-10 gap-1">
+                <div class="col-span-8 col-start-2 lg:col-span-full lg:col-start-1 flex flex-wrap flex-col lg:flex-row w-full items-center lg:items-start gap-1 lg:gap-2">
+                  <div class="field grow shrink w-full lg:w-auto" tabindex="-1">
+                    <input
+                      type="email"
+                      value=""
+                      name="email"
+                      id="DrawerRecoverEmail"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        aria-invalid="true"
+                        autofocus
+                      {% endif %}
+                      placeholder="{{ 'customer.login_page.email' | t }}"
+                      class="default-input{% if form.errors %} error-input{% endif %}"
+                    >
+                    <label class="sr-only" for="DrawerRecoverEmail">
+                      {{ 'customer.login_page.email' | t }}
+                    </label>
+                  </div>
+
+                  <button class="btn-small btn-primary uppercase">
+                    {{ 'customer.login_page.submit' | t }}
+                  </button>
+                  <a class="btn-small btn-secondary uppercase cursor-pointer" id="cancleBtn">
+                    {{ 'customer.login_page.cancel' | t }}
+                  </a>
+                </div>
+              </div>
+            {%- endform -%}
+          </div>
+        </div>
       </div>
-    </div>
+    </login-drawer>
   </details>
 </details-modal>

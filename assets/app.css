@@ -2215,10 +2215,6 @@ p.producer-overview p, .base-text.producer-overview p {
   height: 16.6rem;
 }
 
-.h-\[3\.1rem\] {
-  height: 3.1rem;
-}
-
 .h-\[30rem\] {
   height: 30rem;
 }
@@ -2274,10 +2270,6 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .w-\[22rem\] {
   width: 22rem;
-}
-
-.w-\[3\.1rem\] {
-  width: 3.1rem;
 }
 
 .w-\[30\.3rem\] {
@@ -2530,16 +2522,16 @@ p.producer-overview p, .base-text.producer-overview p {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
+.grid-rows-\[115px_minmax\(290px\2c _1fr\)_155px\] {
+  grid-template-rows: 115px minmax(290px, 1fr) 155px;
+}
+
 .grid-rows-\[2\.4rem_repeat\(2\2c _minmax\(3rem\2c _min-content\)\)_auto\] {
   grid-template-rows: 2.4rem repeat(2, minmax(3rem, min-content)) auto;
 }
 
 .grid-rows-\[auto\2c 1fr\] {
   grid-template-rows: auto 1fr;
-}
-
-.grid-rows-\[115px_minmax\(290px\2c _1fr\)_155px\] {
-  grid-template-rows: 115px minmax(290px, 1fr) 155px;
 }
 
 .flex-col {
@@ -3592,10 +3584,6 @@ p.producer-overview p, .base-text.producer-overview p {
     display: none;
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
   .md\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -3646,6 +3634,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
   .lg\:col-span-full {
     grid-column: 1 / -1;
+  }
+
+  .lg\:col-start-1 {
+    grid-column-start: 1;
   }
 
   .lg\:col-start-2 {
@@ -3752,12 +3744,20 @@ p.producer-overview p, .base-text.producer-overview p {
     display: none;
   }
 
+  .lg\:h-\[2\.2rem\] {
+    height: 2.2rem;
+  }
+
   .lg\:h-\[26rem\] {
     height: 26rem;
   }
 
   .lg\:min-h-\[calc\(100\%_-_40px\)\] {
     min-height: calc(100% - 40px);
+  }
+
+  .lg\:w-\[2\.2rem\] {
+    width: 2.2rem;
   }
 
   .lg\:w-\[22\.4rem\] {
@@ -3770,6 +3770,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
   .lg\:w-\[38rem\] {
     width: 38rem;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 
   .lg\:max-w-\[110rem\] {
@@ -3987,11 +3991,6 @@ p.producer-overview p, .base-text.producer-overview p {
     padding-bottom: 2rem;
   }
 
-  .lg\:py-5 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
   .lg\:py-\[\.9rem\] {
     padding-top: .9rem;
     padding-bottom: .9rem;
@@ -4009,8 +4008,17 @@ p.producer-overview p, .base-text.producer-overview p {
     padding-bottom: 2rem;
   }
 
+  .lg\:pb-5 {
+    padding-bottom: 5rem;
+  }
+
   .lg\:pb-\[28rem\] {
     padding-bottom: 28rem;
+  }
+
+  .lg\:ps-0 {
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
   }
 
   .lg\:ps-2 {
@@ -4235,6 +4243,10 @@ p.producer-overview p, .base-text.producer-overview p {
   .\[\&\.show\]\:lg\:visible.show {
     visibility: visible;
   }
+}
+
+.\[\&\:not\(\.hidden\)\]\:flex:not(.hidden) {
+  display: flex;
 }
 
 .\[\&\>\*\:first-child\]\:indent-3>*:first-child {
