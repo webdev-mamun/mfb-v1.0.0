@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "hero": {
+      "type": "carte-blanche-hero",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/carte-b-1.jpg",
+        "image2": "shopify:\/\/shop_images\/carte-b-2.jpg",
+        "title": "CARTE BLANCHE",
+        "text": "Welcome to CARTE BLANCHE, our one-of-a-kind subscription service, where we hand select the the finest wines and spirits, package them up and send them straight to your doorstep.",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 170
+      }
+    },
+    "subscription-product": {
+      "type": "carte-blanche-subscription-product",
+      "blocks": {
+        "02f10e9a-6d5b-4008-9884-824c1da458e8": {
+          "type": "product",
+          "settings": {
+            "title": "02",
+            "product": "two-bottle-spirits-pack"
+          }
+        },
+        "05bb94af-dee2-49ab-81a0-7f7d6e9ff553": {
+          "type": "product",
+          "settings": {
+            "title": "06",
+            "product": "six-bottle-wine-pack"
+          }
+        },
+        "5ae576eb-4f79-4d81-8104-de4e24a7e6d6": {
+          "type": "product",
+          "settings": {
+            "title": "02",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "02f10e9a-6d5b-4008-9884-824c1da458e8",
+        "05bb94af-dee2-49ab-81a0-7f7d6e9ff553",
+        "5ae576eb-4f79-4d81-8104-de4e24a7e6d6"
+      ],
+      "settings": {
+        "title": "SUBSCRIPTIONS",
+        "text": "<p>A CARTE BLANCHE subscription is the perfect way to discover the world of an exciting new-wave of winemakers, delivered monthly, direct to your door.<\/p><p><\/p><p>These are hand-picked boxes that contain only the most exciting bottles, chosen with an eye not just on what we think is tasting best, but also intended to fit the mood of the season we’re delivering in. So expect bright, vibrant wines for spring & summer with darker, more meditative wines for the cooler months of autumn & winter.<\/p><p>What's more, you will always be able to find the bottles in your subscription on our website so rest assured you are getting the best value for your money .<\/p><p><\/p><p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.<\/p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p><p>If you do wish to make any changes to your membership, including address changes, please email us at hello@drinkmfb.com so we can make the changes to your account.<\/p>",
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 60,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 130
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "all",
+        "btn": "SHOP ALL",
+        "color_scheme": "background-2",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
+        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
+        "title": "Join the <br>%icon% family",
+        "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
+        "color_scheme": "background-1",
+        "padding_top": 25,
+        "padding_bottom": 25,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 65
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "subscription-product",
+    "featured-collection",
+    "newsletter"
+  ]
+}

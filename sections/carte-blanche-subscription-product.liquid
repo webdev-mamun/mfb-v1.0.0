@@ -1,0 +1,245 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign title = section.settings.title
+  assign text = section.settings.text
+-%}
+
+<div class="carte-blanche-subscription section-padding color-{{ section.settings.color_scheme }}">
+  <div class="carte-blanche-subscription--text container">
+    <h2 class="col-span-3 lg:col-span-2 text-[1rem] leading-[2rem] ps-1 lg:text-base lg:ps-2 uppercase">{{ title }}</h2>
+    <div class="col-span-7 lg:col-span-3 carte-blanche-subscription--text-content">
+      {{ text }}
+    </div>
+    <div class="carte-blanche-subscription-products px-1 col-span-full lg:col-span-4 lg:col-start-7 lg:pl-0 lg:pr-2 flex flex-col gap-1">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign title = block.settings.title
+          assign product = all_products[block.settings.product]
+        -%}
+        {%- if product != blank -%}
+          <div class="p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))]{% unless product.available %} bg-[rgba(var(--color-foreground),_.7)]{% else %} bg-[rgb(var(--color-foreground))]{% endunless %}">
+            <h3 class="text-2xl xl:text-4xl w-[9.3rem] lg:w-[18rem] shrink-0">{{ title }}</h3>
+            <div class="flex border-l border-[rgb(var(--color-background))] pl-[4.5rem] lg:pl-0 grow">
+              <div class="pl-[2.5rem] pr-[1.5rem] shrink-0 hidden lg:block">
+                <div class="w-[4.1rem]">
+                  {{
+                    product.featured_image
+                    | image_url: width: product.featured_image.width
+                    | image_tag: loading: 'lazy', width: product.featured_image.width, class: 'mx-auto'
+                  }}
+                </div>
+              </div>
+              <div class=" flex flex-col gap-2 justify-between xl:gap-5 py-.5 lg:py-0 grow">
+                <div>
+                  <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
+                    {{ product.title }}
+                  </h2>
+                  <div class="[&_*]:text-xs [&_*]:leading-[1.6rem] [&_*]:xl:text-base [&_*]:xl:leading-[2.2rem]">
+                    {{ product.description }}
+                  </div>
+                </div>
+                <div class="flex justify-between items-center gap-1 flex-wrap">
+                  {%- liquid
+                    assign card_product = product
+                    assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
+                    assign qty_rules = false
+                    if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
+                      assign qty_rules = true
+                    endif
+                  -%}
+                  <p class="text-md leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
+                    {% unless card_product.selected_or_first_available_variant.available == false -%}
+                      {{- product.price | money -}}
+                    {%- else -%}
+                      SOLD OUT
+                    {%- endunless %}
+                  </p>
+
+                  {% comment %}
+                    <button class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-2 xl:text-md xl:leading-[2.2rem]">
+                      SUBSCRIBE NOW
+                    </button>
+                  {% endcomment %}
+
+                  {%- unless card_product.selected_or_first_available_variant.available == false -%}
+                    <product-form data-section-id="{{ section.id }}">
+                      {%- form 'product',
+                        card_product,
+                        id: product_form_id,
+                        class: 'form',
+                        novalidate: 'novalidate',
+                        data-type: 'add-to-cart-form'
+                      -%}
+                        <input
+                          type="hidden"
+                          name="id"
+                          value="{{ card_product.selected_or_first_available_variant.id }}"
+                          class="product-variant-id"
+                          disabled
+                        >
+                        <button
+                          id="{{ product_form_id }}-submit"
+                          type="submit"
+                          name="add"
+                          class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem] relative"
+                          aria-haspopup="dialog"
+                          aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+                          aria-live="polite"
+                          data-sold-out-message="true"
+                          {% if card_product.selected_or_first_available_variant.available == false %}
+                            disabled
+                          {% endif %}
+                        >
+                          SUBSCRIBE NOW
+                          <div class="loading-overlay--spinner top-0 hidden">
+                            <svg
+                              aria-hidden="true"
+                              focusable="false"
+                              class="spinner"
+                              viewBox="0 0 66 66"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle class="path stroke-[rgb(var(--color-background))] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                            </svg>
+                          </div>
+                        </button>
+                      {%- endform -%}
+                    </product-form>
+                  {%- else -%}
+                    <button class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem]">
+                      NOTIFY ME
+                    </button>
+                  {%- endunless -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- else -%}
+          <div class="p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))] bg-[rgb(var(--color-foreground))]">
+            <h3 class="text-2xl xl:text-4xl w-[9.3rem] lg:w-[18rem] shrink-0">{{ title }}</h3>
+            <div class="flex border-l border-[rgb(var(--color-background))] pl-[4.5rem] lg:pl-0 grow">
+              <div class="pl-[2.5rem] pr-[1.5rem] shrink-0 hidden lg:block">
+                <div class="w-[4.1rem]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="41" height="44" viewBox="0 0 41 44" fill="none">
+                    <path d="M40.44 31.5313H39.3631C40.4895 26.5674 41.3209 20.4462 39.5802 12.4675H40.4397C40.6002 12.4675 40.7526 12.4 40.8583 12.2818C40.9643 12.1629 41.0138 12.0056 40.9939 11.8495L40.435 7.45755C40.3999 7.1821 40.1625 6.97571 39.8807 6.97571H38.1939C37.4011 4.69229 36.4037 2.44306 35.2203 0.288496C35.1229 0.110488 34.9343 0 34.7289 0H6.26981C6.06635 0 5.87926 0.108956 5.78066 0.284273C5.7222 0.389006 4.35103 2.85623 2.99732 6.9761H1.11748C0.83568 6.9761 0.597928 7.1825 0.563234 7.45795L0.00431008 11.8499C-0.0155679 12.006 0.0339331 12.1637 0.139951 12.2822C0.245966 12.4004 0.398359 12.4679 0.558554 12.4679H1.63547C0.509064 17.4291 -0.321898 23.5501 1.41798 31.5317H0.558942C0.398358 31.5317 0.245965 31.5992 0.140339 31.7174C0.0343233 31.8363 -0.0151762 31.9936 0.00469984 32.1497L0.563623 36.5417C0.598701 36.8171 0.83607 37.0235 1.11787 37.0235H2.80553C3.59831 39.3069 4.59497 41.5565 5.77906 43.7115C5.8765 43.8891 6.06514 44 6.27055 44H34.7306C34.934 44 35.1211 43.891 35.2197 43.7157C35.2786 43.6114 36.649 41.1435 38.0031 37.0235H39.8825C40.1643 37.0235 40.4021 36.8171 40.4368 36.5417L40.9957 32.1497C41.0156 31.9936 40.9661 31.8359 40.8601 31.7174C40.7536 31.5988 40.6009 31.5313 40.4407 31.5313L40.44 31.5313ZM38.218 31.5313H31.0011C31.615 26.5724 32.0711 20.4521 31.1196 12.4675H38.4386C40.2308 20.4832 39.3553 26.5952 38.218 31.5313ZM34.3944 1.09954C35.4195 3.00012 36.291 4.97309 37.007 6.97533H30.3612C29.9808 4.97388 29.512 3.00385 28.9674 1.09954H34.3944ZM21.0579 1.09954H27.8075C28.361 2.99934 28.8357 4.97083 29.2228 6.97533H21.058L21.0579 1.09954ZM19.9401 1.09954V6.97533H11.8759C12.4169 4.0006 12.9614 1.91901 13.1898 1.09954H19.9401ZM6.60759 1.09954H12.0315C11.7594 2.10316 11.25 4.13829 10.7409 6.97533H4.17188C5.19811 3.92537 6.22913 1.82885 6.60759 1.09954ZM1.19108 11.3675L1.61007 8.07549H39.3875L39.8065 11.3675H1.19108ZM19.9406 29.0584V31.5309H11.0034C10.036 23.516 10.5076 17.4042 11.1234 12.4671H19.9406V21.8928C18.2128 22.1993 16.8961 23.6874 16.8961 25.4755C16.8965 27.2636 18.2127 28.7513 19.9406 29.0583L19.9406 29.0584ZM18.014 25.4756C18.014 24.0734 19.1731 22.9321 20.598 22.9321C22.023 22.9321 23.1821 24.0734 23.1821 25.4756C23.1821 26.8778 22.023 28.0191 20.598 28.0191C19.1731 28.0195 18.014 26.8782 18.014 25.4756ZM21.0584 29.0883C22.8829 28.8643 24.3001 27.3316 24.3001 25.476C24.3001 23.62 22.8825 22.0873 21.0584 21.8633V12.4672H29.9957C30.9627 20.4718 30.493 26.5871 29.876 31.531H21.0584L21.0584 29.0883ZM2.78086 12.467H9.99809C9.38578 17.4194 8.92706 23.5364 9.87922 31.5308H2.55911C0.768171 23.5117 1.64352 17.4002 2.78086 12.467ZM6.6048 42.8988C5.57937 40.9982 4.70819 39.0248 3.99258 37.0226H10.6384C11.0176 39.021 11.4865 40.9909 12.0318 42.8988H6.6048ZM19.9413 42.8988H13.1921C12.6379 40.9948 12.1632 39.0233 11.7773 37.0226H19.9412L19.9413 42.8988ZM21.0591 42.8988V37.0226H29.1237C28.5823 39.9993 28.0374 42.0805 27.8094 42.8988H21.0591ZM34.3916 42.8988H28.9673C29.2394 41.8956 29.7488 39.86 30.2579 37.0226H36.8273C35.8007 40.0726 34.7702 42.1695 34.3917 42.8988H34.3916ZM39.3884 35.9227H1.61095L1.19195 32.6307H39.8075L39.3884 35.9227Z" fill="rgb(var(--color-background))"/>
+                  </svg>
+                </div>
+              </div>
+              <div class=" flex flex-col gap-2 justify-between xl:gap-5 py-.5 lg:py-0 grow">
+                <div>
+                  <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">product title</h2>
+                  <div class="[&_*]:text-xs [&_*]:leading-[1.6rem] [&_*]:xl:text-base [&_*]:xl:leading-[2.2rem]">
+                    Product description
+                  </div>
+                </div>
+                <div class="flex justify-between items-center gap-1">
+                  <p class="text-md leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">$10</p>
+                  <button class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-2 xl:text-md xl:leading-[2.2rem]">
+                    NOTIFY ME
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Subscription",
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "02"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "SUBSCRIPTIONS"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>A CARTE BLANCHE subscription is the perfect way to discover the world of an exciting new-wave of winemakers, delivered monthly, direct to your door.<p><p>These are hand-picked boxes that contain only the most exciting bottles, chosen with an eye not just on what we think is tasting best, but also intended to fit the mood of the season we’re delivering in. So expect bright, vibrant wines for spring & summer with darker, more meditative wines for the cooler months of autumn & winter.</p><p>What's more, you will always be able to find the bottles in your subscription on our website so rest assured you are getting the best value for your money .<p><p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.</p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.</p><p>If you do wish to make any changes to your membership, including address changes, please email us at hello@drinkmfb.com so we can make the changes to your account.</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "inverse"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 130
+    }
+  ]
+}
+{% endschema %}

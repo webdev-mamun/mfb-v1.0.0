@@ -7,11 +7,53 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign title = section.settings.title
+  assign text = section.settings.text
+  assign image1 = section.settings.image1
+  assign image2 = section.settings.image2
+-%}
+
 <div class="cart-blanche-hero section-padding color-{{ section.settings.color_scheme }}">
-  <div
-    class="cart-blanche-hero--banner grid grid-cols-10 gap-1 lg:gap-2 px-1 lg:px-2 grid-rows-[115px_minmax(290px,_1fr)_155px]"
-  >
-    baltu
+  {%- if image1 != blank or image2 != blank -%}
+    <div
+      class="cart-blanche-hero--banner container grid-rows-[38px_minmax(98px,_1fr)_42px] lg:grid-rows-[115px_minmax(290px,_1fr)_155px] mb-4"
+    >
+      <div class="col-start-1 col-span-5 lg:col-start-2 lg:col-span-4 row-start-2 row-span-2 rounded-2xl overflow-hidden">
+        {%- if image1 != blank -%}
+          {%- assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' -%}
+          {%- capture sizes -%}
+                (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+              {%- endcapture -%}
+          {{
+            image1
+            | image_url: width: 1920
+            | image_tag: loading: 'lazy', class: 'object-cover w-full h-full', sizes: sizes, widths: widths
+          }}
+        {%- endif -%}
+      </div>
+      <div class="col-span-4 col-start-7 lg:col-span-3 lg:col-start-7 row-start-1 row-span-2 rounded-2xl overflow-hidden">
+        {%- if image2 != blank -%}
+          {%- assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' -%}
+          {%- capture sizes -%}
+                (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+              {%- endcapture -%}
+          {{
+            image2
+            | image_url: width: 1920
+            | image_tag: loading: 'lazy', class: 'object-cover w-full h-full', sizes: sizes, widths: widths
+          }}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+  <div class="cart-blanche-hero--text container">
+    <h2 class="col-span-3 lg:col-span-2 text-[1rem] leading-[2rem] ps-1 lg:text-base lg:ps-2">{{ title }}</h2>
+    <div class="col-span-7 lg:col-span-8 text-xl leading-[2.6rem] indent-7 lg:text-3xl lg:leading-[6.6rem] lg:indent-[17rem]">
+      {{ text }}
+    </div>
   </div>
 </div>
 
@@ -19,6 +61,34 @@
 {
   "name": "Cart blanche hero",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "CARTE BLANCHE"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Welcome to CARTE BLANCHE, our one-of-a-kind subscription service, where we hand select the the finest wines and spirits, package them up and send them straight to your doorstep."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "inverse"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
@@ -31,7 +101,7 @@
       "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 20
+      "default": 40
     },
     {
       "type": "range",

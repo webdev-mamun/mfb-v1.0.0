@@ -398,7 +398,9 @@
         @apply hidden;
     }
 
-    
+    .carte-blanche-subscription--text-content {
+        @apply [&>*]:text-md [&>*]:leading-[1.7rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem] [&>*:first-child]:lg:indent-[6.5rem];
+    }
 }
 
 

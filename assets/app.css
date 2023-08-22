@@ -1810,6 +1810,32 @@ p.producer-overview p, .base-text.producer-overview p {
   display: none;
 }
 
+.carte-blanche-subscription--text-content>*:first-child {
+  text-indent: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .carte-blanche-subscription--text-content>*:first-child {
+    text-indent: 6.5rem;
+  }
+}
+
+.carte-blanche-subscription--text-content>*:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.carte-blanche-subscription--text-content>* {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+@media (min-width: 1024px) {
+  .carte-blanche-subscription--text-content>* {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1986,6 +2012,10 @@ p.producer-overview p, .base-text.producer-overview p {
   grid-column-start: 6;
 }
 
+.col-start-7 {
+  grid-column-start: 7;
+}
+
 .col-end-10 {
   grid-column-end: 10;
 }
@@ -2085,6 +2115,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .mb-3 {
   margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
 }
 
 .mb-5 {
@@ -2232,6 +2266,10 @@ p.producer-overview p, .base-text.producer-overview p {
   max-height: 100%;
 }
 
+.max-h-\[15rem\] {
+  max-height: 15rem;
+}
+
 .min-h-\[20rem\] {
   min-height: 20rem;
 }
@@ -2287,6 +2325,18 @@ p.producer-overview p, .base-text.producer-overview p {
 .w-min {
   width: -moz-min-content;
   width: min-content;
+}
+
+.w-\[4\.4rem\] {
+  width: 4.4rem;
+}
+
+.w-\[4\.1rem\] {
+  width: 4.1rem;
+}
+
+.w-\[9\.3rem\] {
+  width: 9.3rem;
 }
 
 .min-w-\[15\.8rem\] {
@@ -2522,12 +2572,12 @@ p.producer-overview p, .base-text.producer-overview p {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
-.grid-rows-\[115px_minmax\(290px\2c _1fr\)_155px\] {
-  grid-template-rows: 115px minmax(290px, 1fr) 155px;
-}
-
 .grid-rows-\[2\.4rem_repeat\(2\2c _minmax\(3rem\2c _min-content\)\)_auto\] {
   grid-template-rows: 2.4rem repeat(2, minmax(3rem, min-content)) auto;
+}
+
+.grid-rows-\[38px_minmax\(98px\2c _1fr\)_42px\] {
+  grid-template-rows: 38px minmax(98px, 1fr) 42px;
 }
 
 .grid-rows-\[auto\2c 1fr\] {
@@ -2592,6 +2642,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .gap-4 {
   gap: 4rem;
+}
+
+.gap-5 {
+  gap: 5rem;
 }
 
 .gap-\[\.3rem\] {
@@ -2703,6 +2757,10 @@ p.producer-overview p, .base-text.producer-overview p {
   border-bottom-width: 1px;
 }
 
+.border-l {
+  border-left-width: 1px;
+}
+
 .border-t {
   border-top-width: 1px;
 }
@@ -2735,6 +2793,10 @@ p.producer-overview p, .base-text.producer-overview p {
   border-color: rgb(var(--color-button-border, 197,197,197));
 }
 
+.border-\[rgb\(var\(--color-background\)\)\] {
+  border-color: rgb(var(--color-background));
+}
+
 .bg-\[color\:var\(--bg\)\] {
   background-color: var(--bg);
 }
@@ -2745,6 +2807,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .bg-\[color\:var\(--btn-bg\)\] {
   background-color: var(--btn-bg);
+}
+
+.bg-\[color\:var\(--color-foreground\)\] {
+  background-color: var(--color-foreground);
 }
 
 .bg-\[color\:var\(--overlayColor\2c _\#d9d9d9\)\] {
@@ -2763,6 +2829,14 @@ p.producer-overview p, .base-text.producer-overview p {
   background-color: rgb(var(--color-foreground));
 }
 
+.bg-\[rgba\(var\(--color-foreground\)\2c _\.7\)\] {
+  background-color: rgba(var(--color-foreground), .7);
+}
+
+.bg-opacity-70 {
+  --tw-bg-opacity: 0.7;
+}
+
 .bg-\[image\:var\(--bg-image\)\] {
   background-image: var(--bg-image);
 }
@@ -2777,6 +2851,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .stroke-\[var\(--act-btn-border\)\] {
   stroke: var(--act-btn-border);
+}
+
+.stroke-\[rgb\(var\(--color-background\)\)\] {
+  stroke: rgb(var(--color-background));
 }
 
 .object-cover {
@@ -2857,6 +2935,11 @@ p.producer-overview p, .base-text.producer-overview p {
   padding-bottom: 1.55rem;
 }
 
+.py-\.5 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 .pb-\.5 {
   padding-bottom: .5rem;
 }
@@ -2899,6 +2982,14 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .pl-1 {
   padding-left: 1rem;
+}
+
+.pl-\[2\.5rem\] {
+  padding-left: 2.5rem;
+}
+
+.pr-\[1\.5rem\] {
+  padding-right: 1.5rem;
 }
 
 .pr-\[6\.8rem\] {
@@ -2955,6 +3046,14 @@ p.producer-overview p, .base-text.producer-overview p {
   padding-top: 3.5rem;
 }
 
+.pr-\[4\.5rem\] {
+  padding-right: 4.5rem;
+}
+
+.pl-\[4\.5rem\] {
+  padding-left: 4.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2969,6 +3068,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .indent-10 {
   text-indent: 10rem;
+}
+
+.indent-7 {
+  text-indent: 7rem;
 }
 
 .align-top {
@@ -3188,6 +3291,10 @@ p.producer-overview p, .base-text.producer-overview p {
   color: var(--color, #151515);
 }
 
+.text-\[color\:var\(--color-background\)\] {
+  color: var(--color-background);
+}
+
 .text-\[color\:var\(--color-disable\)\] {
   color: var(--color-disable);
 }
@@ -3226,6 +3333,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
 .underline-offset-\[3px\] {
   text-underline-offset: 3px;
+}
+
+.underline-offset-1 {
+  text-underline-offset: 1px;
 }
 
 .opacity-0 {
@@ -3632,6 +3743,10 @@ p.producer-overview p, .base-text.producer-overview p {
     grid-column: span 7 / span 7;
   }
 
+  .lg\:col-span-8 {
+    grid-column: span 8 / span 8;
+  }
+
   .lg\:col-span-full {
     grid-column: 1 / -1;
   }
@@ -3650,6 +3765,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
   .lg\:col-start-4 {
     grid-column-start: 4;
+  }
+
+  .lg\:col-start-7 {
+    grid-column-start: 7;
   }
 
   .lg\:col-start-8 {
@@ -3776,6 +3895,10 @@ p.producer-overview p, .base-text.producer-overview p {
     width: auto;
   }
 
+  .lg\:w-\[18rem\] {
+    width: 18rem;
+  }
+
   .lg\:max-w-\[110rem\] {
     max-width: 110rem;
   }
@@ -3852,6 +3975,10 @@ p.producer-overview p, .base-text.producer-overview p {
     grid-template-rows: repeat(5, minmax(0, 1fr));
   }
 
+  .lg\:grid-rows-\[115px_minmax\(290px\2c _1fr\)_155px\] {
+    grid-template-rows: 115px minmax(290px, 1fr) 155px;
+  }
+
   .lg\:grid-rows-none {
     grid-template-rows: none;
   }
@@ -3904,6 +4031,10 @@ p.producer-overview p, .base-text.producer-overview p {
     gap: 4.5rem;
   }
 
+  .lg\:gap-5 {
+    gap: 5rem;
+  }
+
   .lg\:gap-x-2 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
@@ -3954,6 +4085,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
   .lg\:bg-none {
     background-image: none;
+  }
+
+  .lg\:p-2 {
+    padding: 2rem;
   }
 
   .lg\:px-0 {
@@ -4016,6 +4151,14 @@ p.producer-overview p, .base-text.producer-overview p {
     padding-bottom: 28rem;
   }
 
+  .lg\:pl-0 {
+    padding-left: 0;
+  }
+
+  .lg\:pr-2 {
+    padding-right: 2rem;
+  }
+
   .lg\:ps-0 {
     -webkit-padding-start: 0;
             padding-inline-start: 0;
@@ -4069,6 +4212,10 @@ p.producer-overview p, .base-text.producer-overview p {
 
   .lg\:text-right {
     text-align: right;
+  }
+
+  .lg\:indent-\[17rem\] {
+    text-indent: 17rem;
   }
 
   .lg\:font-sans {
@@ -4161,6 +4308,10 @@ p.producer-overview p, .base-text.producer-overview p {
     line-height: 5.4rem;
   }
 
+  .lg\:leading-\[6\.6rem\] {
+    line-height: 6.6rem;
+  }
+
   .lg\:leading-\[7\.4rem\] {
     line-height: 7.4rem;
   }
@@ -4207,6 +4358,10 @@ p.producer-overview p, .base-text.producer-overview p {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .xl\:gap-5 {
+    gap: 5rem;
+  }
+
   .xl\:gap-x-2 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
@@ -4221,13 +4376,56 @@ p.producer-overview p, .base-text.producer-overview p {
     padding-right: 0;
   }
 
+  .xl\:pr-9 {
+    padding-right: 9rem;
+  }
+
   .xl\:text-3xl {
     font-size: 6.2rem;
     line-height: 6.2rem;
   }
 
+  .xl\:text-4xl {
+    font-size: 8.8rem;
+    line-height: 9.24rem;
+  }
+
+  .xl\:text-base {
+    font-size: 1.6rem;
+    line-height: 2.16rem;
+  }
+
+  .xl\:text-md {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
+  .xl\:leading-\[2\.2rem\] {
+    line-height: 2.2rem;
+  }
+
   .xl\:tracking-\[-3\.1px\] {
     letter-spacing: -3.1px;
+  }
+}
+
+.\[\&\*\]\:text-xs* {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.\[\&\*\]\:leading-\[1\.6rem\]* {
+  line-height: 1.6rem;
+}
+
+@media (min-width: 1024px) {
+  .\[\&\*\]\:lg\:text-base* {
+    font-size: 1.6rem;
+    line-height: 2.16rem;
+  }
+
+  .\[\&\*\]\:lg\:leading-\[2\.2rem\]* {
+    line-height: 2.2rem;
   }
 }
 
@@ -4292,12 +4490,21 @@ p.producer-overview p, .base-text.producer-overview p {
   line-height: 2.2rem;
 }
 
+.\[\&\>\*\]\:text-xs>* {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
 .\[\&\>\*\]\:leading-\[1\.8rem\]>* {
   line-height: 1.8rem;
 }
 
 .\[\&\>\*\]\:leading-\[2rem\]>* {
   line-height: 2rem;
+}
+
+.\[\&\>\*\]\:leading-\[1\.6rem\]>* {
+  line-height: 1.6rem;
 }
 
 .\[\&\>\*\]\:-tracking-\[\.02em\]>* {
@@ -4355,6 +4562,37 @@ p.producer-overview p, .base-text.producer-overview p {
 
   .\[\&\>\*\]\:xl\:leading-\[5\.2rem\]>* {
     line-height: 5.2rem;
+  }
+}
+
+.\[\&_\*\]\:text-xs * {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.\[\&_\*\]\:leading-\[1\.6rem\] * {
+  line-height: 1.6rem;
+}
+
+@media (min-width: 1024px) {
+  .\[\&_\*\]\:lg\:text-base * {
+    font-size: 1.6rem;
+    line-height: 2.16rem;
+  }
+
+  .\[\&_\*\]\:lg\:leading-\[2\.2rem\] * {
+    line-height: 2.2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .\[\&_\*\]\:xl\:text-base * {
+    font-size: 1.6rem;
+    line-height: 2.16rem;
+  }
+
+  .\[\&_\*\]\:xl\:leading-\[2\.2rem\] * {
+    line-height: 2.2rem;
   }
 }
 
