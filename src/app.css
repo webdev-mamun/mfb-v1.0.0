@@ -1,6 +1,10 @@
 @tailwind base;
 
 @layer base {
+    html {
+        @apply scroll-smooth
+    }
+
     h1, .h1 {
         @apply text-4xl;
     }
@@ -401,6 +405,16 @@
     .carte-blanche-subscription--text-content {
         @apply [&>*]:text-md [&>*]:leading-[1.7rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem] [&>*:first-child]:lg:indent-[6.5rem];
     }
+
+    .address-list-address {
+        @apply not-italic font-serif -tracking-[.05em] [&>*]:-tracking-[.05em] text-xs [&>*]:text-xs leading-[1.6rem] [&>*]:leading-[1.6rem] lg:text-base [&>*]:lg:text-base [&:not(:first-child)]:mt-2 [&:not(:first-child)]:lg:mt-4
+    }
+
+    .article-content {
+        @apply font-serif -tracking-[.05em] big-text leading-[3.52rem] lg:text-2xl lg:leading-[4.8rem] mt-.5 lg:mt-[9rem] px-1 lg:px-0
+        [&>*]:big-text [&>*]:leading-[3.52rem] [&>*]:-tracking-[.05em] [&>*]:lg:text-2xl [&>*]:lg:leading-[4.8rem] indent-6 lg:indent-[14rem]
+    }
+
 }
 
 

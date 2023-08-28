@@ -1,52 +1,159 @@
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
-
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
 {%- endstyle -%}
-
-{%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+{%- paginate blog.articles by 10 -%}
+  <div class="main-blog section-padding color-{{ section.settings.color_scheme }}">
+    <h1 class="sr-only">
       {{ blog.title | escape }}
     </h1>
 
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div
-          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
-        </div>
-      {%- endfor -%}
-    </div>
+    {%- if paginate.current_page == 1 -%}
+      <div class="container grid-rows-[35.5rem_repeat(5,_19rem)] lg:grid-rows-[26.6rem_repeat(2,_19rem)]">
+        {%- for article in blog.articles -%}
+          {%- if forloop.index == 6 -%}{% break %}{%- endif -%}
+          {%- liquid
+            if forloop.first
+              assign col_class = 'col-span-full lg:col-span-5 lg:row-span-full'
+              assign title_class = 'text-2xl lg:text-4xl max-w-[10ch]'
 
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
+            elsif forloop.index == 2
+              assign col_class = 'col-span-full lg:col-span-5'
+              assign title_class = 'text-xl lg:text-2xl max-w-[10ch]'
+            elsif forloop.index == 3
+              assign col_class = 'col-span-full lg:col-span-2 lg:col-start-6 lg:row-span-2'
+              assign title_class = 'text-xl lg:text-2xl max-w-[6ch]'
+            elsif forloop.index == 4
+              assign col_class = 'col-span-full lg:col-span-3'
+              assign title_class = 'text-xl max-w-[10ch]'
+            elsif forloop.index == 5
+              assign col_class = 'col-span-full lg:col-span-3 lg:col-start-8'
+              assign title_class = 'text-xl max-w-[9ch]'
+            endif
+          -%}
+          <div class="{{ col_class }} relative rounded-2xl overflow-hidden">
+            {%- if article.image != blank -%}
+              <div class="article-image h-full">
+                <img
+                  srcset="
+                    {%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ article.image.src | image_url }} {{ article.image.src.width }}w
+                  "
+                  src="{{ article.image.src | image_url: width: 533 }}"
+                  sizes="(min-width: 1440px) {{ 1440 | minus: 100 | divided_by: 2 }}px, (min-width: 768px) calc((100vw - 40px) / 2), calc((100vw - 10px) / 2)"
+                  alt="{{ article.image.src.alt | escape }}"
+                  class="object-cover object-center w-full h-full"
+                  loading="lazy"
+                  width="{{ article.image.width }}"
+                  height="{{ article.image.height }}"
+                >
+              </div>
+            {%- endif -%}
+            <div
+              class="absolute inset-0 px-1 pt-1 pb-[1.5rem] lg:p-2 flex flex-col justify-between bg-[rgba(var(--color-foreground),_.3)] text-[rgb(var(--color-background))]"
+              style="--color-link: var(--color-background)"
+            >
+              <h2 class="{{ title_class }} first-line:font-serif first-line:-tracking-[.05em]">
+                {{ article.title }}
+              </h2>
+              <div class="flex flex-wrap gap-y-1 gap-x-2 justify-between border-t pt-.5 lg:pt-1">
+                <div class="{% if forloop.index < 3 %}{% if forloop.first %}grow-0 shrink-0 basis-[calc(((100%_-_20px)_/_10)_*_4)]{% endif %} lg:grow-0 lg:shrink-0 lg:basis-[calc(((100%_-_20px)_/_5)_*_2)]{% endif %}">
+                  <p class="text-md leading-[1.8rem] lg:text-base">
+                    {{- article.published_at | time_tag: ' %d %b %Y' -}}
+                  </p>
+                  <p class="text-md leading-[1.8rem] lg:text-base font-serif -tracking-[.05em]">
+                    by {{ article.author | upcase -}}
+                  </p>
+                </div>
+                <div class="mt-auto flex flex-col items-start{% if forloop.index < 3 %}{% if forloop.first %} grow-0 shrink-0 basis-[calc(((100%_-_20px)_/_10)_*_6)]{% endif %} lg:grow-0 lg:shrink-0 lg:basis-[calc(((100%_-_20px)_/_5)_*_3)]{% endif %}{% unless forloop.first %} pr-2 lg:pr-0{% endunless %}">
+                  {%- if forloop.index < 3 -%}
+                    <p class="text-sm lg:text-base{% if forloop.first %} line-clamp-5 lg:line-clamp-3{% else %} hidden lg:line-clamp-3{% endif %}">
+                      {{ article.excerpt_or_content }}
+                    </p>
+                  {%- endif -%}
+                  {%- render 'btn-link',
+                    text: 'Continue reading',
+                    url: article.url,
+                    class: ' items-center normal-case font-serif -tracking-[.05em]'
+                  -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <h2 class="col-span-full uppercase text-md leading-[2.2rem] text-center pt-[1.2rem] pb-[.8rem]">MORE NOTES</h2>
     {%- endif -%}
+
+    <div class="blog-articles container">
+      <div class="border-t border-color col-span-full" id="AjaxinateContainer">
+        {%- for article in blog.articles -%}
+          {%- if paginate.current_page == 1 and forloop.index < 6 -%}{% continue %}{%- endif -%}
+          <a
+            href="{{ article.url }}"
+            class="btn-secondary grid grid-cols-10 gap-x-1 lg:gap-x-2 px-1 lg:px-2 lg:pt-[.7rem] lg:pb-[.5rem] border-b border-color"
+          >
+            <h2 class="col-span-6 text-xs leading-[2.2rem] lg:text-base">{{ article.title }}</h2>
+            <div class="col-span-4 flex items-center justify-between">
+              <span class="text-[1rem] leading-[2.2rem] lg:text-md">
+                {{- article.published_at | time_tag: ' %d %b %Y' -}}
+              </span>
+              <span class="hidden lg:block text-xs leading-[2.2rem] lg:text-md font-serif -tracking-[.05em]">
+                by {{ article.author | upcase -}}
+              </span>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="9"
+                  viewBox="0 0 48 8"
+                  fill="none"
+                  class="hidden lg:block"
+                >
+                  <path d="M47.3536 4.35355C47.5488 4.15829 47.5488 3.84171 47.3536 3.64645L44.1716 0.464466C43.9763 0.269204 43.6597 0.269204 43.4645 0.464466C43.2692 0.659728 43.2692 0.976311 43.4645 1.17157L46.2929 4L43.4645 6.82843C43.2692 7.02369 43.2692 7.34027 43.4645 7.53553C43.6597 7.7308 43.9763 7.7308 44.1716 7.53553L47.3536 4.35355ZM0 4.5H47V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="8"
+                  viewBox="0 0 32 8"
+                  fill="none"
+                  class="lg:hidden"
+                >
+                  <path d="M31.3536 4.35355C31.5488 4.15829 31.5488 3.84171 31.3536 3.64645L28.1716 0.464466C27.9763 0.269204 27.6597 0.269204 27.4645 0.464466C27.2692 0.659728 27.2692 0.976311 27.4645 1.17157L30.2929 4L27.4645 6.82843C27.2692 7.02369 27.2692 7.34027 27.4645 7.53553C27.6597 7.7308 27.9763 7.7308 28.1716 7.53553L31.3536 4.35355ZM0 4.5H31V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <script src="{{ 'ajaxinate.min.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'paginate-component.js' | asset_url }}" defer="defer"></script>
+        <div id="AjaxinatePagination" class="col-span-full flex justify-center">
+          {% if paginate.next %}
+            <a
+              href="{{ paginate.next.url }}"
+              class="btn-primary uppercase h-[2.2rem] rounded-full border text-[1rem] leading-[1.6rem] px-[1.3rem] pt-[.3rem]"
+              >GO BACK FURTHER</a
+            >
+          {% endif %}
+        </div>
+        {% comment %}
+          {%- render 'pagination', paginate: paginate -%}
+        {% endcomment %}
+      {%- endif -%}
+    </div>
   </div>
 {%- endpaginate -%}
 
@@ -57,72 +164,10 @@
   "class": "section",
   "settings": [
     {
-      "type": "header",
-      "content": "t:sections.main-blog.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "t:sections.main-blog.settings.layout.options__1.label"
-        },
-        {
-          "value": "collage",
-          "label": "t:sections.main-blog.settings.layout.options__2.label"
-        }
-      ],
-      "default": "collage",
-      "label": "t:sections.main-blog.settings.layout.label",
-      "info": "t:sections.main-blog.settings.layout.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image",
-      "default": true,
-      "label": "t:sections.main-blog.settings.show_image.label"
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-blog.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.main-blog.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-blog.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-blog.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.main-blog.settings.image_height.label",
-      "info": "t:sections.main-blog.settings.image_height.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "default": true,
-      "label": "t:sections.main-blog.settings.show_date.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_author",
-      "default": false,
-      "label": "t:sections.main-blog.settings.show_author.label"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:sections.main-blog.settings.paragraph.content"
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
     },
     {
       "type": "header",
@@ -132,21 +177,41 @@
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 200,
+      "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 10
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 100,
-      "step": 4,
+      "max": 200,
+      "step": 5,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 140
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 150
     }
   ]
 }

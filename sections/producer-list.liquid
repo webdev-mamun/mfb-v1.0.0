@@ -1,0 +1,126 @@
+<script src="{{ 'text-hover-image-component.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+<div class="producer-list section-padding color-{{ section.settings.color_scheme }}">
+  <div class="container">
+    <h1 class="col-span-full text-2xl leading-[5.6rem] lg:text-base lg:leading-[1.8rem] text-center uppercase">
+      {{ section.settings.title }}
+    </h1>
+    <div class="col-span-full px-1 lg:col-span-6 lg:col-start-3 flex flex-wrap justify-center gap-y-.5 gap-x-[1.5rem]">
+      {%- assign producers = shop.metaobjects.producer.values -%}
+      {%- for producer in producers -%}
+        {%- liquid
+          assign collection = collections[producer.collection].url
+        -%}
+        <text-hover-image class="relative inline-block">
+          {%- if collection != blank -%}
+            <a
+              href="{{ collection }}"
+              class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition"
+            >
+              {{- producer.title }}
+              <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top"
+                >({{ producer.country_code }})</span
+              ></a
+            >
+          {%- else -%}
+            <p class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition">
+              {{- producer.title }}
+              <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top">
+                ({{ producer.country_code }})
+              </span>
+            </p>
+          {%- endif -%}
+          {%- if producer.image != blank -%}
+            <div class="hidden lg:block invisible [&.show]:lg:visible w-[22rem] h-[30rem] absolute text-block-image pointer-events-none top-[var(--top,_0px)] left-[var(--left,_0px)] rounded-lg overflow-hidden z-10">
+              {%- assign widths = '375, 550' -%}
+              {%- capture sizes -%}
+                              (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                              (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+                            {%- endcapture -%}
+              {{
+                producer.image
+                | image_url: width: 220, height: 300
+                | image_tag: loading: 'lazy', class: 'object-cover object-center', sizes: sizes, widths: widths
+              }}
+            </div>
+          {%- endif -%}
+        </text-hover-image>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Producer list",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our producer"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 190
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 285
+    }
+  ]
+}
+{% endschema %}

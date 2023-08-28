@@ -1,0 +1,115 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+<div class="title-list color-{{ section.settings.color_scheme }} px-1 lg:px-2">
+  <div class="border-t border-color section-padding">
+    <div class="container">
+      <h2 class="col-span-3 lg:col-span-2 text-xs leading-[1.6rem] lg:text-base lg:leading-[2.2rem] uppercase">
+        {{ section.settings.title }}
+      </h2>
+      <ul class="col-span-7 lg:col-span-8">
+        {%- for block in section.blocks -%}
+          <li>
+            <a
+              href="#{{ block.settings.url }}"
+              class="inline-block text-xs leading-[1.6rem] lg:text-base lg:leading-[2.2rem] uppercase{% unless forloop.first %} mt-.5{% endunless %}"
+            >
+              {{- block.settings.title -}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+{%- schema -%}
+{
+  "name": "Title list",
+  "class": "section",
+  "tag": "section",
+  "blocks": [
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Section id",
+          "info": "section id without #"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "GO TO:"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 130
+    }
+  ]
+}
+{%- endschema -%}

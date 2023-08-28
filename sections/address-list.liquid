@@ -1,0 +1,169 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign regions = section.blocks | where: 'type', 'region'
+-%}
+
+<div class="address-list color-{{ section.settings.color_scheme }} px-1 lg:px-2">
+  <div class="border-t border-color section-padding">
+    <div class="grid grid-cols-9 lg:grid-cols-10 gap-x-1 lg:gap-x-2">
+      <h2 class="col-span-3 lg:col-span-2 text-xs leading-[1.6rem] lg:text-base lg:leading-[2.2rem] uppercase ps-1 lg:ps-2">
+        {{ section.settings.title }}
+      </h2>
+      <div class="col-span-6 lg:col-span-8 grid grid-cols-6 lg:grid-cols-8 gap-x-1 lg:gap-x-2 gap-y-5">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'text' -%}
+            <div
+              {{ block.shopify_attributes }}
+              class="col-span-full font-serif text-xs leading-[1.6rem] lg:text-base lg:leading-[2.2rem] -tracking-[.05em] uppercase"
+            >
+              {{ block.settings.text }}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- for region in regions -%}
+          <div class="col-span-3 lg:col-span-2">
+            <h3 class="text-xs leading-[1.6rem] lg:text-base lg:leading-[2.2rem] uppercase mb-.5">
+              {{ region.settings.title }}
+            </h3>
+            <div class="ps-1 lg:ps-2">
+              {%- assign region_handle = region.settings.title | handle -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'address' -%}
+                  {%- assign address_handle = block.settings.title | handle -%}
+                  {%- if region_handle == address_handle -%}
+                    <address {{ block.shopify_attributes }} class="address-list-address">
+                      {{ block.settings.address }}
+                    </address>
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- schema -%}
+{
+  "name": "Address list",
+  "class": "section",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "region",
+      "name": "Region",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Region 1"
+        }
+      ]
+    },
+    {
+      "type": "address",
+      "name": "Address",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Region 1"
+        },
+        {
+          "type": "richtext",
+          "id": "address",
+          "label": "Address",
+          "default": "<p>Address Line 01</p><p>Address Line 02</p><p>Postcode</p><p>Telephone Number</p>"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "text",
+          "default": "COMING SOON"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "FRANCE"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 160
+    }
+  ],
+  "presets": [
+    {
+      "name": "Address list"
+    }
+  ]
+}
+{%- endschema -%}

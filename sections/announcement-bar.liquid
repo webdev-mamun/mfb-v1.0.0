@@ -1,14 +1,4 @@
-{%- liquid
-  assign show = true
-  if section.settings.show_home_only == true
-    if request.page_type == 'index'
-      assign show = true
-    else
-      assign show = false
-    endif
-  endif
--%}
-{%- if show and section.blocks.size > 0 -%}
+{%- if section.blocks.size > 0 -%}
   {%- style -%}
       #shopify-section-{{ section.id }} {
       --padding-top: {{ section.settings.padding_top }}px;
@@ -103,16 +93,7 @@
   "name": "t:sections.announcement-bar.name",
   "max_blocks": 12,
   "class": "announcement-bar-section",
-  "enabled_on": {
-    "groups": ["header"]
-  },
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_home_only",
-      "default": false,
-      "label": "t:sections.announcement-bar.settings.show_home_only.label"
-    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

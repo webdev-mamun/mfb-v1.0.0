@@ -17,8 +17,11 @@
 <div class="cart-blanche-hero section-padding color-{{ section.settings.color_scheme }}">
   {%- if image1 != blank or image2 != blank -%}
     <div
-      class="cart-blanche-hero--banner container grid-rows-[38px_minmax(98px,_1fr)_42px] lg:grid-rows-[115px_minmax(290px,_1fr)_155px] mb-4"
+      class="cart-blanche-hero--banner container grid-rows-[38px_minmax(98px,_1fr)_42px] lg:grid-rows-[115px_minmax(290px,_1fr)_155px] mb-4 relative"
     >
+      <div class="absolute w-full left-0 right-0 bottom-4">
+        {%- render 'carte-blanche-big' -%}
+      </div>
       <div class="col-start-1 col-span-5 lg:col-start-2 lg:col-span-4 row-start-2 row-span-2 rounded-2xl overflow-hidden">
         {%- if image1 != blank -%}
           {%- assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840' -%}

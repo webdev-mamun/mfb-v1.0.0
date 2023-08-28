@@ -1,0 +1,8 @@
+{
+    "sections": {
+        "main": {
+            "type": "producer-list"
+        }
+    },
+    "order": ["main"]
+}
