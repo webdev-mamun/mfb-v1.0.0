@@ -1,8 +1,12 @@
 {
-    "sections": {
-        "main": {
-            "type": "producer-list"
-        }
-    },
-    "order": ["main"]
+  "sections": {
+    "main": {
+      "type": "producer-list",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
 }
