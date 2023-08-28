@@ -1,6 +1,11 @@
 <script src="{{ 'featured-collection-slider.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- liquid
+  assign limit = section.settings.limit
+  assign title = section.settings.title
+-%}
+
 {%- style -%}
   #shopify-section-{{ section.id }} .splide {
     visibility: visible;
@@ -11,6 +16,31 @@
     grid-template-columns: repeat(10, minmax(0, 1fr));
     gap: 2rem;
   }
+
+  {% if limit == 4 %}
+    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+    grid-column: span 2 / span 2;
+  }
+  {% endif %}
+
+  {% if limit == 3 %}
+    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+    grid-column: span 4 / span 4;
+  }
+  {% endif %}
+
+  {% if limit == 2 %}
+    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+    grid-column: span 6 / span 6;
+  }
+  {% endif %}
+
+  {% if limit == 1 %}
+    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+    grid-column: span 8 / span 8;
+  }
+  {% endif %}
+
   #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide {
     grid-column: span 2 / span 2;
   }
@@ -31,30 +61,29 @@
             <li class="splide__slide">
               <div class="flex flex-col justify-between h-full px-1 pb-2 pt-.5">
                 <h2 class="font-sans text-xl lg:text-2xl -tracking-[.02em] first-line:font-serif first-line:-tracking-[.05em] uppercase">
-                  {{ section.settings.title | replace_first: ' ', '<br>' }}
+                  {{ title }}
                 </h2>
-                {%- render 'btn-link',
-                  text: section.settings.btn,
-                  url: section.settings.collection.url,
-                  class: ' hidden lg:flex items-center'
-                -%}
-                <a
-                  role="button"
-                  class="font-serif text-[1.2rem] leading-[2.2rem] -tracking-[.02em] flex gap-x-1 gap-y-0 lg:hidden flex-col justify-center"
-                >
-                  <span class="underline underline-offset-[3px]">SWIPE LEFT</span>
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="8" viewBox="0 0 64 8" fill="none">
-                      <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM64 3.5L1 3.5V4.5L64 4.5V3.5Z" fill="#151515"/>
-                    </svg>
-                  </span>
-                </a>
-
-                {%- if section.settings.collection.all_products_count > 4 and section.settings.btn != blank -%}
+                {%- if section.settings.collection.all_products_count > limit and section.settings.btn != blank -%}
+                  {%- render 'btn-link',
+                    text: section.settings.btn,
+                    url: section.settings.collection.url,
+                    class: ' hidden lg:flex items-center'
+                  -%}
+                  <a
+                    role="button"
+                    class="font-serif text-[1.2rem] leading-[2.2rem] -tracking-[.02em] flex gap-x-1 gap-y-0 lg:hidden flex-col justify-center"
+                  >
+                    <span class="underline underline-offset-[3px]">SWIPE LEFT</span>
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="8" viewBox="0 0 64 8" fill="none">
+                        <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM64 3.5L1 3.5V4.5L64 4.5V3.5Z" fill="#151515"/>
+                      </svg>
+                    </span>
+                  </a>
                 {%- endif -%}
               </div>
             </li>
-            {%- for product in section.settings.collection.products limit: 4 -%}
+            {%- for product in section.settings.collection.products limit: limit -%}
               <li class="splide__slide">
                 {% render 'card-product',
                   card_product: product,
@@ -68,7 +97,7 @@
                 %}
               </li>
             {%- else -%}
-              {%- for i in (1..4) -%}
+              {%- for i in (1..limit) -%}
                 <li
                   class="splide__slide"
                   {% if settings.animations_reveal_on_scroll %}
@@ -101,15 +130,24 @@
   },
   "settings": [
     {
-      "type": "text",
+      "type": "html",
       "id": "title",
-      "default": "Featured collection",
+      "default": "Featured<br>collection",
       "label": "t:sections.featured-collection.settings.title.label"
     },
     {
       "type": "collection",
       "id": "collection",
       "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Maximum products to show",
+      "max": 4,
+      "min": 1,
+      "step": 1,
+      "default": 3
     },
     {
       "type": "text",
