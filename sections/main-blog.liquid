@@ -76,9 +76,9 @@
                 </div>
                 <div class="mt-auto flex flex-col items-start{% if forloop.index < 3 %}{% if forloop.first %} grow-0 shrink-0 basis-[calc(((100%_-_20px)_/_10)_*_6)]{% endif %} lg:grow-0 lg:shrink-0 lg:basis-[calc(((100%_-_20px)_/_5)_*_3)]{% endif %}{% unless forloop.first %} pr-2 lg:pr-0{% endunless %}">
                   {%- if forloop.index < 3 -%}
-                    <p class="text-sm lg:text-base{% if forloop.first %} line-clamp-5 lg:line-clamp-3{% else %} hidden lg:line-clamp-3{% endif %}">
+                    <div class="text-sm lg:text-base [&>*]:text-sm [&>*]:lg:text-base{% if forloop.first %} line-clamp-5 lg:line-clamp-3{% else %} hidden lg:line-clamp-3{% endif %}">
                       {{ article.excerpt_or_content }}
-                    </p>
+                    </div>
                   {%- endif -%}
                   {%- render 'btn-link',
                     text: 'Continue reading',

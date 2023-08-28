@@ -4813,6 +4813,11 @@ p.article-content, .base-text.article-content {
   line-height: 2.2rem;
 }
 
+.\[\&\>\*\]\:text-sm>* {
+  font-size: 1.3rem;
+  line-height: 1.43rem;
+}
+
 .\[\&\>\*\]\:leading-\[1\.8rem\]>* {
   line-height: 1.8rem;
 }
