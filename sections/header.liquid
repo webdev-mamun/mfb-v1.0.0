@@ -123,7 +123,7 @@
       {%- if customer -%}
         <a
           href="{{ routes.account_url }}"
-          class="header__icon header__icon--account link focus-insetbase-text font-sans flex items-center uppercase h-full"
+          class="header__icon header__icon--account link focus-insetbase-text text-xs lg:text-base flex items-center uppercase h-full"
         >
           {{ 'customer.account_fallback' | t }}
         </a>
@@ -134,7 +134,7 @@
 
     <a
       href="{{ routes.cart_url }}"
-      class="header__icon header__icon--cart link focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full"
+      class="header__icon header__icon--cart link focus-inset text-xs lg:text-base flex items-center uppercase h-full"
       id="cart-icon-bubble"
     >
       <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>

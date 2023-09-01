@@ -147,7 +147,7 @@
     }
 
     .btn-medium {
-        @apply font-sans text-center text-[1.4rem] leading-[2.2rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] px-[3.5rem] pt-[.6rem] pb-[.3rem];
+        @apply font-sans text-center text-[1.4rem] leading-[2.2rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] px-[3.5rem] pt-[.6rem] pb-[.3rem] min-w-[15rem];
     }
 
     .btn-link {
@@ -172,6 +172,10 @@
 
     .btn-secondary:hover {
         @apply text-[rgb(var(--color-secondary-button-text-hover,_255,254,247))] bg-[rgb(var(--color-secondary-button-hover,_2,37,65))] border-[rgb(var(--color-secondary-button-border-hover,_2,37,65))];
+    }
+
+    .btn-danger {
+        @apply text-[#ffffff] bg-[#FF0F0F] border-[#FF0F0F] hover:text-[#FF0F0F] hover:bg-transparent
     }
 
     .card-act-btn {
@@ -415,6 +419,29 @@
         [&>*]:big-text [&>*]:leading-[3.52rem] [&>*]:-tracking-[.05em] [&>*]:lg:text-2xl [&>*]:lg:leading-[4.8rem] indent-6 lg:indent-[14rem]
     }
 
+    .article-extra-text {
+        @apply text-md leading-[2rem] lg:text-base lg:leading-[2.2rem] 
+        [&>p:first-child]:indent-4 [&>p:first-child]:lg:indent-6 [&>p:not(:first-child)]:mt-2
+        [&>*]:text-md [&>*]:leading-[2rem] [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem]
+    }
+
+    .account-block-title {
+        @apply text-md leading-[2.08rem]
+    }
+
+    .order-item-title {
+        @apply font-serif -tracking-[.05em] text-md leading-[2.1rem] text-[rgba(var(--color-foreground),_.5)]
+    }
+
+    .account-order-item-details {
+        @apply text-md leading-[2.1rem] lg:text-base lg:leading-[2.4rem]
+    }
+
+    .account-order-item {
+        @apply odd:basis-[calc(((100%_-_2rem)_/_10)_*_4)] even:basis-[calc(((100%_-_2rem)_/_10)_*_6)] lg:even:basis-[calc((100%_-_(2rem_*_2))_/_3)] lg:odd:basis-[calc((100%_-_(2rem_*_2))_/_3)] flex flex-col gap-y-1
+    }
+
+    
 }
 
 

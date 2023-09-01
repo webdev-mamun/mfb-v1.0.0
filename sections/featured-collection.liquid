@@ -3,7 +3,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- liquid
   assign limit = section.settings.limit
-  assign title = section.settings.title
+  assign title = section.settings.title | replace: '%br%', '<br>'
 -%}
 
 {%- style -%}
@@ -52,6 +52,7 @@
     --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
 {%- endstyle -%}
+
 <div class="featured-collection section-padding color-{{ section.settings.color_scheme }}">
   <div class="container">
     <featured-collection-slider class="col-span-full">
@@ -130,9 +131,9 @@
   },
   "settings": [
     {
-      "type": "html",
+      "type": "text",
       "id": "title",
-      "default": "Featured<br>collection",
+      "default": "Featured%br%collection",
       "label": "t:sections.featured-collection.settings.title.label"
     },
     {

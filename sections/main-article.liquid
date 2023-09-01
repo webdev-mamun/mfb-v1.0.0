@@ -71,6 +71,43 @@
     <div class="col-span-full lg:col-span-8 lg:col-start-2 article-content">
       {{ article.content }}
     </div>
+    {%- assign image = section.settings.image -%}
+    {%- if image != blank or section.settings.extra_info != blank -%}
+      <div class="col-span-full grid grid-cols-10 gap-1 lg:gap-2 mt-2 lg:mt-7">
+        {%- if image != blank -%}
+          <div class="col-span-full order-2 lg:order-1 lg:col-span-5 lg:col-start-2">
+            <img
+              srcset="
+                {% if image.width >= 350 %}{{ image | image_url: width: 350 }} 350w,{% endif %}
+                {% if image.width >= 750 %}{{ image | image_url: width: 750 }} 750w,{% endif %}
+                {% if image.width >= 1100 %}{{ image | image_url: width: 1100 }} 1100w,{% endif %}
+                {% if image.width >= 1500 %}{{ image | image_url: width: 1500 }} 1500w,{% endif %}
+                {% if image.width >= 2200 %}{{ image | image_url: width: 2200 }} 2200w,{% endif %}
+                {% if image.width >= 3000 %}{{ image | image_url: width: 3000 }} 3000w,{% endif %}
+                {{ image | image_url }} {{ image.width }}w
+              "
+              sizes="(min-width: {{ 1920 }}px) {{ 1920 | minus: 40 }}px, (min-width: 768px) calc(100vw - 20px), 100vw"
+              src="{{ image | image_url: width: 1920 }}"
+              loading="eager"
+              fetchpriority="high"
+              width="{{ image.width }}"
+              height="{{ height }}"
+              alt="{{ image.alt | escape }}"
+              class="mx-auto"
+            >
+          </div>
+        {%- endif -%}
+        {%- if section.settings.extra_info != blank -%}
+          <div class="col-span-8 col-start-2 order-1 lg:order-2 lg:col-span-3 mb-2 lg:mb-0 article-extra-text">
+            {{
+              section.settings.extra_info
+              | replace: '<div class="metafield-rich_text_field">', ''
+              | replace: '</div>', ''
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
   </div>
 </article>
 
@@ -111,6 +148,16 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "extra_info",
+      "label": "Text"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

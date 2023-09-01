@@ -1,5 +1,5 @@
 {%- if section.settings.enable_agecheck -%}
-  <script src="{{ 'age-check.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'age-check.js' | asset_url }}" defer="async"></script>
   {%- style -%}
       #shopify-section-{{ section.id }} {
         --color: #fffef7;
