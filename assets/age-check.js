@@ -7,9 +7,9 @@ class ageVerification extends HTMLElement {
       this.cookieFound = this.checkCookie(this.cName);
       this.redirectUrl = this.dataset.redirecUrl;
       this.redirectPage = window.location.href.indexOf(this.redirectUrl) !== -1;
-
+    
       if (!this.cookieFound && !this.redirectPage) {
-        this.showPopup();
+        this.showPopup();  
       } else {
         this.closePopup();
       }
