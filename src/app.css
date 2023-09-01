@@ -380,10 +380,14 @@
     }
 
     .form__message {
-        @apply text-xs ps-2 underline underline-offset-2
+        @apply text-xs underline underline-offset-2 mt-.5
     }
     .form__message--error {
         @apply text-[#FF0000]
+    }
+
+    .form__message--success {
+        @apply text-[#18AC00]
     }
 
     #login, #recover {

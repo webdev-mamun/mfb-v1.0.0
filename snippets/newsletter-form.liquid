@@ -1,4 +1,5 @@
-{% form 'customer', class: 'newsletter-form' %}
+{% assign form_id = 'contact_form--' | append: id %}
+{% form 'customer', class: 'newsletter-form', id: form_id %}
   <input type="hidden" name="contact[tags]" value="newsletter">
   <div class="flex flex-wrap justify-center gap-2">
     <div class="fild w-full">
@@ -23,14 +24,14 @@
         required
       >
       {%- if form.errors -%}
-        <small class="text-xs text-[#FF0F0F]" id="Newsletter-error--{{ id }}">
+        <small class="form__message form__message--error" id="Newsletter-error--{{ id }}">
           {{- form.errors.translated_fields.email | capitalize }}
           {{ form.errors.messages.email -}}
         </small>
       {%- endif -%}
       {%- if form.posted_successfully? -%}
         <h3
-          class="text-xs text-[#18AC00]"
+          class="form__message form__message--success"
           id="Newsletter-success--{{ id }}"
           tabindex="-1"
           autofocus
@@ -43,7 +44,7 @@
       type="submit"
       class="btn-medium btn-secondary"
       name="commit"
-      id="Subscribe"
+      id="Subscribe--{{ id }}"
       aria-label="{{ 'newsletter.button_label' | t }}"
     >
       sign up
