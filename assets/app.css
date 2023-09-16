@@ -2897,12 +2897,12 @@ p.order-item-title, .base-text.order-item-title {
   animation: spin 1s linear infinite;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .cursor-not-allowed {
   cursor: not-allowed;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .appearance-none {
@@ -3800,17 +3800,13 @@ p.order-item-title, .base-text.order-item-title {
   color: rgba(var(--color-foreground), .5);
 }
 
+.text-\[rgba\(var\(--color-foreground\2c _21\2c 21\2c 21\)\2c _\.5\)\] {
+  color: rgba(var(--color-foreground, 21,21,21), .5);
+}
+
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
-}
-
-.text-\[rgba\(var\(--color-foreground\2c _21\2c 21\2c 21\)_\.5\)\] {
-  color: rgba(var(--color-foreground, 21,21,21) .5);
-}
-
-.text-\[rgba\(var\(--color-foreground\2c _21\2c 21\2c 21\)\2c _\.5\)\] {
-  color: rgba(var(--color-foreground, 21,21,21), .5);
 }
 
 .underline {
@@ -4215,10 +4211,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .peer:checked ~ .peer-checked\:cursor-default {
   cursor: default;
-}
-
-.peer:checked ~ .peer-checked\:text-\[color\:var\(--filter-colot\2c _\#151515\)\] {
-  color: var(--filter-colot, #151515);
 }
 
 .peer:checked ~ .peer-checked\:text-\[rgb\(var\(--color-foreground\2c _21\2c 21\2c 21\)\)\] {
