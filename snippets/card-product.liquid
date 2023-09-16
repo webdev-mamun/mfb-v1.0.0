@@ -108,7 +108,7 @@
         -%}
           <input
             type="hidden"
-            name="id"
+            name="id" data-productid="{{ product.id }}"
             value="{{ card_product.selected_or_first_available_variant.id }}"
             class="product-variant-id"
             disabled
@@ -445,7 +445,7 @@
                   -%}
                     <input
                       type="hidden"
-                      name="id"
+                      name="id" data-productid="{{ product.id }}"
                       value="{{ card_product.selected_or_first_available_variant.id }}"
                       class="product-variant-id"
                       disabled

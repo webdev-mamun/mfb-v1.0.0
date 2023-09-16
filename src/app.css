@@ -180,16 +180,26 @@
 
     .card-act-btn {
         @apply font-sans text-sm uppercase w-full flex justify-between items-center gap-1 px-1 py-[.85rem] border-y
-        text-[rgb(var(--color-button-border,_220,220,220))] bg-[rgb(var(--color-button,_255,254,247))] border-[rgb(var(--color-button-border,_220,220,220))]
-        enabled:text-[rgb(var(--color-button-text,_21,21,21))] enabled:bg-[rgb(var(--color-button,_255,254,247))] 
-        enabled:hover:text-[rgb(var(--color-button-text-hover,_255,254,247))] enabled:hover:bg-[rgb(var(--color-button-hover,_2,37,65))] 
-        enabled:hover:border-[color:var(--color-button-border-hover,_2,37,65)] [&.loading]:hover:text-transparent
-        [&.loading]:hover:bg-[rgb(var(--color-button,_transparent))] [&.loading]:hover:border-[rgb(var(--color-button-border,_220,220,220))]
+        text-[rgba(var(--color-button-text,_21,21,21),_.5)] 
+        bg-[rgba(var(--color-button,_255,254,247),_.5)]
+        border-[rgb(var(--color-button-border,_220,220,220))]
+
+        enabled:text-[rgb(var(--color-button-text,_21,21,21))] 
+        enabled:bg-[rgb(var(--color-button,_255,254,247))] 
+        enabled:border-[rgb(var(--color-button-border,_220,220,220))] 
+
+        enabled:hover:text-[rgb(var(--color-button-text-hover,_255,254,247))] 
+        enabled:hover:bg-[rgb(var(--color-button-hover,_2,37,65))] 
+        enabled:hover:border-[color:var(--color-button-border-hover,_2,37,65)]
+
+        [&.loading]:hover:text-transparent
+        [&.loading]:hover:bg-[rgb(var(--color-button,_transparent))] 
+        [&.loading]:hover:border-[rgb(var(--color-button-border,_220,220,220))]
         transition-all relative;
     }
 
     .card-act-btn:disabled .plus-icon circle {
-        @apply fill-[rgb(var(--color-button-border,_220,220,220))]
+        @apply fill-[rgba(var(--color-button-text,_21,21,21),_.5)]
         transition-all;
     }
 
@@ -203,7 +213,7 @@
     }
 
     .card-act-btn:disabled .plus-icon line {
-        @apply stroke-[rgb(var(--color-button-text-hover,_255,254,247))]
+        @apply stroke-[rgb(var(--color-button,_255,254,247))]
     }
 
     .card-act-btn .plus-icon line {

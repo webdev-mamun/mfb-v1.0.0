@@ -70,7 +70,7 @@
                         class="mobile-facets__details js-filter {{ class }}"
                         data-index="mobile-{{ forloop.index }}"
                       >
-                        <h4 class="text-[1.4rem] leading-[1.7rem] -tracking-[.02em] uppercase text-[color:var(--text-disable,_#C5C5C5)] pb-.5">
+                        <h4 class="text-[1.4rem] leading-[1.7rem] -tracking-[.02em] uppercase text-[rgba(var(--color-foreground,_21,21,21),_.5)] pb-.5">
                           {{ filter.label | escape }}
                         </h4>
                         <div
@@ -101,7 +101,11 @@
 
                                   <span
                                     aria-hidden="true"
-                                    class="underline-offset-4 text-[color:var(--text-disable,_#C5C5C5)] peer-checked:underline peer-checked:text-[color:var(--filter-colot,_#151515)]"
+                                    class="
+                                      underline-offset-4 text-[rgba(var(--color-foreground,_21,21,21),_.5)]
+                                      peer-checked:underline peer-checked:text-[rgb(var(--color-foreground,_21,21,21))]
+                                      peer-enabled:cursor-pointer cursor-not-allowed
+                                    "
                                   >
                                     {{- value.label | escape -}}
                                   </span>
@@ -170,8 +174,9 @@
                           <span
                             aria-hidden="true"
                             class="
-                              underline-offset-4 text-[color:var(--text-disable,_#C5C5C5)]
-                              peer-checked:underline peer-checked:text-[color:var(--filter-colot,_#151515)]
+                              underline-offset-4 text-[rgba(var(--color-foreground,_21,21,21),_.5)]
+                              peer-checked:underline peer-checked:text-[rgb(var(--color-foreground,_21,21,21))]
+                              peer-enabled:cursor-pointer cursor-not-allowed
                             "
                             >Lowest to highest</span
                           >
@@ -192,8 +197,9 @@
                           <span
                             aria-hidden="true"
                             class="
-                              underline-offset-4 text-[color:var(--text-disable,_#C5C5C5)]
-                              peer-checked:underline peer-checked:text-[color:var(--filter-colot,_#151515)]
+                              underline-offset-4 text-[rgba(var(--color-foreground,_21,21,21),_.5)]
+                              peer-checked:underline peer-checked:text-[rgb(var(--color-foreground,_21,21,21))]
+                              cursor-pointer peer-checked:cursor-default
                             "
                             >Highest to lowest</span
                           >

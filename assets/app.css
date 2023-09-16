@@ -1077,7 +1077,7 @@ p.card-act-btn, .base-text.card-act-btn {
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-color: rgb(var(--color-button-border, 220,220,220));
-  background-color: rgb(var(--color-button, 255,254,247));
+  background-color: rgba(var(--color-button, 255,254,247), .5);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: .85rem;
@@ -1086,13 +1086,14 @@ p.card-act-btn, .base-text.card-act-btn {
   font-size: 1.3rem;
   line-height: 1.43rem;
   text-transform: uppercase;
-  color: rgb(var(--color-button-border, 220,220,220));
+  color: rgba(var(--color-button-text, 21,21,21), .5);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .card-act-btn:enabled {
+  border-color: rgb(var(--color-button-border, 220,220,220));
   background-color: rgb(var(--color-button, 255,254,247));
   color: rgb(var(--color-button-text, 21,21,21));
 }
@@ -1110,7 +1111,7 @@ p.card-act-btn, .base-text.card-act-btn {
 }
 
 .card-act-btn:disabled .plus-icon circle {
-  fill: rgb(var(--color-button-border, 220,220,220));
+  fill: rgba(var(--color-button-text, 21,21,21), .5);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -1128,7 +1129,7 @@ p.card-act-btn, .base-text.card-act-btn {
 }
 
 .card-act-btn:disabled .plus-icon line {
-  stroke: rgb(var(--color-button-text-hover, 255,254,247));
+  stroke: rgb(var(--color-button, 255,254,247));
 }
 
 .card-act-btn .plus-icon line {
@@ -2900,6 +2901,10 @@ p.order-item-title, .base-text.order-item-title {
   cursor: pointer;
 }
 
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -3800,6 +3805,14 @@ p.order-item-title, .base-text.order-item-title {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+.text-\[rgba\(var\(--color-foreground\2c _21\2c 21\2c 21\)_\.5\)\] {
+  color: rgba(var(--color-foreground, 21,21,21) .5);
+}
+
+.text-\[rgba\(var\(--color-foreground\2c _21\2c 21\2c 21\)\2c _\.5\)\] {
+  color: rgba(var(--color-foreground, 21,21,21), .5);
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -4200,8 +4213,16 @@ p.order-item-title, .base-text.order-item-title {
   opacity: 1;
 }
 
+.peer:checked ~ .peer-checked\:cursor-default {
+  cursor: default;
+}
+
 .peer:checked ~ .peer-checked\:text-\[color\:var\(--filter-colot\2c _\#151515\)\] {
   color: var(--filter-colot, #151515);
+}
+
+.peer:checked ~ .peer-checked\:text-\[rgb\(var\(--color-foreground\2c _21\2c 21\2c 21\)\)\] {
+  color: rgb(var(--color-foreground, 21,21,21));
 }
 
 .peer:checked ~ .peer-checked\:underline {
@@ -4210,6 +4231,10 @@ p.order-item-title, .base-text.order-item-title {
 
 .peer:empty ~ .peer-empty\:hidden {
   display: none;
+}
+
+.peer:enabled ~ .peer-enabled\:cursor-pointer {
+  cursor: pointer;
 }
 
 .peer.hidden ~ .peer-\[\&\.hidden\]\:visible {
