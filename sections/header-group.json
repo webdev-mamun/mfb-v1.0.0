@@ -5,8 +5,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "menu": "main-menu",
-        "drawer-menu": "drawer",
+        "menu": "",
+        "drawer-menu": "main-menu",
         "sticky_header_type": "none",
         "color_scheme": "background-1",
         "drawer_color_scheme": "inverse"
