@@ -40,6 +40,8 @@
     "09374c67-687a-4189-a13f-876327b1375a": {
       "type": "image-with-text",
       "settings": {
+        "image": "shopify:\/\/shop_images\/image-with-text.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/image-with-text-mobile.jpg",
         "text": "<span>%icon% is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
         "link_text": "Learn more about us",
         "link_url": "",
