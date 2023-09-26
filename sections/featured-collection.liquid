@@ -53,9 +53,14 @@
   }
 {%- endstyle -%}
 
-<div class="featured-collection section-padding color-{{ section.settings.color_scheme }}">
+{%- liquid
+  assign border_top = section.settings.border_top
+  assign border_bottom = section.settings.border_bottom
+-%}
+
+<div class="featured-collection color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <featured-collection-slider class="col-span-full">
+    <featured-collection-slider class="col-span-full{% if border_top %} border-t{% endif %}{% if border_bottom %} border-b{% endif %} border-color section-padding">
       <div class="splide" role="group" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
           <ul class="splide__list">
@@ -70,18 +75,18 @@
                     url: section.settings.collection.url,
                     class: ' hidden lg:flex items-center'
                   -%}
-                  <a
-                    role="button"
-                    class="font-serif text-[1.2rem] leading-[2.2rem] -tracking-[.02em] flex gap-x-1 gap-y-0 lg:hidden flex-col justify-center"
-                  >
-                    <span class="underline underline-offset-[3px]">SWIPE LEFT</span>
-                    <span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="8" viewBox="0 0 64 8" fill="none">
-                        <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM64 3.5L1 3.5V4.5L64 4.5V3.5Z" fill="#151515"/>
-                      </svg>
-                    </span>
-                  </a>
                 {%- endif -%}
+                <a
+                  role="button"
+                  class="font-serif text-[1.2rem] leading-[2.2rem] -tracking-[.02em] flex gap-x-1 gap-y-0 lg:hidden flex-col justify-center"
+                >
+                  <span class="underline underline-offset-[3px]">SWIPE LEFT</span>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="8" viewBox="0 0 64 8" fill="none">
+                      <path d="M0.646446 3.64645C0.451183 3.84171 0.451183 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM64 3.5L1 3.5V4.5L64 4.5V3.5Z" fill="currentColor"/>
+                    </svg>
+                  </span>
+                </a>
               </div>
             </li>
             {%- for product in section.settings.collection.products limit: limit -%}
@@ -206,6 +211,22 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom_desktop",
       "default": 20
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.border.section_border_heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "t:sections.all.border.border_top",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "t:sections.all.border.border_bottom",
+      "default": false
     }
   ],
   "presets": [

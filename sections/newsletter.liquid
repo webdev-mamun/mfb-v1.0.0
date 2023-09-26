@@ -9,7 +9,11 @@
 {%- endstyle -%}
 {%- liquid
   assign title = section.settings.title
-  assign icon = settings.logo_mobile
+  if section.settings.logo_type == 'primary'
+    assign icon = settings.logo_mobile
+  elsif section.settings.logo_type == 'secondary'
+    assign icon = settings.secondary_logo_mobile
+  endif
   assign text = section.settings.text
   assign image_1 = section.settings.image_1
   assign image_2 = section.settings.image_2
@@ -89,6 +93,22 @@
       "type": "image_picker",
       "id": "image_2",
       "label": "Right image"
+    },
+    {
+      "type": "select",
+      "id": "logo_type",
+      "label": "Icon type",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
     },
     {
       "type": "html",

@@ -16,7 +16,7 @@
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
-    {%- form 'contact', id: 'ContactForm', novalidate: 'novalidate', class: 'flex flex-col gap-[1.5rem]' -%}
+    {%- form 'contact', id: 'ContactForm', class: 'flex flex-col gap-[1.5rem]' -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form__message form__message--success" tabindex="-1" autofocus>
           {{ 'templates.contact.form.post_success' | t }}

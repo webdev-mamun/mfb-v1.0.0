@@ -16,10 +16,10 @@
   assign production = section.settings.production
   assign geology = section.settings.geology
 -%}
-<div class="producer-info section-padding color-{{ section.settings.color_scheme }} border-b border-color lg:border-t">
+<div class="producer-info color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <ul class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2 px-2">
-      <li class="col-span-full lg:col-span-2 text-sm lg:text-base text-center lg:text-left border-b border-color lg:border-none pb-1 lg:pb-0 text-[rgb(var(--divider,_197,197,197))] lg:text-[rgb(var(--color-foreground,_21,21,21))]">
+    <ul class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2 px-2 border-b border-color lg:border-t section-padding">
+      <li class="col-span-full lg:col-span-2 text-sm lg:text-base text-center lg:text-left border-b border-color lg:border-none pb-1 lg:pb-0 text-[rgb(var(--divider,_197,197,197))] lg:text-[rgb(var(--color-foreground,_21,21,21))] -mx-2 lg:mx-0">
         INFORMATION
       </li>
       {%- if logo != blank -%}

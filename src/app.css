@@ -131,6 +131,10 @@
         @apply max-w-full grid grid-cols-10 gap-1 px-1 lg:px-2 lg:gap-2;
     }
 
+    .btn-big {
+        @apply font-sans text-[2rem] leading-[2.2rem] -tracking-[.02em] uppercase px-[3.6rem] py-[1.55rem] border rounded-3xl
+    }
+
     .btn {
         @apply font-sans text-center text-[1.3rem] leading-[2.2rem] -tracking-[.02em] uppercase border rounded-2xl px-[3.5rem] pt-[1.2rem] pb-1;
     }
@@ -455,7 +459,9 @@
         @apply odd:basis-[calc(((100%_-_2rem)_/_10)_*_4)] even:basis-[calc(((100%_-_2rem)_/_10)_*_6)] lg:even:basis-[calc((100%_-_(2rem_*_2))_/_3)] lg:odd:basis-[calc((100%_-_(2rem_*_2))_/_3)] flex flex-col gap-y-1
     }
 
-    
+    .main-page-title {
+        @apply mb-3 text-2xl lg:text-3xl lg:mb-10 text-center max-w-[14ch] mx-auto first-line:font-serif first-line:-tracking-[.05em] uppercase
+    }
 }
 
 

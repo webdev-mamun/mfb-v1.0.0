@@ -825,6 +825,48 @@ div, img, svg {
   }
 }
 
+h1.btn-big, .h1.btn-big {
+  letter-spacing: -1.76px;
+}
+
+h2.btn-big, .h2.btn-big {
+  letter-spacing: -1.24px;
+}
+
+h3.btn-big, .h3.btn-big {
+  letter-spacing: -0.88px;
+}
+
+h4.btn-big, .h4.btn-big {
+  letter-spacing: -0.44px;
+}
+
+h5.btn-big, .h5.btn-big {
+  letter-spacing: -0.32px;
+}
+
+h6.btn-big, .h6.btn-big {
+  letter-spacing: -0.26px;
+}
+
+p.btn-big, .base-text.btn-big {
+  letter-spacing: -0.32px;
+}
+
+.btn-big {
+  border-radius: 1.5rem;
+  border-width: 1px;
+  padding-left: 3.6rem;
+  padding-right: 3.6rem;
+  padding-top: 1.55rem;
+  padding-bottom: 1.55rem;
+  font-family: "Tomato Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 2.2rem;
+  letter-spacing: -.02em;
+}
+
 h1.btn, .h1.btn {
   letter-spacing: -1.76px;
 }
@@ -2100,6 +2142,58 @@ p.order-item-title, .base-text.order-item-title {
   }
 }
 
+.main-page-title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  max-width: 14ch;
+  text-align: center;
+  font-size: 4.4rem;
+  line-height: 4.4rem;
+  text-transform: uppercase;
+}
+
+.main-page-title .h1::first-line {
+  letter-spacing: -4.4px;
+}
+
+.main-page-title .h2::first-line {
+  letter-spacing: -3.1px;
+}
+
+.main-page-title .h3::first-line {
+  letter-spacing: -2.2px;
+}
+
+.main-page-title .h4::first-line {
+  letter-spacing: -1.1px;
+}
+
+.main-page-title .h5::first-line {
+  letter-spacing: -0.8px;
+}
+
+.main-page-title .h6::first-line {
+  letter-spacing: -0.65px;
+}
+
+.main-page-title .base-text::first-line {
+  letter-spacing: -0.8px;
+}
+
+.main-page-title::first-line {
+  font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  letter-spacing: -.05em;
+}
+
+@media (min-width: 1024px) {
+  .main-page-title {
+    margin-bottom: 10rem;
+    font-size: 6.2rem;
+    line-height: 6.2rem;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2346,6 +2440,11 @@ p.order-item-title, .base-text.order-item-title {
 
 .row-end-4 {
   grid-row-end: 4;
+}
+
+.-mx-2 {
+  margin-left: -2rem;
+  margin-right: -2rem;
 }
 
 .mx-auto {
@@ -3149,10 +3248,6 @@ p.order-item-title, .base-text.order-item-title {
   border-radius: 1rem;
 }
 
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -3197,18 +3292,6 @@ p.order-item-title, .base-text.order-item-title {
   border-color: var(--border, #C5C5C5);
 }
 
-.border-\[color\:var\(--border-color\2c _\#C5C5C5\)\] {
-  border-color: var(--border-color, #C5C5C5);
-}
-
-.border-\[color\:var\(--border-color\2c _\#c5c5c5\)\] {
-  border-color: var(--border-color, #c5c5c5);
-}
-
-.border-\[color\:var\(--btn-border\)\] {
-  border-color: var(--btn-border);
-}
-
 .border-\[color\:var\(--divider-color\2c _\#DCDCDC\)\] {
   border-color: var(--divider-color, #DCDCDC);
 }
@@ -3231,10 +3314,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .bg-\[color\:var\(--bg\2c _\#FFFEF7\)\] {
   background-color: var(--bg, #FFFEF7);
-}
-
-.bg-\[color\:var\(--btn-bg\)\] {
-  background-color: var(--btn-bg);
 }
 
 .bg-\[color\:var\(--overlayColor\2c _\#d9d9d9\)\] {
@@ -3332,11 +3411,6 @@ p.order-item-title, .base-text.order-item-title {
   padding-right: 1.5rem;
 }
 
-.px-\[3\.6rem\] {
-  padding-left: 3.6rem;
-  padding-right: 3.6rem;
-}
-
 .px-\[4\.5rem\] {
   padding-left: 4.5rem;
   padding-right: 4.5rem;
@@ -3375,11 +3449,6 @@ p.order-item-title, .base-text.order-item-title {
 .py-\[1\.4rem\] {
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
-}
-
-.py-\[1\.55rem\] {
-  padding-top: 1.55rem;
-  padding-bottom: 1.55rem;
 }
 
 .pb-\.5 {
@@ -3591,10 +3660,6 @@ p.order-item-title, .base-text.order-item-title {
   font-size: 2.2rem;
 }
 
-.text-\[2rem\] {
-  font-size: 2rem;
-}
-
 .text-\[3\.2rem\] {
   font-size: 3.2rem;
 }
@@ -3758,10 +3823,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .tracking-\[0\.2em\] {
   letter-spacing: 0.2em;
-}
-
-.text-\[color\:var\(--btn-color\)\] {
-  color: var(--btn-color);
 }
 
 .text-\[color\:var\(--color\)\] {
@@ -4411,6 +4472,11 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:row-end-6 {
     grid-row-end: 6;
+  }
+
+  .lg\:mx-0 {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .lg\:mb-0 {

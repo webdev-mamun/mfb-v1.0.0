@@ -473,6 +473,11 @@
   },
   "sections": {
     "all": {
+      "border": {
+        "section_border_heading": "Section border",
+        "border_top": "Border top",
+        "border_bottom": "Border bottom"
+      },
       "animation": {
         "content": "Animations",
         "image_behavior": {
@@ -549,11 +554,6 @@
     },
     "announcement-bar": {
       "name": "Announcement bar",
-      "settings": {
-        "show_home_only": {
-          "label": "Show home page only"
-        }
-      },
       "blocks": {
         "announcement": {
           "name": "Announcement",
