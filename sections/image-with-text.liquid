@@ -8,17 +8,21 @@
 {%- endstyle -%}
 {%- liquid
   assign text = section.settings.text
-  assign icon = settings.logo_mobile
+  if section.settings.logo_type == 'primary'
+    assign icon = settings.logo_mobile
+  elsif section.settings.logo_type == 'secondary'
+    assign icon = settings.secondary_logo_mobile
+  endif
 -%}
 
 {% capture inline_icon %}
-      {{- icon | image_url: width: 155 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[2.9rem]' -}}
-      {{- icon | image_url: width: 105 | image_tag: loading: 'lazy', class: 'hidden md:inline-block lg:hidden -mt-[1.7rem]' -}}
-      {{- icon | image_url: width: 79 | image_tag: loading: 'lazy', class: 'inline-block md:hidden -mt-[1.4rem]' -}}
-  {% endcapture %}
-{%- if icon != blank and text contains '%icon%' %}
-  {% assign text = text | replace: '%icon%', inline_icon %}
-{% endif %}
+  {{- icon | image_url: width: 155 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[2.9rem]' -}}
+  {{- icon | image_url: width: 105 | image_tag: loading: 'lazy', class: 'hidden md:inline-block lg:hidden -mt-[1.7rem]' -}}
+  {{- icon | image_url: width: 79 | image_tag: loading: 'lazy', class: 'inline-block md:hidden -mt-[1.4rem]' -}}
+{% endcapture %}
+{%- if icon != blank and text contains '%icon%' -%}
+  {%- assign text = text | replace: '%icon%', inline_icon -%}
+{%- endif -%}
 
 <div class="image-with-text section-padding color-{{ section.settings.color_scheme }}">
   <div class="container items-center">
@@ -94,6 +98,22 @@
       "type": "image_picker",
       "id": "mobile_image",
       "label": "t:sections.image-with-text.settings.mobile_image.label"
+    },
+    {
+      "type": "select",
+      "id": "logo_type",
+      "label": "Logo type",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "secondary"
     },
     {
       "type": "html",
