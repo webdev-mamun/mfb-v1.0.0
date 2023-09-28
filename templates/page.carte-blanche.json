@@ -103,6 +103,8 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
+        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
+        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
         "logo_type": "primary",
         "title": "Join the <br>%icon% family",
         "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
