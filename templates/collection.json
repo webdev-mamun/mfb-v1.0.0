@@ -29,6 +29,7 @@
     "d7ae8aaf-1d63-417b-99e1-2913cc788b30": {
       "type": "subscription-banner",
       "settings": {
+        "image": "shopify:\/\/shop_images\/subscription-banner.jpg",
         "text": "Join %icon% for a monthly subscription of hand-selected wines & spirits.",
         "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
         "btn": "see subscriptions",
