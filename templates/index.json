@@ -253,6 +253,8 @@
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_3.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_1.jpg",
         "title": "Join %icon% for a monthly  subscription, full of hand-selected wines and spirits.",
         "btn": "Click through to see all our subscriptions on offer",
         "btn_mobile": "SEE ALL SUBSCRIPTIONS",
@@ -270,6 +272,8 @@
         "036b4a40-be97-4b41-989b-f276067e0eca": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_18.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Rectangle_66.jpg",
             "title": "WHERE TO BUY",
             "text": "Discover where you can get our  wines & spirits near  you.",
             "button_text": "FIND NEARBY SUPPLIERS",
@@ -279,9 +283,11 @@
         "3053b57f-6c75-4eda-8977-f459c5532e6e": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3_mobile.jpg",
             "title": "OUR ETHOS",
             "text": "We have an ethos at  %icon% to only work with our family of local producers we know personally and trust fully.",
-            "button_text": "FIND NEARBY SUPPLIERS",
+            "button_text": "LEARN MORE ABOUT US",
             "button_url": ""
           }
         }
