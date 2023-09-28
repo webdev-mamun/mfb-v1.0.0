@@ -59,7 +59,7 @@
               </div>
             {%- endif -%}
             <div
-              class="absolute inset-0 px-1 pt-1 pb-[1.5rem] lg:p-2 flex flex-col justify-between bg-[rgba(var(--color-foreground),_.3)] text-[rgb(var(--color-background))]"
+              class="absolute inset-0 px-1 pt-1 pb-[1.5rem] lg:p-2 flex flex-col justify-between bg-[rgba(var(--color-foreground),_.3)] text-[rgb(var(--color-background))] backdrop-blur"
               style="--color-link: var(--color-background)"
             >
               <h2 class="{{ title_class }} first-line:font-serif first-line:-tracking-[.05em]">
@@ -91,11 +91,13 @@
           </div>
         {%- endfor -%}
       </div>
-      <h2 class="col-span-full uppercase text-md leading-[2.2rem] text-center pt-[1.2rem] pb-[.8rem]">MORE NOTES</h2>
+      {%- if forloop.index > 5 -%}
+        <h2 class="col-span-full uppercase text-md leading-[2.2rem] text-center pt-[1.2rem] pb-[.8rem]">MORE NOTES</h2>
+      {%- endif -%}
     {%- endif -%}
 
     <div class="blog-articles container">
-      <div class="border-t border-color col-span-full" id="AjaxinateContainer">
+      <div class="{% if forloop.index > 5 %}border-t {% endif %}border-color col-span-full" id="AjaxinateContainer">
         {%- for article in blog.articles -%}
           {%- if paginate.current_page == 1 and forloop.index < 6 -%}{% continue %}{%- endif -%}
           <a
