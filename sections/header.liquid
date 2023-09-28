@@ -38,7 +38,7 @@
 {%- if section.settings.sticky_header_type != 'none' -%}
   <sticky-header
     data-sticky-type="{{ section.settings.sticky_header_type }}"
-    class="header-wrapper color-{{ section.settings.color_scheme }} text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)]"
+    class="header-wrapper color-{{ section.settings.color_scheme }}"
   >
 {%- else -%}
   <div
@@ -334,12 +334,6 @@
       "label": "t:sections.header.settings.menu.label"
     },
     {
-      "type": "link_list",
-      "id": "drawer-menu",
-      "default": "main-menu",
-      "label": "t:sections.header.settings.drawer_menu.label"
-    },
-    {
       "type": "select",
       "id": "sticky_header_type",
       "options": [
@@ -368,6 +362,32 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Drawer"
+    },
+    {
+      "type": "link_list",
+      "id": "drawer-menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.drawer_menu.label"
+    },
+    {
+      "type": "select",
+      "id": "logo_type",
+      "label": "Logo type",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "secondary"
     },
     {
       "type": "color_scheme",

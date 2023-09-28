@@ -5,14 +5,16 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
-{%- style -%}
-  header-drawer {
-    --color: #fffef7;
-    --bg: #022541;
-    --btn-color: #022541;
-    --btn-bg: #fffef7;
-  }
-{%- endstyle -%}
+{% comment %}
+  {%- style -%}
+    header-drawer {
+      --color: #fffef7;
+      --bg: #022541;
+      --btn-color: #022541;
+      --btn-bg: #fffef7;
+    }
+  {%- endstyle -%}
+{% endcomment %}
 
 <header-drawer data-breakpoint="desktop">
   <details
@@ -37,21 +39,35 @@
         </div>
         <div class="col-span-2 flex items-center justify-center">
           {%- liquid
-            assign height = 230 | divided_by: settings.secondary_logo.aspect_ratio
-            assign alt = settings.secondary_logo.alt | default: shop.name
-            assign height_mobile = 68 | divided_by: settings.settings.secondary_logo_mobile.aspect_ratio
-            assign alt_mobile = settings.secondary_logo_mobile.alt | default: shop.name
+            if section.settings.logo_type == 'primary'
+              assign logo = settings.logo
+              assign logo_mobile = settings.logo_mobile
+            elsif section.settings.logo_type == 'secondary'
+              assign logo = settings.secondary_logo
+              assign logo_mobile = settings.secondary_logo_mobile
+            endif
+
+            if logo_mobile == blank
+              assign logo_mobile = logo
+            endif
+
+            assign height = 230 | divided_by: logo.aspect_ratio
+            assign alt = logo.alt | default: shop.name
+            assign height_mobile = 68 | divided_by: logo_mobile.aspect_ratio
+            assign alt_mobile = logo_mobile.alt | default: shop.name
           -%}
-          {{
-            settings.secondary_logo
-            | image_url: width: 230
-            | image_tag: class: 'hidden lg:block', height: height, width: 1440, alt: alt, preload: true
-          }}
-          {{
-            settings.secondary_logo_mobile
-            | image_url: width: 68
-            | image_tag: class: 'lg:hidden', height: height_mobile, width: 68, alt: alt_mobile, preload: true
-          }}
+          {%- if logo != blank -%}
+            {{
+              logo
+              | image_url: width: 230
+              | image_tag: class: 'hidden lg:block', height: height, width: 1440, alt: alt, preload: true
+            }}
+            {{
+              logo_mobile
+              | image_url: width: 68
+              | image_tag: class: 'lg:hidden', height: height_mobile, width: 68, alt: alt_mobile, preload: true
+            }}
+          {%- endif -%}
         </div>
         <div class="col-span-4 flex items-center justify-center"></div>
       </div>
