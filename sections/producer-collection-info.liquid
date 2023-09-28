@@ -29,6 +29,13 @@
         {%- for block in section.blocks -%}
           <div class="col-span-1 flex flex-col gap-2">
             {{ block.settings.text | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}
+            {%- if forloop.last and section.settings.page != blank -%}
+              {%- render 'btn-link',
+                url: pages[section.settings.page].url,
+                text: 'read more',
+                class: ' items-center'
+              -%}
+            {%- endif -%}
           </div>
         {%- endfor -%}
       </div>
@@ -49,6 +56,13 @@
           </div>
           <div class="col-span-7 flex flex-col gap-2">
             {{ block.settings.text | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}
+            {%- if forloop.last and section.settings.page != blank -%}
+              {%- render 'btn-link',
+                url: pages[section.settings.page].url,
+                text: 'read more',
+                class: ' items-center'
+              -%}
+            {%- endif -%}
           </div>
         </div>
       {%- endfor -%}
@@ -60,7 +74,13 @@
 {
   "name": "t:sections.producer-collection-info.name",
   "class": "section",
+  "max_blocks": 2,
   "settings": [
+    {
+      "type": "page",
+      "id": "page",
+      "label": "Page"
+    },
     {
       "type": "paragraph",
       "content": "t:sections.producer-collection-info.settings.paragraph.content"
