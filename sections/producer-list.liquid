@@ -27,20 +27,16 @@
               class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition"
             >
               {{- producer.title }}
-              {%- if producer.country_code != blank -%}
-                <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top">
-                  ({{ producer.country_code }})
-                </span>
-              {%- endif -%}
-            </a>
+              <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top"
+                >({{ producer.country_code }})</span
+              ></a
+            >
           {%- else -%}
             <p class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition">
               {{- producer.title }}
-              {%- if producer.country_code != blank -%}
-                <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top">
-                  ({{ producer.country_code }})
-                </span>
-              {%- endif -%}
+              <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top">
+                ({{ producer.country_code }})
+              </span>
             </p>
           {%- endif -%}
           {%- if producer.image != blank -%}

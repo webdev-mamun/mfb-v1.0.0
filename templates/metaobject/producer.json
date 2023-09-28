@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "hero": {
+      "type": "producer-page-hero",
+      "settings": {
+        "title": "{{ metaobject.title.value }}",
+        "name": "{{ metaobject.name.value }}",
+        "image": "{{ metaobject.image.value }}",
+        "mobile_image": "{{ metaobject.image_mobile.value }}"
+      }
+    },
+    "main": {
+      "type": "producer-page-main",
+      "settings": {
+        "overview": "<p>{{ metaobject.overview | metafield_tag }}<\/p>",
+        "description": "{{ metaobject.description | metafield_tag }}"
+      }
+    },
+    "info": {
+      "type": "producer-informetion",
+      "settings": {
+        "logo": "{{ metaobject.information.value.logo.value }}",
+        "country": "{{ metaobject.information.value.country.value }}",
+        "region": "{{ metaobject.information.value.region.value }}",
+        "appelation": "{{ metaobject.information.value.appelation_s.value }}",
+        "grapes": "<p>{{ metaobject.information.value.grapes | metafield_tag }}<\/p>",
+        "farming": "{{ metaobject.information.value.farming.value }}",
+        "production": "{{ metaobject.information.value.annual_production.value }}",
+        "geology": "{{ metaobject.information.value.geology.value }}"
+      }
+    },
+    "f081b94e-cd20-4617-a64a-03cd95c4be9c": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "more by {{ section.settings.collection.title }}",
+        "collection": "{{ metaobject.collection.value }}",
+        "btn": "SHOP ALL BY THIS PRODUCER"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "info",
+    "f081b94e-cd20-4617-a64a-03cd95c4be9c"
+  ]
+}
