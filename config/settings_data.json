@@ -1,10 +1,10 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/logo-black-desktop.svg",
+    "logo": "shopify:\/\/shop_images\/Logotype_Black.svg",
     "secondary_logo": "shopify:\/\/shop_images\/Logotype_White.svg",
     "logo_width": 230,
-    "logo_mobile": "shopify:\/\/shop_images\/logo-black-mobile_b8ad609b-d0f8-470e-b504-d2748550aa62.svg",
-    "secondary_logo_mobile": "shopify:\/\/shop_images\/Logo_Black_4.svg",
+    "logo_mobile": "shopify:\/\/shop_images\/logo-black-mobile.svg",
+    "secondary_logo_mobile": "shopify:\/\/shop_images\/small-logo-white.svg",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -135,8 +135,10 @@
         "type": "age-check",
         "settings": {
           "enable_agecheck": true,
+          "logo_type": "secondary",
           "text": "Please confirm you are 21 years of age or older.",
-          "url": ""
+          "url": "",
+          "color_scheme": ""
         }
       },
       "newsletter-popup": {
