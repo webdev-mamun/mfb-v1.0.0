@@ -36,6 +36,7 @@
             endif
           -%}
           <div class="{{ col_class }} relative rounded-2xl overflow-hidden">
+            <a href="{{ article.url }}" class="absolute inset-0 opacity-0 z-10"></a>
             {%- if article.image != blank -%}
               <div class="article-image h-full">
                 <img
