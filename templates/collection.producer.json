@@ -37,6 +37,7 @@
         "f6ba837a-2567-4efc-a0c9-35fb4c6697e4"
       ],
       "settings": {
+        "page": "{{ collection.metafields.custom.vendor.value.page.value }}",
         "color_scheme": "inverse",
         "padding_top": 15,
         "padding_bottom": 140,
