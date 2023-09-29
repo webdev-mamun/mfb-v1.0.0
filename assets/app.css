@@ -2696,6 +2696,10 @@ p.order-item-title, .base-text.order-item-title {
   max-height: 100%;
 }
 
+.max-h-\[17rem\] {
+  max-height: 17rem;
+}
+
 .min-h-\[20rem\] {
   min-height: 20rem;
 }
@@ -3390,6 +3394,10 @@ p.order-item-title, .base-text.order-item-title {
   padding: 3rem;
 }
 
+.p-0 {
+  padding: 0;
+}
+
 .px-0 {
   padding-left: 0;
   padding-right: 0;
@@ -3600,6 +3608,14 @@ p.order-item-title, .base-text.order-item-title {
 
 .pt-\[3\.5rem\] {
   padding-top: 3.5rem;
+}
+
+.pt-\[1\.5rem\] {
+  padding-top: 1.5rem;
+}
+
+.pt-\[\.6rem\] {
+  padding-top: .6rem;
 }
 
 .text-left {
@@ -4791,6 +4807,10 @@ p.order-item-title, .base-text.order-item-title {
     grid-template-columns: 12rem 2fr repeat(3, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-\[12\.8rem\2c _1fr\] {
+    grid-template-columns: 12.8rem 1fr;
+  }
+
   .lg\:grid-rows-1 {
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
@@ -5075,6 +5095,10 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:pt-\[4\.5rem\] {
     padding-top: 4.5rem;
+  }
+
+  .lg\:pt-\[1\.5rem\] {
+    padding-top: 1.5rem;
   }
 
   .lg\:text-left {

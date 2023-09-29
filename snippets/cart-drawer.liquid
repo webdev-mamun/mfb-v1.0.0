@@ -109,11 +109,11 @@
                     {%- for item in cart.items -%}
                       <tr
                         id="CartDrawer-Item-{{ item.index | plus: 1 }}"
-                        class="cart-item grid auto-rows-auto grid-cols-[10rem,_1fr] gap-1 md:gap-2"
+                        class="cart-item grid auto-rows-auto grid-cols-[10rem,_1fr] lg:grid-cols-[12.8rem,_1fr] gap-1 md:gap-2"
                         role="row"
                       >
                         <td
-                          class="cart-item__media row-start-1 row-end-3"
+                          class="cart-item__media row-start-1 row-end-3 p-0"
                           role="cell"
                           headers="CartDrawer-ColumnProductImage"
                         >
@@ -121,36 +121,36 @@
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                             <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
                             <img
-                              class="cart-item__image max-h-[15rem]"
+                              class="cart-item__image max-h-[17rem]"
                               src="{{ item.image | image_url: width: 300 }}"
                               alt="{{ item.image.alt | escape }}"
                               loading="lazy"
-                              width="150"
-                              height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                              width="170"
+                              height="{{ 170 | divided_by: item.image.aspect_ratio | ceil }}"
                             >
                           {% endif %}
                         </td>
 
                         <td
-                          class="cart-item__details col-start-2 col-end-3"
+                          class="cart-item__details col-start-2 col-end-3 pt-[.6rem] lg:pt-[1.5rem] p-0"
                           role="cell"
                           headers="CartDrawer-ColumnProduct"
                         >
                           {%- if settings.show_vendor -%}
-                            <p class="caption-with-letter-spacing text-base leading-[1.68rem] -tracking-[.02em]">
+                            <p class="caption-with-letter-spacing text-base leading-[1.68rem] -tracking-[.02em] lg:text-lg lg:leading-[2.6rem] uppercase">
                               {{ item.product.vendor }}
                             </p>
                           {%- endif -%}
 
                           <a
                             href="{{ item.url }}"
-                            class="cart-item__name font-serif text-base leading-[1.5rem] -tracking-[.05em]"
+                            class="cart-item__name font-serif text-base leading-[1.5rem] -tracking-[.05em] lg:text-lg lg:leading-[2.6rem] uppercase"
                           >
                             {{- item.product.title | escape -}}
                           </a>
 
                           {%- if item.original_price != item.final_price -%}
-                            <div class="cart-item__discounted-prices text-base leading-[1.5rem] -tracking-[.02em]">
+                            <div class="cart-item__discounted-prices text-base leading-[1.5rem] -tracking-[.02em] lg:text-lg lg:leading-[2.6rem] lg:pt-1">
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </span>
@@ -165,7 +165,7 @@
                               </strong>
                             </div>
                           {%- else -%}
-                            <div class="product-option text-base leading-[1.5rem] -tracking-[.05em]">
+                            <div class="product-option text-base leading-[1.5rem] -tracking-[.02em] lg:text-lg lg:leading-[2.6rem] lg:pt-1">
                               {{ item.original_price | money }}
                             </div>
                           {%- endif -%}
