@@ -3218,20 +3218,16 @@ p.order-item-title, .base-text.order-item-title {
   row-gap: 9rem;
 }
 
+.gap-y-\[11rem\] {
+  row-gap: 11rem;
+}
+
 .gap-y-\[2\.5rem\] {
   row-gap: 2.5rem;
 }
 
 .gap-y-\[5\.5rem\] {
   row-gap: 5.5rem;
-}
-
-.gap-y-\[8rem\] {
-  row-gap: 8rem;
-}
-
-.gap-y-\[11rem\] {
-  row-gap: 11rem;
 }
 
 .overflow-auto {
@@ -3998,6 +3994,36 @@ p.order-item-title, .base-text.order-item-title {
   transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+}
+
+.shopify-challenge__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.shopify-challenge__container form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.shopify-challenge__container .shopify-challenge__button {
+  cursor: pointer;
+  border-color: rgb(var(--color-button-border, 2,37,65));
+  background-color: rgb(var(--color-button, 2,37,65));
+  color: rgb(var(--color-button-text, 255,254,247));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.shopify-challenge__container .shopify-challenge__button:hover {
+  border-color: rgb(var(--color-button-border-hover, 170,153,85));
+  background-color: rgb(var(--color-button-hover, 170,153,85));
+  color: rgb(var(--color-button-text-hover, 255,254,247));
 }
 
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {

@@ -472,3 +472,16 @@
 [open].menu-opening #menu-drawer {
     @apply transition-transform ease-in-out duration-100 will-change-transform translate-x-0;
 }
+
+.shopify-challenge__container {
+    @apply flex flex-col gap-y-2 py-10
+}
+
+.shopify-challenge__container form {
+    @apply flex flex-col gap-y-2
+}
+
+.shopify-challenge__container .shopify-challenge__button {
+    @apply cursor-pointer text-[rgb(var(--color-button-text,_255,254,247))] bg-[rgb(var(--color-button,_2,37,65))] border-[rgb(var(--color-button-border,_2,37,65))] transition-colors
+    hover:text-[rgb(var(--color-button-text-hover,_255,254,247))] hover:bg-[rgb(var(--color-button-hover,_170,153,85))] hover:border-[rgb(var(--color-button-border-hover,_170,153,85))]
+}
