@@ -20,81 +20,83 @@
 <div class="section-padding color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
-    <div class="">
-      {% comment %} {{ 'component-facets.css' | asset_url | stylesheet_tag }} {% endcomment %}
-      {%- if section.settings.enable_filtering -%}
-        <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-        <aside
-          aria-labelledby="verticalTitle"
-          class="facets-wrapper border-t border-color"
-          id="main-collection-filters"
-          data-id="{{ section.id }}"
-        >
-          {% render 'facets',
-            results: collection,
-            enable_filtering: section.settings.enable_filtering,
-            enable_sorting: section.settings.enable_sorting,
-            filter_type: section.settings.filter_type,
-            paginate: paginate
-          %}
-        </aside>
-      {%- endif -%}
-      <div
-        class="product-grid-container border-t border-color pt-1 lg:pt-2"
-        id="ProductGridContainer"
-      >
-        {%- if collection.products.size == 0 -%}
-          <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-            <div class="loading-overlay gradient"></div>
-            <div class="title-wrapper center">
-              <h2 class="title title--primary">
-                {{ 'sections.collection_template.empty' | t -}}
-                <br>
-                {{
-                  'sections.collection_template.use_fewer_filters_html'
-                  | t: link: collection.url, class: 'underlined-link link'
-                }}
-              </h2>
-            </div>
-          </div>
-        {%- else -%}
-          <div class="group collection container">
-            <div
-              class="loading-overlay gradient hidden inset-0 absolute w-full opacity-70 group-[&.loading]:block pointer-events-none z-[2]"
-            ></div>
-            <ul
-              id="product-grid"
-              data-id="{{ section.id }}"
-              class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2"
-            >
-              {%- for product in collection.products -%}
-                {% assign lazy_load = false %}
-                {%- if forloop.index > 2 -%}
-                  {%- assign lazy_load = true -%}
-                {%- endif -%}
-                <li
-                  class="col-sapn-1 lg:col-span-2"
-                >
-                  {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
-                  %}
-                </li>
-              {%- endfor -%}
-            </ul>
-
-            {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
-            {%- endif -%}
-          </div>
+    <div class="container">
+      <div class="col-span-full">
+        {% comment %} {{ 'component-facets.css' | asset_url | stylesheet_tag }} {% endcomment %}
+        {%- if section.settings.enable_filtering -%}
+          <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+          <aside
+            aria-labelledby="verticalTitle"
+            class="facets-wrapper border-t border-color"
+            id="main-collection-filters"
+            data-id="{{ section.id }}"
+          >
+            {% render 'facets',
+              results: collection,
+              enable_filtering: section.settings.enable_filtering,
+              enable_sorting: section.settings.enable_sorting,
+              filter_type: section.settings.filter_type,
+              paginate: paginate
+            %}
+          </aside>
         {%- endif -%}
+        <div
+          class="product-grid-container border-t border-color pt-1 lg:pt-2"
+          id="ProductGridContainer"
+        >
+          {%- if collection.products.size == 0 -%}
+            <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+              <div class="loading-overlay gradient"></div>
+              <div class="title-wrapper center">
+                <h2 class="title title--primary">
+                  {{ 'sections.collection_template.empty' | t -}}
+                  <br>
+                  {{
+                    'sections.collection_template.use_fewer_filters_html'
+                    | t: link: collection.url, class: 'underlined-link link'
+                  }}
+                </h2>
+              </div>
+            </div>
+          {%- else -%}
+            <div class="group collection">
+              <div
+                class="loading-overlay gradient hidden inset-0 absolute w-full opacity-70 group-[&.loading]:block pointer-events-none z-[2]"
+              ></div>
+              <ul
+                id="product-grid"
+                data-id="{{ section.id }}"
+                class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2"
+              >
+                {%- for product in collection.products -%}
+                  {% assign lazy_load = false %}
+                  {%- if forloop.index > 2 -%}
+                    {%- assign lazy_load = true -%}
+                  {%- endif -%}
+                  <li
+                    class="col-sapn-1 lg:col-span-2"
+                  >
+                    {% render 'card-product',
+                      card_product: product,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      image_shape: section.settings.image_shape,
+                      show_secondary_image: section.settings.show_secondary_image,
+                      show_vendor: section.settings.show_vendor,
+                      show_rating: section.settings.show_rating,
+                      lazy_load: lazy_load,
+                      show_quick_add: section.settings.enable_quick_add,
+                      section_id: section.id
+                    %}
+                  </li>
+                {%- endfor -%}
+              </ul>
+
+              {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
       </div>
     </div>
   {%- endpaginate -%}
