@@ -6,6 +6,7 @@
     --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
 {%- endstyle -%}
+{%- assign show_blog_subtitle = false -%}
 {%- paginate blog.articles by 10 -%}
   <div class="main-blog section-padding color-{{ section.settings.color_scheme }}">
     <h1 class="sr-only">
@@ -15,12 +16,14 @@
     {%- if paginate.current_page == 1 -%}
       <div class="container grid-rows-[35.5rem_repeat(5,_19rem)] lg:grid-rows-[26.6rem_repeat(2,_19rem)]">
         {%- for article in blog.articles -%}
-          {%- if forloop.index == 6 -%}{% break %}{%- endif -%}
+          {%- if forloop.index == 6 -%}
+            {%- assign show_blog_subtitle = true -%}
+            {% break %}
+          {%- endif -%}
           {%- liquid
             if forloop.first
               assign col_class = 'col-span-full lg:col-span-5 lg:row-span-full'
               assign title_class = 'text-2xl lg:text-4xl max-w-[10ch]'
-
             elsif forloop.index == 2
               assign col_class = 'col-span-full lg:col-span-5'
               assign title_class = 'text-xl lg:text-2xl max-w-[10ch]'
@@ -92,13 +95,13 @@
           </div>
         {%- endfor -%}
       </div>
-      {%- if forloop.index > 5 -%}
+      {%- if show_blog_subtitle -%}
         <h2 class="col-span-full uppercase text-md leading-[2.2rem] text-center pt-[1.2rem] pb-[.8rem]">MORE NOTES</h2>
       {%- endif -%}
     {%- endif -%}
 
     <div class="blog-articles container">
-      <div class="{% if forloop.index > 5 %}border-t {% endif %}border-color col-span-full" id="AjaxinateContainer">
+      <div class="{% if show_blog_subtitle %}border-t {% endif %}border-color col-span-full" id="AjaxinateContainer">
         {%- for article in blog.articles -%}
           {%- if paginate.current_page == 1 and forloop.index < 6 -%}{% continue %}{%- endif -%}
           <a
