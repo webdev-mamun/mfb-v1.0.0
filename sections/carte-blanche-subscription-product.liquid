@@ -23,6 +23,7 @@
         {%- liquid
           assign title = block.settings.title
           assign product = all_products[block.settings.product]
+          assign icon = block.settings.icon
         -%}
         {%- if product != blank -%}
           <div class="p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))]{% unless product.available %} bg-[rgba(var(--color-foreground),_.7)]{% else %} bg-[rgb(var(--color-foreground))]{% endunless %}">
@@ -30,11 +31,19 @@
             <div class="flex border-l border-[rgb(var(--color-background))] pl-[4.5rem] lg:pl-0 grow">
               <div class="pl-[2.5rem] pr-[1.5rem] shrink-0 hidden lg:block">
                 <div class="w-[4.1rem]">
-                  {{
-                    product.featured_image
-                    | image_url: width: product.featured_image.width
-                    | image_tag: loading: 'lazy', width: product.featured_image.width, class: 'mx-auto'
-                  }}
+                  {%- if icon == blank -%}
+                    {{
+                      product.featured_image
+                      | image_url: width: product.featured_image.width
+                      | image_tag: loading: 'lazy', width: product.featured_image.width, class: 'mx-auto'
+                    }}
+                  {%- else -%}
+                    {{
+                      icon
+                      | image_url: width: icon.width
+                      | image_tag: loading: 'lazy', width: icon.width, class: 'mx-auto'
+                    }}
+                  {%- endif -%}
                 </div>
               </div>
               <div class=" flex flex-col gap-2 justify-between xl:gap-5 py-.5 lg:py-0 grow">
@@ -80,7 +89,8 @@
                       -%}
                         <input
                           type="hidden"
-                          name="id" data-productid="{{ product.id }}"
+                          name="id"
+                          data-productid="{{ product.id }}"
                           value="{{ card_product.selected_or_first_available_variant.id }}"
                           class="product-variant-id"
                           disabled
@@ -173,6 +183,11 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         }
       ]
     }
