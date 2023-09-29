@@ -2612,6 +2612,10 @@ p.order-item-title, .base-text.order-item-title {
   margin-top: auto;
 }
 
+.mt-\[2\.6rem\] {
+  margin-top: 2.6rem;
+}
+
 .line-clamp-5 {
   overflow: hidden;
   display: -webkit-box;
@@ -4650,6 +4654,10 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:mt-\[5\.5rem\] {
     margin-top: 5.5rem;
+  }
+
+  .lg\:mt-6 {
+    margin-top: 6rem;
   }
 
   .lg\:line-clamp-3 {
