@@ -3226,6 +3226,14 @@ p.order-item-title, .base-text.order-item-title {
   row-gap: 5.5rem;
 }
 
+.gap-y-\[8rem\] {
+  row-gap: 8rem;
+}
+
+.gap-y-\[11rem\] {
+  row-gap: 11rem;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -4077,12 +4085,29 @@ p.order-item-title, .base-text.order-item-title {
 }
 
 @media (min-width: 1024px) {
+  .lg\:h2 {
+    font-size: 6.2rem;
+    line-height: 6.2rem;
+  }
+
   h1.lg\:font-sans,.lg\:font-sans .h1 {
     letter-spacing: -1.76px;
   }
 
   h2.lg\:font-sans,.lg\:font-sans .h2 {
     letter-spacing: -1.24px;
+  }
+
+  .lg\:h2.font-sans {
+    letter-spacing: -1.24px;
+  }
+
+  h2.lg\:font-sans,.lg\:font-sans .h2 {
+    letter-spacing: -1.24px;
+  }
+
+  .lg\:h2.font-serif {
+    letter-spacing: -3.1px;
   }
 
   h3.lg\:font-sans,.lg\:font-sans .h3 {
@@ -4800,6 +4825,10 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:gap-y-4 {
     row-gap: 4rem;
+  }
+
+  .lg\:gap-y-\[8rem\] {
+    row-gap: 8rem;
   }
 
   .lg\:divide-x > :not([hidden]) ~ :not([hidden]) {

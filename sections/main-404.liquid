@@ -1,23 +1,90 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    --padding-top: {{ section.settings.padding_top }}px;
+    --padding-bottom: {{ section.settings.padding_bottom }}px;
+    --padding-top-desktop: {{ section.settings.padding_top_desktop }}px;
+    --padding-bottom-desktop: {{ section.settings.padding_bottom_desktop }}px;
   }
+{%- endstyle -%}
 
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
-  }
-</style>
-
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+<div class="template-404 section-padding color-{{ section.settings.color_scheme }}">
+  <div class="text-center container">
+    {%- comment -%}
+      <p>
+        {{ 'templates.404.subtext' | t }}
+      </p>
+      <h1 class="title">
+        {{ 'templates.404.title' | t }}
+      </h1>
+    {%- endcomment -%}
+    <div class="col-span-full flex flex-col items-center gap-y-[11rem] lg:gap-y-[8rem]">
+      <h1 class="h3 lg:h2 first-line:font-serif first-line:-tracking-[.05em]">
+        NOTHING TO<br>
+        SEE HERE
+      </h1>
+      <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary">
+        {{ 'general.continue_shopping' | t }}
+      </a>
+    </div>
+  </div>
 </div>
+
+{% schema %}
+{
+  "name": "404 page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "accent-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top_desktop",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom_desktop",
+      "default": 100
+    }
+  ]
+}
+{% endschema %}

@@ -96,9 +96,10 @@
       }
 
       body {
-        display: grid;
+        /* display: grid;
         grid-template-rows: auto auto 1fr auto;
         grid-template-columns: 100%;
+        min-height: 100%; */
         min-height: 100%;
         margin: 0;
         font-size: 1.6rem;
@@ -107,6 +108,13 @@
         font-family: 'Tomato Grotesk';
         font-style: normal;
         font-weight: normal;
+      }
+
+      .main-area {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+        min-height: 100vh;
       }
     {% endstyle %}
 
@@ -150,7 +158,7 @@
       <span class="sr-only">Loading...</span>
     </div>
     {%- section 'age-check' -%}
-    <div class="group-[&.loading]:invisible group-[&.loading]:opacity-0">
+    <div class="main-area group-[&.loading]:invisible group-[&.loading]:opacity-0">
       <svg xmlns="http://www.w3.org/2000/svg" hidden>
         <symbol id="icon-close" viewBox="0 0 16 17">
           <line x1="0.353553" y1="0.646447" x2="15.3536" y2="15.6464" stroke="currentColor"/>
