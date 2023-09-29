@@ -4054,6 +4054,34 @@ p.order-item-title, .base-text.order-item-title {
   letter-spacing: -0.8px;
 }
 
+.even\:font-serif:nth-child(even)h1,.even\:font-serif:nth-child(even) .h1 {
+  letter-spacing: -4.4px;
+}
+
+.even\:font-serif:nth-child(even)h2,.even\:font-serif:nth-child(even) .h2 {
+  letter-spacing: -3.1px;
+}
+
+.even\:font-serif:nth-child(even)h3,.even\:font-serif:nth-child(even) .h3 {
+  letter-spacing: -2.2px;
+}
+
+.even\:font-serif:nth-child(even)h4,.even\:font-serif:nth-child(even) .h4 {
+  letter-spacing: -1.1px;
+}
+
+.even\:font-serif:nth-child(even)h5,.even\:font-serif:nth-child(even) .h5 {
+  letter-spacing: -0.8px;
+}
+
+.even\:font-serif:nth-child(even)h6,.even\:font-serif:nth-child(even) .h6 {
+  letter-spacing: -0.65px;
+}
+
+.even\:font-serif:nth-child(even)p,.even\:font-serif:nth-child(even) .base-text {
+  letter-spacing: -0.8px;
+}
+
 .hover\:font-serif:hoverh1,.hover\:font-serif:hover .h1 {
   letter-spacing: -4.4px;
 }
@@ -4246,6 +4274,10 @@ p.order-item-title, .base-text.order-item-title {
 
 .even\:col-start-2:nth-child(even) {
   grid-column-start: 2;
+}
+
+.even\:font-serif:nth-child(even) {
+  font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .hover\:font-serif:hover {

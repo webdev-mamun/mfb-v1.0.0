@@ -46,7 +46,7 @@
             <ul class="splide__list ">
               {%- for block in section.blocks -%}
                 <li
-                  class="splide__slide group"
+                  class="splide__slide text-base -tracking-[.02em] even:font-serif even::-tracking-[.05em] uppercase"
                   id="Slide-{{ section.id }}-{{ forloop.index }}"
                   {{ block.shopify_attributes }}
                   role="group"
@@ -67,7 +67,7 @@
                           class="announcement-bar__link link link--text focus-inset"
                         >
                       {%- endif -%}
-                      <p class="announcement-bar__message text-base -tracking-[.02em] group-even:font-serif group-even::-tracking-[.05em] uppercase">
+                      <p class="announcement-bar__message">
                         <span>{{ block.settings.text | escape }}</span>
                       </p>
                       {%- if block.settings.link != blank -%}
