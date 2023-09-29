@@ -6,7 +6,7 @@
       "type": "header",
       "settings": {
         "menu": "main-menu",
-        "drawer-menu": "main-menu",
+        "drawer-menu": "drawer-menu",
         "sticky_header_type": "always",
         "color_scheme": "background-1",
         "drawer_color_scheme": "inverse"

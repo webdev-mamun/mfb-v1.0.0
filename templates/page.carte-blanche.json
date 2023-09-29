@@ -87,7 +87,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "TRY A SINGLEBOTTLE FIRST",
+        "title": "TRY A SINGLE%br%BOTTLE FIRST",
         "collection": "all",
         "limit": 3,
         "btn": "SHOP ALL",
