@@ -14,7 +14,7 @@
     </h1>
 
     {%- if paginate.current_page == 1 -%}
-      <div class="container grid-rows-[35.5rem_repeat(5,_19rem)] lg:grid-rows-[26.6rem_repeat(2,_19rem)]">
+      <div class="container grid-rows-[35.5rem_repeat(4,_19rem)] lg:grid-rows-[26.6rem_repeat(2,_19rem)]">
         {%- for article in blog.articles -%}
           {%- if forloop.index == 6 -%}
             {%- assign show_blog_subtitle = true -%}
@@ -66,7 +66,7 @@
               class="absolute inset-0 px-1 pt-1 pb-[1.5rem] lg:p-2 flex flex-col justify-between bg-[rgba(var(--color-foreground),_.3)] text-[rgb(var(--color-background))] backdrop-blur"
               style="--color-link: var(--color-background)"
             >
-              <h2 class="{{ title_class }} first-line:font-serif first-line:-tracking-[.05em]">
+              <h2 class="{{ title_class }} first-line:font-serif first-line:-tracking-[.05em] uppercase">
                 {{ article.title }}
               </h2>
               <div class="flex flex-wrap gap-y-1 gap-x-2 justify-between border-t pt-.5 lg:pt-1">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="mt-auto flex flex-col items-start{% if forloop.index < 3 %}{% if forloop.first %} grow-0 shrink-0 basis-[calc(((100%_-_20px)_/_10)_*_6)]{% endif %} lg:grow-0 lg:shrink-0 lg:basis-[calc(((100%_-_20px)_/_5)_*_3)]{% endif %}{% unless forloop.first %} pr-2 lg:pr-0{% endunless %}">
                   {%- if forloop.index < 3 -%}
-                    <div class="text-sm lg:text-base [&>*]:text-sm [&>*]:lg:text-base{% if forloop.first %} line-clamp-5 lg:line-clamp-3{% else %} hidden lg:line-clamp-3{% endif %}">
+                    <div class="text-sm lg:text-base [&>*]:text-sm [&>*]:lg:text-base leading-[1.7rem] lg:leading-[2.2rem] [&>*]:leading-[1.7rem] [&>*]:lg:leading-[2.2rem]{% if forloop.first %} line-clamp-5 lg:line-clamp-3{% else %} hidden lg:line-clamp-3{% endif %}">
                       {{ article.excerpt_or_content }}
                     </div>
                   {%- endif -%}
@@ -96,7 +96,9 @@
         {%- endfor -%}
       </div>
       {%- if show_blog_subtitle -%}
-        <h2 class="col-span-full uppercase text-md leading-[2.2rem] text-center pt-[1.2rem] pb-[.8rem]">MORE NOTES</h2>
+        <h2 class="col-span-full uppercase text-xs lg:text-md leading-[2.2rem] text-center pt-[1.2rem] pb-[.8rem] text-[rgba(var(--color-foreground),_.5)] lg:text-[rgb(var(--color-foreground))]">
+          MORE NOTES
+        </h2>
       {%- endif -%}
     {%- endif -%}
 
@@ -146,7 +148,7 @@
       {%- if paginate.pages > 1 -%}
         <script src="{{ 'ajaxinate.min.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'paginate-component.js' | asset_url }}" defer="defer"></script>
-        <div id="AjaxinatePagination" class="col-span-full flex justify-center">
+        <div id="AjaxinatePagination" class="col-span-full flex justify-center mt-1 lg:mt-0">
           {% if paginate.next %}
             <a
               href="{{ paginate.next.url }}"
