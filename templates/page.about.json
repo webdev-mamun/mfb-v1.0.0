@@ -70,7 +70,7 @@
       ],
       "settings": {
         "title": "WHAT WE DO",
-        "show_mobile_image": true,
+        "show_mobile_image": false,
         "color_scheme": "",
         "padding_top": 45,
         "padding_bottom": 65,
