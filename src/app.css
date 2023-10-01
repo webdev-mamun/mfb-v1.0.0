@@ -358,7 +358,7 @@
     }
 
     .producer-overview p {
-        @apply font-serif text-[3.2rem] leading-[3.6rem] -tracking-[.05em] indent-6 lg:text-2xl lg:leading-normal lg:indent-[14rem];
+        @apply font-serif text-[3.2rem] leading-[3.6rem] -tracking-[.05em] indent-6 lg:text-2xl lg:leading-[4.62rem] lg:indent-[14rem];
     }
 
     .producer-description p{
