@@ -63,10 +63,10 @@
                 assign country = producer.country_code
               -%}
               <li class="splide__slide">
-                {%- if page != blank -%}
-                  <a href="{{ page }}">
-                {%- endif -%}
                 <div class="relative h-full flex justify-center items-center">
+                  {%- if page != blank -%}
+                    <a href="{{ page }}" class="absolute h-full w-full z-[1]"></a>
+                  {%- endif -%}
                   {%- if image != blank -%}
                     <div class="w-[13.4rem] lg:w-[22.4rem] h-[16.6rem] lg:h-[26rem] mx-auto absolute top-2/4 start-2/4 -translate-x-2/4 -translate-y-2/4 z-1 producer-image">
                       {%- assign widths = '375, 550' -%}
@@ -77,12 +77,20 @@
                       {{
                         image
                         | image_url: width: 224, height: 260
-                        | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'hidden lg:block rounded-2xl object-cover object-center',
+                          sizes: sizes,
+                          widths: widths
                       }}
                       {{
                         image
                         | image_url: width: 134, height: 166
-                        | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'lg:hidden rounded-2xl object-cover object-center',
+                          sizes: sizes,
+                          widths: widths
                       }}
                     </div>
                   {%- endif -%}
@@ -99,9 +107,6 @@
                     </span>
                   {%- endif -%}
                 </div>
-                {%- if page != blank -%}
-                  </a>
-                {%- endif -%}
               </li>
             {%- endfor -%}
           {%- else -%}
@@ -110,9 +115,13 @@
                 assign text = block.settings.text
                 assign image = block.settings.image
                 assign country = block.settings.country
+                assign page = pages[block.settings.page]
               -%}
               <li class="splide__slide">
                 <div class="relative h-full flex justify-center items-center">
+                  {%- if page != blank -%}
+                    <a href="{{ page }}" class="absolute h-full w-full z-[1]"></a>
+                  {%- endif -%}
                   <div class="w-[13.4rem] lg:w-[22.4rem] h-[16.6rem] lg:h-[26rem] mx-auto absolute top-2/4 start-2/4 -translate-x-2/4 -translate-y-2/4 z-1 producer-image">
                     {%- if image != blank -%}
                       {%- assign widths = '375, 550' -%}
@@ -277,6 +286,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page"
         }
       ]
     }

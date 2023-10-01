@@ -2321,6 +2321,14 @@ p.order-item-title, .base-text.order-item-title {
   z-index: 2;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
+.z-\[1\] {
+  z-index: 1;
+}
+
 .order-1 {
   order: 1;
 }
