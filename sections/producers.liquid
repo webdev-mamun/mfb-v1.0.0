@@ -25,6 +25,8 @@
       assign url = section.settings.url
       assign btn = section.settings.btn
       assign btn_mobile = section.settings.btn_mobile
+      assign add_from_metaobject = section.settings.enable_metaobject
+      assign producers = shop.metaobjects.producer.values
     -%}
     {% capture inline_icon %}
         {{- icon | image_url: width: 44 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[.2rem]' -}}
@@ -52,50 +54,102 @@
     <div class="splide" role="group" aria-label="{{ title }}">
       <div class="splide__track">
         <ul class="splide__list">
-          {%- for block in section.blocks -%}
-            {%- liquid
-              assign text = block.settings.text
-              assign image = block.settings.image
-              assign country = block.settings.country
-            -%}
-            <li class="splide__slide">
-              <div class="relative h-full flex justify-center items-center">
-                <div class="w-[13.4rem] lg:w-[22.4rem] h-[16.6rem] lg:h-[26rem] mx-auto absolute top-2/4 start-2/4 -translate-x-2/4 -translate-y-2/4 z-1 producer-image">
+          {%- if add_from_metaobject and producers.size > 0 -%}
+            {%- for producer in producers -%}
+              {%- liquid
+                assign page = pages[producer.page].url
+                assign text = producer.title
+                assign image = producer.image
+                assign country = producer.country_code
+              -%}
+              <li class="splide__slide">
+                {%- if page != blank -%}
+                  <a href="{{ page }}" class="flex">
+                {%- endif -%}
+                <div class="relative h-full flex justify-center items-center">
                   {%- if image != blank -%}
-                    {%- assign widths = '375, 550' -%}
-                    {%- capture sizes -%}
-                                    (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
-                                    (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
-                                  {%- endcapture -%}
-                    {{
-                      image
-                      | image_url: width: 224, height: 260
-                      | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
-                    }}
-                    {{
-                      image
-                      | image_url: width: 134, height: 166
-                      | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
-                    }}
-                  {%- else -%}
-                    {%- assign placeholder = 'detailed-apparel-' | append: forloop.index -%}
-                    {{
-                      'detailed-apparel-1'
-                      | placeholder_svg_tag: 'placeholder-svg w-full max-w-full max-h-full rounded-2xl'
-                    }}
+                    <div class="w-[13.4rem] lg:w-[22.4rem] h-[16.6rem] lg:h-[26rem] mx-auto absolute top-2/4 start-2/4 -translate-x-2/4 -translate-y-2/4 z-1 producer-image">
+                      {%- assign widths = '375, 550' -%}
+                      {%- capture sizes -%}
+                                          (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                                          (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+                                        {%- endcapture -%}
+                      {{
+                        image
+                        | image_url: width: 224, height: 260
+                        | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+                      }}
+                      {{
+                        image
+                        | image_url: width: 134, height: 166
+                        | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
+                      }}
+                    </div>
+                  {%- endif -%}
+                  {%- if text != blank -%}
+                    <span class="uppercase font-sans big-text lg:text-2xl w-full text-center relative z-2">
+                      {{- text -}}
+                      {%- if country != blank -%}
+                        <span class="font-serif text-[1.4rem] leading-[1.8rem] -tracking-[.02em] align-top">
+                          (
+                          {{- country -}}
+                          )
+                        </span>
+                      {%- endif -%}
+                    </span>
                   {%- endif -%}
                 </div>
-                <span class="uppercase font-sans big-text lg:text-2xl w-full text-center relative z-2">
-                  {{- text -}}
-                  <span class="font-serif text-[1.4rem] leading-[1.8rem] -tracking-[.02em] align-top">
-                    (
-                    {{- country -}}
-                    )
-                  </span></span
-                >
-              </div>
-            </li>
-          {%- endfor -%}
+                {%- if page != blank -%}
+                  </a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign text = block.settings.text
+                assign image = block.settings.image
+                assign country = block.settings.country
+              -%}
+              <li class="splide__slide">
+                <div class="relative h-full flex justify-center items-center">
+                  <div class="w-[13.4rem] lg:w-[22.4rem] h-[16.6rem] lg:h-[26rem] mx-auto absolute top-2/4 start-2/4 -translate-x-2/4 -translate-y-2/4 z-1 producer-image">
+                    {%- if image != blank -%}
+                      {%- assign widths = '375, 550' -%}
+                      {%- capture sizes -%}
+                                      (min-width: 1440px) {{ 1440 | minus: 40 | divided_by: 2 }}px,
+                                      (min-width: 750px) calc((100vw - 20px) / 2), calc((100vw -20px) / 2)
+                                    {%- endcapture -%}
+                      {{
+                        image
+                        | image_url: width: 224, height: 260
+                        | image_tag: loading: 'lazy', class: 'hidden lg:block rounded-2xl', sizes: sizes, widths: widths
+                      }}
+                      {{
+                        image
+                        | image_url: width: 134, height: 166
+                        | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
+                      }}
+                    {%- else -%}
+                      {%- assign placeholder = 'detailed-apparel-' | append: forloop.index -%}
+                      {{
+                        'detailed-apparel-1'
+                        | placeholder_svg_tag: 'placeholder-svg w-full max-w-full max-h-full rounded-2xl'
+                      }}
+                    {%- endif -%}
+                  </div>
+                  <span class="uppercase font-sans big-text lg:text-2xl w-full text-center relative z-2">
+                    {{- text -}}
+                    <span class="font-serif text-[1.4rem] leading-[1.8rem] -tracking-[.02em] align-top">
+                      (
+                      {{- country -}}
+                      )
+                    </span></span
+                  >
+                </div>
+              </li>
+            {%- endfor -%}
+          {%- endif -%}
         </ul>
       </div>
     </div>
@@ -115,6 +169,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_metaobject",
+      "label": "Add from metaobject",
+      "default": true
+    },
     {
       "type": "textarea",
       "id": "title",
