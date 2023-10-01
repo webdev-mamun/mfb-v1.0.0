@@ -2,6 +2,8 @@
   assign image = section.settings.image
   assign text = section.settings.text
   assign icon = section.settings.icon
+  assign btn_text = section.settings.btn
+  assign btn_url = section.settings.url
 -%}
 
 {% capture inline_icon %}
@@ -38,8 +40,13 @@
       </div>
     </div>
     <div class="col-span-full lg:col-span-6">
-      <div class="mx-auto w-full max-w-[28.2rem] lg:max-w-[69.5rem] lg:ml-0 text-xl leading-[2.6rem] lg:text-2xl lg:leading-[4.6rem] text-center -tracking-[.02em] uppercase">
-        {{ text }}
+      <div class="mx-auto w-full max-w-[28.2rem] lg:max-w-[69.5rem] lg:ml-0 flex flex-col gap-2 items-center">
+        <p class="text-xl leading-[2.6rem] lg:text-2xl lg:leading-[4.6rem] text-center -tracking-[.02em] uppercase">
+          {{ text }}
+        </p>
+        {%- if btn_text != blank -%}
+          <a href="{{ btn_url }}" class="btn btn-primary">{{ btn_text }}</a>
+        {%- endif -%}
       </div>
     </div>
   </div>
