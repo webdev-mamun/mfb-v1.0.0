@@ -184,6 +184,7 @@
         "d613ce9d-8c0d-4d51-a6af-054ac23da94d"
       ],
       "settings": {
+        "enable_metaobject": false,
         "title": "PRODUCERS",
         "text": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at %icon% and are part of an ever growing curated collective of wine and spirit makers.",
         "btn": "Click throught to learn more about the people behind the bottles.",
