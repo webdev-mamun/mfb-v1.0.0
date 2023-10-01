@@ -52,7 +52,7 @@
         "btn_url_2": "",
         "color_scheme": "accent-2",
         "padding_top": 35,
-        "padding_bottom": 35,
+        "padding_bottom": 0,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 10
       }
