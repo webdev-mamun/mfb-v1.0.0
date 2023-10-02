@@ -222,7 +222,7 @@
                             {%- for discount in item.discounts -%}
                               <li class="discounts__discount flex gap-1 items-center">
                                 {%- render 'icon-discount' -%}
-                                {{ discount.title | uppercase }}
+                                {{ discount.title | upcase }}
                               </li>
                             {%- endfor -%}
                           </ul>
