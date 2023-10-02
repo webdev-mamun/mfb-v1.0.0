@@ -51,21 +51,24 @@
           "type": "product",
           "settings": {
             "title": "02",
-            "product": "two-bottle-spirits-pack"
+            "product": "two-bottle-spirits-pack",
+            "icon": "shopify:\/\/shop_images\/spirits.svg"
           }
         },
         "05bb94af-dee2-49ab-81a0-7f7d6e9ff553": {
           "type": "product",
           "settings": {
             "title": "06",
-            "product": "six-bottle-wine-pack"
+            "product": "six-bottle-wine-pack",
+            "icon": "shopify:\/\/shop_images\/wine.svg"
           }
         },
         "5ae576eb-4f79-4d81-8104-de4e24a7e6d6": {
           "type": "product",
           "settings": {
-            "title": "02",
-            "product": ""
+            "title": "16",
+            "product": "sixteen-bottle-wine-pack",
+            "icon": "shopify:\/\/shop_images\/wine.svg"
           }
         }
       },
