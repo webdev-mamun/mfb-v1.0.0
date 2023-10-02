@@ -14,7 +14,7 @@
   assign url = collections[section.settings.collection].url
   assign text = section.settings.text
 -%}
-<div class="producer-main section-padding color-{{ section.settings.color_scheme }} flex flex-col gap-y-2 lg:gap-y-13">
+<div class="producer-main section-padding color-{{ section.settings.color_scheme }} flex flex-col gap-y-2 lg:gap-y-[13rem]">
   {%- if overview != blank -%}
     <div class="w-full max-w-[115.6rem] mx-auto producer-overview px-2 lg:px-4">{{ overview }}</div>
   {%- endif -%}

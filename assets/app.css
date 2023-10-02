@@ -4896,6 +4896,10 @@ p.order-item-title, .base-text.order-item-title {
     row-gap: 8rem;
   }
 
+  .lg\:gap-y-\[13rem\] {
+    row-gap: 13rem;
+  }
+
   .lg\:divide-x > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-x-reverse: 0;
     border-right-width: calc(1px * var(--tw-divide-x-reverse));
