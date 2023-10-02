@@ -2317,16 +2317,12 @@ p.order-item-title, .base-text.order-item-title {
   z-index: 20;
 }
 
-.z-\[2\] {
-  z-index: 2;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
 .z-\[1\] {
   z-index: 1;
+}
+
+.z-\[2\] {
+  z-index: 2;
 }
 
 .order-1 {
@@ -2625,10 +2621,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.-mt-\[1rem\] {
-  margin-top: -1rem;
 }
 
 .line-clamp-5 {
@@ -3225,6 +3217,10 @@ p.order-item-title, .base-text.order-item-title {
   row-gap: 3rem;
 }
 
+.gap-y-4 {
+  row-gap: 4rem;
+}
+
 .gap-y-5 {
   row-gap: 5rem;
 }
@@ -3247,10 +3243,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .gap-y-\[5\.5rem\] {
   row-gap: 5.5rem;
-}
-
-.gap-y-4 {
-  row-gap: 4rem;
 }
 
 .overflow-auto {
@@ -4888,6 +4880,10 @@ p.order-item-title, .base-text.order-item-title {
     row-gap: 10rem;
   }
 
+  .lg\:gap-y-2 {
+    row-gap: 2rem;
+  }
+
   .lg\:gap-y-3 {
     row-gap: 3rem;
   }
@@ -4898,10 +4894,6 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:gap-y-\[8rem\] {
     row-gap: 8rem;
-  }
-
-  .lg\:gap-y-2 {
-    row-gap: 2rem;
   }
 
   .lg\:divide-x > :not([hidden]) ~ :not([hidden]) {
