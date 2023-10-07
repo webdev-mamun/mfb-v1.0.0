@@ -1292,16 +1292,6 @@
         "type": "image_picker",
         "id": "footer_brand_image",
         "label": "t:settings_schema.brand_information.settings.footer_brand_image.label"
-      },
-      {
-        "type": "range",
-        "id": "footer_brand_image_width",
-        "min": 20,
-        "max": 120,
-        "step": 1,
-        "default": 49,
-        "unit": "px",
-        "label": "t:settings_schema.brand_information.settings.footer_brand_image_width.label"
       }
     ]
   },
