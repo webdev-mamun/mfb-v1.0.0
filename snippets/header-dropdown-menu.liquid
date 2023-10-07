@@ -6,15 +6,15 @@
 {% endcomment %}
 
 <nav class="header__inline-menu hidden lg:flex items-center">
-  <ul class="list-menu list-menu--inline inline-flex items-center h-full" role="list">
+  <ul class="list-menu list-menu--inline inline-flex items-center" role="list">
     {%- for link in section.settings.menu.links -%}
-      <li class="inline-flex h-full">
+      <li class="inline-flex">
         {%- if link.links != blank -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link link--text focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full"
+                class="header__menu-item list-menu__item link link--text focus-inset text-xs lg:text-base lg:leading-[1.9rem] font-sans flex items-center uppercase h-full"
               >
                 <span
                   {%- if link.child_active %}
@@ -83,7 +83,7 @@
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset text-xs lg:text-base font-sans flex items-center uppercase h-full"
+            class="header__menu-item list-menu__item link link--text focus-inset text-xs lg:text-base lg:leading-[1.9rem] font-sans flex items-center uppercase h-full"
             {% if link.current %}
               aria-current="page"
             {% endif %}

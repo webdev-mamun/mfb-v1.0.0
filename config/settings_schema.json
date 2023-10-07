@@ -1296,10 +1296,10 @@
       {
         "type": "range",
         "id": "footer_brand_image_width",
-        "min": 100,
+        "min": 20,
         "max": 200,
         "step": 1,
-        "default": 100,
+        "default": 68,
         "unit": "px",
         "label": "t:settings_schema.brand_information.settings.footer_brand_image_width.label"
       }

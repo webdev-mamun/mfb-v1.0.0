@@ -585,9 +585,9 @@ p.header__heading-link, .base-text.header__heading-link,p .header__heading, .bas
   text-transform: uppercase;
 }
 
-.header__heading-link {
-  padding: 1.1rem 0 1.4rem;
-}
+/* .header__heading-link {
+        padding: 1.1rem 0 1.4rem;
+    } */
 
 h1body,body .h1 {
   letter-spacing: -1.76px;
@@ -3449,6 +3449,11 @@ p.order-item-title, .base-text.order-item-title {
   padding-bottom: 1rem;
 }
 
+.py-10 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
 .py-3 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -3472,11 +3477,6 @@ p.order-item-title, .base-text.order-item-title {
 .py-\[1\.4rem\] {
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
-}
-
-.py-10 {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
 }
 
 .pb-\.5 {
@@ -3628,6 +3628,22 @@ p.order-item-title, .base-text.order-item-title {
 
 .pt-\[3\.5rem\] {
   padding-top: 3.5rem;
+}
+
+.pb-\[1rem\] {
+  padding-bottom: 1rem;
+}
+
+.pb-\[\.5rem\] {
+  padding-bottom: .5rem;
+}
+
+.pb-\[\.9rem\] {
+  padding-bottom: .9rem;
+}
+
+.pt-\[\.9rem\] {
+  padding-top: .9rem;
 }
 
 .text-left {
@@ -5165,6 +5181,10 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:leading-\[1\.8rem\] {
     line-height: 1.8rem;
+  }
+
+  .lg\:leading-\[1\.9rem\] {
+    line-height: 1.9rem;
   }
 
   .lg\:leading-\[2\.1rem\] {
