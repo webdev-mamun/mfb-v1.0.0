@@ -16,8 +16,8 @@
   {%- endstyle -%}
 {% endcomment %}
 
-<footer class="footer color-{{ section.settings.color_scheme }} pt-2 pb-6 border-t border-color">
-  <div class="container lg:container">
+<footer class="footer color-{{ section.settings.color_scheme }} pt-3 pb-6 border-t border-color">
+  <div class="container">
     {%- if settings.footer_brand_image != blank -%}
       <div class="col-span-full">
         {%- assign brand_image_height = settings.footer_brand_image_width
@@ -32,7 +32,7 @@
             | image_url: width: 1100
             | image_tag:
               loading: 'lazy',
-              class: 'min-w-[15.8rem]',
+              class: 'min-w-full',
               widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
               height: brand_image_height,
               width: settings.brand_image_width
@@ -53,7 +53,7 @@
         assign col = 'grid-cols-2'
       endif
     -%}
-    <div class="col-span-full pt-3 gap-1 xl:gap-x-2 xl:gap-y-1 grid {{ col }}">
+    <div class="col-span-full pt-2 gap-1 xl:gap-x-2 xl:gap-y-1 grid {{ col }}">
       {%- for block in section.blocks -%}
         {%- liquid
           assign col_class = 'col-span-full'
@@ -109,7 +109,7 @@
     <div class="col-span-full ">
       <div class="grid justify-items-center">
         <small class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px]">
-          {{- 'All right reserved MF&B' | link_to: routes.root_url -}}
+          All right reserved {{ shop.name | link_to: routes.root_url }}
         </small>
         {%- if section.settings.bottom_menu.links.size > 0 -%}
           <ul role="list" class="flex flex-col">

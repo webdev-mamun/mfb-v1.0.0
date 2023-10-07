@@ -2784,6 +2784,10 @@ p.order-item-title, .base-text.order-item-title {
   min-width: 26.2rem;
 }
 
+.min-w-full {
+  min-width: 100%;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
