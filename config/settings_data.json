@@ -1,10 +1,10 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/Logotype_Black.svg",
-    "secondary_logo": "shopify:\/\/shop_images\/Logotype_White.svg",
+    "logo": "shopify:\/\/shop_images\/Logo_Black.svg",
+    "secondary_logo": "shopify:\/\/shop_images\/Logo_White_e35a14a2-dbd9-4df2-bceb-7d6f176fc821.svg",
     "logo_width": 230,
-    "logo_mobile": "shopify:\/\/shop_images\/logo-black-mobile.svg",
-    "secondary_logo_mobile": "shopify:\/\/shop_images\/small-logo-white.svg",
+    "logo_mobile": "shopify:\/\/shop_images\/Logo_Black.svg",
+    "secondary_logo_mobile": "shopify:\/\/shop_images\/Logo_White_e35a14a2-dbd9-4df2-bceb-7d6f176fc821.svg",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -106,7 +106,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": false,
-    "cart_type": "drawer",
+    "cart_type": "page",
     "show_vendor": true,
     "show_cart_note": false,
     "cart_drawer_collection": "",

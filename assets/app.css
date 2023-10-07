@@ -4876,10 +4876,6 @@ p.order-item-title, .base-text.order-item-title {
     row-gap: 0;
   }
 
-  .lg\:gap-y-10 {
-    row-gap: 10rem;
-  }
-
   .lg\:gap-y-2 {
     row-gap: 2rem;
   }
@@ -4892,12 +4888,12 @@ p.order-item-title, .base-text.order-item-title {
     row-gap: 4rem;
   }
 
-  .lg\:gap-y-\[8rem\] {
-    row-gap: 8rem;
-  }
-
   .lg\:gap-y-\[13rem\] {
     row-gap: 13rem;
+  }
+
+  .lg\:gap-y-\[8rem\] {
+    row-gap: 8rem;
   }
 
   .lg\:divide-x > :not([hidden]) ~ :not([hidden]) {
