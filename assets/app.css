@@ -2776,10 +2776,6 @@ p.order-item-title, .base-text.order-item-title {
   width: min-content;
 }
 
-.min-w-\[15\.8rem\] {
-  min-width: 15.8rem;
-}
-
 .min-w-\[26\.2rem\] {
   min-width: 26.2rem;
 }
@@ -3515,8 +3511,16 @@ p.order-item-title, .base-text.order-item-title {
   padding-bottom: .2rem;
 }
 
+.pb-\[\.5rem\] {
+  padding-bottom: .5rem;
+}
+
 .pb-\[\.8rem\] {
   padding-bottom: .8rem;
+}
+
+.pb-\[\.9rem\] {
+  padding-bottom: .9rem;
 }
 
 .pb-\[1\.2rem\] {
@@ -3622,6 +3626,10 @@ p.order-item-title, .base-text.order-item-title {
   padding-top: .6rem;
 }
 
+.pt-\[\.9rem\] {
+  padding-top: .9rem;
+}
+
 .pt-\[1\.2rem\] {
   padding-top: 1.2rem;
 }
@@ -3632,22 +3640,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .pt-\[3\.5rem\] {
   padding-top: 3.5rem;
-}
-
-.pb-\[1rem\] {
-  padding-bottom: 1rem;
-}
-
-.pb-\[\.5rem\] {
-  padding-bottom: .5rem;
-}
-
-.pb-\[\.9rem\] {
-  padding-bottom: .9rem;
-}
-
-.pt-\[\.9rem\] {
-  padding-top: .9rem;
 }
 
 .text-left {
