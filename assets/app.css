@@ -3474,6 +3474,11 @@ p.order-item-title, .base-text.order-item-title {
   padding-bottom: 1.4rem;
 }
 
+.py-10 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
 .pb-\.5 {
   padding-bottom: .5rem;
 }
@@ -4051,6 +4056,10 @@ p.order-item-title, .base-text.order-item-title {
   border-color: rgb(var(--color-button-border-hover, 170,153,85));
   background-color: rgb(var(--color-button-hover, 170,153,85));
   color: rgb(var(--color-button-text-hover, 255,254,247));
+}
+
+.scrolled-past-header {
+  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {
