@@ -43,7 +43,7 @@
         "image": "shopify:\/\/shop_images\/image-with-text.jpg",
         "mobile_image": "shopify:\/\/shop_images\/image-with-text-mobile.jpg",
         "logo_type": "primary",
-        "text": "<span>%icon% is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
+        "text": "<span>Bien Élevé is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
         "link_text": "Learn more about us",
         "link_url": "",
         "btn_text_1": "SHOP WINES",
@@ -80,91 +80,104 @@
           "type": "producer",
           "settings": {
             "text": "GUILLAUME NOIRE",
-            "country": "Fr"
+            "country": "Fr",
+            "page": ""
           }
         },
         "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-2": {
           "type": "producer",
           "settings": {
             "text": "ELISE DECHANNES",
-            "country": "Fr"
+            "country": "Fr",
+            "page": ""
           }
         },
         "template--20004128751917__45ae4465-7843-4d87-8657-fd781121613c-producer-3": {
           "type": "producer",
           "settings": {
             "text": "DOMAINE DE BRIN",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "c79dc3af-4b9b-4f67-97d0-139e770ad379": {
           "type": "producer",
           "settings": {
             "text": "DOMAINE DE L’ENCLOS",
-            "country": "it"
+            "country": "it",
+            "page": ""
           }
         },
         "31b790c8-3a3f-4b2a-855b-41ec0c7dcd61": {
           "type": "producer",
           "settings": {
             "text": "MANOIR D’APREVAL",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "3fde3a48-c7e3-4376-beb3-60247224c828": {
           "type": "producer",
           "settings": {
             "text": "MARISA BACHER",
-            "country": "it"
+            "country": "it",
+            "page": ""
           }
         },
         "4edb1557-8023-4eda-808a-3939332a90eb": {
           "type": "producer",
           "settings": {
             "text": "CALVADOS MICHEL HUARD",
-            "country": "it"
+            "country": "it",
+            "page": ""
           }
         },
         "5b2c41e5-505d-465d-8085-f65523763232": {
           "type": "producer",
           "settings": {
             "text": "ALEXANDRA & OLIVIER MAVIT",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "e5787f87-565a-482c-b4f4-8390ab9b0128": {
           "type": "producer",
           "settings": {
             "text": "PETIT CLERGEOT",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "75f0cd40-94a4-4330-9a78-755e388d2971": {
           "type": "producer",
           "settings": {
             "text": "FONTAINE DES GRIVES",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "bd7f2c02-0750-4734-a644-c3fcd65a0ba8": {
           "type": "producer",
           "settings": {
             "text": "MARX-COUTELAS",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "49c7b10a-c8d3-430d-b695-b4d4b5fcef26": {
           "type": "producer",
           "settings": {
             "text": "TERRES DE NUIT",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         },
         "d613ce9d-8c0d-4d51-a6af-054ac23da94d": {
           "type": "producer",
           "settings": {
             "text": "DOMAINE DE BICHERY",
-            "country": "fr"
+            "country": "fr",
+            "page": ""
           }
         }
       },
@@ -186,7 +199,7 @@
       "settings": {
         "enable_metaobject": true,
         "title": "PRODUCERS",
-        "text": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at %icon% and are part of an ever growing curated collective of wine and spirit makers.",
+        "text": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at Bien Élevé and are part of an ever growing curated collective of wine and spirit makers.",
         "btn": "Click throught to learn more about the people behind the bottles.",
         "btn_mobile": "SEE ALL PRODUCERS",
         "url": "",
@@ -288,7 +301,7 @@
             "image": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3.jpg",
             "image_mobile": "shopify:\/\/shop_images\/pj-dc-AsRsx2VVOnY-unsplash_3_mobile.jpg",
             "title": "OUR ETHOS",
-            "text": "We have an ethos at  %icon% to only work with our family of local producers we know personally and trust fully.",
+            "text": "We have an ethos at  Bien Élevé to only work with our family of local producers we know personally and trust fully.",
             "button_text": "LEARN MORE ABOUT US",
             "button_url": ""
           }
@@ -312,7 +325,7 @@
         "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
         "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
         "logo_type": "primary",
-        "title": "Join the <br>%icon% family",
+        "title": "Join the <br>Bien Élevé family",
         "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
         "color_scheme": "scheme-8b014475-d806-4431-8eba-5ab59944dd7b",
         "padding_top": 20,

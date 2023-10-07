@@ -586,7 +586,7 @@ p.header__heading-link, .base-text.header__heading-link,p .header__heading, .bas
 }
 
 .header__heading-link {
-  padding: 1.1rem 0 .7rem;
+  padding: 1.1rem 0 1.4rem;
 }
 
 h1body,body .h1 {
@@ -5038,10 +5038,6 @@ p.order-item-title, .base-text.order-item-title {
   .lg\:ps-4 {
     -webkit-padding-start: 4rem;
             padding-inline-start: 4rem;
-  }
-
-  .lg\:pt-0 {
-    padding-top: 0;
   }
 
   .lg\:pt-1 {

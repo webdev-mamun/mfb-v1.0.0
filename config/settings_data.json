@@ -2,7 +2,7 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/Logo_Black.svg",
     "secondary_logo": "shopify:\/\/shop_images\/Logo_White_e35a14a2-dbd9-4df2-bceb-7d6f176fc821.svg",
-    "logo_width": 230,
+    "logo_width": 80,
     "logo_mobile": "shopify:\/\/shop_images\/Logo_Black.svg",
     "secondary_logo_mobile": "shopify:\/\/shop_images\/Logo_White_e35a14a2-dbd9-4df2-bceb-7d6f176fc821.svg",
     "buttons_border_thickness": 1,
@@ -144,7 +144,7 @@
       "newsletter-popup": {
         "type": "newsletter-popup",
         "settings": {
-          "title": "join the%br%%icon% family",
+          "title": "join the%br%Bien Élevé family",
           "text": "Keep up to date with everything we’re doing.",
           "color_scheme": "inverse"
         }

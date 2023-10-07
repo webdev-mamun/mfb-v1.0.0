@@ -1,10 +1,26 @@
 {
   "sections": {
     "page": {
-      "type": "main-page"
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 55,
+        "padding_bottom": 160,
+        "padding_top_desktop": 110,
+        "padding_bottom_desktop": 200
+      }
     },
     "main": {
-      "type": "contact-form"
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contact form",
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 40,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 70
+      }
     }
   },
   "order": [
