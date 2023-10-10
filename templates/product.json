@@ -41,7 +41,7 @@
         "cb4a54cf-9ea0-4193-a2d9-0b7632d249ca": {
           "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget\/371eed76-0b44-4869-9813-730372ea378e",
           "settings": {
-            "product": "{{product}}"
+            "product": "{{ product }}"
           }
         }
       },
