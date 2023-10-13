@@ -19,7 +19,7 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
   });
 
   if (summary.closest('header-drawer, menu-drawer')) return;
-  //summary.parentElement.addEventListener('keyup', onKeyUpEscape);
+  summary.parentElement.addEventListener('keyup', onKeyUpEscape);
 });
 
 const trapFocusHandlers = {};
