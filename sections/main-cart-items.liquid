@@ -144,7 +144,7 @@
                       >
                         {{- 'sections.cart.headings.price' | t -}}
                       </span>
-                      <div>
+                      <div class="flex flex-col gap-.5">
                         {%- if item.original_price != item.final_price -%}
                           <div class="cart-item__discounted-prices">
                             <span class="visually-hidden">
@@ -167,55 +167,58 @@
                         {%- endif -%}
 
                         {%- if item.product.has_only_default_variant == false
-                          or item.properties.size != 0
+                          or item.properties != empty
                           or item.selling_plan_allocation != null
                         -%}
-                          <dl>
-                            {%- if item.product.has_only_default_variant == false -%}
-                              {%- for option in item.options_with_values -%}
-                                <div class="product-option">
-                                  <dt>{{ option.name }}:</dt>
-                                  <dd>{{ option.value }}</dd>
-                                </div>
-                              {%- endfor -%}
-                            {%- endif -%}
-
-                            {%- for property in item.properties -%}
-                              {%- assign property_first_char = property.first | slice: 0 -%}
-                              {%- if property.last != blank and property_first_char != '_' -%}
-                                <div class="product-option">
-                                  <dt>{{ property.first }}:</dt>
-                                  <dd>
-                                    {%- if property.last contains '/uploads/' -%}
-                                      <a href="{{ property.last }}" class="link" target="_blank">
-                                        {{ property.last | split: '/' | last }}
-                                      </a>
-                                    {%- else -%}
-                                      {{ property.last }}
-                                    {%- endif -%}
-                                  </dd>
-                                </div>
+                          {%- if item.product.has_only_default_variant == false or item.properties != empty -%}
+                            <dl>
+                              {%- if item.product.has_only_default_variant == false -%}
+                                {%- for option in item.options_with_values -%}
+                                  <div class="product-option text-xs">
+                                    <dt>{{ option.name }}:</dt>
+                                    <dd>{{ option.value }}</dd>
+                                  </div>
+                                {%- endfor -%}
                               {%- endif -%}
-                            {%- endfor -%}
-                          </dl>
-
-                          <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                              {%- if item.properties != empty -%}
+                                {%- for property in item.properties -%}
+                                  {%- assign property_first_char = property.first | slice: 0 -%}
+                                  {%- if property.last != blank and property_first_char != '_' -%}
+                                    <div class="product-option text-xs">
+                                      <dt>{{ property.first }}:</dt>
+                                      <dd>
+                                        {%- if property.last contains '/uploads/' -%}
+                                          <a href="{{ property.last }}" class="link" target="_blank">
+                                            {{ property.last | split: '/' | last }}
+                                          </a>
+                                        {%- else -%}
+                                          {{ property.last }}
+                                        {%- endif -%}
+                                      </dd>
+                                    </div>
+                                  {%- endif -%}
+                                {%- endfor -%}
+                              {%- endif -%}
+                            </dl>
+                          {%- endif -%}
+                          <p class="product-option text-xs">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                         {%- endif -%}
-
-                        <ul
-                          class="discounts list-unstyled flex flex-col gap-1"
-                          role="list"
-                          aria-label="{{ 'customer.order.discount' | t }}"
-                        >
-                          {%- for discount in item.discounts -%}
-                            <li class="discounts__discount flex gap-1 items-center">
-                              <span class="w-[1.6rem]">
-                                {%- render 'icon-discount' -%}
-                              </span>
-                              {{ discount.title | upcase }}
-                            </li>
-                          {%- endfor -%}
-                        </ul>
+                        {%- if item.discounts != empty -%}
+                          <ul
+                            class="discounts list-unstyled flex flex-col gap-1"
+                            role="list"
+                            aria-label="{{ 'customer.order.discount' | t }}"
+                          >
+                            {%- for discount in item.discounts -%}
+                              <li class="discounts__discount flex gap-1 items-center">
+                                <span class="w-[1.6rem]">
+                                  {%- render 'icon-discount' -%}
+                                </span>
+                                {{ discount.title | upcase }}
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
                       </div>
                     </td>
 
@@ -226,7 +229,7 @@
                         >
                           {{- 'sections.cart.headings.quantity' | t -}}
                         </span>
-                        <div class="cart-item__quantity-wrapper flex flex-col items-center">
+                        <div class="cart-item__quantity-wrapper flex flex-col gap-1">
                           <label class="sr-only" for="Quantity-{{ item.index | plus: 1 }}">
                             {{ 'products.product.quantity.label' | t }}
                           </label>

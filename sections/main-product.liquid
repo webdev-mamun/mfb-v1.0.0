@@ -117,13 +117,29 @@
           <div class="hidden lg:block text-xl -tracking-[.02em]">
             {%- render 'price', product: product, use_variant: true -%}
           </div>
-          {%- render 'buy-buttons',
-            product: product,
-            product_form_id: product_form_id,
-            section_id: section.id,
-            show_pickup_availability: false,
-            btn_class: 'product-sticky-btn'
-          -%}
+          <div class="product-form__buttons  flex flex-col gap-2">
+            <button
+              id="ProductSubmitButton-template--21188300275992__main"
+              type="submit"
+              name="add"
+              class="product-form__submit button button--full-width product-sticky-btn"
+              aria-haspopup="dialog"
+              form="{{ product_form_id }}"
+            >
+              <span>Add to cart </span>
+              <div class="group loading-overlay--spinner hidden group-[]:">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="spinner"
+                  viewBox="0 0 66 66"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -226,8 +242,18 @@
                   </div>
                   <div {{ block.shopify_attributes }}>
                     {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-                    {%- form 'product', product, data-productid: product.id, id: product_form_installment_id, class: 'installment caption-large' -%}
-                      <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.selected_or_first_available_variant.id }}">
+                    {%- form 'product',
+                      product,
+                      data-productid: product.id,
+                      id: product_form_installment_id,
+                      class: 'installment caption-large'
+                    -%}
+                      <input
+                        type="hidden"
+                        name="id"
+                        data-productid="{{ product.id }}"
+                        value="{{ product.selected_or_first_available_variant.id }}"
+                      >
                       {{ form | payment_terms }}
                     {%- endform -%}
                   </div>
@@ -438,20 +464,37 @@
             {%- endfor -%}
           </product-info>
         </div>
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'buy_buttons' -%}
-            <div class="hidden xl:flex xl:col-span-2 flex-col justify-center">
-              {%- render 'buy-buttons',
-                block: block,
-                product: product,
-                product_form_id: product_form_id,
-                section_id: section.id,
-                show_pickup_availability: false,
-                btn_class: 'product-act-btn'
-              -%}
+        <div class="hidden xl:flex xl:col-span-2 flex-col justify-center">
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width product-act-btn"
+            form="{{ product_form_id }}"
+            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            <div class="group loading-overlay--spinner hidden group-[]:">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                class="spinner"
+                viewBox="0 0 66 66"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+              </svg>
             </div>
-          {%- endif -%}
-        {%- endfor -%}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -467,7 +510,9 @@
       }
 
       if (!isIE()) return;
-      const hiddenInput = document.querySelector('#{{ product_form_id }} input[name="id" data-productid="{{ product.id }}"]');
+      const hiddenInput = document.querySelector(
+        '#{{ product_form_id }} input[name="id" data-productid="{{ product.id }}"]'
+      );
       const noScriptInputWrapper = document.createElement('div');
       const variantSwitcher =
         document.querySelector('variant-radios[data-section="{{ section.id }}"]') ||

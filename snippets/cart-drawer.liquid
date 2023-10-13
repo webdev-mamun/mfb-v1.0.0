@@ -171,7 +171,7 @@
                           {%- endif -%}
 
                           {%- if item.product.has_only_default_variant == false
-                            or item.properties.size != 0
+                            or item.properties != empty
                             or item.selling_plan_allocation != null
                           -%}
                             <dl>
@@ -211,7 +211,7 @@
                               {%- endfor -%}
                             </dl>
 
-                            <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                            <p class="product-option text-xs">{{ item.selling_plan_allocation.selling_plan.name }}</p>
                           {%- endif -%}
 
                           <ul

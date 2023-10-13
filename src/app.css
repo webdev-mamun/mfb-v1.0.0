@@ -462,6 +462,23 @@
     .main-page-title {
         @apply mb-3 text-2xl lg:text-3xl lg:mb-10 text-center max-w-[14ch] mx-auto first-line:font-serif first-line:-tracking-[.05em] uppercase
     }
+
+    .product-form__error-message-wrapper[hidden] {
+        @apply hidden;
+    }
+
+    .product-form__error-message-wrapper {
+        @apply flex gap-.5 items-start my-.5
+    }
+
+    .icon {
+        @apply w-[1.5rem] h-[1.5rem]
+    }
+
+    /* .cart-item__details .product-option,
+    .cart-item__details .discounts {
+        @apply text-xs
+    } */
 }
 
 

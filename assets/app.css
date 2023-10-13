@@ -2193,6 +2193,28 @@ p.order-item-title, .base-text.order-item-title {
   }
 }
 
+.product-form__error-message-wrapper[hidden] {
+  display: none;
+}
+
+.product-form__error-message-wrapper {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* .cart-item__details .product-option,
+    .cart-item__details .discounts {
+        @apply text-xs
+    } */
+
 .sr-only {
   position: absolute;
   width: 1px;
