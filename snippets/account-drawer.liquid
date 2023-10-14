@@ -39,8 +39,9 @@
             {%- form 'customer_login', novalidate: 'novalidate', class: 'w-full' -%}
               <div class="grid grid-cols-10 gap-1">
                 <div class="col-span-8 col-start-2 lg:col-span-full lg:col-start-1 flex flex-wrap flex-col lg:flex-row w-full items-center lg:items-start gap-1 lg:gap-2">
-                  <div class="field grow shrink w-full lg:max-w-[26rem]" tabindex="-1">
+                  <div class="field grow shrink w-full lg:max-w-[26rem]">
                     <input
+                      tabindex="-1"
                       class="w-full default-input"
                       type="email"
                       name="customer[email]"
