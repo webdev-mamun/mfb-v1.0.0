@@ -58,7 +58,11 @@
           disabled
           class="product-variant-id"
         >
-
+        <input
+          name="selling_plan"
+          type="hidden"
+          value="{{ product.selected_or_first_available_selling_plan_allocation.selling_plan.id }}"
+        >
         {%- if gift_card_recipient_feature_active -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}

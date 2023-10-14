@@ -90,11 +90,17 @@
                       -%}
                         <input
                           type="hidden"
-                          name="id" data-productid="{{ product.id }}"
+                          name="id"
+                          data-productid="{{ product.id }}"
                           data-productid="{{ product.id }}"
                           value="{{ card_product.selected_or_first_available_variant.id }}"
                           class="product-variant-id"
                           disabled
+                        >
+                        <input
+                          name="selling_plan"
+                          type="hidden"
+                          value="{{ card_product.selected_or_first_available_selling_plan_allocation.selling_plan.id }}"
                         >
                         <button
                           id="{{ product_form_id }}-submit"
