@@ -91,7 +91,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "TRY A SINGLE%br%BOTTLE FIRST",
-        "collection": "all",
+        "collection": "our-drink",
         "show_vendor": true,
         "enable_quick_add": true,
         "limit": 3,
