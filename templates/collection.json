@@ -21,9 +21,9 @@
         "enable_filtering": true,
         "color_scheme": "",
         "padding_top": 10,
-        "padding_bottom": 10,
+        "padding_bottom": 50,
         "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20
+        "padding_bottom_desktop": 60
       }
     },
     "d7ae8aaf-1d63-417b-99e1-2913cc788b30": {
