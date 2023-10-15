@@ -1317,8 +1317,16 @@ p.default-input, .base-text.default-input {
   display: flex;
   height: -moz-fit-content;
   height: fit-content;
+  max-height: 100vh;
   width: 100vw;
   justify-content: flex-end;
+  padding: 0;
+}
+
+@media (min-width: 375px) {
+  .drawer {
+    padding: 2rem;
+  }
 }
 
 .drawer.active {
@@ -1336,13 +1344,12 @@ p.default-input, .base-text.default-input {
 
 .drawer__inner {
   display: flex;
+  height: 100%;
   width: 30rem;
-  --tw-translate-y: 0;
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   flex-direction: column;
   gap: 2rem;
-  overflow: auto;
   border-radius: 1rem;
   background-color: var(--bg, #FFFEF7);
   padding-left: 1rem;
@@ -1359,18 +1366,6 @@ p.default-input, .base-text.default-input {
 .group.active .drawer__inner {
   --tw-translate-x: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@media (min-width: 375px) {
-  .drawer__inner {
-    --tw-translate-y: 2rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .group.active .drawer__inner {
-    --tw-translate-x: -2rem;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
 }
 
 @media (min-width: 768px) {
@@ -2725,6 +2720,10 @@ p.order-item-title, .base-text.order-item-title {
   max-height: 17rem;
 }
 
+.max-h-\[calc\(100\%_-_18rem\)\] {
+  max-height: calc(100% - 18rem);
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -2789,6 +2788,10 @@ p.order-item-title, .base-text.order-item-title {
   width: 9.3rem;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2798,20 +2801,12 @@ p.order-item-title, .base-text.order-item-title {
   width: min-content;
 }
 
-.w-\[90\%\] {
-  width: 90%;
-}
-
 .min-w-\[26\.2rem\] {
   min-width: 26.2rem;
 }
 
 .min-w-full {
   min-width: 100%;
-}
-
-.min-w-\[17rem\] {
-  min-width: 17rem;
 }
 
 .max-w-4xl {
@@ -2856,6 +2851,10 @@ p.order-item-title, .base-text.order-item-title {
 
 .max-w-\[25rem\] {
   max-width: 25rem;
+}
+
+.max-w-\[26\.4rem\] {
+  max-width: 26.4rem;
 }
 
 .max-w-\[28\.2rem\] {
@@ -2944,14 +2943,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-\[17rem\] {
-  max-width: 17rem;
-}
-
-.max-w-\[26\.4rem\] {
-  max-width: 26.4rem;
 }
 
 .shrink {
@@ -3339,10 +3330,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .border-double {
   border-style: double;
-}
-
-.border-\[color\:var\(--act-btn-border\2c _\#DCDCDC\)\] {
-  border-color: var(--act-btn-border, #DCDCDC);
 }
 
 .border-\[color\:var\(--border\2c _\#C5C5C5\)\] {
@@ -4662,6 +4649,10 @@ p.order-item-title, .base-text.order-item-title {
     margin-top: 4rem;
   }
 
+  .lg\:mt-5 {
+    margin-top: 5rem;
+  }
+
   .lg\:mt-6 {
     margin-top: 6rem;
   }
@@ -4692,10 +4683,6 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:mt-\[5\.5rem\] {
     margin-top: 5.5rem;
-  }
-
-  .lg\:mt-5 {
-    margin-top: 5rem;
   }
 
   .lg\:line-clamp-3 {

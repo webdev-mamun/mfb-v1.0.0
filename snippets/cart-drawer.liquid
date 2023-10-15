@@ -91,9 +91,7 @@
         </button>
       </div>
       <cart-drawer-items
-        {% if cart == empty %}
-          class=" is-empty hidden"
-        {% endif %}
+        class="max-h-[calc(100%_-_18rem)] overflow-auto{% if cart == empty %} is-empty hidden{% endif %}"
       >
         <form
           action="{{ routes.cart_url }}"
