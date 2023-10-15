@@ -64,7 +64,7 @@
                 class="loading-overlay gradient hidden inset-0 absolute w-full opacity-70 group-[&.loading]:block pointer-events-none z-[2]"
               ></div>
               <ul
-                id="product-grid"
+                id="AjaxinateContainer"
                 data-id="{{ section.id }}"
                 class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2"
               >
@@ -78,9 +78,6 @@
                   >
                     {% render 'card-product',
                       card_product: product,
-                      media_aspect_ratio: section.settings.image_ratio,
-                      image_shape: section.settings.image_shape,
-                      show_secondary_image: section.settings.show_secondary_image,
                       show_vendor: section.settings.show_vendor,
                       show_rating: section.settings.show_rating,
                       lazy_load: lazy_load,
@@ -92,7 +89,20 @@
               </ul>
 
               {%- if paginate.pages > 1 -%}
-                {% render 'pagination', paginate: paginate, anchor: '' %}
+                <script src="{{ 'ajaxinate.min.js' | asset_url }}" defer="defer"></script>
+                <script src="{{ 'paginate-component.js' | asset_url }}" defer="defer"></script>
+                <div id="AjaxinatePagination" class="col-span-full flex justify-center mt-2 lg:mt-5">
+                  {% if paginate.next %}
+                    <a
+                      href="{{ paginate.next.url }}"
+                      class="btn-primary btn-small rounded-full w-[90%] max-w-[26.4rem]"
+                      >LOAD MORE</a
+                    >
+                  {% endif %}
+                </div>
+                {% comment %}
+                  {%- render 'pagination', paginate: paginate -%}
+                {% endcomment %}
               {%- endif -%}
             </div>
           {%- endif -%}
@@ -109,9 +119,9 @@
     {
       "type": "range",
       "id": "products_per_page",
-      "min": 5,
+      "min": 1,
       "max": 20,
-      "step": 5,
+      "step": 1,
       "default": 15,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
     },

@@ -58,7 +58,7 @@
     {%- endif -%}
     <div>
       <div class="group card-info py-1 [&>*]:px-1">
-        {%- if vendor.value.title != blank -%}
+        {%- if show_vendor and vendor.value.title != blank -%}
           {%- if vendor.value.page != blank -%}
             <a
               href="{{ pages[vendor.value.page].url }}"
@@ -98,64 +98,68 @@
           assign qty_rules = true
         endif
       -%}
-      <product-form data-section-id="{{ section.id }}">
-        {%- form 'product',
-          card_product,
-          id: product_form_id,
-          class: 'form',
-          novalidate: 'novalidate',
-          data-type: 'add-to-cart-form'
-        -%}
-          <input
-            type="hidden"
-            name="id" data-productid="{{ product.id }}"
-            value="{{ card_product.selected_or_first_available_variant.id }}"
-            class="product-variant-id"
-            disabled
-          >
-          <button
-            id="{{ product_form_id }}-submit"
-            type="submit"
-            name="add"
-            class="
-              card-act-btn
-              group
-            "
-            aria-haspopup="dialog"
-            aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
-            aria-live="polite"
-            data-sold-out-message="true"
-            {% if card_product.selected_or_first_available_variant.available == false %}
+      {%- if show_quick_add -%}
+        <product-form data-section-id="{{ section.id }}">
+          {%- form 'product',
+            card_product,
+            id: product_form_id,
+            class: 'form',
+            novalidate: 'novalidate',
+            data-type: 'add-to-cart-form'
+          -%}
+            <input
+              type="hidden"
+              name="id"
+              data-productid="{{ product.id }}"
+              value="{{ card_product.selected_or_first_available_variant.id }}"
+              class="product-variant-id"
               disabled
-            {% endif %}
-          >
-            <span class="mt-[.4rem]">
-              {{ 'products.product.add_to_cart' | t }}
-            </span>
-            <span class="sold-out-message hidden mt-[.4rem]">
-              {{ 'products.product.add_to_cart' | t }}
-            </span>
-            <div class="loading-overlay--spinner hidden">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                class="spinner"
-                viewBox="0 0 66 66"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle class="path stroke-[var(--act-btn-border)] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-              </svg>
-            </div>
-            <span class="group-[&.loading]:hidden plus-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="8"/>
-                <line x1="8.11914" y1="3.80951" x2="8.11914" y2="12.1905" />
-                <line x1="12.1904" y1="8.11905" x2="3.80948" y2="8.11905"/>
-              </svg>
-            </span>
-          </button>
-        {%- endform -%}
-      </product-form>
+            >
+
+            <button
+              id="{{ product_form_id }}-submit"
+              type="submit"
+              name="add"
+              class="
+                card-act-btn
+                group
+              "
+              aria-haspopup="dialog"
+              aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+              aria-live="polite"
+              data-sold-out-message="true"
+              {% if card_product.selected_or_first_available_variant.available == false %}
+                disabled
+              {% endif %}
+            >
+              <span class="mt-[.4rem]">
+                {{ 'products.product.add_to_cart' | t }}
+              </span>
+              <span class="sold-out-message hidden mt-[.4rem]">
+                {{ 'products.product.add_to_cart' | t }}
+              </span>
+              <div class="loading-overlay--spinner hidden">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="spinner"
+                  viewBox="0 0 66 66"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle class="path stroke-[var(--act-btn-border)] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+              <span class="group-[&.loading]:hidden plus-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="8"/>
+                  <line x1="8.11914" y1="3.80951" x2="8.11914" y2="12.1905" />
+                  <line x1="12.1904" y1="8.11905" x2="3.80948" y2="8.11905"/>
+                </svg>
+              </span>
+            </button>
+          {%- endform -%}
+        </product-form>
+      {%- endif -%}
     </div>
   </div>
 {%- else -%}
@@ -184,7 +188,7 @@
           {{ 'onboarding.product_title' | t }}
         </a>
       </h3>
-      <div class="flex gap-1 justify-between mt-[2.5rem] border-t border-[color:var(--act-btn-border,_#DCDCDC)]">
+      <div class="flex gap-1 justify-between mt-[1.5rem] pt-1 border-t border-[rgb(var(--color-button-border,_197,197,197))]">
         <p class="font-sans text-sm leading-[1.5rem] tracking-[-.02em]">Info 1, Info 2</p>
         {% render 'price', price_class: 'font-sans text-sm leading-[1.5rem] tracking-[-.02em]' %}
       </div>

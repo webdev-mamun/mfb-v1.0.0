@@ -2798,12 +2798,20 @@ p.order-item-title, .base-text.order-item-title {
   width: min-content;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .min-w-\[26\.2rem\] {
   min-width: 26.2rem;
 }
 
 .min-w-full {
   min-width: 100%;
+}
+
+.min-w-\[17rem\] {
+  min-width: 17rem;
 }
 
 .max-w-4xl {
@@ -2936,6 +2944,14 @@ p.order-item-title, .base-text.order-item-title {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[17rem\] {
+  max-width: 17rem;
+}
+
+.max-w-\[26\.4rem\] {
+  max-width: 26.4rem;
 }
 
 .shrink {
@@ -4676,6 +4692,10 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:mt-\[5\.5rem\] {
     margin-top: 5.5rem;
+  }
+
+  .lg\:mt-5 {
+    margin-top: 5rem;
   }
 
   .lg\:line-clamp-3 {
