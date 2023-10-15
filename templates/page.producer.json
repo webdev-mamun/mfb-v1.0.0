@@ -50,8 +50,10 @@
     "collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "DRINK BY<br>PRODUCER",
+        "title": "DRINK BY%br%PRODUCER",
         "collection": "{{ page.metafields.custom.producers.value.collection.value }}",
+        "show_vendor": true,
+        "enable_quick_add": true,
         "limit": 3,
         "btn": "SHOP ALL",
         "color_scheme": "background-2",

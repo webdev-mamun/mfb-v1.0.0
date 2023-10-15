@@ -62,6 +62,8 @@
       "settings": {
         "title": "NEWARRIVALS",
         "collection": "our-drink",
+        "show_vendor": true,
+        "enable_quick_add": true,
         "limit": 4,
         "btn": "SHOP ALL NEW ARRIVALS",
         "color_scheme": "background-2",

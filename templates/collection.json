@@ -16,14 +16,14 @@
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 15,
-        "show_vendor": false,
-        "enable_quick_add": false,
+        "show_vendor": true,
+        "enable_quick_add": true,
         "enable_filtering": true,
         "color_scheme": "",
         "padding_top": 10,
-        "padding_bottom": 10,
+        "padding_bottom": 50,
         "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20
+        "padding_bottom_desktop": 60
       }
     },
     "d7ae8aaf-1d63-417b-99e1-2913cc788b30": {
