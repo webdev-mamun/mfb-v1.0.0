@@ -6,4 +6,9 @@
     {%- endif -%}
     <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
   </div>
+{%- else -%}
+  <div class="cart-count-bubble">
+    <span>(0)</span>
+    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+  </div>
 {%- endif -%}
