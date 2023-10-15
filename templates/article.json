@@ -3,6 +3,7 @@
     "main": {
       "type": "main-article",
       "settings": {
+        "extra_info": "",
         "color_scheme": "",
         "padding_top": 50,
         "padding_bottom": 140,
@@ -13,15 +14,19 @@
     "cd6aba29-5741-485d-b170-f6200247c644": {
       "type": "featured-collection",
       "settings": {
-        "title": "TRY OUR<br>CHAMPAGNE",
+        "title": "TRY OUR%br%CHAMPAGNE",
         "collection": "all",
+        "show_vendor": true,
+        "enable_quick_add": true,
         "limit": 3,
         "btn": "SHOP ALL CHAMPAGNE",
         "color_scheme": "background-2",
         "padding_top": 10,
         "padding_bottom": 10,
         "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20
+        "padding_bottom_desktop": 20,
+        "border_top": false,
+        "border_bottom": false
       }
     }
   },
