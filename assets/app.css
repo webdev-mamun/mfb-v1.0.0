@@ -3392,6 +3392,10 @@ p.order-item-title, .base-text.order-item-title {
   background-color: rgba(var(--color-foreground), .7);
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-\[image\:var\(--bg-image\)\] {
   background-image: var(--bg-image);
 }
