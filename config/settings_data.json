@@ -296,9 +296,9 @@
           "secondary_button": "#fffef7",
           "secondary_button_label": "#151515",
           "secondary_button_border": "#151515",
-          "secondary_button_hover": "#022541",
+          "secondary_button_hover": "#aa9955",
           "secondary_button_label_hover": "#fffef7",
-          "secondary_button_border_hover": "#022541",
+          "secondary_button_border_hover": "#aa9955",
           "link": "#fffef7",
           "link_hover": "#fffef7",
           "divider": "#c5c5c5"
