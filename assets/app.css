@@ -3878,6 +3878,10 @@ p.order-item-title, .base-text.order-item-title {
   line-height: 5.6rem;
 }
 
+.leading-\[0\] {
+  line-height: 0;
+}
+
 .-tracking-\[\.02em\] {
   letter-spacing: -.02em;
 }

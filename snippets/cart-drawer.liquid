@@ -222,7 +222,9 @@
                                 <span class="w-[1.6rem]">
                                   {%- render 'icon-discount' -%}
                                 </span>
-                                {{ discount.title | upcase }}
+                                <span class="leading-[0]">
+                                  {{ discount.title | upcase }}
+                                </span>
                               </li>
                             {%- endfor -%}
                           </ul>
@@ -420,8 +422,9 @@
                 {%- for discount in cart.cart_level_discount_applications -%}
                   <li class="discounts__discount discounts__discount--end">
                     {%- render 'icon-discount' -%}
-                    {{ discount.title }}
-                    (-{{ discount.total_allocated_amount | money }})
+                    <span class="leading-[0]">
+                      {{- discount.title }} (-{{ discount.total_allocated_amount | money }})</span
+                    >
                   </li>
                 {%- endfor -%}
               </ul>
