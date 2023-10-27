@@ -222,7 +222,7 @@
                                 <span class="w-[1.6rem]">
                                   {%- render 'icon-discount' -%}
                                 </span>
-                                <span class="leading-[0]">
+                                <span class="translate-y-[.15rem]">
                                   {{ discount.title | upcase }}
                                 </span>
                               </li>
@@ -422,7 +422,7 @@
                 {%- for discount in cart.cart_level_discount_applications -%}
                   <li class="discounts__discount discounts__discount--end">
                     {%- render 'icon-discount' -%}
-                    <span class="leading-[0]">
+                    <span class="translate-y-[.15rem]">
                       {{- discount.title }} (-{{ discount.total_allocated_amount | money }})</span
                     >
                   </li>
