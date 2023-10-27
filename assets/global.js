@@ -412,7 +412,7 @@ class MenuDrawer extends HTMLElement {
     });
     summaryElement.setAttribute('aria-expanded', true);
     trapFocus(this.mainDetailsToggle, summaryElement);
-    document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
+    document.body.classList.add('overflow-hidden');
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
@@ -426,7 +426,7 @@ class MenuDrawer extends HTMLElement {
     this.mainDetailsToggle.querySelectorAll('.submenu-open').forEach((submenu) => {
       submenu.classList.remove('submenu-open');
     });
-    document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
+    document.body.classList.remove('overflow-hidden');
     removeTrapFocus(elementToFocus);
     this.closeAnimation(this.mainDetailsToggle);
 
@@ -452,6 +452,7 @@ class MenuDrawer extends HTMLElement {
     detailsElement.querySelector('summary').setAttribute('aria-expanded', false);
     removeTrapFocus(detailsElement.querySelector('summary'));
     this.closeAnimation(detailsElement);
+    document.body.classList.remove('overflow-hidden');
   }
 
   closeAnimation(detailsElement) {
@@ -502,7 +503,7 @@ class HeaderDrawer extends MenuDrawer {
     summaryElement.setAttribute('aria-expanded', true);
     window.addEventListener('resize', this.onResize);
     trapFocus(this.mainDetailsToggle, summaryElement);
-    document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
+    document.body.classList.add('overflow-hidden');
   }
 
   closeMenuDrawer(event, elementToFocus) {
