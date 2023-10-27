@@ -635,6 +635,10 @@ div, img, svg {
   line-height: 1;
 }
 
+summary::-webkit-details-marker {
+  display:none;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;

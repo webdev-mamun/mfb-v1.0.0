@@ -97,6 +97,10 @@
        @apply leading-none;
     }
 
+    summary::-webkit-details-marker {
+        display:none;
+     }
+
 }
 
 .base-text {
