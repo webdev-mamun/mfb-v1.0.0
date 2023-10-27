@@ -3,7 +3,8 @@
     "main": {
       "type": "main-article",
       "settings": {
-        "extra_info": "",
+        "image": "{{ article.image }}",
+        "extra_info": "{{ article.metafields.custom.extra_text | metafield_tag }}",
         "color_scheme": "",
         "padding_top": 50,
         "padding_bottom": 140,
