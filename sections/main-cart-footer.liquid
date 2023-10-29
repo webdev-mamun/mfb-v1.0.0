@@ -72,6 +72,29 @@
                   {%- endif -%}
                 </small>
               </div>
+              <div class="group js-contents flex gap-1 border-t border-color pt-1">
+                <div class="w-[2.3rem] h-[2.3rem] relative rounded-full ring-1 ring-current group-[&.warning]:ring-[color:#FF0F0F] flex justify-center items-center shrink-0 grow-0">
+                  <input
+                    type="checkbox"
+                    name="attributes[Age Verified By User By His/Her Own]"
+                    id="ageVerified"
+                    class="appearance-none absolute top-0 left-0 w-full h-full peer"
+                    form="cart"
+                  >
+                  <span
+                    class="block w-[1.5rem] h-[1.5rem] rounded-full peer-checked:bg-[rgb(var(--color-foreground))] "
+                  ></span>
+                </div>
+                <label for="ageVerified" class="ml-2">
+                  <div class="flex flex-col group-[&.warning]:text-[color:#FF0F0F]">
+                    <h3 class="uppercase text-xs leading-[1.56rem]">AGE VERIFICATION</h3>
+                    <p class="text-xs leading-[1.56rem]">
+                      I accept the terms and conditions and confirm that I am over the required local age limit to
+                      purchase alcohol. Bien Élevé operates out of the US, where customers must be over 21 years of age.
+                    </p>
+                  </div>
+                </label>
+              </div>
             {%- else -%}
               <div
                 class="cart__ctas flex flex-col gap-2 pt-2 lg:pt-7 border-t border-color"
@@ -104,7 +127,6 @@
               {%- endif -%}
           {%- endcase -%}
         {% endfor %}
-
         <div id="cart-errors"></div>
       </div>
     </div>
@@ -130,6 +152,30 @@
       document.querySelector('#cart').submit();
     });
   });
+  (() => {
+    const checkoutBtn = document.querySelector('#checkout[name="checkout"]');
+    const ageVerificationBtn = document.querySelector('#ageVerified');
+
+    if (!checkoutBtn || !ageVerificationBtn) return;
+    console.log(checkoutBtn, ageVerificationBtn);
+    checkoutBtn.addEventListener('click', (event) => {
+      console.log(ageVerificationBtn);
+      if (!ageVerificationBtn.checked) {
+        event.preventDefault();
+        ageVerificationBtn.closest('.js-contents').classList.add('warning');
+      } else {
+        if (ageVerificationBtn.closest('.js-contents').classList.contains('warning'))
+          ageVerificationBtn.closest('.js-contents').classList.remove('warning');
+      }
+    });
+
+    ageVerificationBtn.addEventListener('change', () => {
+      if (ageVerificationBtn.checked) {
+        if (ageVerificationBtn.closest('.js-contents').classList.contains('warning'))
+          ageVerificationBtn.closest('.js-contents').classList.remove('warning');
+      }
+    });
+  })();
 </script>
 
 {% schema %}

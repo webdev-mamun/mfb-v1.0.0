@@ -129,9 +129,11 @@
                       {% endif %}
                     </td>
                     <td class="cart-item__details text-base leading-[2.08rem] -tracking-[.02em] border-b border-color lg:border-none">
-                      {%- if settings.show_vendor -%}
-                        <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
-                      {%- endif -%}
+                      {% comment %}
+                        {%- if settings.show_vendor -%}
+                          <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
+                        {%- endif -%}
+                      {% endcomment %}
 
                       <a href="{{ item.url }}" class="cart-item__name">
                         {{- item.product.title | escape -}}
@@ -146,7 +148,7 @@
                       </span>
                       <div class="flex flex-col gap-.5">
                         {%- if item.original_price != item.final_price -%}
-                          <div class="cart-item__discounted-prices">
+                          <div class="cart-item__discounted-prices flex gap-.5 lg:gap-1">
                             <span class="visually-hidden">
                               {{ 'products.product.price.regular_price' | t }}
                             </span>
@@ -205,16 +207,16 @@
                         {%- endif -%}
                         {%- if item.discounts != empty -%}
                           <ul
-                            class="discounts list-unstyled flex flex-col gap-1"
+                            class="discounts list-unstyled hidden lg:flex flex-col gap-1"
                             role="list"
                             aria-label="{{ 'customer.order.discount' | t }}"
                           >
                             {%- for discount in item.discounts -%}
-                              <li class="discounts__discount flex gap-1 items-center">
-                                <span class="w-[1.6rem]">
+                              <li class="discounts__discount flex gap-.5 items-center">
+                                <span class="w-[1.2rem]">
                                   {%- render 'icon-discount' -%}
                                 </span>
-                                {{ discount.title | upcase }}
+                                <span class="text-xs">{{ discount.title | upcase }}</span>
                               </li>
                             {%- endfor -%}
                           </ul>
@@ -222,14 +224,14 @@
                       </div>
                     </td>
 
-                    <td class="cart-item__quantity flex flex-col justify-center lg:justify-start border-b border-color lg:border-none">
+                    <td class="cart-item__quantity flex flex-col gap-.5 py-.5 lg:py-0 justify-center lg:justify-start border-b border-color lg:border-none">
                       <div class="flex justify-between items-center lg:justify-start lg:items-start">
                         <span
                           class="font-serif font-normal text-left text-[1.4rem] heading-[1.4rem] -tracking-[.05em] uppercase lg:hidden"
                         >
                           {{- 'sections.cart.headings.quantity' | t -}}
                         </span>
-                        <div class="cart-item__quantity-wrapper flex flex-col gap-1">
+                        <div class="cart-item__quantity-wrapper flex gap-1">
                           <label class="sr-only" for="Quantity-{{ item.index | plus: 1 }}">
                             {{ 'products.product.quantity.label' | t }}
                           </label>
@@ -281,7 +283,7 @@
                           >
                             <a
                               href="{{ item.url_to_remove }}"
-                              class="button button--tertiary"
+                              class="w-[1.6rem]"
                               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
                             >
                               {% render 'icon-remove' %}
@@ -290,7 +292,7 @@
                         </div>
                       </div>
                       <div
-                        class="cart-item--error flex items-start gap-.5"
+                        class="cart-item--error hidden items-start gap-.5"
                         id="Line-item-error-{{ item.index | plus: 1 }}"
                         role="alert"
                       >
@@ -334,7 +336,7 @@
 
                         <div class="cart-item__price-wrapper lg:text-right invisible peer-[&.hidden]:visible">
                           {%- if item.original_line_price != item.final_line_price -%}
-                            <dl class="cart-item__discounted-prices">
+                            <dl class="cart-item__discounted-prices flex gap-.5 lg:gap-1">
                               <dt class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
                               </dt>

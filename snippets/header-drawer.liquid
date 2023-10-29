@@ -74,9 +74,9 @@
       <div class="container min-h-[calc(100%_-_51px)] lg:min-h-[calc(100%_-_40px)]">
         <div class="col-span-full overflow-auto ps-1 lg:ps-2 pt-5 pb-10 flex flex-col gap-3">
           <nav>
-            <ul>
+            <ul class="flex flex-col">
               {%- for link in section.settings['drawer-menu'].links -%}
-                <li class="flex flex-col">
+                <li>
                   <a
                     href="{{ link.url }}"
                     class="font-serif big-text leading-[3.36rem] -tracking-[.05em] lg:text-2xl lg:leading-[5.2rem] lg:-tracking-[.04em] uppercase"
@@ -84,9 +84,9 @@
                     {{- link.title -}}
                   </a>
                   {%- if link.links != blank -%}
-                    <ul class="ps-1 lg:ps-4">
+                    <ul class="ps-1 lg:ps-4 flex flex-col">
                       {%- for childlink in link.links -%}
-                        <li class="flex flex-col">
+                        <li>
                           <a
                             href="{{ childlink.url }}"
                             class="font-sans big-text leading-[3.34rem] lg:text-2xl lg:leading-[4.8rem] lg:-tracking-[.02em] uppercase"
@@ -94,9 +94,9 @@
                             {{- childlink.title -}}
                           </a>
                           {%- if childlink.links != blank -%}
-                            <ul class="ps-1 lg:ps-4">
+                            <ul class="ps-1 lg:ps-4 flex flex-col">
                               {%- for grandchildlink in childlink.links -%}
-                                <li class="flex flex-col">
+                                <li>
                                   <a
                                     href="{{ grandchildlink.url }}"
                                     class="font-serif big-text leading-[3.36rem] -tracking-[.05em] lg:text-2xl lg:leading-[4.8rem] lg:-tracking-[.04em] uppercase pb-.5"
@@ -109,7 +109,6 @@
                           {%- endif -%}
                         </li>
                       {%- endfor -%}
-                      <li></li>
                     </ul>
                   {%- endif -%}
                 </li>

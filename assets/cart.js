@@ -184,9 +184,11 @@ class CartItems extends HTMLElement {
       document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
       
     if(message !== ''){
-      lineItemError.classList.add('pt-.5');
+      lineItemError.classList.add('flex');
+      if(lineItemError.classList.contains('hidden')) lineItemError.classList.remove('hidden');
     } else {
-      if(lineItemError.classList.contains('pt-.5')) lineItemError.classList.remove('pt-.5');
+      if(lineItemError.classList.contains('flex')) lineItemError.classList.remove('flex');
+      lineItemError.classList.add('hidden');
     }
 
     if (lineItemError) lineItemError.querySelector('.cart-item--error-text').innerHTML = message;
