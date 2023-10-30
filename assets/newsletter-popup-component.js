@@ -33,7 +33,7 @@ class newsletterPopup extends HTMLElement {
       window.addEventListener('click', this.clickHandler.bind(this));
       let t = 100;
       console.log('baltu', typeof(this.getCookie('challenge')));
-      if(this.getCookie('challenge')) {
+      if(this.getCookie('challenge') === 'true') {
         console.log('if');
         if(!window.location.pathname.includes('/challenge')){
           console.log('secondif');
