@@ -34,6 +34,7 @@ class newsletterPopup extends HTMLElement {
       let t = 100;
       console.log('baltu', this.checkCookie('challenge'));
       if(this.checkCookie('challenge')) {
+        console.log('if');
         if(!window.location.pathname.includes('/challenge')){
           this.initNewsletterPopup(true);
           document.cookie = `challenge=false;expires=1990-10-10T13:38:49.029Z;path=/`;
