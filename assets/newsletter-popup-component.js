@@ -57,7 +57,7 @@ class newsletterPopup extends HTMLElement {
 
     clickHandler(event) {
       const _location = window.location.pathname;
-      console.log('something');
+      console.log(_location);
       if(!_location.includes('/challenge')){
         if((event.target !== this.newsletter && !this.newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
           this.setCookie(this.cName, this.cValue, this.days);
