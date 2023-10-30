@@ -58,7 +58,7 @@ class newsletterPopup extends HTMLElement {
     clickHandler(event) {
       
       if((event.target !== this.newsletter && !this.newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
-        this.setCookie(this.cName, this.cValue, this.days);
+        //this.setCookie(this.cName, this.cValue, this.days);
         this.closeNewsletterPopup();
       }
       // if (!event.target.closest('.newsletter-popup') || event.target.closest('#popupClose')) {
