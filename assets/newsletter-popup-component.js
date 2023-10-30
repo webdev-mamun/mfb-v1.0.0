@@ -29,19 +29,28 @@ class newsletterPopup extends HTMLElement {
       });
 
       this.submitBtn.addEventListener('click', this.handleSubmit.bind(this));
-
       window.addEventListener('click', this.clickHandler.bind(this));
       let t = 100;
-      console.log('baltu', typeof(this.getCookie('challenge')));
       if(this.getCookie('challenge') === 'true') {
-        console.log('if');
         if(!window.location.pathname.includes('/challenge')){
-          console.log('secondif');
           this.initNewsletterPopup(false);
           document.cookie = `challenge=false;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`;
+          // Get the current URL
+          const currentURL = window.location.href;
+
+          // Create a URL object
+          const url = new URL(currentURL);
+
+          // Remove the 'customer_posted' query parameter
+          url.searchParams.delete('customer_posted');
+
+          // Get the updated URL
+          const updatedURL = url.toString();
+
+          // Update the URL without reloading the page
+          window.history.replaceState({}, document.title, updatedURL);
         }
       } else {
-        console.log('else');
         const showTime = setInterval(() => {
           if(this.getScrollPercent() && t >= this.delay) {
               this.initNewsletterPopup(this.cookieFound);
@@ -70,7 +79,6 @@ class newsletterPopup extends HTMLElement {
 
     clickHandler(event) {
       const _location = window.location.pathname;
-      console.log(_location);
       if(!_location.includes('/challenge')){
         if((event.target !== this.newsletter && !this.newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
           this.setCookie(this.cName, this.cValue, this.days);
