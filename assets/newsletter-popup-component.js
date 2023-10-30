@@ -56,10 +56,13 @@ class newsletterPopup extends HTMLElement {
     }
 
     clickHandler(event) {
+      const _location = window.location.pathname;
       console.log('something');
-      if((event.target !== this.newsletter && !this.newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
-        //this.setCookie(this.cName, this.cValue, this.days);
-        this.closeNewsletterPopup();
+      if(!_location.includes('/challenge')){
+        if((event.target !== this.newsletter && !this.newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
+          this.setCookie(this.cName, this.cValue, this.days);
+          this.closeNewsletterPopup();
+        }
       }
       // if (!event.target.closest('.newsletter-popup') || event.target.closest('#popupClose')) {
       //   this.setCookie(this.cName, this.cValue, this.days);
