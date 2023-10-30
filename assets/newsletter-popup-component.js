@@ -55,10 +55,15 @@ class newsletterPopup extends HTMLElement {
     }
 
     clickHandler(event) {
-      if (!event.target.closest('.newsletter-popup') || event.target.closest('#popupClose')) {
+      const newsletter = this.querySelector('.newsletter-popup');
+      if((event.target !== newsletter && !newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
         this.setCookie(this.cName, this.cValue, this.days);
         this.closeNewsletterPopup();
       }
+      // if (!event.target.closest('.newsletter-popup') || event.target.closest('#popupClose')) {
+      //   this.setCookie(this.cName, this.cValue, this.days);
+      //   this.closeNewsletterPopup();
+      // }
     }
 
     showNewsletterPopup() {
