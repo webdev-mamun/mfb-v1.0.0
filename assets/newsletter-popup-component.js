@@ -32,13 +32,13 @@ class newsletterPopup extends HTMLElement {
 
       window.addEventListener('click', this.clickHandler.bind(this));
       let t = 100;
-      console.log('baltu', this.checkCookie('challenge'));
-      if(this.checkCookie('challenge')) {
+      console.log('baltu', typeof(this.getCookie('challenge')));
+      if(this.getCookie('challenge')) {
         console.log('if');
         if(!window.location.pathname.includes('/challenge')){
           console.log('secondif');
           this.initNewsletterPopup(false);
-          document.cookie = `challenge=false;expires=1990-10-10T13:38:49.029Z;path=/`;
+          document.cookie = `challenge=false;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`;
         }
       } else {
         console.log('else');
@@ -103,6 +103,14 @@ class newsletterPopup extends HTMLElement {
 
     checkCookie(name) {
       return document.cookie.split(';').some((item) => item.trim().startsWith(`${name}=`));
+    }
+
+    getCookie(name){
+      const regex = new RegExp(`(^| )${name}=([^;]+)`)
+      const match = document.cookie.match(regex)
+      if (match) {
+        return match[2]
+      }
     }
   }
   customElements.define('newsletter-popup', newsletterPopup);
