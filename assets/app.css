@@ -2338,6 +2338,14 @@ p.order-item-title, .base-text.order-item-title {
   top: var(--top, 0px);
 }
 
+.top-\[var\(--header-height\2c _40px\)\] {
+  top: var(--header-height, 40px);
+}
+
+.top-\[var\(--header-height\)\] {
+  top: var(--header-height);
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -2568,6 +2576,10 @@ p.order-item-title, .base-text.order-item-title {
   margin-bottom: 1.5rem;
 }
 
+.ml-2 {
+  margin-left: 2rem;
+}
+
 .mr-\.5 {
   margin-right: .5rem;
 }
@@ -2656,10 +2668,6 @@ p.order-item-title, .base-text.order-item-title {
   margin-top: auto;
 }
 
-.ml-2 {
-  margin-left: 2rem;
-}
-
 .line-clamp-5 {
   overflow: hidden;
   display: -webkit-box;
@@ -2723,6 +2731,10 @@ p.order-item-title, .base-text.order-item-title {
   height: 2.2rem;
 }
 
+.h-\[2\.3rem\] {
+  height: 2.3rem;
+}
+
 .h-\[30rem\] {
   height: 30rem;
 }
@@ -2734,14 +2746,6 @@ p.order-item-title, .base-text.order-item-title {
 .h-min {
   height: -moz-min-content;
   height: min-content;
-}
-
-.h-\[2\.3rem\] {
-  height: 2.3rem;
-}
-
-.h-\[1\.9rem\] {
-  height: 1.9rem;
 }
 
 .max-h-\[17rem\] {
@@ -2792,6 +2796,10 @@ p.order-item-title, .base-text.order-item-title {
   width: 13.4rem;
 }
 
+.w-\[2\.3rem\] {
+  width: 2.3rem;
+}
+
 .w-\[21rem\] {
   width: 21rem;
 }
@@ -2827,14 +2835,6 @@ p.order-item-title, .base-text.order-item-title {
 .w-min {
   width: -moz-min-content;
   width: min-content;
-}
-
-.w-\[2\.3rem\] {
-  width: 2.3rem;
-}
-
-.w-\[1\.9rem\] {
-  width: 1.9rem;
 }
 
 .min-w-\[16\.2rem\] {
@@ -3437,21 +3437,6 @@ p.order-item-title, .base-text.order-item-title {
   background-color: transparent;
 }
 
-.bg-pink-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
-}
-
-.bg-amber-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
 .bg-\[image\:var\(--bg-image\)\] {
   background-image: var(--bg-image);
 }
@@ -3854,6 +3839,10 @@ p.order-item-title, .base-text.order-item-title {
   line-height: 1.4rem;
 }
 
+.leading-\[1\.56rem\] {
+  line-height: 1.56rem;
+}
+
 .leading-\[1\.5rem\] {
   line-height: 1.5rem;
 }
@@ -3928,10 +3917,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .leading-\[5\.6rem\] {
   line-height: 5.6rem;
-}
-
-.leading-\[1\.56rem\] {
-  line-height: 1.56rem;
 }
 
 .-tracking-\[\.02em\] {
@@ -4074,10 +4059,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .ring-current {
   --tw-ring-color: currentColor;
-}
-
-.ring-offset-4 {
-  --tw-ring-offset-width: 4px;
 }
 
 .blur {
@@ -4403,18 +4384,8 @@ p.order-item-title, .base-text.order-item-title {
   font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-.checked\:bg-rose-500:checked {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
-}
-
 .empty\:hidden:empty {
   display: none;
-}
-
-.hover\:bg-amber-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(180 83 9 / var(--tw-bg-opacity));
 }
 
 .hover\:font-serif:hover {
@@ -4497,11 +4468,6 @@ p.order-item-title, .base-text.order-item-title {
   opacity: 1;
 }
 
-.group.warning .group-\[\&\.warning\]\:ring-red-500 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(239 68 68 / var(--tw-ring-opacity));
-}
-
 .group.warning .group-\[\&\.warning\]\:ring-\[color\:\#FF0F0F\] {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(255 15 15 / var(--tw-ring-opacity));
@@ -4509,14 +4475,6 @@ p.order-item-title, .base-text.order-item-title {
 
 .peer:checked ~ .peer-checked\:cursor-default {
   cursor: default;
-}
-
-.peer:checked ~ .peer-checked\:border-2 {
-  border-width: 2px;
-}
-
-.peer:checked ~ .peer-checked\:bg-\[var\(--color-foreground\)\] {
-  background-color: var(--color-foreground);
 }
 
 .peer:checked ~ .peer-checked\:bg-\[rgb\(var\(--color-foreground\)\)\] {
@@ -5015,6 +4973,10 @@ p.order-item-title, .base-text.order-item-title {
     gap: 0;
   }
 
+  .lg\:gap-1 {
+    gap: 1rem;
+  }
+
   .lg\:gap-2 {
     gap: 2rem;
   }
@@ -5037,10 +4999,6 @@ p.order-item-title, .base-text.order-item-title {
 
   .lg\:gap-\[4\.5rem\] {
     gap: 4.5rem;
-  }
-
-  .lg\:gap-1 {
-    gap: 1rem;
   }
 
   .lg\:gap-x-2 {

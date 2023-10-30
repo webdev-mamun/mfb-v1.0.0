@@ -110,7 +110,7 @@
             href="{{ article.url }}"
             class="btn-secondary grid grid-cols-10 gap-x-1 lg:gap-x-2 px-1 lg:px-2 lg:pt-[.7rem] lg:pb-[.5rem] border-b border-color"
           >
-            <h2 class="col-span-6 text-xs leading-[2.2rem] lg:text-base">{{ article.title }}</h2>
+            <h2 class="col-span-6 text-xs leading-[2.2rem] lg:text-base uppercase">{{ article.title }}</h2>
             <div class="col-span-4 flex items-center justify-between">
               <span class="text-[1rem] leading-[2.2rem] lg:text-md">
                 {{- article.published_at | time_tag: ' %d %b %Y' -}}
