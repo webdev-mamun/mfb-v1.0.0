@@ -33,14 +33,18 @@ class newsletterPopup extends HTMLElement {
       window.addEventListener('click', this.clickHandler.bind(this));
       let t = 100;
       console.log('baltu', this.checkCookie('challenge'));
-      const showTime = setInterval(() => {
-        if(this.getScrollPercent() && t >= this.delay) {
-             this.initNewsletterPopup(this.cookieFound);
-            clearInterval(showTime);
-        }
-        t += 100
-      }, 100);
-
+      if(this.checkCookie('challenge') === true) {
+        this.initNewsletterPopup(true);
+        document.cookie = `challenge=false;expires=1990-10-10T13:38:49.029Z;path=/`;
+      } else {
+        const showTime = setInterval(() => {
+          if(this.getScrollPercent() && t >= this.delay) {
+              this.initNewsletterPopup(this.cookieFound);
+              clearInterval(showTime);
+          }
+          t += 100
+        }, 100);
+      }
     }
 
     getScrollPercent() {
@@ -85,6 +89,7 @@ class newsletterPopup extends HTMLElement {
     setCookie(name, value, days) {
       const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
       document.cookie = `${name}=${value};${expires};path=/`;
+      console.log(expires);
     }
 
     handleSubmit() {
