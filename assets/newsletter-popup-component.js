@@ -2,6 +2,7 @@ class newsletterPopup extends HTMLElement {
     constructor() {
       super();
       this.closeBtn = this.querySelector('#popupClose');
+      this.newsletter = this.querySelector('.newsletter-popup');
       this.cName = 'newsletterClose';
       this.cValue = 'yes';
       this.days = 15;
@@ -55,8 +56,8 @@ class newsletterPopup extends HTMLElement {
     }
 
     clickHandler(event) {
-      const newsletter = this.querySelector('.newsletter-popup');
-      if((event.target !== newsletter && !newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
+      
+      if((event.target !== this.newsletter && !this.newsletter.contains(event.target)) || (event.target === this.closeBtn || this.closeBtn.contains(event.target))) {
         this.setCookie(this.cName, this.cValue, this.days);
         this.closeNewsletterPopup();
       }
