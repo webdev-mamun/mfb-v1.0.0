@@ -34,7 +34,9 @@
           class="form__message form__message--success"
           id="Newsletter-success--{{ id }}"
           tabindex="-1"
-          autofocus
+          {% unless autofocus == true %}
+            autofocus
+          {% endunless %}
         >
           {{- 'newsletter.success' | t }}
         </h3>
