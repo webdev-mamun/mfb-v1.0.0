@@ -33,12 +33,13 @@ class newsletterPopup extends HTMLElement {
       window.addEventListener('click', this.clickHandler.bind(this));
       let t = 100;
       console.log('baltu', this.checkCookie('challenge'));
-      if(this.checkCookie('challenge') === 'true') {
+      if(this.checkCookie('challenge')) {
         if(!window.location.pathname.includes('/challenge')){
           this.initNewsletterPopup(true);
           document.cookie = `challenge=false;expires=1990-10-10T13:38:49.029Z;path=/`;
         }
       } else {
+        console.log('else');
         const showTime = setInterval(() => {
           if(this.getScrollPercent() && t >= this.delay) {
               this.initNewsletterPopup(this.cookieFound);
