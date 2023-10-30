@@ -36,6 +36,7 @@ class newsletterPopup extends HTMLElement {
       if(this.checkCookie('challenge')) {
         console.log('if');
         if(!window.location.pathname.includes('/challenge')){
+          console.log('secondif');
           this.initNewsletterPopup(true);
           document.cookie = `challenge=false;expires=1990-10-10T13:38:49.029Z;path=/`;
         }
