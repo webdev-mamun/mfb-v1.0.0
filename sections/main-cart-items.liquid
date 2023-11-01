@@ -235,7 +235,7 @@
                           <label class="sr-only" for="Quantity-{{ item.index | plus: 1 }}">
                             {{ 'products.product.quantity.label' | t }}
                           </label>
-                          <quantity-input class="quantity cart-quantity flex items-center">
+                          <quantity-input class="quantity cart-quantity flex items-center gap-[4px]">
                             <button
                               class="quantity__button no-js-hidden w-[1.6rem] h-[1.6rem]"
                               name="minus"
@@ -247,7 +247,7 @@
                               {% render 'icon-minus' %}
                             </button>
                             <input
-                              class="quantity__input w-3 h-[1.6rem] text-center leading-[1.4rem]"
+                              class="quantity__input w-3 h-[1.6rem] text-center leading-[1.4rem] bg-transparent"
                               data-quantity-variant-id="{{ item.variant.id }}"
                               type="number"
                               name="updates[]"
