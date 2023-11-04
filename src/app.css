@@ -331,7 +331,7 @@
 
     .product-sticky-btn {
         @apply flex justify-center items-center h-[3.1rem] text-[1.3rem] lg:text-[1.4rem] leading-[2.2rem] -tracking-[.02em] uppercase rounded-2xl border border-[color:var(--sticky-btn-border,_#FFFEF7)]
-        pt-[.2rem] lg:pt-0 px-2 min-w-[13.6rem] lg:min-w-[15.8rem];
+        pt-[.2rem] px-2 min-w-[13.6rem] lg:min-w-[15.8rem];
     }
 
     .sticky-act-section {
