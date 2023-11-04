@@ -492,6 +492,18 @@
     .cart-item__details .discounts {
         @apply text-xs
     } */
+
+    bis-popup {
+        @apply fixed top-0 left-0 w-full h-full z-20 bg-[rgba(0,_0,_0,_.7)]
+    }
+
+    .bis-popup-container {
+        @apply flex justify-center items-center w-full h-full p-0
+    }
+
+    .bis-popup-inner {
+        @apply max-w-[95%] w-[40rem] bg-[rgb(var(--color-foreground))] text-[rgb(var(--color-background))] rounded-2xl py-3 px-3 relative shadow-lg flex flex-col gap-2
+    }
 }
 
 
