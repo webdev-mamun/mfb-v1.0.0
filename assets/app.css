@@ -1517,7 +1517,6 @@ p.default-input, .base-text.default-input {
 @media (min-width: 1024px) {
   .product-sticky-btn {
     min-width: 15.8rem;
-    padding-top: 0;
     font-size: 1.4rem;
   }
 }
@@ -4185,6 +4184,12 @@ bis-popup {
 
 .ease-linear {
   transition-timing-function: linear;
+}
+
+bis-popup {
+  --color-secondary-button-border-hover: 170, 153, 85;
+  --color-secondary-button-hover: 170, 153, 85;
+  --color-secondary-button-text-hover: 255, 254, 247;
 }
 
 #menu-drawer {

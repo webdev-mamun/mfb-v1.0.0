@@ -507,6 +507,12 @@
 }
 
 
+bis-popup {
+    --color-secondary-button-border-hover: 170, 153, 85;
+    --color-secondary-button-hover: 170, 153, 85;
+    --color-secondary-button-text-hover: 255, 254, 247;
+}
+
 #menu-drawer {
     @apply transition-transform ease-in-out duration-100 will-change-transform -translate-x-full;
 }
