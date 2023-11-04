@@ -33,17 +33,6 @@
             "show_gift_card_recipient": false
           }
         },
-        "895a20f1-3e89-49ca-a0d9-dca23bf53aec": {
-          "type": "shopify:\/\/apps\/yanet-back-in-stock\/blocks\/inline\/4a272ca4-2ae2-4e8b-9da8-8dc6353ba485",
-          "settings": {
-            "text": "Email me when available",
-            "color": "#ffffff",
-            "background": "#121212",
-            "custom": false,
-            "font": "assistant_n4",
-            "css": "bis-inline {\n}"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -54,6 +43,17 @@
           "settings": {
             "product": "{{ product }}"
           }
+        },
+        "895a20f1-3e89-49ca-a0d9-dca23bf53aec": {
+          "type": "shopify:\/\/apps\/yanet-back-in-stock\/blocks\/inline\/4a272ca4-2ae2-4e8b-9da8-8dc6353ba485",
+          "settings": {
+            "text": "Email me when available",
+            "color": "#ffffff",
+            "background": "#121212",
+            "custom": false,
+            "font": "assistant_n4",
+            "css": "bis-inline {\n}"
+          }
         }
       },
       "block_order": [
@@ -62,9 +62,9 @@
         "price",
         "quantity_selector",
         "buy_buttons",
-        "895a20f1-3e89-49ca-a0d9-dca23bf53aec",
         "description",
-        "cb4a54cf-9ea0-4193-a2d9-0b7632d249ca"
+        "cb4a54cf-9ea0-4193-a2d9-0b7632d249ca",
+        "895a20f1-3e89-49ca-a0d9-dca23bf53aec"
       ],
       "settings": {
       }
