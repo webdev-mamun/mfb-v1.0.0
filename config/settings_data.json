@@ -177,7 +177,7 @@
           "product_list": [
 
           ],
-          "show": true,
+          "show": false,
           "top": 100,
           "text": "EMAIL ME WHEN AVAILABLE",
           "color": "#ffffff",
