@@ -502,7 +502,7 @@
     }
     
     bis-popup .container.bis-popup-container {
-        @apply flex justify-center items-center w-full h-full p-0 z-20 relative
+        @apply flex justify-center items-center w-full h-full p-0 z-20 relative bg-transparent
     }
     
     bis-popup .bis-popup-inner {

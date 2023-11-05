@@ -2256,6 +2256,7 @@ bis-popup .container.bis-popup-container {
   width: 100%;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
   padding: 0;
 }
 
@@ -4470,6 +4471,7 @@ bis-popup {
     width: 100%;
     align-items: center;
     justify-content: center;
+    background-color: transparent;
     padding: 0;
   }
 }
