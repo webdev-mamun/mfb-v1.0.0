@@ -493,7 +493,25 @@
         @apply text-xs
     } */
 
+    bis-popup {
+        @apply fixed top-0 left-0 w-full h-full z-[3]
+    }
     
+    bis-popup .bis-popup-overlay {
+        @apply fixed inset-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
+    }
+    
+    bis-popup .bis-popup-container {
+        @apply flex justify-center items-center w-full h-full p-0 z-20 relative
+    }
+    
+    bis-popup .bis-popup-inner {
+        @apply max-w-[95%] w-[40rem] bg-[rgb(var(--color-background))] text-[rgb(var(--color-foreground))] rounded-2xl py-3 px-3 relative shadow-lg flex flex-col gap-2
+    }
+    
+    bis-popup .close {
+        @apply w-[1.6rem] h-[1.6rem] cursor-pointer absolute top-1 right-1
+    }
 }
 
 
@@ -508,25 +526,7 @@ bis-popup {
     --color-secondary-button-border-hover: 255,254,247;
 }
 
-bis-popup {
-    @apply fixed top-0 left-0 w-full h-full z-[3]
-}
 
-bis-popup .bis-popup-overlay {
-    @apply fixed inset-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
-}
-
-bis-popup .bis-popup-container {
-    @apply flex justify-center items-center w-full h-full p-0 z-20 relative
-}
-
-bis-popup .bis-popup-inner {
-    @apply max-w-[95%] w-[40rem] bg-[rgb(var(--color-background))] text-[rgb(var(--color-foreground))] rounded-2xl py-3 px-3 relative shadow-lg flex flex-col gap-2
-}
-
-bis-popup .close {
-    @apply close w-[1.6rem] h-[1.6rem] cursor-pointer absolute top-1 right-1
-}
 
 #menu-drawer {
     @apply transition-transform ease-in-out duration-100 will-change-transform -translate-x-full;
