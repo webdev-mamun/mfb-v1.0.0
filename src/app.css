@@ -501,7 +501,7 @@
         @apply fixed inset-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
     }
     
-    bis-popup .bis-popup-container {
+    bis-popup .container.bis-popup-container {
         @apply flex justify-center items-center w-full h-full p-0 z-20 relative
     }
     
