@@ -2238,7 +2238,7 @@ bis-popup {
   width: 100%;
 }
 
-.bis-popup-overlay {
+bis-popup .bis-popup-overlay {
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -2248,7 +2248,7 @@ bis-popup {
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
-.bis-popup-container {
+bis-popup.bis-popup-container {
   position: relative;
   z-index: 20;
   display: flex;
@@ -2259,7 +2259,7 @@ bis-popup {
   padding: 0;
 }
 
-.bis-popup-inner {
+bis-popup .bis-popup-inner {
   position: relative;
   display: flex;
   width: 40rem;
