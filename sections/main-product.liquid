@@ -212,13 +212,14 @@
                   >
                     <div class="flex items-center text-[2.2rem] leading-[5.6rem] -tracking-[.02em] lg:pt-[2.5rem] whitespace-nowrap">
                       {%- render 'price', product: product, use_variant: true -%}
-                      ,
+
                       {%- liquid
                         assign meta = product.metafields.custom
                         assign color = meta.colour
                         assign size = meta.sizes
                       -%}
                       {%- if color != blank or size != blank -%}
+                        ,
                         <p class="text-[2.2rem] leading-[5.6rem] -tracking-[.02em] uppercase">
                           {%- if color != blank -%}{{ color }}{% endif -%}
                           {%- if color != blank and size != blank %}, {% endif -%}

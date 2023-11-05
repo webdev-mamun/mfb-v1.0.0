@@ -130,112 +130,10 @@
                       {%- endform -%}
                     </product-form>
                   {%- else -%}
-                    {% comment %}
-                      <button class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem]">
-                        NOTIFY ME
-                      </button>
-                    {% endcomment %}
-                    <bis-inline
-                      type="button"
-                      class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem] cursor-pointer"
-                      data-variant="{{ card_product.selected_or_first_available_variant.id }}"
-                    >
-                      <span>NOTIFY ME</span>
-                    </bis-inline>
-                    <bis-popup style="display: none;">
-                      <div class="container bis-popup-container">
-                        <div class="bis-popup-inner">
-                          <div class="close w-[1.6rem] h-[1.6rem] cursor-pointer absolute top-1 right-1" type="button">
-                            <!-- BEGIN app snippet: icon-close -->
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              aria-hidden="true"
-                              focusable="false"
-                              role="presentation"
-                              class="icon icon-close"
-                              fill="none"
-                              viewBox="0 0 18 17"
-                            >
-                                <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
-                              </path>
-                            </svg>
-                            <!-- END app snippet -->
-                          </div>
-                          <h3
-                            class="title font-sans text-xl -tracking-[.02em] uppercase"
-                            style="display: block;"
-                          >
-                            EMAIL ME WHEN AVAILABLE
-                          </h3>
-                          <h3
-                            class="success form__message--success font-sans text-xl -tracking-[.02em] uppercase"
-                            style="display: none;"
-                          >
-                            Successfully subscribed
-                          </h3>
-                          <p class="info text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem]">
-                            We will send you an email as soon as this product is available again.
-                          </p>
-                          <form
-                            class="form-horizontal clearfix"
-                            action="https://bis.flyon.top/subscribe"
-                            style="display: block;"
-                          >
-                            <div class=" flex flex-wrap gap-2">
-                              <h4 class="product-name text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
-                                {{ product.title }}
-                              </h4>
-                              <input name="shop" type="hidden" value="{{ shop.permanent_domain }}">
-                              <input name="productId" type="hidden" value="{{ card_product.id }}">
-
-                              <input
-                                name="productImage"
-                                type="hidden"
-                                value="{{ card_product.featured_image | image_url }}"
-                              >
-
-                              <input name="channel" type="hidden" value="E">
-
-                              <div
-                                class="form-group name w-full"
-                                style="--color-background: var(--color-foreground); --color-foreground: var(--color-background);"
-                              >
-                                <input
-                                  class="default-input"
-                                  name="customerName"
-                                  type="text"
-                                  placeholder="Name"
-                                  value=""
-                                >
-                              </div>
-
-                              <div
-                                class="form-group email w-full flex flex-col gap-.5"
-                                style="--color-background: var(--color-foreground); --color-foreground: var(--color-background);"
-                              >
-                                <input
-                                  class="default-input"
-                                  name="customer"
-                                  type="email"
-                                  placeholder="Email address"
-                                  value=""
-                                >
-                                <small class="email-invalid form__message--error" style="display: none;"
-                                  >Enter a valid email</small
-                                >
-                              </div>
-                              <button type="button" class="form-group button w-full btn-medium btn-secondary">
-                                EMAIL ME WHEN AVAILABLE
-                              </button>
-                              <small class="privacy"
-                                >We respect your privacy and don't share your email with anybody.</small
-                              >
-                              {% comment %} <p class="center">Powered by <a href="https://yanet.io/">Yanet</a></p> {% endcomment %}
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </bis-popup>
+                    {%- render 'back-in-stock',
+                      card_product: card_product,
+                      btn_class: 'font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem] cursor-pointer'
+                    -%}
                   {%- endunless -%}
                 </div>
               </div>
@@ -281,6 +179,7 @@
 {% schema %}
 {
   "name": "Subscription",
+  "tag": "section",
   "blocks": [
     {
       "type": "product",
