@@ -497,7 +497,7 @@
         @apply fixed top-0 left-0 w-full h-full z-[3]
     }
     
-    bis-popup .bis-popup-overlay {
+    bis-popup > .bis-popup-overlay {
         @apply fixed inset-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
     }
     
