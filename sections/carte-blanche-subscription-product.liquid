@@ -1,3 +1,7 @@
+<script
+  src="https://cdn.shopify.com/extensions/c17f9fbb-43ec-4175-850e-1a29578a9f4d/yanet-back-in-stock-1/assets/bis.js"
+  defer="defer"
+></script>
 {%- style -%}
   #shopify-section-{{ section.id }} {
     --padding-top: {{ section.settings.padding_top }}px;
@@ -130,10 +134,11 @@
                       {%- endform -%}
                     </product-form>
                   {%- else -%}
-                    {%- render 'back-in-stock',
+                    {%- render 'back-in-stock-button',
                       card_product: card_product,
                       btn_class: 'font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem] cursor-pointer'
                     -%}
+                    {%- render 'back-in-stock-form', card_product: card_product -%}
                   {%- endunless -%}
                 </div>
               </div>
@@ -152,7 +157,7 @@
               </div>
               <div class=" flex flex-col gap-2 justify-between xl:gap-5 py-.5 lg:py-0 grow">
                 <div>
-                  <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">product title</h2>
+                  <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">Product title</h2>
                   <div class="[&_*]:text-xs [&_*]:leading-[1.6rem] [&_*]:xl:text-base [&_*]:xl:leading-[2.2rem]">
                     Product description
                   </div>
@@ -171,10 +176,6 @@
     </div>
   </div>
 </div>
-
-<script
-  src="https://cdn.shopify.com/extensions/c17f9fbb-43ec-4175-850e-1a29578a9f4d/yanet-back-in-stock-1/assets/bis.js"
-></script>
 
 {% schema %}
 {

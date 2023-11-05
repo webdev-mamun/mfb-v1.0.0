@@ -314,14 +314,14 @@
     }
 
     .product-act-btn {
-        @apply flex justify-center items-center h-[5.5rem] w-full px-[3.6rem] py-[1.2rem] rounded-3xl uppercase text-[color:var(--act-btn-color,_#FFFEF7)] bg-[color:var(--act-btn-bg,_#022541)]
-        text-[2rem] leading-[2.2rem] -tracking-[.02em] border border-[color:var(--act-btn-border,_#022541)] hover:text-[color:var(--act-btn-color-hover,_#FFFEF7)]
+        @apply flex justify-center items-center h-[5.5rem] w-full px-[3.6rem] rounded-3xl uppercase text-[color:var(--act-btn-color,_#FFFEF7)] bg-[color:var(--act-btn-bg,_#022541)]
+        text-[2rem] leading-[5.5rem] -tracking-[.02em] border border-[color:var(--act-btn-border,_#022541)] hover:text-[color:var(--act-btn-color-hover,_#FFFEF7)]
         hover:border-[color:var(--act-btn-border-hover,_#AA9955)] hover:bg-[color:var(--act-btn-bg-hover,_#AA9955)] transition-all;
     }
 
     .product-form__buttons .shopify-payment-button__button {
-        @apply flex justify-center items-center h-[5.5rem] w-full px-[3.6rem] py-[1.2rem] rounded-3xl uppercase text-[color:var(--act-btn-color,_#151515)] bg-[color:var(--act-btn-bg,_transparent)]
-        text-[2rem] leading-[2.2rem] -tracking-[.02em] border border-[color:var(--act-btn-border,_#151515)] hover:text-[color:var(--act-btn-color-hover,_#FFFEF7)]
+        @apply flex justify-center items-center h-[5.5rem] w-full px-[3.6rem] rounded-3xl uppercase text-[color:var(--act-btn-color,_#151515)] bg-[color:var(--act-btn-bg,_transparent)]
+        text-[2rem] leading-[5.5rem] -tracking-[.02em] border border-[color:var(--act-btn-border,_#151515)] hover:text-[color:var(--act-btn-color-hover,_#FFFEF7)]
         hover:border-[color:var(--act-btn-border-hover,_#022541)] hover:bg-[color:var(--act-btn-bg-hover,_#022541)] border-solid transition-all;
     }
     
@@ -494,23 +494,32 @@
     } */
 
     bis-popup {
-        @apply fixed top-0 left-0 w-full h-full z-20 bg-[rgba(0,_0,_0,_.7)]
+        @apply fixed top-0 left-0 w-full h-full z-[3]
+    }
+
+    .bis-popup-overlay {
+        @apply fixed inset-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
     }
 
     .bis-popup-container {
-        @apply flex justify-center items-center w-full h-full p-0
+        @apply flex justify-center items-center w-full h-full p-0 z-20 relative
     }
 
     .bis-popup-inner {
-        @apply max-w-[95%] w-[40rem] bg-[rgb(var(--color-foreground))] text-[rgb(var(--color-background))] rounded-2xl py-3 px-3 relative shadow-lg flex flex-col gap-2
+        @apply max-w-[95%] w-[40rem] bg-[rgb(var(--color-background))] text-[rgb(var(--color-foreground))] rounded-2xl py-3 px-3 relative shadow-lg flex flex-col gap-2
     }
 }
 
 
 bis-popup {
-    --color-secondary-button-border-hover: 170, 153, 85;
-    --color-secondary-button-hover: 170, 153, 85;
-    --color-secondary-button-text-hover: 255, 254, 247;
+    --color-background: 2,37,65;
+    --color-foreground: 255,254,247;
+    --color-secondary-button: 2,37,65;
+    --color-secondary-button-text: 255,255,255;
+    --color-secondary-button-border: 255,254,247;
+    --color-secondary-button-hover: 255,254,247;
+    --color-secondary-button-text-hover: 2,37,65;
+    --color-secondary-button-border-hover: 255,254,247;
 }
 
 #menu-drawer {

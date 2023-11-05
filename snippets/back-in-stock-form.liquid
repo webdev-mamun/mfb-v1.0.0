@@ -1,10 +1,5 @@
-<bis-inline
-  type="button"
-  class="{{ btn_class }}"
-  data-variant="{{ card_product.selected_or_first_available_variant.id }}"
-  >NOTIFY ME
-</bis-inline>
-<bis-popup style="display: none;">
+<bis-popup class="group" style="display: none;">
+  <div class="bis-popup-overlay"></div>
   <div class="container bis-popup-container">
     <div class="bis-popup-inner">
       <div class="close w-[1.6rem] h-[1.6rem] cursor-pointer absolute top-1 right-1" type="button">
@@ -45,7 +40,7 @@
       >
         <div class=" flex flex-wrap gap-2">
           <h4 class="product-name text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
-            {{ product.title }}
+            {{ card_product.title }}
           </h4>
           <input name="shop" type="hidden" value="{{ shop.permanent_domain }}">
           <input name="productId" type="hidden" value="{{ card_product.id }}">
@@ -60,7 +55,6 @@
 
           <div
             class="form-group name w-full"
-            style="--color-background: var(--color-foreground); --color-foreground: var(--color-background);"
           >
             <input
               class="default-input"
@@ -73,7 +67,6 @@
 
           <div
             class="form-group email w-full flex flex-col gap-.5"
-            style="--color-background: var(--color-foreground); --color-foreground: var(--color-background);"
           >
             <input
               class="default-input"

@@ -1,3 +1,7 @@
+<script
+  src="https://cdn.shopify.com/extensions/c17f9fbb-43ec-4175-850e-1a29578a9f4d/yanet-back-in-stock-1/assets/bis.js"
+  defer="defer"
+></script>
 <section
   id="MainProduct-{{ section.id }}"
   data-section="{{ section.id }}"
@@ -58,13 +62,18 @@
       onload="this.media='all'"
     >
   {%- endif -%}
-
-  {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
+  {%- liquid
+    assign product_form_id = 'product-form-' | append: section.id
+    assign section_id = section.id
+    assign vendor = section.blocks | where: 'type', 'vendor' | first
+    assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
+    if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+      assign quantity_rule_soldout = true
+    endif
+  -%}
   {%- capture sizes -%}
     (min-width: 1440px) {{ 1440 | minus: 40 | times: 0.65 | divided_by: 3 | round }}px, (min-width:1024px) calc({{0.65 | times: 100 | divided_by: 2 }}vw - 4rem), calc(100vw / 1 - 2rem)
   {%- endcapture -%}
-  {%- assign product_form_id = 'product-form-' | append: section.id -%}
-  {% assign vendor = section.blocks | where: 'type', 'vendor' | first %}
 
   <div class="sticky-act-section text-[color:var(--sticky-color,_#FFFEF7)] bg-[color:var(--sticky--bg,_#022541)]">
     <div class="container py-1 lg:py-2">
@@ -118,32 +127,37 @@
             {%- render 'price', product: product, use_variant: true -%}
           </div>
           <div class="product-form__buttons  flex flex-col gap-2">
-            <button
-              id="ProductSubmitButton-template--21188300275992__main"
-              type="submit"
-              name="add"
-              class="product-form__submit button button--full-width product-sticky-btn"
-              aria-haspopup="dialog"
-              form="{{ product_form_id }}"
-            >
-              <span>Add to cart </span>
-              <div class="group loading-overlay--spinner hidden group-[]:">
-                <svg
-                  aria-hidden="true"
-                  focusable="false"
-                  class="spinner"
-                  viewBox="0 0 66 66"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                </svg>
-              </div>
-            </button>
+            {%- unless product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+              <button
+                id="ProductSubmitButton-template--21188300275992__main"
+                type="submit"
+                name="add"
+                class="product-form__submit button button--full-width product-sticky-btn"
+                aria-haspopup="dialog"
+                form="{{ product_form_id }}"
+              >
+                <span>Add to cart </span>
+                <div class="group loading-overlay--spinner hidden group-[]:">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    class="spinner"
+                    viewBox="0 0 66 66"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </div>
+              </button>
+            {%- else -%}
+              {%- render 'back-in-stock-button', card_product: product, btn_class: 'product-sticky-btn' -%}
+            {%- endunless -%}
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="product{% if product.media.size == 0 %} product--no-media{% endif %} border-b text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] border-[color:var(--divider-color,_#DCDCDC)]">
     <div class="container gap-x-2 lg:gap-x-4 pt-1 pb-6 lg:pt-4 lg:pb-2">
       <div class="col-span-full lg:col-span-4 product__media-wrapper">
@@ -466,39 +480,45 @@
           </product-info>
         </div>
         <div class="hidden xl:flex xl:col-span-2 flex-col justify-center">
-          <button
-            id="ProductSubmitButton-{{ section_id }}"
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width product-act-btn"
-            form="{{ product_form_id }}"
-            {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
-              disabled
-            {% endif %}
-          >
-            <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span>
-            <div class="group loading-overlay--spinner hidden group-[]:">
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                class="spinner"
-                viewBox="0 0 66 66"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-              </svg>
-            </div>
-          </button>
+          {%- unless product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+            <button
+              id="ProductSubmitButton-{{ section_id }}"
+              type="submit"
+              name="add"
+              class="product-form__submit button button--full-width product-act-btn"
+              form="{{ product_form_id }}"
+              {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                disabled
+              {% endif %}
+            >
+              <span>
+                {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- else -%}
+                  {{ 'products.product.add_to_cart' | t }}
+                {%- endif -%}
+              </span>
+              <div class="group loading-overlay--spinner hidden group-[]:">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  class="spinner"
+                  viewBox="0 0 66 66"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </button>
+          {%- else -%}
+            {%- render 'back-in-stock-button', card_product: product, btn_class: 'product-act-btn' -%}
+          {%- endunless -%}
         </div>
       </div>
     </div>
   </div>
+
+  {%- render 'back-in-stock-form', card_product: product -%}
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
