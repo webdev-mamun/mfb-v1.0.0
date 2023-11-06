@@ -4246,6 +4246,12 @@ bis-popup {
 
 .shopify-pc__banner__btns {
   min-width: unset !important;
+  gap: 1rem;
+}
+
+.shopify-pc__banner__dialog button {
+  margin: 0 !important;
+  flex-basis: unset !important;
 }
 
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {
