@@ -559,3 +559,7 @@ bis-popup {
 .shopify-pc__banner__dialog {
     padding: 2rem !important;
 }
+
+.shopify-pc__banner__dialog h2 {
+    line-height: 120% !important;
+}
