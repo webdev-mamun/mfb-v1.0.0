@@ -2,16 +2,7 @@
 {%- liquid
   assign title = section.settings.title | replace: '%br%', '<br>'
   assign text = section.settings.text
-  assign icon = settings.secondary_logo_mobile
 -%}
-
-{% capture inline_icon %}
-      {{- icon | image_url: width: 70.09 | image_tag: loading: 'lazy', class: 'hidden lg:inline-block -mt-[1.1rem] mr-[.2rem]' -}}
-      {{- icon | image_url: width: 81.91 | image_tag: loading: 'lazy', class: 'inline-block lg:hidden -mt-[1.6rem] mr-[.2rem]' -}}
-  {% endcapture %}
-{%- if icon != blank and title contains '%icon%' %}
-  {% assign title = title | replace: '%icon%', inline_icon %}
-{% endif %}
 
 <newsletter-popup
   class="w-[30.3rem] lg:w-[38rem] fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 rounded-2xl color-{{ section.settings.color_scheme }} shadow-xl block aria-hidden:hidden"

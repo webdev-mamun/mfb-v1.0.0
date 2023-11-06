@@ -1,6 +1,8 @@
 <script src="{{ 'featured-collection-slider.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- if section.settings.enable_quick_add -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {%- liquid
   assign limit = section.settings.limit
   assign title = section.settings.title | replace: '%br%', '<br>'
