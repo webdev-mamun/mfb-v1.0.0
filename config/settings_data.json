@@ -110,6 +110,8 @@
     "show_vendor": true,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_Black.svg",
+    "checkout_body_background_color": "#fffef7",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
