@@ -578,6 +578,7 @@ bis-popup {
 }
 
 .shopify-pc__banner__dialog button {
+    font-size: 1.2rem !important;
     margin: 0 !important;
     flex-basis: unset !important;
 }
