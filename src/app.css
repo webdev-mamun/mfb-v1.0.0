@@ -598,6 +598,7 @@ bis-popup {
 @media only screen and (max-width: 1280px){
     .shopify-pc__banner__wrapper {
         gap: 10px;
+        flex-direction: row !important;
     }
     .shopify-pc__banner__body {
         margin-bottom: 0!important;
