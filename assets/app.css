@@ -2802,6 +2802,10 @@ bis-popup .close {
   height: min-content;
 }
 
+.h-1 {
+  height: 1rem;
+}
+
 .max-h-\[17rem\] {
   max-height: 17rem;
 }
