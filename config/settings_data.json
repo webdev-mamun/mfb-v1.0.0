@@ -109,7 +109,7 @@
     "cart_type": "drawer",
     "show_vendor": true,
     "show_cart_note": false,
-    "cart_drawer_collection": "our-drink",
+    "cart_drawer_collection": "",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
