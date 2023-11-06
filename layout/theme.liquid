@@ -236,7 +236,7 @@
       {%- if settings.predictive_search_enabled -%}
         <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
       {%- endif -%}
-      {%- render 'cookie-banner' -%}
+      {% comment %} {%- render 'cookie-banner' -%} {% endcomment %}
       {% section 'newsletter-popup' %}
     </div>
   </body>
