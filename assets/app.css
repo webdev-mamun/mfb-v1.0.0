@@ -3482,10 +3482,6 @@ bis-popup .close {
   border-color: rgb(var(--color-background));
 }
 
-.border-\[rgb\(var\(--color-button-border\2c _197\2c 197\2c 197\)\)\] {
-  border-color: rgb(var(--color-button-border, 197,197,197));
-}
-
 .border-\[rgb\(var\(--color-foreground\)\)\] {
   border-color: rgb(var(--color-foreground));
 }
