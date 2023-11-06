@@ -182,12 +182,16 @@
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 165
       }
+    },
+    "titleList": {
+      "type": "title-list"
     }
   },
   "order": [
     "8e1ccf58-7d13-4210-afb3-f7539228c6b9",
     "hero",
     "contact",
+    "titleList",
     "addressList",
     "6a6656de-5667-4d82-93e1-2cb327641f13",
     "6b2bd83a-9823-4ad6-b7e5-47782785344e",
