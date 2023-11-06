@@ -555,3 +555,7 @@ bis-popup {
 .scrolled-past-header {
     box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
+
+.shopify-pc__banner__dialog {
+    @apply p-2;
+}

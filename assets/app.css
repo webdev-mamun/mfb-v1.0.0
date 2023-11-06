@@ -4228,6 +4228,10 @@ bis-popup {
   box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
+.shopify-pc__banner__dialog {
+  padding: 2rem;
+}
+
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {
   letter-spacing: -4.4px;
 }
