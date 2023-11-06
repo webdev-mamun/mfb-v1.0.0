@@ -294,7 +294,7 @@
             "title": "WHERE TO BUY",
             "text": "Discover where you can get our  wines & spirits near  you.",
             "button_text": "FIND NEARBY SUPPLIERS",
-            "button_url": ""
+            "button_url": "shopify:\/\/pages\/where-to-find-our-drinks"
           }
         },
         "3053b57f-6c75-4eda-8977-f459c5532e6e": {
@@ -305,7 +305,7 @@
             "title": "OUR ETHOS",
             "text": "We have an ethos at  Bien Élevé to only work with our family of local producers we know personally and trust fully.",
             "button_text": "LEARN MORE ABOUT US",
-            "button_url": ""
+            "button_url": "shopify:\/\/pages\/about-us"
           }
         }
       },
