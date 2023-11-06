@@ -4256,6 +4256,7 @@ bis-popup {
   flex-basis: unset !important;
   padding: 5px 25px !important;
   border-radius: 5px !important;
+  text-transform: uppercase;
 }
 
 .shopify-pc__banner__dialog p {
