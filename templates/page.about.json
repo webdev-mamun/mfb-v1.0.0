@@ -127,7 +127,7 @@
           "type": "text",
           "settings": {
             "title": "SHOP & TRADE",
-            "text": "<p>+1 202 997 5565<\/p><p>hello@mfbimports.com<\/p>"
+            "text": "<p><a href=\"tel:+1 202 997 5565\" target=\"_blank\" title=\"+1 202 997 5565\">+1 202 997 5565<\/a><\/p><p><a href=\"mailto:hello@mfbimports.com\" target=\"_blank\" title=\"mailto:hello@mfbimports.com\">hello@mfbimports.com<\/a><\/p>"
           }
         },
         "d96e143f-229e-4d79-b523-993aa558b2a9": {
@@ -159,7 +159,6 @@
       "settings": {
         "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
         "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
-        "logo_type": "primary",
         "title": "Join the <br>Bien Élevé family",
         "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio. Magna hendrerit orci venenatis sed enim eu. Parturient neque suspendisse nisi bibendum sollicitudin sed. Ultricies quis vel id bibendum. Gravida nunc egestas ultricies.",
         "color_scheme": "scheme-8b014475-d806-4431-8eba-5ab59944dd7b",
