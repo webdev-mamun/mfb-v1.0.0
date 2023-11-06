@@ -412,7 +412,7 @@ class MenuDrawer extends HTMLElement {
     });
     summaryElement.setAttribute('aria-expanded', true);
     trapFocus(this.mainDetailsToggle, summaryElement);
-    document.body.classList.add('overflow-hidden');
+    //document.body.classList.add('overflow-hidden');
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
