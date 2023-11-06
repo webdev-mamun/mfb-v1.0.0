@@ -4,6 +4,8 @@
       "type": "producer-collection-banner",
       "settings": {
         "show_collection_description": true,
+        "image": "{{ collection.metafields.custom.vendor.value.image_mobile.value }}",
+        "image_mobile": "{{ collection.metafields.custom.vendor.value.image_mobile.value }}",
         "show_collection_image": true,
         "color_scheme": "inverse",
         "padding_top": 60,
