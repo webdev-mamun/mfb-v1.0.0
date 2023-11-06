@@ -237,7 +237,7 @@
                           </label>
                           <quantity-input class="quantity cart-quantity flex items-center gap-[4px]">
                             <button
-                              class="quantity__button no-js-hidden w-[1.6rem] h-[1.6rem]"
+                              class="quantity__button no-js-hidden w-[1.6rem] h-[1.6rem] shrink-0"
                               name="minus"
                               type="button"
                             >
@@ -265,7 +265,7 @@
                               data-index="{{ item.index | plus: 1 }}"
                             >
                             <button
-                              class="quantity__button no-js-hidden w-[1.6rem] h-[1.6rem]"
+                              class="quantity__button no-js-hidden w-[1.6rem] h-[1.6rem] shrink-0"
                               name="plus"
                               type="button"
                             >
@@ -283,7 +283,7 @@
                           >
                             <a
                               href="{{ item.url_to_remove }}"
-                              class="w-[1.6rem]"
+                              class="w-[1.6rem] shrink-0"
                               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
                             >
                               {% render 'icon-remove' %}
