@@ -4253,6 +4253,8 @@ bis-popup {
   font-size: 1.2rem !important;
   margin: 0 !important;
   flex-basis: unset !important;
+  padding: 5px 25px !important;
+  border-radius: 5px;
 }
 
 .shopify-pc__banner__dialog p {
