@@ -45,7 +45,7 @@
         "logo_type": "primary",
         "text": "<span>Bien Élevé is a direct-to-consumer  wine and spirits merchant.<\/span>\n<span class=\"mt-3 inline-block\">We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/span>",
         "link_text": "Learn more about us",
-        "link_url": "",
+        "link_url": "shopify:\/\/pages\/about-us",
         "btn_text_1": "SHOP WINES",
         "btn_url_1": "shopify:\/\/collections\/wines",
         "btn_text_2": "SHOP SPIRITS",
@@ -204,7 +204,7 @@
         "text": "Our producers are friends we’ve made along the way from our research and travels throughout Europe. They’re integral to everything we do at Bien Élevé and are part of an ever growing curated collective of wine and spirit makers.",
         "btn": "Click throught to learn more about the people behind the bottles.",
         "btn_mobile": "SEE ALL PRODUCERS",
-        "url": "",
+        "url": "shopify:\/\/pages\/our-producers",
         "color_scheme": "inverse",
         "padding_top": 70,
         "padding_bottom": 100,
@@ -223,7 +223,7 @@
             "title": "NOTES FROM THE ROAD",
             "text": "Lorem ipsum dolor sit amet consectetur. Massa sapien congue amet at. Massa sapien ut et ipsum volutpat eros. Elementum ultrices proin amet a in odio.",
             "button_text": "Follow our journey",
-            "button_url": ""
+            "button_url": "shopify:\/\/blogs\/notes-from-the-field"
           }
         }
       },
@@ -294,7 +294,7 @@
             "title": "WHERE TO BUY",
             "text": "Discover where you can get our  wines & spirits near  you.",
             "button_text": "FIND NEARBY SUPPLIERS",
-            "button_url": ""
+            "button_url": "shopify:\/\/pages\/where-to-find-our-drinks"
           }
         },
         "3053b57f-6c75-4eda-8977-f459c5532e6e": {
@@ -305,7 +305,7 @@
             "title": "OUR ETHOS",
             "text": "We have an ethos at  Bien Élevé to only work with our family of local producers we know personally and trust fully.",
             "button_text": "LEARN MORE ABOUT US",
-            "button_url": ""
+            "button_url": "shopify:\/\/pages\/about-us"
           }
         }
       },

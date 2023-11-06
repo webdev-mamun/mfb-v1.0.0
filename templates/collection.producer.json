@@ -49,8 +49,8 @@
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 15,
-        "show_vendor": false,
-        "enable_quick_add": false,
+        "show_vendor": true,
+        "enable_quick_add": true,
         "enable_filtering": false,
         "color_scheme": "accent-1",
         "padding_top": 10,
