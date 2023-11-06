@@ -119,6 +119,9 @@
 @tailwind utilities;
 
 @layer components {
+    .section {
+        @apply scroll-m-5
+    }
     .section-header.animate {
         @apply transition-[top] duration-[.15s] ease-out
     }
