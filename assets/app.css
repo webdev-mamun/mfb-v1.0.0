@@ -2428,6 +2428,10 @@ bis-popup .close {
   z-index: 2;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .order-1 {
   order: 1;
 }
@@ -2712,6 +2716,10 @@ bis-popup .close {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mt-\.5 {
+  margin-top: .5rem;
 }
 
 .line-clamp-5 {
