@@ -557,5 +557,5 @@ bis-popup {
 }
 
 .shopify-pc__banner__dialog {
-    @apply p-2;
+    padding: 2rem !important;
 }

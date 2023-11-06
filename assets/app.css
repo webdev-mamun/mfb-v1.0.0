@@ -4229,7 +4229,7 @@ bis-popup {
 }
 
 .shopify-pc__banner__dialog {
-  padding: 2rem;
+  padding: 2rem !important;
 }
 
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {
