@@ -47,59 +47,12 @@
         "title": "OUR STOCKISTS:",
         "text": "Get in touch to find out how you can stock our wines and spirits. Straight from the source to your customers.",
         "btn_text": "GET IN TOUCH",
-        "btn_url": "",
+        "btn_url": "mailto:hello@mfbimports.com",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 40,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 70
-      }
-    },
-    "titleList": {
-      "type": "title-list",
-      "blocks": {
-        "3f4c1d06-610d-474f-ba5f-3d650807a537": {
-          "type": "title",
-          "settings": {
-            "title": "FRANCE",
-            "url": "shopify-section-template--21144363958552__addressList"
-          }
-        },
-        "9f796ff8-1ccc-4a6d-95df-e8f77a9746bb": {
-          "type": "title",
-          "settings": {
-            "title": "ITALY",
-            "url": "shopify-section-template--21144363958552__6a6656de-5667-4d82-93e1-2cb327641f13"
-          }
-        },
-        "e95f6e9e-c313-4e21-8fd8-ce9f1ac2ea88": {
-          "type": "title",
-          "settings": {
-            "title": "North america",
-            "url": "shopify-section-template--21144363958552__6b2bd83a-9823-4ad6-b7e5-47782785344e"
-          }
-        },
-        "470a2859-5309-4b40-bd04-6b17280337c6": {
-          "type": "title",
-          "settings": {
-            "title": "BESPOKE SERVICES",
-            "url": "shopify-section-template--20794490552621__0262d1eb-cc87-4344-b53c-5387b4ecfe70"
-          }
-        }
-      },
-      "block_order": [
-        "3f4c1d06-610d-474f-ba5f-3d650807a537",
-        "9f796ff8-1ccc-4a6d-95df-e8f77a9746bb",
-        "e95f6e9e-c313-4e21-8fd8-ce9f1ac2ea88",
-        "470a2859-5309-4b40-bd04-6b17280337c6"
-      ],
-      "settings": {
-        "title": "GO TO:",
-        "color_scheme": "",
-        "padding_top": 10,
-        "padding_bottom": 60,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 130
       }
     },
     "addressList": {
@@ -222,7 +175,7 @@
         "text": "Speak to us directly to discuss how we can provide your event with the best small scale European wines and spirits.",
         "btn_text": "GET IN TOUCH",
         "image": "shopify:\/\/shop_images\/clem-onojeghuo.jpg",
-        "btn_url": "",
+        "btn_url": "mailto:hello@mfbimports.com",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 125,
@@ -235,7 +188,6 @@
     "8e1ccf58-7d13-4210-afb3-f7539228c6b9",
     "hero",
     "contact",
-    "titleList",
     "addressList",
     "6a6656de-5667-4d82-93e1-2cb327641f13",
     "6b2bd83a-9823-4ad6-b7e5-47782785344e",
