@@ -567,3 +567,7 @@ bis-popup {
 .shopify-pc__banner__body {
     margin-right: 0 !important;
 }
+
+.shopify-pc__banner__wrapper {
+    gap: 15px;
+}
