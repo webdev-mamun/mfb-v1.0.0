@@ -4236,6 +4236,10 @@ bis-popup {
   line-height: 120% !important;
 }
 
+.shopify-pc__banner__body {
+  margin-right: 0 !important;
+}
+
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {
   letter-spacing: -4.4px;
 }
