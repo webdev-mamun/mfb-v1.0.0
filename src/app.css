@@ -591,6 +591,10 @@ bis-popup {
     font-size: 1.2rem;
 }
 
+.shopify-pc__banner__dialog button.shopify-pc__banner__btn-manage-prefs:focus span {
+    outline: none !important;
+}
+
 @media only screen and (max-width: 1280px){
     .shopify-pc__banner__wrapper {
         gap: 10px;
