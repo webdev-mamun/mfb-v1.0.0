@@ -4254,6 +4254,10 @@ bis-popup {
   flex-basis: unset !important;
 }
 
+.shopify-pc__banner__dialog p {
+  font-size: 1.2rem;
+}
+
 .first-line\:font-serifh1::first-line,.first-line\:font-serif .h1::first-line {
   letter-spacing: -4.4px;
 }
