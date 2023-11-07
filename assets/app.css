@@ -2714,6 +2714,10 @@ bis-popup .close {
   margin-top: auto;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 .line-clamp-5 {
   overflow: hidden;
   display: -webkit-box;
