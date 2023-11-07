@@ -3055,6 +3055,10 @@ bis-popup .close {
   max-width: 100%;
 }
 
+.max-w-\[30rem\] {
+  max-width: 30rem;
+}
+
 .shrink {
   flex-shrink: 1;
 }
