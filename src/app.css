@@ -295,7 +295,7 @@
     }
 
     .cart-drawer__overlay {
-        @apply fixed inset-0 backdrop-blur-[10px] -z-10;
+        @apply fixed top-0 left-0 right-0 bottom-0 backdrop-blur-[10px] -z-10;
     }
     .drawer__inner {
         @apply text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] w-[30rem] md:w-[60.9rem] 
@@ -501,7 +501,7 @@
     }
     
     bis-popup > .bis-popup-overlay {
-        @apply fixed inset-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
+        @apply fixed top-0 left-0 right-0 bottom-0 backdrop-blur-[10px] z-10 bg-[color:rgba(217,_217,_217,_0.6)]
     }
     
     bis-popup .container.bis-popup-container {

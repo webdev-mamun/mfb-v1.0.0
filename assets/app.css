@@ -1367,7 +1367,10 @@ p.default-input, .base-text.default-input {
 
 .cart-drawer__overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -10;
   --tw-backdrop-blur: blur(10px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -2248,7 +2251,10 @@ bis-popup {
 
 bis-popup > .bis-popup-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 10;
   background-color: rgba(217, 217, 217, 0.6);
   --tw-backdrop-blur: blur(10px);
@@ -2590,6 +2596,10 @@ bis-popup .close {
   margin-bottom: 0;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 .mb-2 {
   margin-bottom: 2rem;
 }
@@ -2712,10 +2722,6 @@ bis-popup .close {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-1 {
-  margin-bottom: 1rem;
 }
 
 .line-clamp-5 {
@@ -3003,6 +3009,10 @@ bis-popup .close {
   max-width: 43.7rem;
 }
 
+.max-w-\[45rem\] {
+  max-width: 45rem;
+}
+
 .max-w-\[46rem\] {
   max-width: 46rem;
 }
@@ -3053,14 +3063,6 @@ bis-popup .close {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-\[30rem\] {
-  max-width: 30rem;
-}
-
-.max-w-\[45rem\] {
-  max-width: 45rem;
 }
 
 .shrink {
