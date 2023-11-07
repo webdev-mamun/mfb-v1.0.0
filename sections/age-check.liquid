@@ -61,7 +61,7 @@
                 <h3 class="font-serif text-center big-text lg:text-3xl -tracking-[.05em]">{{ refuse_title }}</h3>
               {%- endif -%}
               {%- if refuse_text != blank -%}
-                <p class="mb-0">{{ refuse_text }}</p>
+                <p class="mb-0 text-center">{{ refuse_text }}</p>
               {%- endif -%}
             </div>
           {%- endif -%}
@@ -109,7 +109,7 @@
       "type": "range",
       "id": "popup_days",
       "label": "Frequency",
-      "default": 30,
+      "default": 7,
       "info": "Number of days before a dismissed popup reappears",
       "min": 2,
       "max": 30,
