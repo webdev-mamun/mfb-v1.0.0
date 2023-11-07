@@ -101,7 +101,6 @@ class newsletterPopup extends HTMLElement {
 
     setCookie(name, value, days) {
       const expires = `expires=${new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString()}`;
-      console.log(expires, days);
       document.cookie = `${name}=${value};${expires};path=/`;
     }
 
