@@ -8,6 +8,7 @@ class ageVerification extends HTMLElement {
       this.days = this.dataset.frequency;
       this.message = this.querySelector('#messageText');
       this.refuseText = this.querySelector('#refuseText');
+      this.btnContainer = this.querySelector('#btnContainer');
     
       if (!this.cookieFound && !this.redirectPage) {
         this.showPopup();  
@@ -52,6 +53,7 @@ class ageVerification extends HTMLElement {
     showRefuseText() {
       this.message.classList.add('hidden');
       this.refuseText.classList.remove('hidden');
+      this.this.btnContainer.classList.add('hidden');
     }
 
     checkCookie(name) {
