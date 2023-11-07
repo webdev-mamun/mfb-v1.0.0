@@ -10,7 +10,7 @@ class ageVerification extends HTMLElement {
       this.refuseText = this.querySelector('#refuseText');
       this.btnContainer = this.querySelector('#btnContainer');
     
-      if (!this.cookieFound && !this.redirectPage) {
+      if (!this.cookieFound) {
         this.showPopup();  
       } else {
         this.closePopup();
@@ -46,6 +46,7 @@ class ageVerification extends HTMLElement {
     }
 
     setCookie(cName, cValue, days) {
+      console.log(days);
       const expires = `expires=${new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString()}`;
       document.cookie = `${cName}=${cValue};${expires};path=/`;
     }
@@ -61,7 +62,6 @@ class ageVerification extends HTMLElement {
     }
 
     showPopup() {
-        
       this.ariaHidden = false;
       document.body.classList.add('overflow-hidden');
     }
