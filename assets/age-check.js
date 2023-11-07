@@ -16,21 +16,21 @@ class ageVerification extends HTMLElement {
         this.closePopup();
       }
 
-    document.addEventListener('shopify:section:select', (e) => {
-        if(e.detail.sectionId === this.id) {
-            this.showPopup();
-            return;
-        }
-        this.closePopup();
-    });
+      document.addEventListener('shopify:section:select', (e) => {
+          if(e.detail.sectionId === this.id) {
+              this.showPopup();
+              return;
+          }
+          this.closePopup();
+      });
 
-    document.addEventListener('shopify:section:deselect', (e) => {
-        if(e.detail.sectionId === this.id) this.closePopup();
-    });
+      document.addEventListener('shopify:section:deselect', (e) => {
+          if(e.detail.sectionId === this.id) this.closePopup();
+      });
 
-    document.addEventListener('shopify:inspector:activate', () => {
-        this.closePopup();
-    });
+      document.addEventListener('shopify:inspector:activate', () => {
+          this.closePopup();
+      });
 
       this.querySelector('#accept').addEventListener('click', this.acceptButtonHandler.bind(this));
       this.querySelector('#refuse').addEventListener('click', this.refuseButtonHandler.bind(this));
