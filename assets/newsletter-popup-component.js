@@ -85,10 +85,6 @@ class newsletterPopup extends HTMLElement {
           this.closeNewsletterPopup();
         }
       }
-      // if (!event.target.closest('.newsletter-popup') || event.target.closest('#popupClose')) {
-      //   this.setCookie(this.cName, this.cValue, this.days);
-      //   this.closeNewsletterPopup();
-      // }
     }
 
     showNewsletterPopup() {
