@@ -1261,6 +1261,7 @@ p.default-input, .base-text.default-input {
 
 .default-input {
   width: 100%;
+  border-radius: 0px;
   border-bottom-width: 1px;
   border-color: rgb(var(--color-foreground, 21,21,21));
   background-color: rgb(var(--color-background, 255,254,247));
