@@ -53,7 +53,7 @@ class ageVerification extends HTMLElement {
     showRefuseText() {
       this.message.classList.add('hidden');
       this.refuseText.classList.remove('hidden');
-      // this.btnContainer.classList.add('hidden');
+      this.btnContainer.classList.add('hidden');
     }
 
     checkCookie(name) {
