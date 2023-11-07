@@ -5,7 +5,7 @@ class ageVerification extends HTMLElement {
       this.cName = 'isAdalt';
       this.cValue = 'yes';
       this.cookieFound = this.checkCookie(this.cName);
-      this.redirectUrl = this.dataset.redirecUrl;
+      this.days = this.dataset.frequency;
       this.message = this.querySelector('#messageText');
       this.refuseText = this.querySelector('#refuseText');
     
@@ -36,7 +36,7 @@ class ageVerification extends HTMLElement {
     }
 
     acceptButtonHandler() {
-      this.setCookie(this.cName, this.cValue);
+      this.setCookie(this.cName, this.cValue, this.days);
       this.closePopup();
     }
 
@@ -44,8 +44,7 @@ class ageVerification extends HTMLElement {
       this.showRefuseText();
     }
 
-    setCookie(cName, cValue) {
-      const days = 7;
+    setCookie(cName, cValue, days) {
       const expires = `expires=${new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString()}`;
       document.cookie = `${cName}=${cValue};${expires};path=/`;
     }
