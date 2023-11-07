@@ -144,6 +144,7 @@
           "enable_agecheck": true,
           "logo_type": "secondary",
           "text": "Please confirm you are 21 years of age or older.",
+          "refuse_text": "Access forbidden! Your access is restricted because of your age. Please come back when you are 21 years of age!",
           "url": "",
           "color_scheme": ""
         }
