@@ -1,3 +1,4 @@
+if (!customElements.get('text-block')) {
 class textBlock extends HTMLElement {
     constructor() {
       super();
@@ -29,3 +30,4 @@ class textBlock extends HTMLElement {
   }
 
   customElements.define('text-block', textBlock);
+}

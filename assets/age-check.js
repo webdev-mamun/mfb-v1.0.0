@@ -6,7 +6,8 @@ class ageVerification extends HTMLElement {
       this.cValue = 'yes';
       this.cookieFound = this.checkCookie(this.cName);
       this.redirectUrl = this.dataset.redirecUrl;
-      this.redirectPage = window.location.href.indexOf(this.redirectUrl) !== -1;
+      this.message = this.querySelector('#messageText');
+      this.refuseText = this.querySelector('#refuseText');
     
       if (!this.cookieFound && !this.redirectPage) {
         this.showPopup();  
@@ -40,18 +41,18 @@ class ageVerification extends HTMLElement {
     }
 
     refuseButtonHandler() {
-      this.redirect();
-      this.closePopup();
+      this.showRefuseText();
     }
 
     setCookie(cName, cValue) {
-      const days = 14;
+      const days = 7;
       const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
       document.cookie = `${cName}=${cValue};${expires};path=/`;
     }
 
-    redirect() {
-        this.redirectUrl !== 'null' ? (window.location = this.redirectUrl) : (window.location = 'https://www.google.com/');
+    showRefuseText() {
+      this.message.classList.add('hidden');
+      this.refuseText.classList.remove('hidden');
     }
 
     checkCookie(name) {

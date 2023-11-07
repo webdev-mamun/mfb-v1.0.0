@@ -4224,9 +4224,9 @@ bis-popup {
   color: rgb(var(--color-button-text-hover, 255,254,247));
 }
 
-.scrolled-past-header {
-  box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
-}
+/* .scrolled-past-header {
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+} */
 
 .shopify-pc__banner__dialog {
   padding: 1rem 2rem !important;
@@ -4394,6 +4394,10 @@ bis-popup {
     letter-spacing: -1.76px;
   }
 
+  h1.lg\:font-serif,.lg\:font-serif .h1 {
+    letter-spacing: -4.4px;
+  }
+
   h2.lg\:font-sans,.lg\:font-sans .h2 {
     letter-spacing: -1.24px;
   }
@@ -4406,7 +4410,15 @@ bis-popup {
     letter-spacing: -1.24px;
   }
 
+  h2.lg\:font-serif,.lg\:font-serif .h2 {
+    letter-spacing: -3.1px;
+  }
+
   .lg\:h2.font-serif {
+    letter-spacing: -3.1px;
+  }
+
+  h2.lg\:font-serif,.lg\:font-serif .h2 {
     letter-spacing: -3.1px;
   }
 
@@ -4414,20 +4426,40 @@ bis-popup {
     letter-spacing: -0.88px;
   }
 
+  h3.lg\:font-serif,.lg\:font-serif .h3 {
+    letter-spacing: -2.2px;
+  }
+
   h4.lg\:font-sans,.lg\:font-sans .h4 {
     letter-spacing: -0.44px;
+  }
+
+  h4.lg\:font-serif,.lg\:font-serif .h4 {
+    letter-spacing: -1.1px;
   }
 
   h5.lg\:font-sans,.lg\:font-sans .h5 {
     letter-spacing: -0.32px;
   }
 
+  h5.lg\:font-serif,.lg\:font-serif .h5 {
+    letter-spacing: -0.8px;
+  }
+
   h6.lg\:font-sans,.lg\:font-sans .h6 {
     letter-spacing: -0.26px;
   }
 
+  h6.lg\:font-serif,.lg\:font-serif .h6 {
+    letter-spacing: -0.65px;
+  }
+
   p.lg\:font-sans,.lg\:font-sans .base-text {
     letter-spacing: -0.32px;
+  }
+
+  p.lg\:font-serif,.lg\:font-serif .base-text {
+    letter-spacing: -0.8px;
   }
 }
 
@@ -5391,6 +5423,10 @@ bis-popup {
 
   .lg\:font-sans {
     font-family: "Tomato Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  .lg\:font-serif {
+    font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
   .lg\:text-2xl {

@@ -3,6 +3,7 @@
 
   {%- liquid
     assign text = section.settings.text
+    assign refuse_text = section.settings.refuse_text
     assign redirec_url = section.settings.redirec_url
     if section.settings.logo_type == 'primary'
       assign logo = settings.logo
@@ -43,8 +44,19 @@
         {%- endif -%}
         <div class="flex flex-col justify-center gap-y-9 lg:gap-y-4">
           {%- if text != blank -%}
-            <div class="font-serif w-full max-w-[78rem] mx-auto text-center big-text lg:text-3xl -tracking-[.05em]">
+            <div
+              id="messageText"
+              class="font-serif w-full max-w-[78rem] mx-auto text-center big-text lg:text-3xl -tracking-[.05em]"
+            >
               {{ text }}
+            </div>
+          {%- endif -%}
+          {%- if refuse_text != blank -%}
+            <div
+              id="refuseText"
+              class="font-serif w-full max-w-[78rem] mx-auto text-center big-text lg:text-3xl -tracking-[.05em] hidden"
+            >
+              {{ refuse_text }}
             </div>
           {%- endif -%}
           <div class="w-full max-w-[55rem] mx-auto flex flex-wrap justify-center gap-2">
@@ -108,6 +120,12 @@
       "id": "text",
       "label": "Text",
       "default": "Please confirm you are 21 years of age or older."
+    },
+    {
+      "type": "html",
+      "id": "refuse_text",
+      "label": "Refuse text",
+      "default": "Please combeack when you are 21 years of age!"
     },
     {
       "type": "url",
