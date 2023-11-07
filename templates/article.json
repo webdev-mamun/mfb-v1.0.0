@@ -15,7 +15,7 @@
     "cd6aba29-5741-485d-b170-f6200247c644": {
       "type": "featured-collection",
       "settings": {
-        "title": "TRY OUR%br%CHAMPAGNE",
+        "title": "TRY OUR%br%{{ article.metafields.custom.collection_title.value }}",
         "collection": "all",
         "show_vendor": true,
         "enable_quick_add": true,
