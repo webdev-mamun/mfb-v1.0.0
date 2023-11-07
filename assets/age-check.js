@@ -46,7 +46,7 @@ class ageVerification extends HTMLElement {
 
     setCookie(cName, cValue) {
       const days = 7;
-      const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+      const expires = `expires=${new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString()}`;
       document.cookie = `${cName}=${cValue};${expires};path=/`;
     }
 
