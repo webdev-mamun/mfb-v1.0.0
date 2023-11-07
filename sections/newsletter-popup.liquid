@@ -2,12 +2,14 @@
 {%- liquid
   assign title = section.settings.title | replace: '%br%', '<br>'
   assign text = section.settings.text
+  assign popup_days = section.settings.popup_days
 -%}
 
 <newsletter-popup
   class="w-[30.3rem] lg:w-[38rem] fixed top-2/4 left-2/4 -translate-x-1/2 -translate-y-1/2 rounded-2xl color-{{ section.settings.color_scheme }} shadow-xl block aria-hidden:hidden"
   data-id="{{ section.id }}"
   aria-hidden="true"
+  data-frequency="{{ popup_days }}"
 >
   <div class="newsletter-popup relative pt-[3.5rem] pb-4 lg:py-2">
     <div class="w-[21rem] lg:w-[29.5rem] mx-auto flex flex-col gap-[1.83rem] lg:gap-[1.5rem]">
@@ -44,6 +46,17 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "range",
+      "id": "popup_days",
+      "label": "Frequency",
+      "default": 7,
+      "info": "Number of days before a dismissed popup reappears",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "day"
+    },
     {
       "type": "textarea",
       "id": "title",

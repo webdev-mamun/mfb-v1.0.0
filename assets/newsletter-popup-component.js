@@ -6,7 +6,7 @@ class newsletterPopup extends HTMLElement {
       this.submitBtn = this.querySelector('#Subscribe--popup');
       this.cName = 'newsletterClose';
       this.cValue = 'yes';
-      this.days = 7;
+      this.days = this.dataset.frequency;
       this.cookieFound = this.checkCookie(this.cName);
       this.id = this.dataset.id;
       this.scrollPercent = 10;
