@@ -275,7 +275,7 @@
     }
 
     .default-input {
-        @apply w-full border-b outline-none rounded-none shadow-none box-sha font-sans text-[1.4rem] leading-[2.2rem] -tracking-[.02em] focus-visible:outline-none 
+        @apply w-full border-b outline-none rounded-none box-sha font-sans text-[1.4rem] leading-[2.2rem] -tracking-[.02em] focus-visible:outline-none 
         text-[rgb(var(--color-foreground,_21,21,21))] bg-[rgb(var(--color-background,_255,254,247))] border-[rgb(var(--color-foreground,_21,21,21))]
          pb-[.1rem] [&.error-input:not(:focus)]:border-[#FF0000] [&.error-input:not(:focus)]:text-[#FF0000] [&.error-input:not(:focus)]:placeholder:text-[#FF0000]
     }
