@@ -1005,7 +1005,11 @@ p.btn-link, .base-text.btn-link {
   transition-duration: 150ms;
 }
 
-.btn-primary:hover {
+.btn-primary:disabled {
+  opacity: 0.5;
+}
+
+.btn-primary:not(:disabled):hover {
   border-color: rgb(var(--color-button-border-hover, 170,153,85));
   background-color: rgb(var(--color-button-hover, 170,153,85));
   color: rgb(var(--color-button-text-hover, 255,254,247));
@@ -1020,7 +1024,11 @@ p.btn-link, .base-text.btn-link {
   transition-duration: 150ms;
 }
 
-.btn-secondary:hover {
+.btn-secondary:disabled {
+  opacity: 0.5;
+}
+
+.btn-secondary:not(:disabled):hover {
   border-color: rgb(var(--color-secondary-button-border-hover, 2,37,65));
   background-color: rgb(var(--color-secondary-button-hover, 2,37,65));
   color: rgb(var(--color-secondary-button-text-hover, 255,254,247));
@@ -3153,10 +3161,6 @@ bis-popup .close {
 }
 .border-\[rgb\(var\(--color-foreground\)\)\] {
   border-color: rgb(var(--color-foreground));
-}
-.border-stone-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(214 211 209 / var(--tw-border-opacity));
 }
 .bg-\[color\:var\(--bg\)\] {
   background-color: var(--bg);
