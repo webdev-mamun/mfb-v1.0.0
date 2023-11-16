@@ -147,26 +147,26 @@
     }
 
     .btn-big {
-        @apply font-sans text-[2rem] leading-[2.2rem] -tracking-[.02em] uppercase px-[3.6rem] py-[1.55rem] border rounded-3xl
+        @apply font-sans text-[2rem] leading-[5.5rem] -tracking-[.02em] uppercase py-0 px-[3.6rem] border rounded-3xl max-h-[5.5rem]
     }
 
     .btn {
-        @apply font-sans text-center text-[1.3rem] leading-[2.2rem] -tracking-[.02em] uppercase border rounded-2xl px-[3.5rem] pt-[1.2rem] pb-1;
+        @apply font-sans text-center text-[1.3rem] leading-[4.7rem] -tracking-[.02em] uppercase border rounded-2xl px-[3.5rem] py-0 max-h-[4.7rem];
     }
 
 
     @media (min-width: 1024px) {
         .btn {
-            @apply text-md;
+            @apply text-md leading-[4.7rem];
         }
     }
 
     .btn-small {
-        @apply font-sans text-center text-[1rem] leading-[1.6rem] -tracking-[.02em] border uppercase rounded-[.2rem] px-[1.3rem] pt-[.25rem] pb-[.15rem] max-h-[2.2rem];
+        @apply font-sans text-center text-[1rem] leading-[2.2rem] -tracking-[.02em] border uppercase rounded-[.2rem] px-[1.3rem] py-0 max-h-[2.2rem];
     }
 
     .btn-medium {
-        @apply font-sans text-center text-[1.4rem] leading-[2.2rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] px-[3.5rem] pt-[.6rem] pb-[.3rem] min-w-[15rem];
+        @apply font-sans text-center text-[1.4rem] leading-[3.3rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] py-0 px-[3.5rem] min-w-[15rem];
     }
 
     .btn-link {
@@ -281,7 +281,7 @@
     }
 
     .loading-overlay--spinner {
-        @apply absolute w-[1.5rem] left-1/2 -translate-x-2/4 animate-spin-slow;
+        @apply absolute w-[1.5rem] left-1/2 -translate-x-2/4 -translate-y-2/4 animate-spin-slow;
     }
 
     .loading-overlay--spinner .path {
@@ -298,7 +298,7 @@
         @apply fixed top-0 left-0 right-0 bottom-0 backdrop-blur-[10px] -z-10;
     }
     .drawer__inner {
-        @apply text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] w-[30rem] md:w-[60.9rem] 
+        @apply text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] w-[30rem] md:w-[69rem] 
         flex flex-col pt-[1.5rem] px-1 pb-2 md:p-2 gap-2 rounded-2xl h-full translate-x-full group-[&.active]:-translate-x-0 
         transition-transform delay-100 duration-500;
     }

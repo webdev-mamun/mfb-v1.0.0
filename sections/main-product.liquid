@@ -132,21 +132,23 @@
                 id="ProductSubmitButton-template--21188300275992__main"
                 type="submit"
                 name="add"
-                class="product-form__submit button button--full-width product-sticky-btn"
+                class="group product-form__submit btn-medium relative"
                 aria-haspopup="dialog"
                 form="{{ product_form_id }}"
               >
                 <span>Add to cart </span>
-                <div class="group loading-overlay--spinner hidden group-[]:">
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    class="spinner"
-                    viewBox="0 0 66 66"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                  </svg>
+                <div class="hidden">
+                  <div class="loading-overlay--spinner">
+                    <svg
+                      aria-hidden="true"
+                      focusable="false"
+                      class="spinner"
+                      viewBox="0 0 66 66"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                    </svg>
+                  </div>
                 </div>
               </button>
             {%- else -%}
@@ -472,7 +474,7 @@
                       product_form_id: product_form_id,
                       section_id: section.id,
                       show_pickup_availability: false,
-                      btn_class: 'product-act-btn'
+                      btn_class: 'btn-big btn-secondary'
                     -%}
                   </div>
               {%- endcase -%}
@@ -485,7 +487,7 @@
               id="ProductSubmitButton-{{ section_id }}"
               type="submit"
               name="add"
-              class="product-form__submit button button--full-width product-act-btn"
+              class="product-form__submit button button--full-width btn-big btn-secondary"
               form="{{ product_form_id }}"
               {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
                 disabled

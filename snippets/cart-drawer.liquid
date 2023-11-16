@@ -32,8 +32,8 @@
       {%- if cart == empty -%}
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
-            <div class="cart-drawer__empty-content min-h-[20rem] flex flex-col gap-2 justify-between">
-              <div class="items-center justify-between gap-1 hidden group-[&.is-empty]:flex">
+            <div class="cart-drawer__empty-content min-h-[20rem] flex flex-col justify-between">
+              <div class="items-center justify-between gap-1 hidden group-[&.is-empty]:flex pb-[1.5rem] border-b border-color">
                 <h2 class="font-sans text-base leading-[1.5rem] tracking-[0.2em] uppercase">
                   {{ 'sections.cart.empty' | t }}
                 </h2>
@@ -48,31 +48,135 @@
                   </svg>
                 </button>
               </div>
-              <div class="flex justify-center">
-                {%- liquid
-                  assign text = 'general.continue_shopping' | t
-                -%}
-                {% render 'btn-link',
-                  text: text,
-                  url: routes.all_products_collection_url,
-                  class: ' flex-col items-center'
-                %}
-              </div>
+
+              {%- if settings.cart_drawer_collection != blank -%}
+                <div class="flex flex-col">
+                  <h3 class="text-center text-base uppercase leading-relaxed py-[.7rem] border-b border-color">
+                    Popular Products
+                  </h3>
+                  <div class="cart-drawer__collection flex flex-col overflow-auto max-h-[calc(100vh_-_23rem)] divide-y border-color">
+                    {%- for product in settings.cart_drawer_collection.products limit: 2 -%}
+                      {% assign card_product = product %}
+                      <div class="cart-drawer__product py-2 grid grid-cols-[10rem_1fr] md:grid-cols-[17rem_1fr] gap-1 md:gap-2">
+                        <div class="row-span-full relative">
+                          <a href="{{ product.url }}" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                          <img
+                            class="cart-item__image"
+                            src="{{ product.featured_image | image_url: width: 300 }}"
+                            alt="{{ product.featured_image.alt | escape }}"
+                            loading="lazy"
+                            width="170"
+                            height="{{ 170 | divided_by: product.featured_image.aspect_ratio | ceil }}"
+                          >
+                        </div>
+                        <div class="flex flex-col md:flex-row justify-center md:justify-start gap-[1.5rem] md:gap-2 my-1">
+                          <div class="grow shrink basis-3/6">
+                            {%- if product.vendor != blank -%}
+                              <h3 class="text-base leading-none md:text-[22px] uppercase md:leading-[2.6rem] mb-.5 md:mb-0">
+                                {{ product.vendor }}
+                              </h3>
+                            {%- endif -%}
+                            <a
+                              href="{{ product.url }}"
+                              class="font-serif text-base leading-none md:text-[22px] uppercase md:leading-[2.6rem]"
+                            >
+                              {{- product.title -}}
+                            </a>
+                            {% render 'price',
+                              product: card_product,
+                              price_class: 'text-base leading-none md:text-[22px] uppercase md:leading-[2.6rem] mt-1 md:mt-2'
+                            %}
+                          </div>
+                          <div class="grow shrink basis-3/6">
+                            {%- liquid
+                              assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
+                            -%}
+                            <product-form data-section-id="{{ section.id }}">
+                              {%- form 'product',
+                                card_product,
+                                id: product_form_id,
+                                class: 'form',
+                                novalidate: 'novalidate',
+                                data-type: 'add-to-cart-form'
+                              -%}
+                                <input
+                                  type="hidden"
+                                  name="id"
+                                  data-productid="{{ product.id }}"
+                                  value="{{ card_product.selected_or_first_available_variant.id }}"
+                                  class="product-variant-id"
+                                  disabled
+                                >
+
+                                <button
+                                  id="{{ product_form_id }}-submit"
+                                  type="submit"
+                                  name="add"
+                                  class="group btn-small md:btn-big btn-secondary md:w-full"
+                                  aria-haspopup="dialog"
+                                  aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+                                  aria-live="polite"
+                                  data-sold-out-message="true"
+                                  {% if card_product.selected_or_first_available_variant.available == false %}
+                                    disabled
+                                  {% endif %}
+                                >
+                                  <span>
+                                    {{ 'products.product.add_to_cart' | t }}
+                                  </span>
+                                  <span class="sold-out-message hidden ">
+                                    {{ 'products.product.add_to_cart' | t }}
+                                  </span>
+                                  <div class="loading-overlay--spinner hidden w-[1.6rem] h-[1.6rem]">
+                                    <svg
+                                      aria-hidden="true"
+                                      focusable="false"
+                                      class="spinner icon"
+                                      viewBox="0 0 66 66"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <circle class="path stroke-[var(--act-btn-border)] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                                    </svg>
+                                  </div>
+                                </button>
+                              {%- endform -%}
+                            </product-form>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- else -%}
+                <div class="flex justify-center">
+                  {%- liquid
+                    assign text = 'general.continue_shopping' | t
+                  -%}
+                  {% render 'btn-link',
+                    text: text,
+                    url: routes.all_products_collection_url,
+                    class: ' flex-col items-center'
+                  %}
+                </div>
+              {%- endif -%}
               {%- if shop.customer_accounts_enabled and customer == null -%}
-                <div class="flex flex-col items-center">
-                  <p class="font-serif h4 text-center -tracking-[.02em]">{{ 'sections.cart.login.title' | t }}</p>
-                  <p class="text-sm -tracking-[.02em] [&_a]:underline [&_a]:underline-offset-2 text-center">
+                <div class="text-center pt-[1.5rem] border-t border-color">
+                  <p class="text-sm md:text-base uppercase leading-relaxed">Have an account?</p>
+                  <p class="text-sm md:text-base leading-relaxed [&_a]:uppercase [&_a]:underline [&_a]:underline-offset-2 [&_a]:hover:text-[color:rgb(var(--color-link-hover,_170,153,85))]">
                     {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
                   </p>
                 </div>
+                {% comment %}
+                  <div class="flex flex-col items-center">
+                    <p class="font-serif h4 text-center -tracking-[.02em]">{{ 'sections.cart.login.title' | t }}</p>
+                    <p class="text-sm -tracking-[.02em] [&_a]:underline [&_a]:underline-offset-2 text-center">
+                      {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
+                    </p>
+                  </div>
+                {% endcomment %}
               {%- endif -%}
             </div>
           </div>
-          {%- if settings.cart_drawer_collection != blank -%}
-            <div class="cart-drawer__collection">
-              {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
-            </div>
-          {%- endif -%}
         </div>
       {%- endif -%}
       <div class="drawer__header flex items-center justify-between gap-1 group-[&.is-empty]:hidden">
@@ -486,7 +590,7 @@
           <button
             type="submit"
             id="CartDrawer-Checkout"
-            class="cart__checkout-button button btn btn-secondary w-full"
+            class="btn-big btn-secondary w-full"
             name="checkout"
             form="CartDrawer-Form"
             {% if cart == empty %}
