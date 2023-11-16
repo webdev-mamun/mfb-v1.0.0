@@ -25,7 +25,7 @@
     "cart_type": "drawer",
     "show_vendor": true,
     "show_cart_note": false,
-    "cart_drawer_collection": "",
+    "cart_drawer_collection": "domaine-de-brin",
     "checkout_logo_image": "shopify:\/\/shop_images\/Logo_Black.svg",
     "checkout_body_background_color": "#ffffff",
     "checkout_sidebar_background_color": "#ffffff",
@@ -153,6 +153,7 @@
       "newsletter-popup": {
         "type": "newsletter-popup",
         "settings": {
+          "popup_days": 7,
           "title": "join the%br%Bien Élevé family",
           "text": "Keep up to date with everything we’re doing.",
           "color_scheme": "inverse"
