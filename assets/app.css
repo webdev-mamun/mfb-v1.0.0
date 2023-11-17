@@ -941,8 +941,8 @@ p.btn-medium, .base-text.btn-medium {
   border-width: 1px;
   padding-top: 0;
   padding-bottom: 0;
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   text-align: center;
   font-family: "Tomato Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.4rem;
@@ -4209,6 +4209,10 @@ bis-popup {
   display: block;
 }
 
+.group.price--on-sale .group-\[\&\.price--on-sale\]\:block {
+  display: block;
+}
+
 .group.is-empty .group-\[\&\.is-empty\]\:flex {
   display: flex;
 }
@@ -4218,6 +4222,10 @@ bis-popup {
 }
 
 .group.loading .group-\[\&\.loading\]\:hidden {
+  display: none;
+}
+
+.group.price--on-sale .group-\[\&\.price--on-sale\]\:hidden {
   display: none;
 }
 
@@ -4288,6 +4296,22 @@ bis-popup {
   .dark\:text-gray-600 {
     --tw-text-opacity: 1;
     color: rgb(75 85 99 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 640px) {
+
+  .sm\:text-\[2\.2rem\] {
+    font-size: 2.2rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+
+  .sm\:leading-\[5\.6rem\] {
+    line-height: 5.6rem;
   }
 }
 
@@ -5204,6 +5228,10 @@ bis-popup {
 
   .xl\:gap-5 {
     gap: 5rem;
+  }
+
+  .xl\:gap-4 {
+    gap: 4rem;
   }
 
   .xl\:gap-x-2 {

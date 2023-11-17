@@ -122,7 +122,7 @@
           {%- endif -%}
         </div>
 
-        <div class="col-span-1 flex items-center justify-end gap-4">
+        <div class="col-span-1 flex items-center justify-end gap-2 xl:gap-4">
           <div class="hidden lg:block text-xl -tracking-[.02em]">
             {%- render 'price', product: product, use_variant: true -%}
           </div>
@@ -226,7 +226,7 @@
                     role="status"
                     {{ block.shopify_attributes }}
                   >
-                    <div class="flex items-center text-[2.2rem] leading-[5.6rem] -tracking-[.02em] lg:pt-[2.5rem] whitespace-nowrap">
+                    <div class="flex items-center text-base sm:text-xl sm:leading-[5.6rem] -tracking-[.02em] lg:pt-[2.5rem] whitespace-nowrap">
                       {%- render 'price', product: product, use_variant: true -%}
 
                       {%- liquid
@@ -235,11 +235,9 @@
                         assign size = meta.sizes
                       -%}
                       {%- if color != blank or size != blank -%}
-                        ,
-                        <p class="text-[2.2rem] leading-[5.6rem] -tracking-[.02em] uppercase">
-                          {%- if color != blank -%}{{ color }}{% endif -%}
-                          {%- if color != blank and size != blank %}, {% endif -%}
-                          {%- if size != blank -%}{{ size }}{%- endif -%}
+                        <p class="text-base sm:text-xl sm:leading-[5.6rem] -tracking-[.02em] uppercase">
+                          {%- if color != blank -%}, {{ color }}{%- endif -%}
+                          {%- if size != blank -%}, {{ size }}{%- endif -%}
                         </p>
                       {%- endif -%}
                     </div>

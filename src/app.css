@@ -166,7 +166,7 @@
     }
 
     .btn-medium {
-        @apply font-sans text-center text-[1.4rem] leading-[3.3rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] py-0 px-[3.5rem] min-w-[15rem];
+        @apply font-sans text-center text-[1.4rem] leading-[3.3rem] -tracking-[.02em] border uppercase rounded-2xl max-h-[3.3rem] py-0 px-[2.5rem] min-w-[15rem];
     }
 
     .btn-link {
@@ -515,6 +515,7 @@
     bis-popup .close {
         @apply w-[1.6rem] h-[1.6rem] cursor-pointer absolute top-1 right-1
     }
+
 }
 
 
