@@ -33,7 +33,6 @@
     },
     "image_banner": {
       "type": "image-banner",
-      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/hero.jpg",
         "image_mobile": "shopify:\/\/shop_images\/hero-mobile.jpg"
