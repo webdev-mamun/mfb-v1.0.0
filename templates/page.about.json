@@ -19,14 +19,14 @@
       "settings": {
         "title": "WINES OF TERROIR,  SPIRITS FROM THE SOURCE",
         "image": "shopify:\/\/shop_images\/about-main.jpg",
-        "caption_title": "ORGANICALLY GROWN",
-        "caption": "All our drinks are produced organically by European producers.",
-        "text": "<p>Lorem ipsum dolor sit amet consectetur. Adipiscing nibh fames vel ac netus a faucibus blandit enim. Lorem pharetra sed donec enim. In dolor fames sit sed augue cras pellentesque.<\/p><p>Congue fames sit turpis nulla sit sed tristique arcu. Purus viverra commodo et eget nec.<\/p>",
+        "caption_title": "Selecting a barrel of Calvados in Normandy.",
+        "caption": "Selecting a barrel of Calvados in Normandy.",
+        "text": "<p>We select directly from the cellars of our small-scale, independent European producers to bring you delicious bottles straight from the source and at excellent value. <\/p>",
         "color_scheme": "",
         "padding_top": 10,
-        "padding_bottom": 55,
+        "padding_bottom": 30,
         "padding_top_desktop": 20,
-        "padding_bottom_desktop": 130
+        "padding_bottom_desktop": 35
       }
     },
     "text-blocks": {
@@ -36,7 +36,7 @@
           "type": "textblock",
           "settings": {
             "title": "WEBSHOP",
-            "text": "<p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.<\/p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p><p>If you do wish to make any changes to your membership, including address changes, please email us at hello@drinkmfb.com so we can make the changes to your account.<\/p>",
+            "text": "<p>Our producers’ wines and spirits are for purchase in our web shop as they arrive throughout the year. <\/p><p>We are able to ship to most states and also offer local delivery in the Washington, D.C. area. <\/p><p>We also offer the opportunity for you to join our Club and receive a quarterly release of our latest selections.  You can be a part of our Spirits Single Barrel Club, our Wine Club, or both and receive special double subscriber perks, access to exclusive bottles and discounts! As part of either Club, you’ll get access to special releases and a 15% discount on all purchases. Please <a href=\"\/pages\/carte-blanche\" target=\"_blank\" title=\"Carte Blanche\">click here<\/a> for more information.<\/p>",
             "image": "shopify:\/\/shop_images\/text-block-workshop.png"
           }
         },
