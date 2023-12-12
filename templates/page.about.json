@@ -84,8 +84,8 @@
         "4765cfdd-ae81-44b2-aaf7-19143060698a": {
           "type": "textblock",
           "settings": {
-            "title": "NATALIE MUFSON",
-            "text": "<p>Natalie Mufson lives in New York after time in Europe working the London fine wine trade. She’s also worked in the vineyards of Bordeaux.<\/p>",
+            "title": "Kristen Smith",
+            "text": "<p>Who is Kristen Smith?<\/p>",
             "image": "shopify:\/\/shop_images\/mufson.png"
           }
         },
@@ -101,7 +101,7 @@
           "type": "textblock",
           "settings": {
             "title": "GREG FARON",
-            "text": "<p>Greg Faron is a Washington, D.C.-based restaurateur with a passion for brandy and single-barrel spirits. He side-gigs as a real estate executive<\/p>"
+            "text": "<p>Greg Faron is a Washington, D.C.-based hotelier with a passion for brandy and single-barrel spirits. He side-gigs as a real estate executive<\/p>"
           }
         }
       },
