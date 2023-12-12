@@ -22,6 +22,7 @@
         "template--20004128751917__eff610b3-65e4-4fb2-957b-bddb8c135184-announcement-1",
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "inverse",
         "padding_top": 8,
@@ -32,6 +33,7 @@
     },
     "image_banner": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/hero.jpg",
         "image_mobile": "shopify:\/\/shop_images\/hero-mobile.jpg"
@@ -197,6 +199,7 @@
         "49c7b10a-c8d3-430d-b695-b4d4b5fcef26",
         "d613ce9d-8c0d-4d51-a6af-054ac23da94d"
       ],
+      "disabled": true,
       "settings": {
         "enable_metaobject": true,
         "title": "PRODUCERS",
@@ -229,6 +232,7 @@
       "block_order": [
         "7cdb18db-f71f-4772-be2a-485c048b4e65"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "padding_top": 10,
@@ -267,6 +271,7 @@
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2",
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_3.jpg",
         "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_1.jpg",
@@ -312,6 +317,7 @@
         "036b4a40-be97-4b41-989b-f276067e0eca",
         "3053b57f-6c75-4eda-8977-f459c5532e6e"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "padding_top": 10,
