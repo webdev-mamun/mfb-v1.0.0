@@ -3,9 +3,9 @@
     "hero": {
       "type": "about-page-hero",
       "settings": {
-        "title": "WINES AND SPIRITS FROM THE SOURCE",
+        "title": "WINES + SPIRITS FROM THE SOURCE",
         "image": "shopify:\/\/shop_images\/about-hero.jpg",
-        "text": "<p>Bien Élevé is a direct-to-consumer wine and spirits merchant.<\/p><p>We source from small-scale, independent European producers bringing you delicious bottles right to your door.<\/p>",
+        "text": "<p>Bien Élevé is an importer and online retailer based in Washington, D.C. We specialize in well- made natural wines and rare, expertly-aged single-barrel spirits.  <\/p>",
         "icon_color": "black",
         "color_scheme": "",
         "padding_top": 50,
@@ -17,7 +17,7 @@
     "main": {
       "type": "about-page-image-with-text",
       "settings": {
-        "title": "WINES AND SPIRITS FROM THE SOURCE",
+        "title": "WINES OF TERROIR,  SPIRITS FROM THE SOURCE",
         "image": "shopify:\/\/shop_images\/about-main.jpg",
         "caption_title": "ORGANICALLY GROWN",
         "caption": "All our drinks are produced organically by European producers.",
