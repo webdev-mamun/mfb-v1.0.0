@@ -35,13 +35,13 @@
       "settings": {
         "image1": "shopify:\/\/shop_images\/carte-b-1.jpg",
         "image2": "shopify:\/\/shop_images\/carte-b-2.jpg",
-        "title": "CARTE BLANCHE",
-        "text": "Welcome to CARTE BLANCHE, our wine and spirits membership program. Become a member to get first access to our new discoveries, along with special discounts and offers tailored to you.",
+        "title": "",
+        "text": "",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 60,
+        "padding_top": 15,
+        "padding_bottom": 10,
         "padding_top_desktop": 20,
-        "padding_bottom_desktop": 170
+        "padding_bottom_desktop": 85
       }
     },
     "subscription-product": {
