@@ -36,7 +36,7 @@
         "image1": "shopify:\/\/shop_images\/carte-b-1.jpg",
         "image2": "shopify:\/\/shop_images\/carte-b-2.jpg",
         "title": "CARTE BLANCHE",
-        "text": "Welcome to CARTE BLANCHE, our one-of-a-kind subscription service, where we hand select the the finest wines and spirits, package them up and send them straight to your doorstep.",
+        "text": "Welcome to CARTE BLANCHE, our wine and spirits membership program. Become a member to get first access to our new discoveries, along with special discounts and offers tailored to you.",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 60,
@@ -79,7 +79,7 @@
       ],
       "settings": {
         "title": "SUBSCRIPTIONS",
-        "text": "<p>A CARTE BLANCHE subscription is the perfect way to discover the world of an exciting new-wave of winemakers, delivered monthly, direct to your door.<\/p><p><\/p><p>These are hand-picked boxes that contain only the most exciting bottles, chosen with an eye not just on what we think is tasting best, but also intended to fit the mood of the season we’re delivering in. So expect bright, vibrant wines for spring & summer with darker, more meditative wines for the cooler months of autumn & winter.<\/p><p>What's more, you will always be able to find the bottles in your subscription on our website so rest assured you are getting the best value for your money .<\/p><p><\/p><p>Members are not tied into any fixed term and once purchased, the subscription amount you have selected will be billed on the 1st of every month ongoing and dispatched around the 15th.<\/p><p>Should you wish to pause or cancel your subscription please ensure this has been communicated before the 1st of the next month as we are unable to refund once the order has been placed.<\/p><p>If you do wish to make any changes to your membership, including address changes, please email us at hello@drinkmfb.com so we can make the changes to your account.<\/p>",
+        "text": "<p>On the wine side, we offer two club options: <\/p><p>* A deep dive into our latest wine arrivals. of 12 bottles per quarter directly from the cellars of our European producers.<\/p><p>* An introduction to our latest arrivals, of 6 bottles per quarter.<\/p><p>On the spirit side, we offer one membership option: <\/p><p>*A guaranteed allocation of our most exclusive single-casks of Armagnac, Calvados and Cognac, selected by hand from the cellars of both well-loved and largely undiscovered producers.<\/p><p>The allocations are released 3-4 times a year. Pricing varies based on the size of the casks and the type and age of spirit. <\/p><p><\/p><p><\/p>",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 60,
