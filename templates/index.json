@@ -245,21 +245,21 @@
           "type": "column",
           "settings": {
             "title": "02",
-            "text": "Two bottles of hand-selected spirits delivered to your door every month."
+            "text": "Two bottles of hand-selected spirits delivered to your door every quarter."
           }
         },
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2": {
           "type": "column",
           "settings": {
             "title": "06",
-            "text": "Six bottles of hand-selected wines delivered to your door every month."
+            "text": "Six bottles of hand-selected wines delivered to your door every quarter."
           }
         },
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3": {
           "type": "column",
           "settings": {
-            "title": "16",
-            "text": "Sixteen bottles of hand-selected wines delivered to your door every month."
+            "title": "12",
+            "text": "Sixteen bottles of hand-selected wines delivered to your door every quarter."
           }
         }
       },
