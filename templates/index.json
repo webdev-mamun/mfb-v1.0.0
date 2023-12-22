@@ -275,7 +275,7 @@
         "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
         "btn": "Click through to see all our subscriptions on offer",
         "btn_mobile": "SEE ALL SUBSCRIPTIONS",
-        "url": "",
+        "url": "shopify:\/\/pages\/carte-blanche",
         "color_scheme": "inverse",
         "padding_top": 0,
         "padding_bottom": 0,
