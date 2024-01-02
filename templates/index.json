@@ -61,7 +61,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "NEW%br%ARRIVALS",
-        "collection": "our-drink",
+        "collection": "our-drinks",
         "show_vendor": true,
         "enable_quick_add": true,
         "limit": 4,
