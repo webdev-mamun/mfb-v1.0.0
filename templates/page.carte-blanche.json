@@ -35,7 +35,7 @@
       "settings": {
         "image1": "shopify:\/\/shop_images\/carte-b-1.jpg",
         "image2": "shopify:\/\/shop_images\/carte-b-2.jpg",
-        "title": "",
+        "title": "Club Memberships",
         "text": "Our Club memberships are the perfect way to follow along on our importing adventure.",
         "color_scheme": "",
         "padding_top": 15,
@@ -79,7 +79,7 @@
       ],
       "settings": {
         "title": "OUR CLUBS",
-        "text": "<p><em>Our wine and spirits clubs are the perfect way to follow along on our importing adventure!<\/em><\/p><p>Club members are guaranteed an allocation of our latest arrivals from Europe.  As part of either club, also you’ll get access to special releases and a 15% discount on all purchases throughout the year.  <\/p><p>On the wine side, we offer two club options: <\/p><p>* A deep dive into our latest wine arrivals, of 12 bottles per quarter directly from the cellars of our European producers.<\/p><p>* An introduction to our latest arrivals, of 6 bottles per quarter.<\/p><p>On the spirit side, we offer one membership option: <\/p><p>*A guaranteed allocation of our most exclusive single-casks of Armagnac, Calvados and Cognac, selected by hand from the cellars of both well-loved and largely undiscovered producers.<\/p><p>The allocations are released 3-4 times a year. Pricing varies based on the size of the casks and the type and age of spirit. <\/p>",
+        "text": "<h6><strong>Our wine and spirits clubs are the perfect way to follow along on our importing adventure!<\/strong><\/h6><p>Club members are guaranteed an allocation of our latest arrivals from Europe.  As part of either club, also you’ll get access to special releases and a 15% discount on all purchases throughout the year.  <\/p><p>On the wine side, we offer two club options: <\/p><ol><li>A deep dive into our latest wine arrivals, of 12 bottles per quarter directly from the cellars of our European producers.<\/li><li>An introduction to our latest arrivals, of 6 bottles per quarter.<\/li><\/ol><p>On the spirit side, we offer one membership option: <\/p><ol><li>A guaranteed allocation of our most exclusive single-casks of Armagnac, Calvados and Cognac, selected by hand from the cellars of both well-loved and largely undiscovered producers.<\/li><\/ol><p>The allocations are released 3-4 times a year. Pricing varies based on the size of the casks and the type and age of spirit. <\/p>",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 60,
