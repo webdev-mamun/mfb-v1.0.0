@@ -61,21 +61,14 @@
         "7b2d8deb-0fff-4bf2-922d-b2f63773f536": {
           "type": "title",
           "settings": {
-            "title": "FRANCE",
+            "title": "NEW YORK CITY",
             "url": "shopify-section-template--21144363958552__addressList"
-          }
-        },
-        "2e9953b1-6060-4833-a7aa-7dd39a36bbc3": {
-          "type": "title",
-          "settings": {
-            "title": "ITALY",
-            "url": "shopify-section-template--21144363958552__6a6656de-5667-4d82-93e1-2cb327641f13"
           }
         },
         "6b5e5f67-5489-4efd-9665-eea2c12cc7c7": {
           "type": "title",
           "settings": {
-            "title": "NORTH AMERICA",
+            "title": "WASHINGTON, D.C.",
             "url": "shopify-section-template--21144363958552__6b2bd83a-9823-4ad6-b7e5-47782785344e"
           }
         },
@@ -89,7 +82,6 @@
       },
       "block_order": [
         "7b2d8deb-0fff-4bf2-922d-b2f63773f536",
-        "2e9953b1-6060-4833-a7aa-7dd39a36bbc3",
         "6b5e5f67-5489-4efd-9665-eea2c12cc7c7",
         "fa7e661c-40d0-4f2f-a859-759437747983"
       ],
@@ -108,84 +100,23 @@
         "45a3332e-55fa-4874-b196-3b806169d9c0": {
           "type": "region",
           "settings": {
-            "title": "Paris"
+            "title": "Brooklyn"
           }
         },
         "893e212e-1c49-4457-987c-78f86fc933ee": {
           "type": "address",
           "settings": {
-            "title": "paris",
-            "address": "<p>Address Line 01<\/p><p>Address Line 02 paris<\/p><p>Postcode<\/p><p>Telephone Number<\/p>"
-          }
-        },
-        "bf787271-7198-42bb-bc5b-72bcbb99723f": {
-          "type": "address",
-          "settings": {
-            "title": "paris",
-            "address": "<p>Address Line 01<\/p><p>Address Line 02<\/p><p>Postcode<\/p><p>Telephone Number<\/p>"
-          }
-        },
-        "5325e21e-dac3-4265-bfa4-b59a53ab3f43": {
-          "type": "address",
-          "settings": {
-            "title": "lyon",
-            "address": "<p>Address Line 01<\/p><p>lyon<\/p><p>Postcode<\/p><p>Telephone Number<\/p>"
-          }
-        },
-        "84eb402e-f554-4dac-8fae-641be1bd5e7a": {
-          "type": "region",
-          "settings": {
-            "title": "lyon"
+            "title": "Brooklyn",
+            "address": "<p>Place des Fêtes<\/p><p>212 Greene Ave<\/p><p> Brooklyn, NY 11238<\/p><p>718-857-0101<\/p>"
           }
         }
       },
       "block_order": [
         "45a3332e-55fa-4874-b196-3b806169d9c0",
-        "893e212e-1c49-4457-987c-78f86fc933ee",
-        "bf787271-7198-42bb-bc5b-72bcbb99723f",
-        "5325e21e-dac3-4265-bfa4-b59a53ab3f43",
-        "84eb402e-f554-4dac-8fae-641be1bd5e7a"
+        "893e212e-1c49-4457-987c-78f86fc933ee"
       ],
       "settings": {
-        "title": "FRANCE",
-        "color_scheme": "",
-        "padding_top": 10,
-        "padding_bottom": 80,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 160
-      }
-    },
-    "6a6656de-5667-4d82-93e1-2cb327641f13": {
-      "type": "address-list",
-      "blocks": {
-        "86281701-22e5-450d-a1a8-873592f4331f": {
-          "type": "region",
-          "settings": {
-            "title": "rome"
-          }
-        },
-        "83baa0e3-3d1f-4b1b-9292-20954308d4f5": {
-          "type": "address",
-          "settings": {
-            "title": "rome",
-            "address": "<p>Address Line 01<\/p><p>Address Line 02<\/p><p>Postcode<\/p><p>Telephone Number<\/p>"
-          }
-        },
-        "a04bb458-d963-48c6-b77b-af360b64b655": {
-          "type": "address",
-          "settings": {
-            "title": "rome",
-            "address": "<p>Address Line 01<\/p><p>Address Line 02<\/p><p>Postcode<\/p><p>Telephone Number<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "86281701-22e5-450d-a1a8-873592f4331f",
-        "83baa0e3-3d1f-4b1b-9292-20954308d4f5",
-        "a04bb458-d963-48c6-b77b-af360b64b655"
-      ],
-      "settings": {
-        "title": "italy",
+        "title": "NEW YORK CITY",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 80,
@@ -237,7 +168,6 @@
     "contact",
     "titleList",
     "addressList",
-    "6a6656de-5667-4d82-93e1-2cb327641f13",
     "6b2bd83a-9823-4ad6-b7e5-47782785344e",
     "0262d1eb-cc87-4344-b53c-5387b4ecfe70"
   ]
