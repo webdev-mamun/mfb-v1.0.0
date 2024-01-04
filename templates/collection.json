@@ -33,7 +33,7 @@
         "text": "Join %icon% for a monthly subscription of hand-selected wines & spirits.",
         "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
         "btn": "see subscriptions",
-        "url": "shopify:\/\/pages\/carte-blanche",
+        "url": "shopify:\/\/pages\/clubs",
         "color_scheme": "accent-1",
         "padding_top": 130,
         "padding_bottom": 130,
