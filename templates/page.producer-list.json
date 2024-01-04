@@ -3,6 +3,12 @@
     "main": {
       "type": "producer-list",
       "settings": {
+        "title": "Our producers",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 190,
+        "padding_top_desktop": 100,
+        "padding_bottom_desktop": 285
       }
     }
   },
