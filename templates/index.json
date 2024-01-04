@@ -6,14 +6,14 @@
         "template--20004128751917__eff610b3-65e4-4fb2-957b-bddb8c135184-announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE",
+            "text": "WINES OF TERROIR, SPIRITS FROM THE SOURCE",
             "link": ""
           }
         },
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1": {
           "type": "announcement",
           "settings": {
-            "text": "WINES AND SPIRITS FROM THE SOURCE",
+            "text": "WINES OF TERROIR, SPIRITS FROM THE SOURCE",
             "link": ""
           }
         }
@@ -55,6 +55,51 @@
         "padding_bottom": 0,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 10
+      }
+    },
+    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df": {
+      "type": "subscription-info",
+      "blocks": {
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-1": {
+          "type": "column",
+          "settings": {
+            "title": "02",
+            "text": "Two bottles of hand-selected spirits delivered to your door every quarter."
+          }
+        },
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2": {
+          "type": "column",
+          "settings": {
+            "title": "06",
+            "text": "Six bottles of hand-selected wines delivered to your door every quarter."
+          }
+        },
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3": {
+          "type": "column",
+          "settings": {
+            "title": "12",
+            "text": "Sixteen bottles of hand-selected wines delivered to your door every quarter."
+          }
+        }
+      },
+      "block_order": [
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-1",
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2",
+        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_3.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_1.jpg",
+        "title": "JOIN OUR CLUB for a  QUARTERLY DELIVERY of our latest Single-Cask SPIRITS and Wine.",
+        "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
+        "btn": "Click through to see all our subscriptions on offer",
+        "btn_mobile": "SEE ALL SUBSCRIPTIONS",
+        "url": "shopify:\/\/pages\/carte-blanche",
+        "color_scheme": "inverse",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
       }
     },
     "featured_collection": {
@@ -238,51 +283,6 @@
         "padding_bottom_desktop": 20
       }
     },
-    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df": {
-      "type": "subscription-info",
-      "blocks": {
-        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-1": {
-          "type": "column",
-          "settings": {
-            "title": "02",
-            "text": "Two bottles of hand-selected spirits delivered to your door every quarter."
-          }
-        },
-        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2": {
-          "type": "column",
-          "settings": {
-            "title": "06",
-            "text": "Six bottles of hand-selected wines delivered to your door every quarter."
-          }
-        },
-        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3": {
-          "type": "column",
-          "settings": {
-            "title": "12",
-            "text": "Sixteen bottles of hand-selected wines delivered to your door every quarter."
-          }
-        }
-      },
-      "block_order": [
-        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-1",
-        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2",
-        "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_3.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/WhatsApp_Image_2023-01-06_at_17.04_1.jpg",
-        "title": "JOIN OUR CLUB for a  QUARTERLY DELIVERY of our latest Single-Cask SPIRITS and Wine.",
-        "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
-        "btn": "Click through to see all our subscriptions on offer",
-        "btn_mobile": "SEE ALL SUBSCRIPTIONS",
-        "url": "shopify:\/\/pages\/carte-blanche",
-        "color_scheme": "inverse",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 0
-      }
-    },
     "25f85844-b960-42a2-ba01-81d581141e76": {
       "type": "image-with-text-column",
       "blocks": {
@@ -341,10 +341,10 @@
     "eff610b3-65e4-4fb2-957b-bddb8c135184",
     "image_banner",
     "09374c67-687a-4189-a13f-876327b1375a",
+    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df",
     "featured_collection",
     "45ae4465-7843-4d87-8657-fd781121613c",
     "317c40db-089f-41c8-b5a1-a98e808d05f5",
-    "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df",
     "25f85844-b960-42a2-ba01-81d581141e76",
     "e16f32bb-984a-4534-b479-4a7ab16c282c"
   ]
