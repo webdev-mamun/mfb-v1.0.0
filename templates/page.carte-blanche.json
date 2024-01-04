@@ -33,7 +33,6 @@
     },
     "hero": {
       "type": "carte-blanche-hero",
-      "disabled": true,
       "settings": {
         "image1": "shopify:\/\/shop_images\/carte-b-1.jpg",
         "image2": "shopify:\/\/shop_images\/carte-b-2.jpg",
@@ -81,7 +80,7 @@
       ],
       "settings": {
         "title": "OUR CLUB MEMBERSHIPS",
-        "text": "<p><strong>Our wine and spirits clubs are the perfect way to follow along on our importing adventure!<\/strong><\/p><p>Club members are guaranteed an allocation of our latest arrivals from Europe.  As part of either club, also you’ll get access to special releases and a 15% discount on all purchases throughout the year.  <\/p><p>On the spirit side, we offer one membership option: <\/p><p>**A guaranteed an <br\/>allocation of our most exclusive single-casks of Armagnac, Calvados and <br\/>Cognac. <\/p><p>Each cask is individually selected by our tasting panel as <br\/>exemplary from the cellars of both well-loved and largely undiscovered <br\/>producers.You will receive your allocation 3-4 times a year as <br\/>special casks present themselves. Pricing varies based on the size of <br\/>the casks and the type and age of spirit. <br\/>We target an average allocation of 2-4 bottles with an average price ranging from $80-$250 per bottle. <br\/><br\/>For spirits that are more expensive and exclusive, we will send out an email allowing you to opt in prior to billing.<\/p><p>On the wine side, we offer two club options: <\/p><ol><li>** A deep dive into our latest wine arrivals, of 12 bottles per quarter directly from the cellars of our European producers.<\/li><\/ol><p>**An introduction to our latest arrivals, of 6 bottles per quarter<\/p>",
+        "text": "<p><strong>Our wine and spirits clubs are the perfect way to follow along on our importing adventure!<\/strong><\/p><p>Club members are guaranteed an allocation of our latest arrivals from Europe.  As part of either club, also you’ll get access to special releases and a 15% discount on all purchases throughout the year.  <\/p><p><span style=\"text-decoration:underline\">On the spirit side, we offer one membership option: <\/span><\/p><p>**A guaranteed an <br\/>allocation of our most exclusive single-casks of Armagnac, Calvados and <br\/>Cognac. <\/p><p>Each cask is individually selected by our tasting panel as <br\/>exemplary from the cellars of both well-loved and largely undiscovered <br\/>producers.<\/p><p>You will receive your allocation 3-4 times a year as <br\/>special casks present themselves. <\/p><p>Pricing varies based on the size of <br\/>the casks and the type and age of spirit. <br\/>We target an average allocation of 2-4 bottles with an average price ranging from $80-$250 per bottle. <br\/><br\/>For spirits that are more expensive and exclusive, we will send out an email allowing you to opt in prior to billing.<\/p><p><span style=\"text-decoration:underline\">On the wine side, we offer two club options: <\/span><\/p><ol><li>** A deep dive into our latest wine arrivals, of 12 bottles per quarter directly from the cellars of our European producers.<\/li><\/ol><p>**An introduction to our latest arrivals, of 6 bottles per quarter<\/p>",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 60,
