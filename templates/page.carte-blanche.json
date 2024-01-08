@@ -34,7 +34,7 @@
     "hero": {
       "type": "carte-blanche-hero",
       "settings": {
-        "image1": "shopify:\/\/shop_images\/carte-b-1.jpg",
+        "image1": "",
         "image2": "shopify:\/\/shop_images\/carte-b-2.jpg",
         "title": "CLUB MEMBERSHIPS",
         "text": "Our Club memberships are the perfect way to follow along on our importing adventure.",
