@@ -26,9 +26,10 @@
       <h4 class="lg:hidden text-center text-[1rem] leading-[200%] mt-[1.5rem] mb-[.5rem]">OUR OFFERS</h4>
       {%- for block in section.blocks -%}
         {%- liquid
-          assign title = block.settings.title
           assign product = all_products[block.settings.product]
+          assign title = block.settings.title | default: product.title
           assign icon = block.settings.icon
+          assign productDescription = block.settings.productDescription | default: product.description
         -%}
         {%- if product != blank -%}
           <div class="p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))]{% unless product.available %} bg-[rgba(var(--color-foreground),_.7)]{% else %} bg-[rgb(var(--color-foreground))]{% endunless %}">
@@ -53,12 +54,16 @@
               </div>
               <div class=" flex flex-col gap-2 justify-between xl:gap-5 py-.5 lg:py-0 grow">
                 <div>
-                  <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
-                    {{ product.title }}
-                  </h2>
-                  <div class="text-xs [&_*]:text-xs leading-[1.6rem] [&_*]:leading-[1.6rem] xl:text-base [&_*]:xl:text-base xl:leading-[2.2rem] [&_*]:xl:leading-[2.2rem]">
-                    {{ product.description }}
-                  </div>
+                  {%- if title != blank -%}
+                    <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
+                      {{ title }}
+                    </h2>
+                  {%- endif -%}
+                  {%- if productDescription != blank -%}
+                    <div class="text-xs [&_*]:text-xs leading-[1.6rem] [&_*]:leading-[1.6rem] xl:text-base [&_*]:xl:text-base xl:leading-[2.2rem] [&_*]:xl:leading-[2.2rem]">
+                      {{ productDescription }}
+                    </div>
+                  {%- endif -%}
                 </div>
                 <div class="flex justify-between items-center gap-1 flex-wrap">
                   {%- liquid
@@ -187,15 +192,19 @@
       "name": "Product",
       "settings": [
         {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "02"
-        },
-        {
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "productDescription",
+          "lable": "product"
         },
         {
           "type": "image_picker",

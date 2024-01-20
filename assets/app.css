@@ -567,6 +567,24 @@ video {
        -moz-appearance: textfield !important;
      }
 
+     main ol,
+     main ul {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 30px;
+    }
+
+     ul {
+        list-style-type: disc;
+     }
+
+     ol {
+        list-style-type: decimal;
+     }
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1350,6 +1368,17 @@ p.default-input, .base-text.default-input {
     width: 69rem;
     padding: 2rem;
   }
+}
+
+.drawer-link {
+  color: rgb(var(--color-link, 21,21,21));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.drawer-link:hover {
+  color: rgb(var(--color-link-hover, 21,21,21));
 }
 
 .no-js .no-js-hidden {
@@ -3025,9 +3054,6 @@ bis-popup .close {
 .gap-3 {
   gap: 3rem;
 }
-.gap-4 {
-  gap: 4rem;
-}
 .gap-\[\.3rem\] {
   gap: .3rem;
 }
@@ -4301,10 +4327,6 @@ bis-popup {
 
 @media (min-width: 640px) {
 
-  .sm\:text-\[2\.2rem\] {
-    font-size: 2.2rem;
-  }
-
   .sm\:text-xl {
     font-size: 2.2rem;
     line-height: 2.2rem;
@@ -5226,12 +5248,12 @@ bis-popup {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .xl\:gap-5 {
-    gap: 5rem;
-  }
-
   .xl\:gap-4 {
     gap: 4rem;
+  }
+
+  .xl\:gap-5 {
+    gap: 5rem;
   }
 
   .xl\:gap-x-2 {

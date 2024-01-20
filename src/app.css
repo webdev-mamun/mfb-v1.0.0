@@ -109,6 +109,25 @@
        -moz-appearance: textfield !important;
      }
 
+     main ol,
+     main ul {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 30px;
+    }
+
+     ul {
+        list-style-type: disc;
+     }
+
+     ol {
+        list-style-type: decimal;
+     }
+     
+
 }
 
 .base-text {
@@ -301,6 +320,10 @@
         @apply text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] w-[30rem] md:w-[69rem] 
         flex flex-col pt-[1.5rem] px-1 pb-2 md:p-2 gap-2 rounded-2xl h-full translate-x-full group-[&.active]:-translate-x-0 
         transition-transform delay-100 duration-500;
+    }
+
+    .drawer-link {
+        @apply text-[rgb(var(--color-link,_21,21,21))] hover:text-[rgb(var(--color-link-hover,_21,21,21))] transition-colors
     }
 
     .no-js .no-js-hidden {
