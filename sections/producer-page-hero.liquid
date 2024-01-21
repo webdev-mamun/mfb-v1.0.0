@@ -23,7 +23,7 @@
         <h1 class="text-2xl lg:text-4xl font-serif lg:font-sans m-0">{{ title }}</h1>
       {%- endif -%}
       {%- if name != blank -%}
-        <p class="uppercase">{{ name }}</p>
+        <p class="uppercase m-0">{{ name }}</p>
       {%- endif -%}
     </div>
     <div class="col-span-full lg:col-span-3 flex flex-col gap-10">
@@ -44,7 +44,7 @@
           | image_tag: loading: 'lazy', class: 'lg:hidden rounded-2xl', sizes: sizes, widths: widths
         }}
       {%- endif -%}
-      <p class="uppercase text-xs text-center lg:hidden">start reading</p>
+      <p class="uppercase text-xs text-center lg:hidden m-0">start reading</p>
     </div>
   </div>
 </div>
