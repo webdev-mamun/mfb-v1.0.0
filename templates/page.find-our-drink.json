@@ -127,16 +127,39 @@
     "6b2bd83a-9823-4ad6-b7e5-47782785344e": {
       "type": "address-list",
       "blocks": {
-        "address_bRY84C": {
+        "region_tiPAtr": {
+          "type": "region",
+          "settings": {
+            "title": "NORTHWEST"
+          }
+        },
+        "address_6Hq4AB": {
           "type": "address",
           "settings": {
             "title": "NORTHWEST",
-            "address": "<p>Reveler's Hour<\/p>"
+            "address": "<p>Reveler's Hour <\/p><p>1775 Columbia Rd NW, Washington, DC 20009<\/p>"
+          }
+        },
+        "address_ztdHiV": {
+          "type": "address",
+          "settings": {
+            "title": "NORTHWEST",
+            "address": "<p>2 Amys<\/p><p>3715 Macomb St NW, Washington, DC 20016<\/p>"
+          }
+        },
+        "address_GXqw3p": {
+          "type": "address",
+          "settings": {
+            "title": "NORTHWEST",
+            "address": "<p>The Duck & The Peach<\/p><p>300 7th St SE, Washington, DC 20003<\/p>"
           }
         }
       },
       "block_order": [
-        "address_bRY84C"
+        "region_tiPAtr",
+        "address_6Hq4AB",
+        "address_ztdHiV",
+        "address_GXqw3p"
       ],
       "settings": {
         "title": "WASHINGTON D.C.",
