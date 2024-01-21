@@ -107,7 +107,7 @@
           "type": "address",
           "settings": {
             "title": "Brooklyn",
-            "address": "<p>Place des Fêtes<\/p><p>212 Greene Ave<\/p><p> Brooklyn, NY 11238<\/p><p>718-857-0101<\/p>"
+            "address": "<p>Place des Fêtes<\/p><p>Oxalis<\/p>"
           }
         }
       },
@@ -137,29 +137,13 @@
           "type": "address",
           "settings": {
             "title": "NORTHWEST",
-            "address": "<p>Reveler's Hour <\/p><p>1775 Columbia Rd NW, Washington, DC 20009<\/p>"
-          }
-        },
-        "address_ztdHiV": {
-          "type": "address",
-          "settings": {
-            "title": "NORTHWEST",
-            "address": "<p>2 Amys<\/p><p>3715 Macomb St NW, Washington, DC 20016<\/p>"
-          }
-        },
-        "address_GXqw3p": {
-          "type": "address",
-          "settings": {
-            "title": "NORTHWEST",
-            "address": "<p>The Duck & The Peach<\/p><p>300 7th St SE, Washington, DC 20003<\/p>"
+            "address": "<p>Reveler's Hour <\/p><p>2 Amys <\/p><p>The Duck & The Peach <\/p><p>St Vincent Wine<\/p><p>Happy Gemini <\/p><p>Nido <\/p>"
           }
         }
       },
       "block_order": [
         "region_tiPAtr",
-        "address_6Hq4AB",
-        "address_ztdHiV",
-        "address_GXqw3p"
+        "address_6Hq4AB"
       ],
       "settings": {
         "title": "WASHINGTON D.C.",
