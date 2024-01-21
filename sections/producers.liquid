@@ -38,7 +38,7 @@
     <div class="col-span-full">
       <div class="max-w-[52.6rem] mx-auto">
         {%- if section.settings.title != blank -%}
-          <h2 class="font-sans text-[3.2rem] leading-[4rem] lg:text-[6.2rem] lg:leading-[5.2rem] -tracking-[.02em] uppercase text-center">
+          <h2 class="font-sans text-[3.2rem] leading-[4rem] lg:text-[6.2rem] lg:leading-[5.2rem] -tracking-[.02em] uppercase text-center m-0">
             {{ section.settings.title }}
           </h2>
         {%- endif -%}
@@ -53,7 +53,7 @@
   <producers-slider class="block h-[16.6rem] lg:h-[26rem] mt-5">
     <div class="splide" role="group" aria-label="{{ title }}">
       <div class="splide__track">
-        <ul class="splide__list {{producers}}">
+        <ul class="list-none p-0 m-0 splide__list {{producers}}">
           {%- if add_from_metaobject and producers != blank -%}
             {%- for producer in producers -%}
               {%- liquid

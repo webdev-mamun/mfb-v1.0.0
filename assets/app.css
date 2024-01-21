@@ -567,8 +567,8 @@ video {
        -moz-appearance: textfield !important;
      }
 
-     main ol,
-     main ul {
+     ol,
+     ul {
         display: block;
         margin-block-start: 1em;
         margin-block-end: 1em;
@@ -583,6 +583,11 @@ video {
 
      ol {
         list-style-type: decimal;
+     }
+     
+
+     blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+        margin-bottom: 0.625em;
      }
 
 *, ::before, ::after {
@@ -2481,6 +2486,9 @@ bis-popup .close {
 .row-end-4 {
   grid-row-end: 4;
 }
+.m-0 {
+  margin: 0;
+}
 .-mx-2 {
   margin-left: -2rem;
   margin-right: -2rem;
@@ -2955,6 +2963,9 @@ bis-popup .close {
 }
 .cursor-pointer {
   cursor: pointer;
+}
+.list-none {
+  list-style-type: none;
 }
 .appearance-none {
   -webkit-appearance: none;

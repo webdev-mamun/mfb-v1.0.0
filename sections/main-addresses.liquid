@@ -20,7 +20,7 @@
     </svg>
     <div class="container">
       <div class="col-span-full mb-7 lg:mb-[3.5rem]">
-        <h1 class="customer__title text-2xl leading-[4.6rem] text-center max-w-[25rem] mx-auto uppercase first-line:font-serif first-line:-tracking-[.05em]">
+        <h1 class="m-0 customer__title text-2xl leading-[4.6rem] text-center max-w-[25rem] mx-auto uppercase first-line:font-serif first-line:-tracking-[.05em]">
           {{ 'customer.account.title' | t }}
         </h1>
       </div>
@@ -222,7 +222,7 @@
               </div>
             </div>
             <div class="mt-3">
-              <ul role="list" class="grid grid-cols-2 gap-2 lg:gap-3" id="AjaxinateContainer">
+              <ul role="list" class="grid grid-cols-2 gap-2 lg:gap-3 list-none p-0 m-0" id="AjaxinateContainer">
                 {%- for address in customer.addresses -%}
                   <li
                     class="col-span-full text-center pb-2 lg:pb-3{% unless forloop.last %} border-b border-color{% endunless %}"

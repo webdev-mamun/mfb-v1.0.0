@@ -43,7 +43,7 @@
       >
         <section class="splide">
           <div class="splide__track">
-            <ul class="splide__list ">
+            <ul class="splide__list list-none m-0 p-0">
               {%- for block in section.blocks -%}
                 <li
                   class="splide__slide text-base -tracking-[.02em] even:font-serif even::-tracking-[.05em] uppercase"
@@ -67,7 +67,7 @@
                           class="announcement-bar__link link link--text focus-inset"
                         >
                       {%- endif -%}
-                      <p class="announcement-bar__message">
+                      <p class="announcement-bar__message m-0">
                         <span>{{ block.settings.text | escape }}</span>
                       </p>
                       {%- if block.settings.link != blank -%}

@@ -39,7 +39,7 @@
               <div class="js-contents flex flex-col gap-1" {{ block.shopify_attributes }}>
                 {%- if cart.cart_level_discount_applications.size > 0 -%}
                   <div>
-                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                    <ul class="discounts list-none" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in cart.cart_level_discount_applications -%}
                         <li class="discounts__discount discounts__discount--position">
                           {%- render 'icon-discount' -%}

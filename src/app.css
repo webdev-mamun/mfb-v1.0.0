@@ -109,8 +109,8 @@
        -moz-appearance: textfield !important;
      }
 
-     main ol,
-     main ul {
+     ol,
+     ul {
         display: block;
         margin-block-start: 1em;
         margin-block-end: 1em;
@@ -128,6 +128,9 @@
      }
      
 
+     blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+        margin-bottom: 0.625em;
+     }
 }
 
 .base-text {

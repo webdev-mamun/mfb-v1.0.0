@@ -10,7 +10,7 @@
 <div class="collection-hero section-padding color-{{ section.settings.color_scheme }}{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %}">
   <div class="collection-hero__inner container">
     <div class="collection-hero__text-wrapper col-span-full max-w-[46rem] mx-auto text-center">
-      <h1 class="collection-hero__title text-2xl lg:text-[8.8rem] -tracking-[.02em] lg:leading-[7.4rem] first-line:font-serif first-line:-tracking-[.05em] uppercase">
+      <h1 class="m-0 collection-hero__title text-2xl lg:text-[8.8rem] -tracking-[.02em] lg:leading-[7.4rem] first-line:font-serif first-line:-tracking-[.05em] uppercase">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | replace_first: ' ', '<br>' -}}
       </h1>

@@ -26,13 +26,15 @@
       <h4 class="lg:hidden text-center text-[1rem] leading-[200%] mt-[1.5rem] mb-[.5rem]">OUR OFFERS</h4>
       {%- for block in section.blocks -%}
         {%- liquid
+          assign title = block.settings.title
           assign product = all_products[block.settings.product]
-          assign title = block.settings.title | default: product.title
           assign icon = block.settings.icon
+          assign productTitle = block.settings.productTitle | default: product.title
           assign productDescription = block.settings.productDescription | default: product.description
         -%}
         {%- if product != blank -%}
-          <div class="p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))]{% unless product.available %} bg-[rgba(var(--color-foreground),_.7)]{% else %} bg-[rgb(var(--color-foreground))]{% endunless %}">
+          <div class="relative p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))]{% unless product.available %} bg-[rgba(var(--color-foreground),_.7)]{% else %} bg-[rgb(var(--color-foreground))]{% endunless %}">
+            <a href="{{ product.url }}" class="absolute top-0 left-0 w-full h-full"></a>
             <h3 class="text-2xl xl:text-4xl w-[9.3rem] lg:w-[18rem] shrink-0">{{ title }}</h3>
             <div class="flex border-l border-[rgb(var(--color-background))] pl-[4.5rem] lg:pl-0 grow">
               <div class="pl-[2.5rem] pr-[1.5rem] shrink-0 hidden lg:block">
@@ -54,16 +56,12 @@
               </div>
               <div class=" flex flex-col gap-2 justify-between xl:gap-5 py-.5 lg:py-0 grow">
                 <div>
-                  {%- if title != blank -%}
-                    <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
-                      {{ title }}
-                    </h2>
-                  {%- endif -%}
-                  {%- if productDescription != blank -%}
-                    <div class="text-xs [&_*]:text-xs leading-[1.6rem] [&_*]:leading-[1.6rem] xl:text-base [&_*]:xl:text-base xl:leading-[2.2rem] [&_*]:xl:leading-[2.2rem]">
-                      {{ productDescription }}
-                    </div>
-                  {%- endif -%}
+                  <h2 class="text-xs leading-[1.6rem] xl:text-base xl:leading-[2.2rem] uppercase">
+                    {{ productTitle }}
+                  </h2>
+                  <div class="text-xs [&_*]:text-xs leading-[1.6rem] [&_*]:leading-[1.6rem] xl:text-base [&_*]:xl:text-base xl:leading-[2.2rem] [&_*]:xl:leading-[2.2rem]">
+                    {{ productDescription }}
+                  </div>
                 </div>
                 <div class="flex justify-between items-center gap-1 flex-wrap">
                   {%- liquid
@@ -81,63 +79,61 @@
                       SOLD OUT
                     {%- endunless %}
                   </p>
-
-                  {% comment %}
-                    <button class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-2 xl:text-md xl:leading-[2.2rem]">
+                  {%- unless card_product.selected_or_first_available_variant.available == false -%}
+                    <button class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem]">
                       SUBSCRIBE NOW
                     </button>
-                  {% endcomment %}
-
-                  {%- unless card_product.selected_or_first_available_variant.available == false -%}
-                    <product-form data-section-id="{{ section.id }}">
-                      {%- form 'product',
-                        card_product,
-                        id: product_form_id,
-                        class: 'form',
-                        novalidate: 'novalidate',
-                        data-type: 'add-to-cart-form'
-                      -%}
-                        <input
-                          type="hidden"
-                          name="id"
-                          data-productid="{{ card_product.id }}"
-                          value="{{ card_product.selected_or_first_available_variant.id }}"
-                          class="product-variant-id"
-                          disabled
-                        >
-                        <input
-                          name="selling_plan"
-                          type="hidden"
-                          value="{{ card_product.selected_or_first_available_selling_plan_allocation.selling_plan.id }}"
-                        >
-                        <button
-                          id="{{ product_form_id }}-submit"
-                          type="submit"
-                          name="add"
-                          class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem] relative"
-                          aria-haspopup="dialog"
-                          aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
-                          aria-live="polite"
-                          data-sold-out-message="true"
-                          {% if card_product.selected_or_first_available_variant.available == false %}
+                    {% comment %}
+                      <product-form data-section-id="{{ section.id }}">
+                        {%- form 'product',
+                          card_product,
+                          id: product_form_id,
+                          class: 'form',
+                          novalidate: 'novalidate',
+                          data-type: 'add-to-cart-form'
+                        -%}
+                          <input
+                            type="hidden"
+                            name="id"
+                            data-productid="{{ card_product.id }}"
+                            value="{{ card_product.selected_or_first_available_variant.id }}"
+                            class="product-variant-id"
                             disabled
-                          {% endif %}
-                        >
-                          SUBSCRIBE NOW
-                          <div class="loading-overlay--spinner top-0 hidden">
-                            <svg
-                              aria-hidden="true"
-                              focusable="false"
-                              class="spinner"
-                              viewBox="0 0 66 66"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle class="path stroke-[rgb(var(--color-background))] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                            </svg>
-                          </div>
-                        </button>
-                      {%- endform -%}
-                    </product-form>
+                          >
+                          <input
+                            name="selling_plan"
+                            type="hidden"
+                            value="{{ card_product.selected_or_first_available_selling_plan_allocation.selling_plan.id }}"
+                          >
+                          <button
+                            id="{{ product_form_id }}-submit"
+                            type="submit"
+                            name="add"
+                            class="font-serif text-[1rem] leading-[1.6rem] underline underline-offset-1 xl:text-md xl:leading-[2.2rem] relative"
+                            aria-haspopup="dialog"
+                            aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+                            aria-live="polite"
+                            data-sold-out-message="true"
+                            {% if card_product.selected_or_first_available_variant.available == false %}
+                              disabled
+                            {% endif %}
+                          >
+                            SUBSCRIBE NOW
+                            <div class="loading-overlay--spinner top-0 hidden">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                class="spinner"
+                                viewBox="0 0 66 66"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle class="path stroke-[rgb(var(--color-background))] animate-dash" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                              </svg>
+                            </div>
+                          </button>
+                        {%- endform -%}
+                      </product-form>
+                    {% endcomment %}
                   {%- else -%}
                     {%- render 'back-in-stock-button',
                       card_product: card_product,
@@ -199,17 +195,23 @@
         {
           "type": "text",
           "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "richtext",
-          "id": "productDescription",
-          "lable": "product"
+          "label": "Title",
+          "default": "02"
         },
         {
           "type": "image_picker",
           "id": "icon",
           "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "productTitle",
+          "label": "Product title"
+        },
+        {
+          "type": "richtext",
+          "id": "productDescription",
+          "label": "Product title"
         }
       ]
     }

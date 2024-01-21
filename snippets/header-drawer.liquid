@@ -74,7 +74,7 @@
       <div class="container min-h-[calc(100%_-_51px)] lg:min-h-[calc(100%_-_40px)]">
         <div class="col-span-full overflow-auto ps-1 lg:ps-2 pt-5 pb-10 flex flex-col gap-3">
           <nav>
-            <ul class="flex flex-col">
+            <ul class="flex flex-col list-none m-0 p-0">
               {%- for link in section.settings['drawer-menu'].links -%}
                 <li>
                   <a
@@ -84,7 +84,7 @@
                     {{- link.title -}}
                   </a>
                   {%- if link.links != blank -%}
-                    <ul class="ps-1 lg:ps-4 flex flex-col">
+                    <ul class="list-none m-0 ps-1 lg:ps-4 flex flex-col">
                       {%- for childlink in link.links -%}
                         <li>
                           <a
@@ -94,7 +94,7 @@
                             {{- childlink.title -}}
                           </a>
                           {%- if childlink.links != blank -%}
-                            <ul class="ps-1 lg:ps-4 flex flex-col">
+                            <ul class="list-none m-0 ps-1 lg:ps-4 flex flex-col">
                               {%- for grandchildlink in childlink.links -%}
                                 <li>
                                   <a

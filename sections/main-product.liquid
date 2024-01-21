@@ -210,7 +210,7 @@
 
                 {%- when 'title' -%}
                   <div class="product__title" {{ block.shopify_attributes }}>
-                    <h1 class="font-serif big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase">
+                    <h1 class="m-0 font-serif big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase">
                       {{ product.title | escape }}
                     </h1>
                     <a href="{{ product.url }}" class="product__title hidden">
@@ -424,7 +424,7 @@
                       <volume-pricing class="parent-display no-js-hidden" id="Volume-{{ section.id }}">
                         {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
                           <span class="caption-large">{{ 'products.product.volume_pricing.title' | t }}</span>
-                          <ul class="list-unstyled no-js-hidden">
+                          <ul class="list-none no-js-hidden">
                             <li>
                               <span>{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
                               {%- assign price = product.selected_or_first_available_variant.price

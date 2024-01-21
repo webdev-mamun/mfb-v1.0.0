@@ -18,7 +18,7 @@
 -%}
 <div class="producer-info color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <ul class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2 px-2 border-b border-color lg:border-t section-padding">
+    <ul class="col-span-full grid grid-cols-2 gap-1 lg:grid-cols-10 lg:gap-2 list-none m-0 px-2 border-b border-color lg:border-t section-padding">
       <li class="col-span-full lg:col-span-2 text-sm lg:text-base text-center lg:text-left border-b border-color lg:border-none pb-1 lg:pb-0 text-[rgb(var(--divider,_197,197,197))] lg:text-[rgb(var(--color-foreground,_21,21,21))] -mx-2 lg:mx-0">
         INFORMATION
       </li>
@@ -42,19 +42,19 @@
           {%- if country != blank -%}
             <div>
               <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">COUNTRY:</p>
-              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ country }}</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] m-0">{{ country }}</p>
             </div>
           {%- endif -%}
           {%- if region != blank -%}
             <div>
               <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">REGION:</p>
-              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ region }}</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] m-0">{{ region }}</p>
             </div>
           {%- endif -%}
           {%- if appelation != blank -%}
             <div>
               <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">APPELATION(S):</p>
-              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ appelation }}</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] m-0">{{ appelation }}</p>
             </div>
           {%- endif -%}
           {%- if grapes != blank -%}
@@ -68,19 +68,19 @@
           {%- if farming != blank -%}
             <div>
               <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">FARMING:</p>
-              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ farming }}</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] m-0">{{ farming }}</p>
             </div>
           {%- endif -%}
           {%- if production != blank -%}
             <div>
               <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">ANNUAL PRODUCTION:</p>
-              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ production }}</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] m-0">{{ production }}</p>
             </div>
           {%- endif -%}
           {%- if geology != blank -%}
             <div>
               <p class="text-[1rem] leading-[1.8rem] -tracking-[.02em] uppercase mb-[.2rem]">GEOLOGY:</p>
-              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em]">{{ geology }}</p>
+              <p class="text-[1.4rem] leading-[1.8rem] -tracking-[.02em] m-0">{{ geology }}</p>
             </div>
           {%- endif -%}
         </li>
@@ -90,13 +90,13 @@
           {%- if country != blank -%}
             <div>
               <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">COUNTRY:</p>
-              <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ country }}</p>
+              <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em] m-0">{{ country }}</p>
             </div>
           {%- endif -%}
           {%- if region != blank -%}
             <div>
               <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">REGION:</p>
-              <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ region }}</p>
+              <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em] m-0">{{ region }}</p>
             </div>
           {%- endif -%}
         </li>
@@ -104,7 +104,7 @@
       {%- if appelation != blank -%}
         <li class="col-span-1 hidden lg:block">
           <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">APPELATION(S):</p>
-          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ appelation }}</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em] m-0">{{ appelation }}</p>
         </li>
       {%- endif -%}
       {%- if grapes != blank -%}
@@ -117,20 +117,20 @@
       {%- endif -%}
       {%- if farming != blank -%}
         <li class="col-span-1 hidden lg:block">
-          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem] ">FARMING:</p>
-          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ farming }}</p>
+          <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">FARMING:</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em] m-0">{{ farming }}</p>
         </li>
       {%- endif -%}
       {%- if production != blank -%}
         <li class="col-span-1 hidden lg:block">
           <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">ANNUAL PRODUCTION:</p>
-          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ production }}</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em] m-0">{{ production }}</p>
         </li>
       {%- endif -%}
       {%- if geology != blank -%}
         <li class="col-span-1 hidden lg:block">
           <p class="text-sm -tracking-[.02em] uppercase mb-[.2rem]">GEOLOGY:</p>
-          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em]">{{ geology }}</p>
+          <p class="text-[1.4rem] leading-[2rem] -tracking-[.02em] m-0">{{ geology }}</p>
         </li>
       {%- endif -%}
     </ul>

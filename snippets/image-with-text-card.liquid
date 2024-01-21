@@ -41,11 +41,11 @@
   </div>
   <div class="px-1 lg:px-2 grid gap-1 lg:gap-2 {{ container_class }}">
     {%- if title != blank -%}
-      <h2 class="{{ title_class }} text-base -tracking-[.02em]">{{ title }}</h2>
+      <h2 class="{{ title_class }} text-base -tracking-[.02em] m-0">{{ title }}</h2>
     {%- endif -%}
     <div class="{{ content_class }}">
       {%- if text != blank -%}
-        <p class="font-serif pb-.5">{{ text }}</p>
+        <p class="font-serif pb-.5 m-0">{{ text }}</p>
       {%- endif -%}
       {%- if block.settings.button_text != blank -%}
         {%- render 'btn-link',

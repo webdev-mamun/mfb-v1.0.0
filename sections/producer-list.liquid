@@ -11,7 +11,7 @@
 
 <div class="producer-list section-padding color-{{ section.settings.color_scheme }}">
   <div class="container">
-    <h1 class="col-span-full text-2xl leading-[5.6rem] lg:text-base lg:leading-[1.8rem] text-center uppercase">
+    <h1 class="col-span-full text-2xl leading-[5.6rem] lg:text-base lg:leading-[1.8rem] text-center uppercase m-0">
       {{ section.settings.title }}
     </h1>
     <div class="col-span-full px-1 lg:col-span-6 lg:col-start-3 flex flex-wrap justify-center gap-y-.5 gap-x-[1.5rem]">
@@ -34,7 +34,7 @@
               {%- endif -%}
             </a>
           {%- else -%}
-            <p class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition">
+            <p class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition m-0">
               {{- producer.title }}
               {%- if producer.country_code != blank -%}
                 <span class="font-serif -tracking-[.05em] text-md leading-[1.7rem] uppercase align-top">

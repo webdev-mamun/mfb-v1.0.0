@@ -34,7 +34,7 @@
           class="col-span-full w-full max-w-[63rem] mx-auto [&:not(.hidden)]:flex flex-col gap-[3.5rem] lg:gap-3"
           id="account-drawer-login"
         >
-          <h2 class="font-sans text-xl -tracking-[.02em] uppercase ps-1 lg:ps-0">{{ 'customer.log_in' | t }}</h2>
+          <h2 class="font-sans text-xl -tracking-[.02em] uppercase ps-1 lg:ps-0 m-0">{{ 'customer.log_in' | t }}</h2>
           <div class="flex flex-col lg:flex-row w-full">
             {%- form 'customer_login', novalidate: 'novalidate', class: 'w-full' -%}
               <div class="grid grid-cols-10 gap-1">
@@ -90,7 +90,7 @@
                   </button>
                 </div>
                 <div class="col-span-full flex flex-col items-center">
-                  <p class="text-xs">Don’t have an account yet?</p>
+                  <p class="text-xs m-0">Don’t have an account yet?</p>
                   <a href="{{ routes.account_register_url }}" class="text-xs text-[color:var(--color-disable)]">
                     {{ 'customer.login_page.create_account' | t }}
                   </a>
@@ -105,7 +105,7 @@
         >
           <div class="flex flex-col gap-1 ps-1 lg:ps-0">
             <h2 class="font-sans text-xl -tracking-[.02em] uppercase">{{ 'customer.recover_password.title' | t }}</h2>
-            <p class="text-sm">
+            <p class="text-sm m-0">
               {{ 'customer.recover_password.subtext' | t }}
             </p>
           </div>

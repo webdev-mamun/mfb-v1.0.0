@@ -89,7 +89,7 @@
             {%- when 'address' -%}
               <address class="font-sans text-xs lg:text-md not-italic ps-2">{{ block.settings.address }}</address>
             {%- when 'link_list' -%}
-              <ul role="list" class="flex flex-col gap-[.3rem] ps-2">
+              <ul role="list" class="flex flex-col gap-[.3rem] ps-2 list-none">
                 {%- for link in block.settings.menu.links -%}
                   <li>
                     <a class="font-sans text-xs lg:text-md" href="{{ link.url }}">{{ link.title }}</a>
@@ -112,7 +112,7 @@
           All right reserved {{ shop.name | link_to: routes.root_url }}
         </small>
         {%- if section.settings.bottom_menu.links.size > 0 -%}
-          <ul role="list" class="flex flex-col">
+          <ul role="list" class="flex flex-col list-none p-0 m-0">
             {%- for link in section.settings.bottom_menu.links -%}
               <li class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px]">
                 <a class="underline" href="{{ link.url }}">{{ link.title }}</a>

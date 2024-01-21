@@ -28,7 +28,7 @@
 <div class="color-{{ section.settings.color_scheme }}">
   <cart-items class="group block mx-auto max-w-[37rem] lg:max-w-[87rem] pt-6 px-2 lg:pt-[18rem] [&.is-empty]:pb-[18rem]{% if cart == empty %} is-empty{% endif %}">
     <div class="title-wrapper-with-link mb-5 lg:mb-7 group-[&.is-empty]:hidden">
-      <h1 class="text-center h3 uppercase w-min mx-auto -tracking-[.02em] first-line:font-serif first-line:-tracking-[.05em]">
+      <h1 class="text-center h3 uppercase w-min mx-auto -tracking-[.02em] first-line:font-serif first-line:-tracking-[.05em] m-0">
         {{ 'sections.cart.title' | t }}
       </h1>
     </div>
@@ -207,7 +207,7 @@
                         {%- endif -%}
                         {%- if item.discounts != empty -%}
                           <ul
-                            class="discounts list-unstyled hidden lg:flex flex-col gap-1"
+                            class="discounts list-unstyled hidden lg:flex flex-col gap-1 list-none p-0"
                             role="list"
                             aria-label="{{ 'customer.order.discount' | t }}"
                           >
