@@ -127,18 +127,19 @@
     "6b2bd83a-9823-4ad6-b7e5-47782785344e": {
       "type": "address-list",
       "blocks": {
-        "7d7b6559-a3ff-408a-8506-7505b6bd6052": {
-          "type": "text",
+        "address_bRY84C": {
+          "type": "address",
           "settings": {
-            "text": "COMING SOON"
+            "title": "NORTHWEST",
+            "address": "<p>Reveler's Hour<\/p>"
           }
         }
       },
       "block_order": [
-        "7d7b6559-a3ff-408a-8506-7505b6bd6052"
+        "address_bRY84C"
       ],
       "settings": {
-        "title": "NORTH AMERICA",
+        "title": "WASHINGTON D.C.",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 80,
