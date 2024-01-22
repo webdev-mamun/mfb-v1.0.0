@@ -1945,6 +1945,7 @@ p.address-list-address, .base-text.address-list-address {
 }
 
 .address-list-address>* {
+  margin-bottom: 0;
   font-size: 1.2rem;
   line-height: 1.6rem;
   letter-spacing: -.05em;

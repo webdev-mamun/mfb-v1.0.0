@@ -473,7 +473,7 @@
     }
 
     .address-list-address {
-        @apply not-italic font-serif -tracking-[.05em] [&>*]:-tracking-[.05em] text-xs [&>*]:text-xs leading-[1.6rem] [&>*]:leading-[1.6rem] lg:text-base [&>*]:lg:text-base [&:not(:first-child)]:mt-2 [&:not(:first-child)]:lg:mt-4
+        @apply not-italic font-serif -tracking-[.05em] [&>*]:-tracking-[.05em] text-xs [&>*]:text-xs leading-[1.6rem] [&>*]:leading-[1.6rem] lg:text-base [&>*]:lg:text-base [&>*]:mb-0 [&:not(:first-child)]:mt-2 [&:not(:first-child)]:lg:mt-4
     }
 
     .article-content {
