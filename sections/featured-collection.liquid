@@ -4,7 +4,7 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {%- liquid
-  assign products = section.settings.collection.products
+  assign products = section.settings.collection.products | sort: 'created-ascending'
   assign limit = section.settings.limit
   assign title = section.settings.title | replace: '%br%', '<br>'
   assign border_top = section.settings.border_top
@@ -20,34 +20,6 @@
     display: grid;
     grid-template-columns: repeat(10, minmax(0, 1fr));
     gap: 2rem;
-  }
-
-  {% if limit == 4 %}
-    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
-    grid-column: span 2 / span 2;
-  }
-  {% endif %}
-
-  {% if limit == 3 %}
-    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
-    grid-column: span 4 / span 4;
-  }
-  {% endif %}
-
-  {% if limit == 2 %}
-    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
-    grid-column: span 6 / span 6;
-  }
-  {% endif %}
-
-  {% if limit == 1 %}
-    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
-    grid-column: span 8 / span 8;
-  }
-  {% endif %}
-
-  #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide {
-    grid-column: span 2 / span 2;
   }
 
   #shopify-section-{{ section.id }} {
@@ -90,7 +62,36 @@
               </div>
             </li>
             {%- for product in products limit: limit -%}
-              <li class="splide__slide">
+              <li class="splide__slide {{forloop.length}}">
+                <style>
+                  {% if forloop.length == 4 %}
+                    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+                    grid-column: span 2 / span 2;
+                  }
+                  {% endif %}
+
+                  {% if forloop.length == 3 %}
+                    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+                    grid-column: span 4 / span 4;
+                  }
+                  {% endif %}
+
+                  {% if forloop.length == 2 %}
+                    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+                    grid-column: span 6 / span 6;
+                  }
+                  {% endif %}
+
+                  {% if forloop.length == 1 %}
+                    #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide:first-child {
+                    grid-column: span 8 / span 8;
+                  }
+                  {% endif %}
+
+                  #shopify-section-{{ section.id }} .splide:not(.is-active) .splide__slide {
+                    grid-column: span 2 / span 2;
+                  }
+                </style>
                 {% render 'card-product',
                   card_product: product,
                   media_aspect_ratio: section.settings.image_ratio,
