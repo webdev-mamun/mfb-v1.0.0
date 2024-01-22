@@ -30,7 +30,7 @@
           assign product = all_products[block.settings.product]
           assign icon = block.settings.icon
           assign productTitle = block.settings.productTitle | default: product.title
-          assign productDescription = block.settings.productDescription | default: product.description
+          assign productDescription = block.settings.productDescription
         -%}
         {%- if product != blank -%}
           <div class="relative p-1 lg:p-2 rounded-2xl flex text-[rgb(var(--color-background))]{% unless product.available %} bg-[rgba(var(--color-foreground),_.7)]{% else %} bg-[rgb(var(--color-foreground))]{% endunless %}">
@@ -211,7 +211,7 @@
         {
           "type": "richtext",
           "id": "productDescription",
-          "label": "Product title"
+          "label": "Product description"
         }
       ]
     }
