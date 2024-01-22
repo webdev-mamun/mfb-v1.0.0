@@ -29,17 +29,17 @@
         {%- if caption != blank -%}
           <div class="py-1 flex justify-between gap-2">
             {%- if caption_title != blank -%}
-              <p class="text-xs md:text-base -tracking-[.02em] uppercase opacity-70 px-1 lg:px-2">
+              <p class="text-xs md:text-base -tracking-[.02em] uppercase opacity-70 px-1 lg:px-2 m-0">
                 {{ caption_title }}
               </p>
             {%- endif -%}
-            <p class="hidden lg:block font-serif text-base -tracking-[.05em] opacity-70">{{ caption }}</p>
+            <p class="hidden lg:block font-serif text-base -tracking-[.05em] opacity-70 m-0">{{ caption }}</p>
           </div>
         {%- endif -%}
       {%- endif -%}
     </div>
     <div class="col-span-6">
-      <div class="lg:ml-2 font-sans lg:font-serif [&>*]:text-md [&>*]:leadign-[2rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:md:text-xl [&>*]:md:leading-[2.6rem] [&>*]:lg:text-[3.2rem] [&>*]:lg:leading-[3.6rem] [&>*]:xl:text-2xl [&>*]:xl:leading-[5.2rem] [&>*]:-tracking-[.05em] [&>*:not(:first-child)]:lg:mt-[3.5rem] [&>*:first-child]:lg:indent-[12rem]">
+      <div class="lg:ml-2 font-sans lg:font-serif [&>*]:text-md [&>*]:leadign-[2rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:md:text-xl [&>*]:md:leading-[2.6rem] [&>*]:lg:text-[3.2rem] [&>*]:lg:leading-[3.6rem] [&>*]:xl:text-2xl [&>*]:xl:leading-[5.2rem] [&>*]:-tracking-[.05em] [&>*]:m-0 [&>*:not(:first-child)]:lg:mt-[3.5rem] [&>*:first-child]:lg:indent-[12rem]">
         {{ text }}
       </div>
     </div>
