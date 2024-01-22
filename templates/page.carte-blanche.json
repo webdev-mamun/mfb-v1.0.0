@@ -51,25 +51,31 @@
         "02f10e9a-6d5b-4008-9884-824c1da458e8": {
           "type": "product",
           "settings": {
+            "product": "copy-of-calvados-pacory-2004-vintage",
             "title": "2-4",
-            "product": "spirits-club",
-            "icon": "shopify:\/\/shop_images\/spirits.svg"
+            "icon": "shopify:\/\/shop_images\/spirits.svg",
+            "productTitle": "",
+            "productDescription": "<p>This is product description from section <\/p>"
           }
         },
         "05bb94af-dee2-49ab-81a0-7f7d6e9ff553": {
           "type": "product",
           "settings": {
-            "title": "06",
             "product": "six-bottle-wine-pack",
-            "icon": "shopify:\/\/shop_images\/wine.svg"
+            "title": "06",
+            "icon": "shopify:\/\/shop_images\/wine.svg",
+            "productTitle": "",
+            "productDescription": ""
           }
         },
         "5ae576eb-4f79-4d81-8104-de4e24a7e6d6": {
           "type": "product",
           "settings": {
-            "title": "16",
             "product": "sixteen-bottle-wine-pack",
-            "icon": "shopify:\/\/shop_images\/wine.svg"
+            "title": "16",
+            "icon": "shopify:\/\/shop_images\/wine.svg",
+            "productTitle": "",
+            "productDescription": ""
           }
         }
       },
