@@ -5082,6 +5082,10 @@ bis-popup {
     padding-top: 4.5rem;
   }
 
+  .lg\:pb-4 {
+    padding-bottom: 4rem;
+  }
+
   .lg\:text-left {
     text-align: left;
   }
