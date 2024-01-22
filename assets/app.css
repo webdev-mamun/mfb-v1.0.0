@@ -1775,12 +1775,8 @@ p.producer-overview p, .base-text.producer-overview p {
   }
 }
 
-.main-page-content p {
-  margin-bottom: 0;
-}
-
-.main-page-content p + p {
-  margin-top: 2rem;
+.main-page-content p:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .account-title {
