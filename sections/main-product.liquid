@@ -79,7 +79,7 @@
     <div class="container py-1 lg:py-2">
       <div class="col-span-full grid grid-cols-2 lg:grid-cols-3 items-center">
         <div class="lg:hidden col-span-1 flex flex-col gap-.5">
-          <div class="{{ vendor.settings.text }}">
+          <div class="">
             {%- if vendor.settings.page != blank -%}
               {%- assign page = pages[vendor.settings.page].url -%}
               <a
@@ -106,7 +106,7 @@
         <div class="col-span-1 hidden lg:block font-serif text-xl -tracking-[.05em] ">
           {{ product.title | escape }}
         </div>
-        <div class="col-span-1 hidden lg:block text-center {{ vendor.settings.page }}">
+        <div class="col-span-1 hidden lg:block text-center">
           {%- if vendor.settings.page != blank -%}
             {%- assign page = pages[vendor.settings.page].url -%}
             <a
