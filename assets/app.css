@@ -1396,7 +1396,7 @@ p.default-input, .base-text.default-input {
 
 .product__description, .product__description>* {
   font-size: 1.4rem;
-  line-height: 1.6;
+  line-height: 2.08rem;
   letter-spacing: -.02em;
 }
 

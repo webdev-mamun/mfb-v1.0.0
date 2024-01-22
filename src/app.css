@@ -337,7 +337,7 @@
     }
 
     .product__description, .product__description>* {
-        @apply text-[1.4rem] leading-[1.6] -tracking-[.02em] lg:text-base
+        @apply text-[1.4rem] leading-[2.08rem] -tracking-[.02em] lg:text-base
     }
 
     .product__description hr {
