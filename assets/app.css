@@ -1396,7 +1396,7 @@ p.default-input, .base-text.default-input {
 
 .product__description, .product__description>* {
   font-size: 1.4rem;
-  line-height: 1.5rem;
+  line-height: 1.6;
   letter-spacing: -.02em;
 }
 
@@ -1405,6 +1405,7 @@ p.default-input, .base-text.default-input {
   .product__description, .product__description>* {
     font-size: 1.6rem;
     line-height: 2.16rem;
+    line-height: 1.6;
   }
 }
 
@@ -3159,6 +3160,9 @@ bis-popup .close {
 }
 .rounded-2xl {
   border-radius: 1rem;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
 }
 .rounded-full {
   border-radius: 9999px;

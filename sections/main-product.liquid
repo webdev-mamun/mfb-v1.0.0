@@ -163,7 +163,7 @@
   <div class="product{% if product.media.size == 0 %} product--no-media{% endif %} border-b text-[color:var(--color,_#151515)] bg-[color:var(--bg,_#FFFEF7)] border-[color:var(--divider-color,_#DCDCDC)]">
     <div class="container gap-x-2 lg:gap-x-4 pt-1 pb-6 lg:pt-4 lg:pb-2">
       <div class="col-span-full lg:col-span-4 product__media-wrapper">
-        <div class="product__media media media--transparent">
+        <div class="product__media media media--transparent rounded-2xl overflow-hidden">
           {{
             product.featured_image
             | image_url: width: 1946
@@ -235,7 +235,7 @@
                         assign size = meta.sizes
                       -%}
                       {%- if color != blank or size != blank -%}
-                        <p class="text-base sm:text-xl sm:leading-[5.6rem] -tracking-[.02em] uppercase">
+                        <p class="text-base sm:text-xl sm:leading-[5.6rem] -tracking-[.02em] uppercase m-0">
                           {%- if color != blank -%}, {{ color }}{%- endif -%}
                           {%- if size != blank -%}, {{ size }}{%- endif -%}
                         </p>

@@ -18,12 +18,12 @@
       {%- assign producers = shop.metaobjects.producer.values -%}
       {%- for producer in producers -%}
         {%- liquid
-          assign collection = collections[producer.collection].url
+          assign page = pages[producer.page].url
         -%}
-        <text-hover-image class="relative inline-block">
-          {%- if collection != blank -%}
+        <text-hover-image class="relative inline-block {{ page }}">
+          {%- if page != blank -%}
             <a
-              href="{{ collection }}"
+              href="{{ page }}"
               class="big-text lg:text-2xl hover:-tracking-[.05em] hover:font-serif transition"
             >
               {{- producer.title }}

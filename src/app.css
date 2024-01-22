@@ -336,7 +336,9 @@
         @apply hidden;
     }
 
-    .product__description, .product__description>* {@apply text-[1.4rem] leading-[1.5rem] -tracking-[.02em] lg:text-base}
+    .product__description, .product__description>* {
+        @apply text-[1.4rem] leading-[1.6] -tracking-[.02em] lg:text-base lg:leading-[1.6]
+    }
 
     .product__description hr {
         @apply mt-[5.5rem] lg:mt-[6.5rem] mb-[1.5rem];

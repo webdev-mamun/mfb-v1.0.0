@@ -120,7 +120,21 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
-        <small class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px] pt-1">Site Credit</small>
+        {%- if section.settings.siteCreditText != blank -%}
+          {%- if section.settings.siteCreditUrl != blank %}
+            <a
+              href="{{ section.settings.siteCreditUrl }}"
+              target="_blank"
+              class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px] mt-1 decoration-none"
+            >
+              {{- section.settings.siteCreditText -}}
+            </a>
+          {%- else -%}
+            <small class="font-sans text-[1rem] leading-[1.6rem] tracking-[-.2px] mt-1">
+              {{- section.settings.siteCreditText -}}
+            </small>
+          {%- endif -%}
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -222,6 +236,21 @@
       "type": "link_list",
       "id": "bottom_menu",
       "label": "t:sections.footer.settings.bottom_menu.label"
+    },
+    {
+      "type": "header",
+      "content": "Site credit"
+    },
+    {
+      "type": "url",
+      "id": "siteCreditUrl",
+      "label": "Site credit url"
+    },
+    {
+      "type": "text",
+      "id": "siteCreditText",
+      "label": "Site credit text",
+      "default": "Site Credit"
     },
     {
       "type": "color_scheme",
