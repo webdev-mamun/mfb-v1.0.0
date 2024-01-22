@@ -5373,6 +5373,10 @@ bis-popup {
   }
 }
 
+.\[\&\>\*\]\:mb-0>* {
+  margin-bottom: 0;
+}
+
 .\[\&\>\*\]\:px-1>* {
   padding-left: 1rem;
   padding-right: 1rem;
