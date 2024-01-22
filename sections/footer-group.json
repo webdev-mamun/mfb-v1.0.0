@@ -48,6 +48,8 @@
       ],
       "settings": {
         "bottom_menu": "policy",
+        "siteCreditUrl": "https:\/\/benepooley.co.uk\/",
+        "siteCreditText": "Site Credit",
         "color_scheme": "background-1"
       }
     }
