@@ -6,8 +6,8 @@
         "791c2280-69ad-4bfe-b48c-28ed3236c848": {
           "type": "vendor",
           "settings": {
-            "text": "{{ block.settings.page.title }}",
-            "page": "{{ product.metafields.custom.vendor.value.page.value }}"
+            "text": "{{ product.metafields.custom.vendor.value.title.value }}",
+            "page": ""
           }
         },
         "title": {
