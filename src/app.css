@@ -428,7 +428,9 @@
     .main-page-content > *:not(h1,h2,h3,h4) {
         @apply text-md lg:text-base
     }
-
+    .main-page-content p {
+        @apply mb-0;
+    }
     .main-page-content p + p {
         @apply mt-2;
     }
