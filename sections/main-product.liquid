@@ -210,7 +210,7 @@
 
                 {%- when 'title' -%}
                   <div class="product__title" {{ block.shopify_attributes }}>
-                    <h1 class="m-0 font-serif big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase">
+                    <h1>
                       {{ product.title | escape }}
                     </h1>
                     <a href="{{ product.url }}" class="product__title hidden">

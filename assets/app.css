@@ -1405,7 +1405,6 @@ p.default-input, .base-text.default-input {
   .product__description, .product__description>* {
     font-size: 1.6rem;
     line-height: 2.16rem;
-    line-height: 1.6;
   }
 }
 
@@ -2289,6 +2288,56 @@ bis-popup .close {
   height: 1.6rem;
   width: 1.6rem;
   cursor: pointer;
+}
+
+.product__title h1 {
+        font-size: 3.2rem;
+        line-height: 3.6rem;
+        letter-spacing: -1.6px;
+    }
+
+h1.product__title h1, .h1.product__title h1 {
+        letter-spacing: -4.4px;
+    }
+
+h2.product__title h1, .h2.product__title h1 {
+        letter-spacing: -3.1px;
+    }
+
+h3.product__title h1, .h3.product__title h1 {
+        letter-spacing: -2.2px;
+    }
+
+h4.product__title h1, .h4.product__title h1 {
+        letter-spacing: -1.1px;
+    }
+
+h5.product__title h1, .h5.product__title h1 {
+        letter-spacing: -0.8px;
+    }
+
+h6.product__title h1, .h6.product__title h1 {
+        letter-spacing: -0.65px;
+    }
+
+p.product__title h1, .base-text.product__title h1 {
+        letter-spacing: -0.8px;
+    }
+
+.product__title h1 {
+  margin: 0;
+  font-family: "TT Ramillas", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  line-height: 3.6rem;
+  letter-spacing: -.02em;
+}
+
+@media (min-width: 1024px) {
+
+  .product__title h1 {
+    font-size: 4.4rem;
+    line-height: 4.5rem;
+  }
 }
 .sr-only {
   position: absolute;

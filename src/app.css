@@ -337,7 +337,7 @@
     }
 
     .product__description, .product__description>* {
-        @apply text-[1.4rem] leading-[1.6] -tracking-[.02em] lg:text-base lg:leading-[1.6]
+        @apply text-[1.4rem] leading-[1.6] -tracking-[.02em] lg:text-base
     }
 
     .product__description hr {
@@ -428,7 +428,7 @@
     .main-page-content > *:not(h1,h2,h3,h4) {
         @apply text-md lg:text-base
     }
-    
+
     .main-page-content p:not(:last-child) {
         @apply mb-2;
     }
@@ -542,6 +542,10 @@
     
     bis-popup .close {
         @apply w-[1.6rem] h-[1.6rem] cursor-pointer absolute top-1 right-1
+    }
+
+    .product__title h1 {
+        @apply m-0 font-serif big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase
     }
 
 }
