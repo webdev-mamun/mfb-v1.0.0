@@ -84,29 +84,37 @@
           "type": "textblock",
           "settings": {
             "title": "KRISTEN SMITH",
-            "text": ""
+            "text": "<p>Bio coming soon!<\/p>"
           }
         },
-        "9cee0141-1cbf-4fb5-9e6d-d717f6cdc15b": {
+        "textblock_NAKDif": {
           "type": "textblock",
           "settings": {
-            "title": "JON BRAND",
-            "text": "<p>Jon Brand lives in Paris, where he turned in his journalist card a few years back to sell and distribute wine to the city’s top restaurants.<\/p>",
-            "image": "shopify:\/\/shop_images\/Brand_0822-839-2.jpg"
+            "title": "LEE SMITH",
+            "text": ""
           }
         },
         "60da167a-247a-4279-a39c-260078af85d0": {
           "type": "textblock",
           "settings": {
             "title": "GREG FARON",
-            "text": "<p>Greg Faron is a Washington, D.C.-based hotelier with a passion for brandy and single-barrel spirits. He side-gigs as a real estate executive<\/p>"
+            "text": "<p>Greg Faron is a Washington, D.C.-based hotelier with a passion for brandy and single-barrel spirits. He side-gigs as a real estate executive.<\/p>"
+          }
+        },
+        "9cee0141-1cbf-4fb5-9e6d-d717f6cdc15b": {
+          "type": "textblock",
+          "settings": {
+            "title": "JON BRAND",
+            "text": "<p>Jon Brand lives in Paris. A former sports journalist, he worked as a  wine distributor for the the city's top restaurants before starting Bien Élevé.<\/p>",
+            "image": "shopify:\/\/shop_images\/Brand_0822-839-2.jpg"
           }
         }
       },
       "block_order": [
         "4765cfdd-ae81-44b2-aaf7-19143060698a",
-        "9cee0141-1cbf-4fb5-9e6d-d717f6cdc15b",
-        "60da167a-247a-4279-a39c-260078af85d0"
+        "textblock_NAKDif",
+        "60da167a-247a-4279-a39c-260078af85d0",
+        "9cee0141-1cbf-4fb5-9e6d-d717f6cdc15b"
       ],
       "settings": {
         "title": "WHO WE ARE",
