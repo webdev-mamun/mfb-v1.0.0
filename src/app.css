@@ -414,11 +414,11 @@
     }
 
     .text-block-title {
-        @apply text-md leading-[1.8rem] lg:text-xl lg:leading-[2.6rem] uppercase group-hover/textblock:lg:font-serif transition-all;
+        @apply text-md leading-[1.8rem] lg:text-xl lg:leading-[2.6rem] m-0 uppercase group-hover/textblock:lg:font-serif transition-all;
     }
 
     .text-block-text {
-        @apply [&>*]:text-md [&>*]:leading-[2rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem] [&>*:first-child]:lg:indent-[6.5rem] group-hover/textblock:lg:font-serif transition-all;
+        @apply [&>*]:text-md [&>*]:leading-[2rem] [&>*:not(:first-child)]:mt-2 [&>*:first-child]:indent-3 [&>*]:lg:text-base [&>*]:lg:leading-[2.2rem] [&>*]:mb-0 [&>*:first-child]:lg:indent-[6.5rem] group-hover/textblock:lg:font-serif transition-all;
     }
 
     .main-page-content h2 {

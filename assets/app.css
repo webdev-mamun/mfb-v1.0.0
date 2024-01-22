@@ -1643,6 +1643,7 @@ p.producer-overview p, .base-text.producer-overview p {
 }
 
 .text-block-title {
+  margin: 0;
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 1.8rem;
@@ -1731,6 +1732,7 @@ p.producer-overview p, .base-text.producer-overview p {
 }
 
 .text-block-text>* {
+  margin-bottom: 0;
   font-size: 1.4rem;
   line-height: 2rem;
 }
@@ -2379,6 +2381,9 @@ bis-popup .close {
 .isolate {
   isolation: isolate;
 }
+.z-0 {
+  z-index: 0;
+}
 .z-10 {
   z-index: 10;
 }
@@ -2393,9 +2398,6 @@ bis-popup .close {
 }
 .z-\[2\] {
   z-index: 2;
-}
-.z-0 {
-  z-index: 0;
 }
 .order-1 {
   order: 1;
@@ -3163,9 +3165,6 @@ bis-popup .close {
 }
 .rounded-2xl {
   border-radius: 1rem;
-}
-.rounded-3xl {
-  border-radius: 1.5rem;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -5005,8 +5004,8 @@ bis-popup {
     padding-bottom: 3rem;
   }
 
-  .lg\:pb-5 {
-    padding-bottom: 5rem;
+  .lg\:pb-4 {
+    padding-bottom: 4rem;
   }
 
   .lg\:pb-\[\.5rem\] {
@@ -5083,10 +5082,6 @@ bis-popup {
 
   .lg\:pt-\[4\.5rem\] {
     padding-top: 4.5rem;
-  }
-
-  .lg\:pb-4 {
-    padding-bottom: 4rem;
   }
 
   .lg\:text-left {

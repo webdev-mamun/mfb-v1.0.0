@@ -50,9 +50,11 @@
                     {{ block.settings.title }}
                   </h4>
                 {%- endif -%}
-                <div class="text-block-text">
-                  {{ block.settings.text }}
-                </div>
+                {%- if block.settings.text != blank -%}
+                  <div class="text-block-text">
+                    {{ block.settings.text }}
+                  </div>
+                {%- endif -%}
                 {%- if block.settings.image != blank -%}
                   <div class="hidden lg:block invisible [&.show]:lg:visible w-[22rem] h-[30rem] absolute text-block-image pointer-events-none top-[var(--top,_0px)] left-[var(--left,_0px)] rounded-lg overflow-hidden z-10">
                     {%- assign widths = '375, 550' -%}
