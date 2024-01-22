@@ -7,7 +7,7 @@
           "type": "vendor",
           "settings": {
             "text": "{{ product.metafields.custom.vendor.value.title.value }}",
-            "page": ""
+            "page": "{{ product.metafields.custom.vendor.value.page.value }}"
           }
         },
         "title": {
