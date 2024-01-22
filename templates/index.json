@@ -69,7 +69,6 @@
         },
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-2": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "title": "06",
             "text": "A half-case of hand-selected wines delivered to your door every quarter."
@@ -77,7 +76,6 @@
         },
         "template--20004128751917__cc1a0cb4-7d2e-4366-ba44-09b73f2e88df-column-3": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "title": "12",
             "text": "A case of hand-selected wines delivered to your door every quarter."
