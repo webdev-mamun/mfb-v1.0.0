@@ -60,13 +60,12 @@
         },
         "05bb94af-dee2-49ab-81a0-7f7d6e9ff553": {
           "type": "product",
-          "disabled": true,
           "settings": {
             "product": "six-bottle-wine-pack",
             "title": "06",
             "icon": "shopify:\/\/shop_images\/wine.svg",
-            "productTitle": "",
-            "productDescription": ""
+            "productTitle": "WINE PORTFOLIO HALF-CASE",
+            "productDescription": "<p>An introduction to our latest arrivals, of 6 bottles per quarter.<\/p>"
           }
         },
         "5ae576eb-4f79-4d81-8104-de4e24a7e6d6": {
