@@ -4,7 +4,7 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {%- liquid
-  assign products = section.settings.collection.products | sort: 'created-ascending'
+  assign products = section.settings.collection.products
   assign limit = section.settings.limit
   assign title = section.settings.title | replace: '%br%', '<br>'
   assign border_top = section.settings.border_top
