@@ -2394,6 +2394,9 @@ bis-popup .close {
 .z-\[2\] {
   z-index: 2;
 }
+.z-0 {
+  z-index: 0;
+}
 .order-1 {
   order: 1;
 }
