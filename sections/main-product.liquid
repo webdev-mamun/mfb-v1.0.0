@@ -79,17 +79,18 @@
     <div class="container py-1 lg:py-2">
       <div class="col-span-full grid grid-cols-2 lg:grid-cols-3 items-center">
         <div class="lg:hidden col-span-1 flex flex-col gap-.5">
-          <div class="">
-            {%- if vendor.settings.url != blank -%}
+          <div class="{{ vendor.settings.text }}">
+            {%- if vendor.settings.page != blank -%}
+              {%- assign page = pages[vendor.settings.page].url -%}
               <a
-                href="{{ vendor.settings.url }}"
+                href="{{ page }}"
                 class="text-[1.4rem] leading-[1.5rem] -tracking-[.02em] uppercase"
               >
                 {{- vendor.settings.text -}}
               </a>
             {%- else -%}
               <p
-                class="text-[1.4rem] leading-[1.5rem] uppercase"
+                class="text-[1.4rem] leading-[1.5rem] uppercase m-0"
               >
                 {{- vendor.settings.text -}}
               </p>
@@ -105,17 +106,18 @@
         <div class="col-span-1 hidden lg:block font-serif text-xl -tracking-[.05em] ">
           {{ product.title | escape }}
         </div>
-        <div class="col-span-1 hidden lg:block text-center">
-          {%- if vendor.settings.url != blank -%}
+        <div class="col-span-1 hidden lg:block text-center {{ vendor.settings.page }}">
+          {%- if vendor.settings.page != blank -%}
+            {%- assign page = pages[vendor.settings.page].url -%}
             <a
-              href="{{ vendor.settings.url }}"
+              href="{{ page }}"
               class="text-xl -tracking-[.02em] uppercase"
             >
               {{- vendor.settings.text -}}
             </a>
           {%- else -%}
             <p
-              class="text-xl -tracking-[.02em] uppercase"
+              class="text-xl -tracking-[.02em] uppercase m-0"
             >
               {{- vendor.settings.text -}}
             </p>
@@ -191,7 +193,7 @@
                   {% render block %}
                 {%- when 'vendor' -%}
                   {%- assign page_url = pages[block.settings.page].url -%}
-                  <div class="" {{ block.shopify_attributes }}>
+                  <div class="{{ page_url }}" {{ block.shopify_attributes }}>
                     {%- if page_url != blank -%}
                       <a
                         href="{{ page_url }}"
@@ -199,9 +201,9 @@
                       >
                         {{- block.settings.text -}}
                       </a>
-                    {%- else -%}
+                    {%- elsif page_url == blank -%}
                       <p
-                        class="big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase"
+                        class="big-text leading-[3.6rem] lg:text-2xl lg:leading-[4.5rem] -tracking-[.02em] uppercase m-0"
                       >
                         {{- block.settings.text -}}
                       </p>
