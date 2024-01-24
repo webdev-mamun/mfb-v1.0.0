@@ -70,13 +70,12 @@
         },
         "5ae576eb-4f79-4d81-8104-de4e24a7e6d6": {
           "type": "product",
-          "disabled": true,
           "settings": {
-            "product": "wine-portfolio-half-case",
-            "title": "16",
+            "product": "wine-portfolio-full-case",
+            "title": "12",
             "icon": "shopify:\/\/shop_images\/wine.svg",
-            "productTitle": "",
-            "productDescription": ""
+            "productTitle": "WINE PORTFOLIO FULL CASE",
+            "productDescription": "<p>12 freshly-landed bottles per quarter, directly from the cellars of our European producers. <\/p>"
           }
         }
       },
