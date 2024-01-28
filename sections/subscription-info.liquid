@@ -106,7 +106,7 @@
             -%}
           {%- endif -%}
           {%- if btn_mobile != blank -%}
-            <a src="{{ url }}" class="btn btn-primary lg:hidden">{{ btn_mobile | default: btn }}</a>
+            <a href="{{ url }}" class="btn btn-primary lg:hidden">{{ btn_mobile | default: btn }}</a>
           {%- endif -%}
         </div>
       {%- endif -%}
