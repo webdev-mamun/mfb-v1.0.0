@@ -29,16 +29,16 @@
     "d7ae8aaf-1d63-417b-99e1-2913cc788b30": {
       "type": "subscription-banner",
       "settings": {
-        "image": "shopify:\/\/shop_images\/subscription-banner.jpg",
-        "text": "JOIN US FOR A QUARTERLY DELIVERY OF OUR LATEST SINGLE-CASK SPIRITS AND WINE.",
+        "image": "shopify:\/\/shop_images\/IMG_0636.jpg",
+        "text": "SIGN UP NOW FOR OUR SPIRITS FROM THE SOURCE PRIVATE BARREL CLUB.",
         "icon": "shopify:\/\/shop_images\/RTE_BLANCHE.svg",
-        "btn": "see club subscriptions",
-        "url": "shopify:\/\/pages\/clubs",
+        "btn": "CLICK HERE TO SIGN UP",
+        "url": "shopify:\/\/products\/spirits-club",
         "color_scheme": "accent-1",
-        "padding_top": 130,
-        "padding_bottom": 130,
-        "padding_top_desktop": 140,
-        "padding_bottom_desktop": 140
+        "padding_top": 10,
+        "padding_bottom": 25,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 70
       }
     },
     "41494bba-9524-468a-80ef-dad4eb90a18d": {
