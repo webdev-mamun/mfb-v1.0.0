@@ -10,13 +10,6 @@
             "link": "shopify:\/\/products\/spirits-club"
           }
         },
-        "announcement_wnc9bt": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        },
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1": {
           "type": "announcement",
           "settings": {
@@ -27,7 +20,6 @@
       },
       "block_order": [
         "template--20004128751917__eff610b3-65e4-4fb2-957b-bddb8c135184-announcement-1",
-        "announcement_wnc9bt",
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1"
       ],
       "settings": {
