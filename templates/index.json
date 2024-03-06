@@ -262,6 +262,7 @@
         "7cdb18db-f71f-4772-be2a-485c048b4e65": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_0758.jpg",
             "title": "NOTES FROM THE ROAD",
             "text": "Dispatches from the wine route, reviews of newly arrived bottles, tasting notes and more.",
             "button_text": "Follow our journey",
@@ -272,6 +273,7 @@
       "block_order": [
         "7cdb18db-f71f-4772-be2a-485c048b4e65"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "padding_top": 10,
