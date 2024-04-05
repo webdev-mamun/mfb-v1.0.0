@@ -256,31 +256,6 @@
         "padding_bottom_desktop": 90
       }
     },
-    "317c40db-089f-41c8-b5a1-a98e808d05f5": {
-      "type": "image-with-text-column",
-      "blocks": {
-        "7cdb18db-f71f-4772-be2a-485c048b4e65": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "NOTES FROM THE ROAD",
-            "text": "Dispatches from the wine route, reviews of newly arrived bottles, tasting notes and more.",
-            "button_text": "Follow our journey",
-            "button_url": "shopify:\/\/blogs\/notes-from-the-field"
-          }
-        }
-      },
-      "block_order": [
-        "7cdb18db-f71f-4772-be2a-485c048b4e65"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "background-1",
-        "padding_top": 10,
-        "padding_bottom": 35,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 20
-      }
-    },
     "25f85844-b960-42a2-ba01-81d581141e76": {
       "type": "image-with-text-column",
       "blocks": {
@@ -333,6 +308,32 @@
         "padding_top_desktop": 0,
         "padding_bottom_desktop": 85
       }
+    },
+    "317c40db-089f-41c8-b5a1-a98e808d05f5": {
+      "type": "image-with-text-column",
+      "blocks": {
+        "7cdb18db-f71f-4772-be2a-485c048b4e65": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bien_Eleve_Renewal_2024.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Bien_Eleve_Renewal_2024.jpg",
+            "title": "",
+            "text": "",
+            "button_text": "Follow our journey",
+            "button_url": "shopify:\/\/blogs\/notes-from-the-field"
+          }
+        }
+      },
+      "block_order": [
+        "7cdb18db-f71f-4772-be2a-485c048b4e65"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "padding_top": 10,
+        "padding_bottom": 35,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20
+      }
     }
   },
   "order": [
@@ -342,8 +343,8 @@
     "cc1a0cb4-7d2e-4366-ba44-09b73f2e88df",
     "featured_collection",
     "45ae4465-7843-4d87-8657-fd781121613c",
-    "317c40db-089f-41c8-b5a1-a98e808d05f5",
     "25f85844-b960-42a2-ba01-81d581141e76",
-    "e16f32bb-984a-4534-b479-4a7ab16c282c"
+    "e16f32bb-984a-4534-b479-4a7ab16c282c",
+    "317c40db-089f-41c8-b5a1-a98e808d05f5"
   ]
 }
