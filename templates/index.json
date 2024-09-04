@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "eff610b3-65e4-4fb2-957b-bddb8c135184": {
@@ -286,27 +295,12 @@
         "036b4a40-be97-4b41-989b-f276067e0eca",
         "3053b57f-6c75-4eda-8977-f459c5532e6e"
       ],
-      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "padding_top": 10,
         "padding_bottom": 35,
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20
-      }
-    },
-    "e16f32bb-984a-4534-b479-4a7ab16c282c": {
-      "type": "newsletter",
-      "settings": {
-        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
-        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
-        "title": "Join the <br>Bien Élevé family",
-        "text": "All our wine and spirits news that’s fit to print, delivered once a week. Receive our newsletter for first access to new arrivals, special offers, bottle reviews and more.",
-        "color_scheme": "scheme-8b014475-d806-4431-8eba-5ab59944dd7b",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "padding_top_desktop": 0,
-        "padding_bottom_desktop": 85
       }
     },
     "317c40db-089f-41c8-b5a1-a98e808d05f5": {
@@ -334,6 +328,20 @@
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 20
       }
+    },
+    "e16f32bb-984a-4534-b479-4a7ab16c282c": {
+      "type": "newsletter",
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/AdobeStock_63590650_2.png",
+        "image_2": "shopify:\/\/shop_images\/AdobeStock_63590734_2-removebg-preview_1.png",
+        "title": "Join the <br>Bien Élevé family",
+        "text": "All our wine and spirits news that’s fit to print, delivered once a week. Receive our newsletter for first access to new arrivals, special offers, bottle reviews and more.",
+        "color_scheme": "scheme-8b014475-d806-4431-8eba-5ab59944dd7b",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 85
+      }
     }
   },
   "order": [
@@ -344,7 +352,7 @@
     "featured_collection",
     "45ae4465-7843-4d87-8657-fd781121613c",
     "25f85844-b960-42a2-ba01-81d581141e76",
-    "e16f32bb-984a-4534-b479-4a7ab16c282c",
-    "317c40db-089f-41c8-b5a1-a98e808d05f5"
+    "317c40db-089f-41c8-b5a1-a98e808d05f5",
+    "e16f32bb-984a-4534-b479-4a7ab16c282c"
   ]
 }
