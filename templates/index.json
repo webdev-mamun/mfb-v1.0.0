@@ -295,6 +295,7 @@
         "036b4a40-be97-4b41-989b-f276067e0eca",
         "3053b57f-6c75-4eda-8977-f459c5532e6e"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "padding_top": 10,
