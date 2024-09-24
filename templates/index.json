@@ -21,7 +21,6 @@
         },
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "text": "NEW WINES FROM FONTAINE DES GRIVES AND CHÂTEAU RICHARD HAVE ARRIVED",
             "link": "shopify://collections/wines"
