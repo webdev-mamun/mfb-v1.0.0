@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "8e1ccf58-7d13-4210-afb3-f7539228c6b9": {
@@ -97,26 +106,26 @@
     "addressList": {
       "type": "address-list",
       "blocks": {
-        "45a3332e-55fa-4874-b196-3b806169d9c0": {
+        "region_CgP8yU": {
           "type": "region",
           "settings": {
-            "title": "Brooklyn"
+            "title": "NEW YORK CITY"
           }
         },
-        "893e212e-1c49-4457-987c-78f86fc933ee": {
+        "address_NNDwDr": {
           "type": "address",
           "settings": {
-            "title": "Brooklyn",
-            "address": "<p>Place des Fêtes<\/p><p>Oxalis<\/p>"
+            "title": "NEW YORK CITY",
+            "address": "<p>Place des Fêtes</p><p>Café Mado</p><p>Vanderbilt Wine Merchants</p><p>Wine Therapy </p><p>St. Jardim</p>"
           }
         }
       },
       "block_order": [
-        "45a3332e-55fa-4874-b196-3b806169d9c0",
-        "893e212e-1c49-4457-987c-78f86fc933ee"
+        "region_CgP8yU",
+        "address_NNDwDr"
       ],
       "settings": {
-        "title": "NEW YORK CITY",
+        "title": "NEW YORK",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 80,
@@ -137,16 +146,31 @@
           "type": "address",
           "settings": {
             "title": "NORTHWEST",
-            "address": "<p>Reveler's Hour <\/p><p>2 Amys <\/p><p>The Duck & The Peach <\/p><p>St Vincent Wine<\/p><p>Happy Gemini <\/p><p>Nido <\/p><p>Sonny's Pizza<\/p><p>No Kisses <\/p>"
+            "address": "<p>Reveler's Hour </p><p>St. Vincent Wine</p><p>2 Amys </p><p>Queen's English</p><p>Tail Up Goat</p><p>Bourbon Steak</p><p>MacArthur Beverages (Bassins)</p><p>Jack Rose</p><p>Bar Spero </p><p>Happy Gemini </p><p>Nido </p><p>Sonny's Pizza</p><p>No Kisses </p>"
+          }
+        },
+        "region_973xAL": {
+          "type": "region",
+          "settings": {
+            "title": "SOUTHEAST"
+          }
+        },
+        "address_DFJmkn": {
+          "type": "address",
+          "settings": {
+            "title": "SOUTHEAST",
+            "address": "<p>The Duck & The Peach </p>"
           }
         }
       },
       "block_order": [
         "region_tiPAtr",
-        "address_6Hq4AB"
+        "address_6Hq4AB",
+        "region_973xAL",
+        "address_DFJmkn"
       ],
       "settings": {
-        "title": "WASHINGTON D.C.",
+        "title": "WASHINGTON, D.C.",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 80,
@@ -161,7 +185,7 @@
         "text": "Speak to us directly to discuss how we can provide your event with the best small scale European wines and spirits.",
         "btn_text": "GET IN TOUCH",
         "btn_url": "mailto:info@drinkbien.com",
-        "image": "shopify:\/\/shop_images\/clem-onojeghuo.jpg",
+        "image": "shopify://shop_images/clem-onojeghuo.jpg",
         "color_scheme": "",
         "padding_top": 10,
         "padding_bottom": 125,
