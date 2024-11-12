@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "eff610b3-65e4-4fb2-957b-bddb8c135184": {
@@ -15,8 +15,8 @@
         "template--20004128751917__eff610b3-65e4-4fb2-957b-bddb8c135184-announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "NEW WINES FROM FONTAINE DES GRIVES AND CHÂTEAU RICHARD HAVE ARRIVED",
-            "link": "shopify://collections/wines"
+            "text": "NEW CALVADOS FROM ADRIEN CAMUT HAVE ARRIVED",
+            "link": "shopify://collections/spirits"
           }
         },
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1": {
