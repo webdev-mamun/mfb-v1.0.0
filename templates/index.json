@@ -15,15 +15,15 @@
         "template--20004128751917__eff610b3-65e4-4fb2-957b-bddb8c135184-announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "NEW CALVADOS FROM ADRIEN CAMUT HAVE ARRIVED",
-            "link": "shopify://collections/spirits"
+            "text": "NEW ARRIVAL: THE RARE CHAMPAGNES OF EMILIEN FENEUIL",
+            "link": "shopify://collections/champagne-emilien-feneuil"
           }
         },
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1": {
           "type": "announcement",
           "settings": {
-            "text": "NEW CALVADOS FROM ADRIEN CAMUT HAVE ARRIVED",
-            "link": "shopify://collections/spirits"
+            "text": "NEW ARRIVAL: THE RARE CHAMPAGNES OF EMILIEN FENEUIL",
+            "link": "shopify://collections/champagne-emilien-feneuil"
           }
         }
       },
@@ -322,6 +322,7 @@
       "block_order": [
         "7cdb18db-f71f-4772-be2a-485c048b4e65"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "background-1",
         "padding_top": 10,
