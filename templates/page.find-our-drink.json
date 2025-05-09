@@ -81,6 +81,13 @@
             "url": "shopify-section-template--21144363958552__6b2bd83a-9823-4ad6-b7e5-47782785344e"
           }
         },
+        "title_xVL9GK": {
+          "type": "title",
+          "settings": {
+            "title": "BALTIMORE",
+            "url": "BALTIMORE"
+          }
+        },
         "fa7e661c-40d0-4f2f-a859-759437747983": {
           "type": "title",
           "settings": {
@@ -92,6 +99,7 @@
       "block_order": [
         "7b2d8deb-0fff-4bf2-922d-b2f63773f536",
         "6b5e5f67-5489-4efd-9665-eea2c12cc7c7",
+        "title_xVL9GK",
         "fa7e661c-40d0-4f2f-a859-759437747983"
       ],
       "settings": {
@@ -192,6 +200,30 @@
         "padding_top_desktop": 20,
         "padding_bottom_desktop": 165
       }
+    },
+    "address_list_KCcC4W": {
+      "type": "address-list",
+      "blocks": {
+        "address_zaxFLK": {
+          "type": "address",
+          "settings": {
+            "title": "BALTIMORE",
+            "address": "<p>FADDENSONNEN</p>"
+          }
+        }
+      },
+      "block_order": [
+        "address_zaxFLK"
+      ],
+      "name": "Address list",
+      "settings": {
+        "title": "BALTIMORE",
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 80,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 160
+      }
     }
   },
   "order": [
@@ -201,6 +233,7 @@
     "titleList",
     "addressList",
     "6b2bd83a-9823-4ad6-b7e5-47782785344e",
-    "0262d1eb-cc87-4344-b53c-5387b4ecfe70"
+    "0262d1eb-cc87-4344-b53c-5387b4ecfe70",
+    "address_list_KCcC4W"
   ]
 }
