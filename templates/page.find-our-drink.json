@@ -141,36 +141,6 @@
         "padding_bottom_desktop": 160
       }
     },
-    "address_list_dE3AzA": {
-      "type": "address-list",
-      "blocks": {
-        "region_BwQUL3": {
-          "type": "region",
-          "settings": {
-            "title": "BALTIMORE"
-          }
-        },
-        "address_yTF6A6": {
-          "type": "address",
-          "settings": {
-            "title": "BALTIMORE",
-            "address": "<p>Fadensonnen </p><p>Angels Ate Lemons</p>"
-          }
-        }
-      },
-      "block_order": [
-        "region_BwQUL3",
-        "address_yTF6A6"
-      ],
-      "settings": {
-        "title": "MARYLAND",
-        "color_scheme": "",
-        "padding_top": 10,
-        "padding_bottom": 80,
-        "padding_top_desktop": 20,
-        "padding_bottom_desktop": 160
-      }
-    },
     "6b2bd83a-9823-4ad6-b7e5-47782785344e": {
       "type": "address-list",
       "blocks": {
@@ -216,6 +186,36 @@
         "padding_bottom_desktop": 160
       }
     },
+    "address_list_dE3AzA": {
+      "type": "address-list",
+      "blocks": {
+        "region_BwQUL3": {
+          "type": "region",
+          "settings": {
+            "title": "BALTIMORE"
+          }
+        },
+        "address_yTF6A6": {
+          "type": "address",
+          "settings": {
+            "title": "BALTIMORE",
+            "address": "<p>Fadensonnen </p><p>Angels Ate Lemons</p>"
+          }
+        }
+      },
+      "block_order": [
+        "region_BwQUL3",
+        "address_yTF6A6"
+      ],
+      "settings": {
+        "title": "MARYLAND",
+        "color_scheme": "",
+        "padding_top": 10,
+        "padding_bottom": 80,
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 160
+      }
+    },
     "0262d1eb-cc87-4344-b53c-5387b4ecfe70": {
       "type": "contact",
       "settings": {
@@ -238,8 +238,8 @@
     "contact",
     "titleList",
     "addressList",
-    "address_list_dE3AzA",
     "6b2bd83a-9823-4ad6-b7e5-47782785344e",
+    "address_list_dE3AzA",
     "0262d1eb-cc87-4344-b53c-5387b4ecfe70"
   ]
 }
