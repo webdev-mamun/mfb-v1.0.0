@@ -15,15 +15,15 @@
         "template--20004128751917__eff610b3-65e4-4fb2-957b-bddb8c135184-announcement-1": {
           "type": "announcement",
           "settings": {
-            "text": "SHOP NEW GROWER CHAMPAGNE",
-            "link": "shopify://collections/wines"
+            "text": "SHOP NEW calvados Lemorton single-casks",
+            "link": "shopify://collections/calvados-lemorton"
           }
         },
         "2a61f9ef-fc7a-495b-b48b-57a0c0810ab1": {
           "type": "announcement",
           "settings": {
-            "text": "SHOP NEW GROWER CHAMPAGNE",
-            "link": "shopify://collections/wines"
+            "text": "Shop new calvados Lemorton single-casks",
+            "link": "shopify://collections/calvados-lemorton"
           }
         }
       },
