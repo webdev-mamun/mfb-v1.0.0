@@ -154,7 +154,20 @@
           "type": "address",
           "settings": {
             "title": "NORTHWEST",
-            "address": "<p>Reveler's Hour </p><p>St. Vincent Wine</p><p>2 Amys </p><p>Queen's English</p><p>Tail Up Goat</p><p>District Champagne</p><p>Sushi Nakazawa</p><p>Bourbon Steak</p><p>MacArthur Beverages (Bassins)</p><p>Jack Rose</p><p>Happy Gemini </p><p>Nido </p><p>Sonny's Pizza</p><p>No Kisses </p><p>Rose's Luxury </p><p>Albi</p><p>Bresca</p><p></p>"
+            "address": "<p>Reveler's Hour </p><p>St. Vincent Wine</p><p>2 Amys </p><p>Queen's English</p><p>Tail Up Goat</p><p>District Champagne</p><p>Sushi Nakazawa</p><p>Bourbon Steak</p><p>MacArthur Beverages (Bassins)</p><p>Jack Rose</p><p>Happy Gemini </p><p>Nido </p><p>Sonny's Pizza</p><p>No Kisses </p><p>Rose's Luxury </p><p>Albi</p><p>Bresca</p><p>Jont</p><p>Maison</p><p>Pop Fizz</p><p>Sushi Nakazawa</p><p>Potomac Wines & Spirits</p><p>Maxwell Park</p><p>The Spark-list</p><p></p><p></p>"
+          }
+        },
+        "address_ppgNh4": {
+          "type": "address",
+          "settings": {
+            "title": "SOUTHWEST",
+            "address": "<p>FISH SHOP DC</p>"
+          }
+        },
+        "region_pcW7jr": {
+          "type": "region",
+          "settings": {
+            "title": "SOUTHWEST"
           }
         },
         "region_973xAL": {
@@ -174,6 +187,8 @@
       "block_order": [
         "region_tiPAtr",
         "address_6Hq4AB",
+        "address_ppgNh4",
+        "region_pcW7jr",
         "region_973xAL",
         "address_DFJmkn"
       ],
