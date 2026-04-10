@@ -16,7 +16,7 @@
           "type": "announcement",
           "settings": {
             "text": "Get in touch to enquire about stocking our drinks",
-            "link": ""
+            "link": "{{ page.url }}"
           }
         },
         "153540d8-c1d6-4c48-9851-8e1dd31da734": {
@@ -252,9 +252,9 @@
     "hero",
     "contact",
     "titleList",
-    "addressList",
     "6b2bd83a-9823-4ad6-b7e5-47782785344e",
     "address_list_dE3AzA",
+    "addressList",
     "0262d1eb-cc87-4344-b53c-5387b4ecfe70"
   ]
 }
